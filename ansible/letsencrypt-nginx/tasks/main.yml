@@ -1,0 +1,54 @@
+---
+- name: "install letsencrypt"
+  apt:
+    name: letsencrypt
+    update_cache: yes
+    cache_valid_time: 3600
+
+- name: "remove all server blocks"
+  shell: /bin/rm -f /etc/nginx/conf.d/*
+  notify:
+    - reload nginx
+
+- name: "nginx configuration for webroot plugin"
+  copy:
+    src: letsencrypt.conf
+    dest: /etc/nginx/conf.d/letsencrypt.conf
+  notify:
+    - reload nginx
+
+- name: "obtain certificates"
+  command: letsencrypt certonly -n --agree-tos --email {{ email }} --webroot -w /usr/share/nginx/html/ -d {{ domain }} -d www.{{ domain }}
+
+- name: "remove configuration for webroot plugin"
+  file:
+    path: /etc/nginx/conf.d/letsencrypt.conf
+    state: absent
+  notify:
+    - reload nginx
+
+- name: "generate strong Diffie-Hellman group"
+  command: openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048
+  args:
+    creates: /etc/ssl/certs/dhparam.pem
+
+- name: "nginx default configuration"
+  template:
+    src: default.conf
+    dest: /etc/nginx/conf.d/default.conf
+  notify:
+    - reload nginx
+
+- name: "nginx default configuration for ssl"
+  template:
+    src: default-ssl.conf
+    dest: /etc/nginx/conf.d/default-ssl.conf
+  notify:
+    - reload nginx
+
+- name: "nginx configuration for ssl"
+  template:
+    src: application.conf
+    dest: /etc/nginx/conf.d/{{ domain }}.conf
+  notify:
+    - reload nginx

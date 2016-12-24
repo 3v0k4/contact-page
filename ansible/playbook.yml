@@ -1,5 +1,9 @@
 ---
 - hosts: all
+  vars:
+    domain: odone.io
+  vars_files:
+    - secrets.yml
   remote_user: root
   gather_facts: no
   pre_tasks:
@@ -7,4 +11,5 @@
       raw: apt-get update && apt-get install -y python-simplejson
   roles:
     - nginx
+    - letsencrypt-nginx
     - website
