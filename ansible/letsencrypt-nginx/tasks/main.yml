@@ -39,6 +39,16 @@
   notify:
     - reload nginx
 
+- name: "create snippets folder"
+  file:
+    path: /etc/nginx/snippets/
+    state: directory
+
+- name: "nginx default configuration"
+  template:
+    src: ssl-params.conf
+    dest: /etc/nginx/snippets/ssl-params.conf
+
 - name: "nginx default configuration for ssl"
   template:
     src: default-ssl.conf
