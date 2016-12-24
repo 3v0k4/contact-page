@@ -52,3 +52,19 @@
     dest: /etc/nginx/conf.d/{{ domain }}.conf
   notify:
     - reload nginx
+
+- name: "add cronjob to renew certificates every monday at 2:30"
+  cron:
+    name: letsencrypt renew
+    job: /usr/bin/letsencrypt renew >> /var/log/letsencrypt-renew.log
+    weekday: 1
+    hour: 2
+    minute: 30
+
+- name: "reload nginx after renewing certificates"
+  cron:
+    name: nginx reload
+    job: /bin/systemctl reload nginx
+    weekday: 1
+    hour: 2
+    minute: 35
