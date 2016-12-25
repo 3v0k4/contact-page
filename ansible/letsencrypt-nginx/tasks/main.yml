@@ -10,7 +10,7 @@
   notify:
     - reload nginx
 
-- name: "nginx configuration for webroot plugin"
+- name: "configuration for letsencrypt webroot plugin"
   copy:
     src: letsencrypt.conf
     dest: /etc/nginx/conf.d/letsencrypt.conf
@@ -20,7 +20,7 @@
 - name: "obtain certificates"
   command: letsencrypt certonly -n --agree-tos --email {{ email }} --webroot -w /usr/share/nginx/html/ -d {{ domain }} -d www.{{ domain }}
 
-- name: "remove configuration for webroot plugin"
+- name: "remove configuration for letsencrypt webroot plugin"
   file:
     path: /etc/nginx/conf.d/letsencrypt.conf
     state: absent
@@ -44,7 +44,7 @@
     path: /etc/nginx/snippets/
     state: directory
 
-- name: "nginx default configuration"
+- name: "create snippet for ssl params"
   template:
     src: ssl-params.conf
     dest: /etc/nginx/snippets/ssl-params.conf
@@ -71,7 +71,7 @@
     hour: 2
     minute: 30
 
-- name: "reload nginx after renewing certificates"
+- name: "add cronjob to reload nginx after renewing certificates"
   cron:
     name: nginx reload
     job: /bin/systemctl reload nginx
