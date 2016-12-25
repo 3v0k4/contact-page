@@ -1,0 +1,28 @@
+---
+- name: "install aptitude"
+  apt:
+    name: aptitude
+    update_cache: yes
+    cache_valid_time: 3600
+
+- name: "apt safe-upgrade (update package w/o touching others)"
+  apt:
+    upgrade: safe
+
+- name: "install unattended-upgrades"
+  apt:
+    name: unattended-upgrades
+    update_cache: yes
+    cache_valid_time: 3600
+
+- name: "config unattended-upgrades"
+  copy:
+    src: apt_periodic
+    dest: /etc/apt/apt.conf.d/10periodic
+
+- name: "config unattended-upgrades to send emails to {{ email }}"
+  lineinfile:
+    dest: /etc/apt/apt.conf.d/50unattended-upgrades
+    state: present
+    regexp: "Unattended-Upgrade::Mail \".*\";"
+    line: "Unattended-Upgrade::Mail \"{{ email }}\";"
