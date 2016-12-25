@@ -1,0 +1,43 @@
+---
+- name: "change root password"
+  user:
+    name: root
+    password: "{{ root_password }}"
+
+- name: "create wheel group"
+  group:
+    name: wheel
+    state: present
+
+- name: "give wheel group passwordless sudo"
+  lineinfile:
+    dest: /etc/sudoers
+    state: present
+    regexp: "^%wheel"
+    line: "%wheel ALL=(ALL) NOPASSWD: ALL"
+    validate: visudo -cf %s
+
+- name: "create user {{ user_name }}"
+  user:
+    name: "{{ user_name }}"
+    shell: /bin/bash
+    groups: wheel
+    append: yes
+    state: present
+    createhome: yes
+
+- name: "set up authorized keys for user {{ user_name }}"
+  authorized_key:
+    user: "{{ user_name }}"
+    key: "{{ item }}"
+    state: present
+  with_file:
+    - public_key
+
+- name: "disallow ssh password authentication"
+  lineinfile:
+    dest: /etc/ssh/sshd_config
+    regexp: "^PasswordAuthentication"
+    line: PasswordAuthentication no
+    state: present
+  notify: reload ssh

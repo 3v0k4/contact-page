@@ -2,6 +2,7 @@
 - hosts: all
   vars:
     domain: odone.io
+    user_name: riccardo
   vars_files:
     - secrets.yml
   remote_user: root
@@ -12,4 +13,5 @@
   roles:
     - nginx
     - letsencrypt-nginx
+    - user
     - website
