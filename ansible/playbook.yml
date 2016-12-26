@@ -2,6 +2,7 @@
 - hosts: all
   vars:
     domain: odone.io
+    hostname: moon
     user_name: riccardo
   vars_files:
     - secrets.yml
