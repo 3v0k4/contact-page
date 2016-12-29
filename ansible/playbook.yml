@@ -1,0 +1,10 @@
+---
+- hosts: all
+  remote_user: root
+  gather_facts: no
+  pre_tasks:
+    - name: "install python 2"
+      raw: apt-get update && apt-get install -y python-simplejson
+  roles:
+    - nginx
+    - website
