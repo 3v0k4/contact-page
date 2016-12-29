@@ -1,4 +1,18 @@
 ---
+# consider enabling swapfile if not using an SSD HD
+# https://www.digitalocean.com/community/tutorials/additional-recommended-steps-for-new-ubuntu-14-04-servers#create-a-swap-file
+
+- name: "set timezone to CET"
+  timezone:
+    name: CET
+  notify: restart cron
+
+- name: "install ntp"
+  apt:
+    name: ntp
+    update_cache: yes
+    cache_valid_time: 3600
+
 - name: "set fqdn"
   lineinfile:
     dest: /etc/hosts

@@ -5,3 +5,5 @@
 - name: reload aliases
   command: newaliases
 
+- name: restart cron
+  command: service cron restart
