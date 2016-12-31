@@ -1,0 +1,39 @@
+---
+- name: "set deny as default policy for incoming connections"
+  ufw:
+    direction: incoming
+    policy: deny
+
+- name: "set allow as default policy for outgoing connections"
+  ufw:
+    direction: outgoing
+    policy: allow
+
+- name: "limit allow ports"
+  ufw:
+    rule: limit
+    port: "{{ item }}"
+  with_items:
+    - ssh
+
+- name: "allow ports"
+  ufw:
+    rule: allow
+    port: "{{ item }}"
+  with_items:
+    - http
+    - https
+    - ntp
+
+- name: "allow out ports"
+  ufw:
+    direction: out
+    rule: allow
+    port: "{{ item }}"
+  with_items:
+    - domain
+
+- name: "enable"
+  ufw:
+    state: enabled
+    logging: on
