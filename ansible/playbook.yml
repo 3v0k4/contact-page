@@ -13,6 +13,7 @@
       raw: apt-get update && apt-get install -y python-simplejson
   roles:
     - server
+    - send-only-smtp
     - nginx
     - letsencrypt-nginx
     - user

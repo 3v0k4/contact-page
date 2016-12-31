@@ -1,0 +1,7 @@
+---
+- name: reload postfix
+  systemd: name=postfix state=reloaded
+
+- name: reload aliases
+  command: newaliases
+

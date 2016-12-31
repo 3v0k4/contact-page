@@ -7,12 +7,6 @@
     name: CET
   notify: restart cron
 
-- name: "install ntp"
-  apt:
-    name: ntp
-    update_cache: yes
-    cache_valid_time: 3600
-
 - name: "set fqdn"
   lineinfile:
     dest: /etc/hosts
@@ -34,82 +28,6 @@
   apt:
     upgrade: safe
 
-- name: "set postfix option type as internet site"
-  debconf:
-    name: postfix
-    question: postfix/main_mailer_type
-    value: Internet Site
-    vtype: string
-
-- name: "set postfix option hostname"
-  debconf:
-    name: postifx
-    question: postfix/mailname
-    value: "{{ domain }}"
-    vtype: string
-
-- name: "install mailutils"
-  apt:
-    name: mailutils
-    update_cache: yes
-    cache_valid_time: 3600
-
-- name: "set postfix myhostname"
-  lineinfile:
-    dest: /etc/postfix/main.cf
-    state: present
-    regexp: "^myhostname"
-    line: "myhostname = {{ hostname }}.{{ domain }}"
-  notify: "reload postfix"
-
-- name: "set postfix mydomain"
-  lineinfile:
-    dest: /etc/postfix/main.cf
-    state: present
-    regexp: "^mydomain"
-    line: "mydomain = {{ domain }}"
-  notify: "reload postfix"
-
-- name: "set postfix myorigin"
-  lineinfile:
-    dest: /etc/postfix/main.cf
-    state: present
-    regexp: "^myorigin"
-    line: "myorigin = $mydomain"
-  notify: "reload postfix"
-
-- name: "set postfix relayhost"
-  lineinfile:
-    dest: /etc/postfix/main.cf
-    state: present
-    regexp: "^relayhost"
-    line: "relayhost ="
-  notify: "reload postfix"
-
-- name: "set postfix inet_interfaces"
-  lineinfile:
-    dest: /etc/postfix/main.cf
-    state: present
-    regexp: "^inet_interfaces"
-    line: "inet_interfaces = loopback-only"
-  notify: "reload postfix"
-
-- name: "set postfix mydestination"
-  lineinfile:
-    dest: /etc/postfix/main.cf
-    state: present
-    regexp: "^mydestination"
-    line: "mydestination =  $myhostname, localhost.$mydomain, $mydomain"
-  notify: "reload postfix"
-
-- name: "set email root alias to {{ email }}"
-  lineinfile:
-    dest: /etc/aliases
-    state: present
-    regexp: "^root:"
-    line: "root: {{ email }}"
-  notify: "reload aliases"
-
 - name: "install unattended-upgrades"
   apt:
     name: unattended-upgrades
@@ -121,9 +39,8 @@
     src: apt_periodic
     dest: /etc/apt/apt.conf.d/10periodic
 
-- name: "config unattended-upgrades to send emails to {{ email }}"
-  lineinfile:
-    dest: /etc/apt/apt.conf.d/50unattended-upgrades
-    state: present
-    regexp: "Unattended-Upgrade::Mail \".*\";"
-    line: "Unattended-Upgrade::Mail \"{{ email }}\";"
+- name: "install ntp"
+  apt:
+    name: ntp
+    update_cache: yes
+    cache_valid_time: 3600
