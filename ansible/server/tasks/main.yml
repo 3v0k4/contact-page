@@ -2,6 +2,9 @@
 # consider enabling swapfile if not using an SSD HD
 # https://www.digitalocean.com/community/tutorials/additional-recommended-steps-for-new-ubuntu-14-04-servers#create-a-swap-file
 
+- name: "set locale"
+  command: update-locale LANG=en_US.UTF-8 LC_CTYPE=
+
 - name: "set timezone to CET"
   timezone:
     name: CET
