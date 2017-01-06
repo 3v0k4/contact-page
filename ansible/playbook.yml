@@ -6,7 +6,6 @@
     user_name: riccardo
   vars_files:
     - secrets.yml
-  remote_user: root
   gather_facts: no
   pre_tasks:
     - name: "install python 2"
