@@ -41,3 +41,11 @@
     line: PasswordAuthentication no
     state: present
   notify: reload ssh
+
+- name: "disallow ssh root access"
+  lineinfile:
+    dest: /etc/ssh/sshd_config
+    regexp: "^PermitRootLogin"
+    line: PermitRootLogin no
+    state: present
+  notify: reload ssh
