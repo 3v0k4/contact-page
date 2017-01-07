@@ -37,3 +37,15 @@
   ufw:
     state: enabled
     logging: on
+
+- name: "install fail2ban"
+  apt:
+    name: fail2ban
+    update_cache: yes
+    cache_valid_time: 3600
+
+- name: "config fail2ban"
+  template:
+    src: jail.local
+    dest: /etc/fail2ban/jail.local
+  notify: reload fail2ban

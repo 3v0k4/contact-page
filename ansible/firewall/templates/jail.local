@@ -1,0 +1,19 @@
+[DEFAULT]
+# "bantime" is the number of seconds that a host is banned.
+bantime = 3600
+
+# A host is banned if it has generated "maxretry" during the last "findtime" seconds
+findtime = 1800
+maxretry = 5
+
+# Recipient for email notifications
+destemail = {{ email }}
+
+# Sender for email notifications
+sendername = Fail2BanAlerts
+
+# Use Postfix as MTA
+mta = mail
+
+# Ban AND send email notification on action
+action = %(action_mwl)s
