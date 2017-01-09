@@ -49,3 +49,15 @@
     src: jail.local
     dest: /etc/fail2ban/jail.local
   notify: reload fail2ban
+
+- name: "add jail for nginx"
+  copy:
+    src: jail.d/nginx.conf
+    dest: /etc/fail2ban/jail.d/nginx.conf
+  notify: reload fail2ban
+
+- name: "add filters for nginx"
+  copy:
+    src: filter.d/
+    dest: /etc/fail2ban/filter.d/
+  notify: reload fail2ban
