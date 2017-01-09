@@ -9,9 +9,6 @@ maxretry = 5
 # Recipient for email notifications
 destemail = {{ email }}
 
-# Sender for email notifications
-sendername = Fail2BanAlerts
-
 # Use Postfix as MTA
 mta = mail
 
