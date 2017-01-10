@@ -32,7 +32,8 @@
     key: "{{ item }}"
     state: present
   with_file:
-    - public_key
+    - public_key_1
+    - public_key_2
 
 - name: "disallow ssh password authentication"
   lineinfile:
