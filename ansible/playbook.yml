@@ -17,4 +17,5 @@
     - nginx
     - letsencrypt-nginx
     - user
+    - logwatch
     - website

@@ -1,0 +1,16 @@
+---
+- name: "install logwatch"
+  apt:
+    name: logwatch
+    update_cache: yes
+    cache_valid_time: 3600
+
+- name: "create cache directory"
+  file:
+    path: /var/cache/logwatch
+    state: directory
+
+- name: "configure"
+  template:
+    src: logwatch.conf
+    dest: /etc/logwatch/conf/logwatch.conf
