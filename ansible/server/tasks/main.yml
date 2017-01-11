@@ -60,3 +60,11 @@
 - name: "remount /run/shm"
   command: mount -o remount /run/shm
   when: fstab.changed
+
+- name: "reduce ssh login grace time"
+  lineinfile:
+    dest: /etc/ssh/sshd_config
+    regexp: "^LoginGraceTime"
+    line: LoginGraceTime 30
+    state: present
+  notify: reload ssh
