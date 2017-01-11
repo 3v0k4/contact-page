@@ -67,4 +67,5 @@
     regexp: "^LoginGraceTime"
     line: LoginGraceTime 30
     state: present
+    validate: "/usr/sbin/sshd -t -f %s"
   notify: reload ssh

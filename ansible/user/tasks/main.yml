@@ -41,6 +41,7 @@
     regexp: "^PasswordAuthentication"
     line: PasswordAuthentication no
     state: present
+    validate: "/usr/sbin/sshd -t -f %s"
   notify: reload ssh
 
 - name: "disallow ssh root access"
@@ -49,6 +50,7 @@
     regexp: "^PermitRootLogin"
     line: PermitRootLogin no
     state: present
+    validate: "/usr/sbin/sshd -t -f %s"
   notify: reload ssh
 
 - name: "allow ssh access only to {{ user_name }}"
@@ -57,4 +59,5 @@
     regexp: "^AllowUsers"
     line: "AllowUsers {{ user_name }}"
     state: present
+    validate: "/usr/sbin/sshd -t -f %s"
   notify: reload ssh
