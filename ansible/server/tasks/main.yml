@@ -47,3 +47,16 @@
     name: ntp
     update_cache: yes
     cache_valid_time: 3600
+
+- name: "make /run/shm read-only"
+  mount:
+    src: none
+    name: /run/shm
+    fstype: tmpfs
+    opts: "defaults,ro"
+    state: present
+  register: fstab
+
+- name: "remount /run/shm"
+  command: mount -o remount /run/shm
+  when: fstab.changed
