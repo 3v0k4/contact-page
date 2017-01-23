@@ -9,7 +9,9 @@
   gather_facts: no
   pre_tasks:
     - name: "install python 2"
-      raw: apt-get update && apt-get install -y python-simplejson
+      raw: test -e /usr/bin/python || (apt-get update && apt-get install -y python-simplejson)
+      register: output
+      changed_when: output.stdout != "" and output.stdout != "\r\n"
   roles:
     - server
     - send-only-smtp
