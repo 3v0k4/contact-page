@@ -42,6 +42,13 @@
     src: apt_periodic
     dest: /etc/apt/apt.conf.d/10periodic
 
+- name: "allow only security updates for unattended-upgrades"
+  lineinfile:
+    dest: /etc/apt/apt.conf.d/50unattended-upgrades
+    regexp: '\"\${distro_id}:\${distro_codename}\";'
+    line: '// "${distro_id}:${distro_codename}";'
+    state: present
+
 - name: "install ntp"
   apt:
     name: ntp
