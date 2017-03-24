@@ -2,64 +2,118 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Riccardo Odone - About</title>
+
+    <style>
+      header {
+        border-bottom: 1px dotted #666;
+        margin: auto;
+        width: 90%;
+      }
+
+      header h1 {
+        font-size: 35px;
+        font-family: sans-serif;
+        font-weight: 100;
+        letter-spacing: 5px;
+        text-align: center;
+        text-transform: uppercase;
+      }
+
+      main {
+        font-size: 24px;
+        line-height: 35px;
+        margin: auto;
+        width: 90%;
+      }
+
+      main p {
+        color: #3C4442;
+      }
+
+      a {
+        transition: color .4s;
+        color: #265C83;
+      }
+
+      a:link,
+      a:visited { color: #265C83; }
+      a:hover   { color: #7FDBFF; }
+      a:active  {
+        transition: color .3s;
+        color: #007BE6;
+      }
+
+      .link { text-decoration: none; }
+
+      @media screen and (min-width: 768px) {
+        main {
+          width: 60%;
+        }
+
+        header {
+          width: 70%;
+        }
+      }
+    </style>
   </head>
   <body>
-    <h1>
-      Hello! Cześć! Hola! Ciao!
-    </h1>
+    <header>
+      <h1>odone.io</h1>
+    </header>
 
-    <p>
-      I'm Riccardo, but you can call me Rick. <br/>
-      Or Rysiek if you want to work on your Polish pronunciation.
-    </p>
+    <main>
+      <p>Hello! Cześć! Hola! Ciao!</p>
 
-    <p>
-      I'm a rising star software engineer at <a href="http://www.lunarlogic.io/" target="_blank">Lunar Logic</a>. <br/>
-    </p>
+      <p>
+        I'm Riccardo, but you can call me Rick. <br/>
+        Or Rysiek if you want to work on your Polish pronunciation.
+      </p>
 
-    <p>
-      Currently I work with Ruby and JavaScript. <br/>
-      But those two are just excuses to broaden my horizons. This is why, for example, this last week (today is 1469910177) I have been busy with DDD, CQRS, YEAH and FRP. <br/>
-      I suck at all of them but I'm excited whenever I can deep dive into software architecture and improve my coding skills. <br/>
-      Also, sometimes I wear the devops hat and break some stuff around too. That's fun. <br/>
-    </p>
+      <p>
+        I'm a rising star software engineer at <a href="http://www.lunarlogic.io/" target="_blank">Lunar Logic</a>. <br/>
+      </p>
 
-    <p>
-      By the way, have you really googled for YEAH?!1?1? I bet they have come up with YEAH.js and ruined my joke though. <br/>
-    </p>
+      <p>
+        Currently I work with Ruby and JavaScript. <br/>
+        But those two are just excuses to broaden my horizons. This is why, for example, this last week (today is 1469910177) I have been busy with DDD, CQRS, YEAH and FRP. <br/>
+        I suck at all of them but I'm excited whenever I can deep dive into software architecture and improve my coding skills. <br/>
+        Also, sometimes I wear the devops hat and break some stuff around too. That's fun. <br/>
+      </p>
 
-    <p>
-      This web page is responsive, super fast and, most importantly, good enough.
-      In fact, I've decided to focus on what matters most: being awesome. <br/>
-      This means in this specific moment I'm either geeking up or out doing something cool. <br/>
-      This also means that it's really difficult to get in contact with me.
-      But if you are a good hacker I bet you will manage.
-    </p>
+      <p>
+        By the way, have you really googled for YEAH?!1?1? I bet they have come up with YEAH.js and ruined my joke though. <br/>
+      </p>
 
-    <p>
-      You can (rarely) find me on
-    </p>
+      <p>
+        This web page is responsive, super fast and, most importantly, good enough.
+        In fact, I've decided to focus on what matters most: being awesome. <br/>
+        This means in this specific moment I'm either geeking up or out doing something cool. <br/>
+        This also means that it's really difficult to get in contact with me.
+        But if you are a good hacker I bet you will manage.
+      </p>
 
-    <ul>
-      <li><a href="https://www.facebook.com/riccardo.odone" target="_blank">Facebook</a></li>
-      <li><a href="https://twitter.com/riccardoodone" target="_blank">Twitter</a></li>
-      <li><a href="https://it.linkedin.com/in/riccardoodone" target="_blank">Linkedin</a></li>
-      <li><a href="https://github.com/3v0k4" target="_blank">Github</a></li>
-    </ul>
+      <p>
+        You can (rarely) find me on
+      </p>
 
-    <p>
-      Hopefully I'll meet you somewhere in the community soon. I'm sure we will come up with something great altogether. <br/>
-      Or we will just get drunk and have a nostalgic chat on those shitty web pages from the eighties with no CSS and JS.
-    </p>
+      <ul>
+        <li><a href="https://www.facebook.com/riccardo.odone" target="_blank">Facebook</a></li>
+        <li><a href="https://twitter.com/riccardoodone" target="_blank">Twitter</a></li>
+        <li><a href="https://it.linkedin.com/in/riccardoodone" target="_blank">Linkedin</a></li>
+        <li><a href="https://github.com/3v0k4" target="_blank">Github</a></li>
+      </ul>
 
-    <p>
-      This web page is on <a href="https://github.com/3v0k4/contact-page" target="_blank">Github</a> because why not. <br/>
-      Feel free to contribute ;)
-    </p>
+      <p>
+        Hopefully I'll meet you somewhere in the community soon. I'm sure we will come up with something great altogether. <br/>
+        Or we will just get drunk and have a nostalgic chat on those shitty web pages from the eighties with no CSS and JS.
+      </p>
 
-    <p>
-      Powered by DigitalOcean
-    </p>
+      <p>
+        This web page is on <a href="https://github.com/3v0k4/contact-page" target="_blank">Github</a> because why not. <br/>
+        Feel free to contribute ;)
+      </p>
+    </main>
   </body>
 </html>
