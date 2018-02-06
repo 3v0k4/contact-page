@@ -34,6 +34,7 @@
   with_file:
     - public_key_1
     - public_key_2
+    - public_key_3
 
 - name: "disallow ssh password authentication"
   lineinfile:
