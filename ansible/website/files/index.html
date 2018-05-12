@@ -56,6 +56,18 @@
           width: 70%;
         }
       }
+
+      blink {
+        -webkit-animation: blink 1s step-end infinite;
+        -moz-animation: blink 1s step-end infinite;
+        -o-animation: blink 1s step-end infinite;
+        animation: blink 1s step-end infinite;
+      }
+
+      @-webkit-keyframes blink { 67% { opacity: 0 }}
+      @-moz-keyframes blink {  67% { opacity: 0 }}
+      @-o-keyframes blink {  67% { opacity: 0 }}
+      @keyframes blink {  67% { opacity: 0 }}
     </style>
   </head>
   <body>
@@ -72,17 +84,12 @@
       </p>
 
       <p>
-        I'm a Software Maverick at <a href="https://lunarlogic.io/" target="_blank">Lunar Logic</a>. Which means I do picky code reviews, ask the important stupid questions and sometimes write good software. <br/>
+        I'm a Software Maverick at <a href="https://lunarlogic.io/" target="_blank">Lunar Logic</a>.
       </p>
 
       <p>
-        I'm a student for life in the art of software crafting, I love being among other crafters and I'm trying hard to be a good human being.
-      </p>
-
-      <p>
-        This web page is responsive, super fast and, most importantly, good enough.
-        In fact, I've decided to focus on what matters most: being awesome. <br/>
-        This means in this specific moment I'm either geeking up or out doing something cool. <br/>
+        This web page is responsive, super fast and, most importantly, good enough. In fact, I've decided to focus on
+        what matters most: being awesome.
       </p>
 
       <p>
@@ -90,6 +97,7 @@
       </p>
 
       <ul>
+        <li><a href="https://medium.com/@riccardoodone" target="_blank">Medium</a></li>
         <li><a href="https://www.facebook.com/riccardo.odone" target="_blank">Facebook</a></li>
         <li><a href="https://twitter.com/riccardoodone" target="_blank">Twitter</a></li>
         <li><a href="https://it.linkedin.com/in/riccardoodone" target="_blank">Linkedin</a></li>
@@ -97,12 +105,13 @@
       </ul>
 
       <p>
-        Hopefully I'll meet you somewhere in the community soon. I'm sure we will come up with something great together. <br/>
-        Or we will just get drunk and have a nostalgic chat on those shitty web pages from the eighties with no CSS and JS.
+        Hope to see you around soon. I'm sure we will come up with something great together. Or we will just get drunk
+        and have a nostalgic chat on those shitty web pages from the eighties with <blink>bad CSS</blink> and no JS.
       </p>
 
       <p>
-        This web page is on <a href="https://github.com/3v0k4/contact-page" target="_blank">Github</a> because why not. <br/>
+        This web page is on <a href="https://github.com/3v0k4/contact-page" target="_blank">Github</a> because why not.
+        <br/>
         Feel free to contribute ;)
       </p>
     </main>
