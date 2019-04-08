@@ -1,0 +1,10 @@
+div.sourceCode {
+  margin-left: calc(50% - 50vw);
+  width: 100vw;
+}
+
+pre.sourceCode {
+  background: rgba(0,0,0,.04);
+  padding: 30px 60px 30px 60px;
+  overflow: scroll;
+}
