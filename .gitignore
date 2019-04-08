@@ -1,2 +1,6 @@
 ansible/inventory
 ansible/secrets.yml
+
+blog/.stack-work
+blog/_cache
+blog/_site
