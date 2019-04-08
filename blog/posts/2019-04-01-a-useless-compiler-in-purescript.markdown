@@ -3,6 +3,8 @@ title: A Useless Compiler in PureScript
 author: Riccardo
 ---
 
+<img class="cover" src="https://cdn-images-1.medium.com/max/2400/1*rTVIrJPogxTyV4Guona3Pw.jpeg"></img>
+
 ## Intro
 
 This week I've decided to write some code in PureScript that resembles a compiler. As for the last few posts, I've limited the scope to the smallest possible unit.

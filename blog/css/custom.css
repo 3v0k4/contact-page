@@ -8,3 +8,8 @@ pre.sourceCode {
   padding: 30px 60px 30px 60px;
   overflow: scroll;
 }
+
+.cover {
+  margin-left: calc(50% - 50vw);
+  width: 100vw;
+}

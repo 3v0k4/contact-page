@@ -3,7 +3,7 @@ title: Bank Kata in PureScript
 author: Riccardo
 ---
 
-![](https://cdn-images-1.medium.com/max/1024/1*wy9M28S1h8KHOav3b2DBBw.jpeg)
+<img class="cover" src="https://cdn-images-1.medium.com/max/1024/1*wy9M28S1h8KHOav3b2DBBw.jpeg"></img>
 
 ## Intro
 

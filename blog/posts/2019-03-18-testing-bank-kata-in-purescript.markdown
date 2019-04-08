@@ -3,7 +3,7 @@ title: Testing Bank Kata in PureScript
 author: Riccardo
 ---
 
-![](https://cdn-images-1.medium.com/max/1024/1*CQ1bneAfNmhYuocE6f8gxg.jpeg)
+<img class="cover" src="https://cdn-images-1.medium.com/max/1024/1*CQ1bneAfNmhYuocE6f8gxg.jpeg"></img>
 
 ## Intro
 
