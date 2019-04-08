@@ -20,4 +20,3 @@
     - letsencrypt-nginx
     - user
     - logwatch
-    - { role: website, tags: [ "website" ] }

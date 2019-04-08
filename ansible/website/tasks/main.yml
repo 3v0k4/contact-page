@@ -1,7 +1,0 @@
----
-- name: "deploy"
-  copy:
-    src: index.html
-    dest: /usr/share/nginx/html/index.html
-  notify: reload nginx
-
