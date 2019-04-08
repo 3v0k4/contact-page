@@ -3,7 +3,13 @@ title: Tu Quoque
 author: Julius
 ---
 
-Vestibulum leo turpis, dignissim quis ultrices sit amet, iaculis ac ligula.
+```haskell
+main :: IO ()
+main = do
+  putStrLn "hello"
+```
+
+Vestibulum `leo` turpis, dignissim quis ultrices sit amet, iaculis ac ligula.
 Pellentesque tristique, velit eget scelerisque scelerisque, est dolor ultrices
 arcu, quis ullamcorper justo arcu luctus mauris. Integer congue molestie nisi id
 posuere. Fusce pellentesque gravida tempus. Integer viverra tortor nec eros
