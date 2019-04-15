@@ -5,6 +5,15 @@ import           Hakyll
 
 
 --------------------------------------------------------------------------------
+feedConfiguration :: FeedConfiguration
+feedConfiguration = FeedConfiguration
+    { feedTitle       = "odone.io"
+    , feedDescription = "Rambling on software as a learning tool"
+    , feedAuthorName  = "Riccardo Odone"
+    , feedAuthorEmail = ""
+    , feedRoot        = "https://odone.io"
+    }
+
 main :: IO ()
 main = hakyll $ do
     match "images/*" $ do
@@ -25,6 +34,7 @@ main = hakyll $ do
         route $ setExtension "html"
         compile $ pandocCompiler
             >>= loadAndApplyTemplate "templates/post.html"    postCtx
+            >>= saveSnapshot "content"
             >>= loadAndApplyTemplate "templates/default.html" postCtx
             >>= relativizeUrls
 
@@ -58,6 +68,14 @@ main = hakyll $ do
                 >>= relativizeUrls
 
     match "templates/*" $ compile templateBodyCompiler
+
+    create ["atom.xml"] $ do
+        route idRoute
+        compile $ do
+            let feedCtx = postCtx `mappend` bodyField "description"
+            posts <- fmap (take 10) . recentFirst =<<
+                loadAllSnapshots "posts/*" "content"
+            renderAtom feedConfiguration feedCtx posts
 
 
 --------------------------------------------------------------------------------
