@@ -8,6 +8,16 @@
         <link rel="stylesheet" href="/css/default.css?VERSION" />
         <link rel="stylesheet" href="/css/syntax.css?VERSION" />
         <link rel="stylesheet" href="/css/custom.css?VERSION" />
+        $if(description)$
+          <meta name="twitter:card" content="summary" />
+          <meta name="twitter:site" content="@riccardoodone" />
+          <meta name="twitter:creator" content="@riccardoodone" />
+          <meta property="og:url" content="$url$" />
+          <meta property="og:title" content="$title$" />
+          <meta property="og:description" content="$description$" />
+          <meta property="og:image" content="$cover_image$" />
+        $else$
+        $endif$
     </head>
     <body>
         <header>
