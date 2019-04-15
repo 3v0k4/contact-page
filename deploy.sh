@@ -3,6 +3,7 @@ set -euxo pipefail
 
 cd blog
 sed -i '' -e "s/VERSION/$(date +%s)/g" templates/default.html
+stack build
 stack exec site rebuild
 rsync \
   --rsync-path="sudo rsync" \
