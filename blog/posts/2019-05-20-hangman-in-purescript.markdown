@@ -5,8 +5,6 @@ description: Interactive Programming in PureScript
 cover_image: https://odone.io/images/hangman.jpeg
 ---
 
-# Hangman in PureScript
-
 An example run
 
 ```bash
