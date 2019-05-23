@@ -72,11 +72,10 @@ main = hakyll $ do
     create ["atom.xml"] $ do
         route idRoute
         compile $ do
-            let feedCtx = postCtx `mappend` bodyField "description"
+            let feedCtx = mconcat [ bodyField "description" , defaultContext ]
             posts <- fmap (take 10) . recentFirst =<<
                 loadAllSnapshots "posts/*" "content"
             renderAtom feedConfiguration feedCtx posts
-
 
 --------------------------------------------------------------------------------
 postCtx :: Context String
