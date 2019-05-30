@@ -3,8 +3,7 @@ title: About
 ---
 
 <p>
-  I'm Riccardo, but you can call me Rick. <br />
-  Or Rysiek if you want to work on your Polish.
+  I'm Riccardo or Rick or Rysiek.
 </p>
 
 <p>
