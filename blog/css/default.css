@@ -1,5 +1,5 @@
 html {
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
 body {
@@ -68,6 +68,16 @@ header {
     width: 90%;
     margin: 0;
     padding: 0 5%;
+    font-size: 1.3rem;
+  }
+
+  .logo {
+    width: 295px;
+    font-size: 1.9rem;
+  }
+
+  .footer {
+    width: 300px;
   }
 }
 
