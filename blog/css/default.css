@@ -1,9 +1,9 @@
 html {
-  font-size: 62.5%;
+  font-size: 1rem;
 }
 
 body {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   color: #000;
 }
 
@@ -20,7 +20,7 @@ footer {
 }
 
 .footer {
-  width: 300px;
+  width: 440px;
   margin: 0 auto;
 }
 
@@ -39,7 +39,7 @@ article .header {
 }
 
 .logo {
-  width: 260px;
+  width: 410px;
   font-size: 2.4rem;
   font-weight: bold;
   margin: 0 auto;
@@ -73,7 +73,7 @@ header {
 
 @media (min-width: 640px) {
   body {
-    width: 60rem;
+    width: 60%;
     margin: 0 auto;
     padding: 0;
   }
