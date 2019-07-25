@@ -12,7 +12,7 @@ A good read about Yesod is available online for free: [Developing web applicatio
 In other words, this won't be good material to learn how to use Yesod. However, it will hopefully give an overview of how the framework works.
 
 Series index:
-- [Building a Blog in Haskell with Yesod–The Basic Structure](https://dev.to/riccardoodone/building-a-blog-in-haskell-with-yesod-the-basic-structure-43i7)
+- [Building a Blog in Haskell with Yesod–The Basic Structure](https://odone.io/posts/2019-07-15-building-a-blog-in-haskell-with-yesod%E2%80%93the-basic-structure.html)
 - Building a Blog in Haskell with Yesod–Using a Database (this post)
 
 ---
