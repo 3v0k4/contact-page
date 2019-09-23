@@ -5,7 +5,7 @@ author: Riccardo
 cover_image: https://odone.io/images/refactoring-mars-rover.jpg
 ---
 
-Last week I received some friendly criticism cause I've ended the post by postponing the refactor step of our Type-Driven-Developed kata:
+Last week I received some friendly criticism cause I've ended the [post](https://odone.io/posts/2019-09-16-mars-rover-kata-in-haskell.html) by postponing the refactor step of our Type-Driven-Developed kata:
 
 > I don't have any more time for today. We will be refactoring in a future post!
 
@@ -120,7 +120,7 @@ main = do
 
 ## CyclicEnum
 
-A couple of weeks ago, we [introduced (i.e. blatantly copied)](https://dev.to/riccardoodone/fun-with-typeclasses-ap7) the `CyclicEnum` typeclass.
+A couple of weeks ago, we [introduced (i.e. blatantly copied)](https://odone.io/posts/2019-09-09-fun-with-typeclasses.html) the `CyclicEnum` typeclass.
 
 Let's use it in our `turnL` and `turnR` functions:
 
