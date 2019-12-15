@@ -1,8 +1,6 @@
 div.sourceCode {
   margin-left: calc(50% - 50vw);
   width: 100vw;
-  overflow: scroll;
-  -webkit-overflow-scrolling: touch;
 }
 
 pre.sourceCode {
