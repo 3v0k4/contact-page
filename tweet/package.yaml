@@ -21,6 +21,16 @@ description:         Please see the README on GitHub at <https://github.com/gith
 
 dependencies:
 - base >= 4.7 && < 5
+- frontmatter
+- yaml
+- bytestring
+- aeson
+- text
+- filepath
+- tweet-hs
+- optparse-applicative
+- directory
+- directory
 
 library:
   source-dirs: src

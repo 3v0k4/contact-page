@@ -18,6 +18,13 @@ packages:
       sha256: 3834291e5e06ee1e1041c51fb111bd22ccae184c453c61b5600c193a4bb66f32
   original:
     hackage: htoml-megaparsec-2.1.0.3@sha256:719228dc4243294127d5e6c451d70b58c6b437e1e8d25ec584a587574cca9e6e,3534
+- completed:
+    hackage: tweet-hs-1.0.2.1@sha256:00b84d87807fca36434e7bc37d76c3703731c433338befe2d8aab03a9d8294a2,3029
+    pantry-tree:
+      size: 1006
+      sha256: c19f3a90e1c387bea8a0edb7bc56c58904c09d8d5e870554af76c7ba3497ca5f
+  original:
+    hackage: tweet-hs-1.0.2.1@sha256:00b84d87807fca36434e7bc37d76c3703731c433338befe2d8aab03a9d8294a2,3029
 snapshots:
 - completed:
     size: 524799
