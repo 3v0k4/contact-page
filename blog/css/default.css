@@ -1,10 +1,14 @@
 html {
-  font-size: 0.9rem;
+  font-size: 1rem;
+}
+
+blockquote {
+  padding-left: 1em;
+  border-left: 0.2em solid rgb(240,240,240);
 }
 
 body {
-  font-size: 1.5rem;
-  color: #000;
+  font-size: 1.3rem !important;
 }
 
 header {
@@ -12,37 +16,27 @@ header {
 }
 
 footer {
-  margin-top: 3rem;
-  padding: 1.2rem 0;
   border-top: 0.2rem solid #000;
   font-size: 1.2rem;
-  color: #555;
-}
-
-.footer {
-  width: 440px;
-  margin: 0 auto;
 }
 
 h1 {
-  font-size: 2.4rem;
+  font-size: 2.6rem;
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 2.2rem;
 }
 
 article .header {
-  font-size: 1.4rem;
+  font-size: 1rem;
   font-style: italic;
   color: #555;
 }
 
 .logo {
-  width: 410px;
   font-size: 2.4rem;
   font-weight: bold;
-  margin: 0 auto;
 }
 
 .logo a {
@@ -50,41 +44,48 @@ article .header {
   text-decoration: none;
 }
 
-header {
-  margin: 0 0 3rem;
-  padding: 1.2rem 0;
-}
-
-@media (max-width: 319px) {
-  body {
-    width: 90%;
-    margin: 0;
-    padding: 0 5%;
-  }
+.logo a:hover {
+  color: #007bff;
+  text-decoration: none;
 }
 
 @media (min-width: 320px) {
   body {
-    width: 90%;
-    margin: 0;
-    padding: 0 5%;
     font-size: 1.3rem;
   }
 
   .logo {
-    width: 295px;
     font-size: 1.9rem;
-  }
-
-  .footer {
-    width: 300px;
   }
 }
 
-@media (min-width: 640px) {
-  body {
-    width: 60%;
-    margin: 0 auto;
-    padding: 0;
-  }
+div.sourceCode {
+  margin-left: calc(50% - 50vw);
+  width: 100vw;
+}
+
+pre.sourceCode {
+  background: rgb(240,240,240);
+  padding: 30px 5vw 30px 5vw;
+  -webkit-overflow-scrolling: touch;
+}
+
+code {
+  background: rgb(240,240,240);
+  overflow: auto !important;
+  word-wrap: normal !important;
+  white-space: pre !important;
+}
+
+.cover {
+  margin-left: calc(50% - 50vw);
+  width: 100vw;
+}
+
+.content-image {
+  width: 100%;
+}
+
+img {
+  width: 100%;
 }

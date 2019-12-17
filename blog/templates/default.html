@@ -7,7 +7,7 @@
         <title>Riccardo Odone - $title$</title>
         <link rel="stylesheet" href="/css/default.css?VERSION" />
         <link rel="stylesheet" href="/css/syntax.css?VERSION" />
-        <link rel="stylesheet" href="/css/custom.css?VERSION" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
@@ -26,26 +26,24 @@
         $endif$
     </head>
     <body>
+      <div class="col-md-8 mx-auto">
         <header>
-            <div class="logo">
+            <div class="logo text-center">
                 <a href="/">Riccardo Odone</a>
-                <span>&#36; $page$<span>
+                <span>🇮🇹 $page$<span>
             </div>
         </header>
 
-        <main role="main">
+        <main role="main" class="mt-4 mb-4">
             $body$
         </main>
 
         <footer>
-            <div class="footer">
-                <a href="/about.html">About</a>
-                &#36;
-                <a type="application/atom+xml" href="/atom.xml">ATOM Feed</a>
-                &#36;
-                Powered by
-                <a href="http://jaspervdj.be/hakyll">Hakyll</a>
+            <div class="footer text-center mt-2 mb-2">
+                <a href="/about.html">About</a>🖖<a type="application/atom+xml" href="/atom.xml">ATOM Feed</a>
+                ❤️<a href="http://jaspervdj.be/hakyll">Hakyll</a>
             </div>
         </footer>
+      </div>
     </body>
 </html>
