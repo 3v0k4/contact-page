@@ -17,19 +17,22 @@ import GHC.Generics
 import System.FilePath.Posix
 import Web.Tweet
 import Data.Foldable
+import Data.List
 
 data Front =
   Front
     { title :: String
     , description :: String
+    , tags :: [String]
     } deriving (Show, Generic, FromJSON)
 
 mkTweet :: FilePath -> Front -> String
-mkTweet path Front{..} = fold [title, " 📒 ", description, ".\n\n", url]
+mkTweet path Front{..} = fold [title, " 📒 ", description, "\n\n", htags, "\n\n", url]
   where
     base = "https://odone.io/posts"
     name = System.FilePath.Posix.takeBaseName path
     url = fold [base, "/", name, ".html"]
+    htags = Data.List.intercalate " " $ fmap ('#':) tags
 
 tweet :: String -> FilePath -> IO ()
 tweet creds path =
