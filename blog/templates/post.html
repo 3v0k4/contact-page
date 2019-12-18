@@ -8,7 +8,9 @@
     </section>
     <br />
     <section>
-        <img class="cover mb-4" src="$cover_image$"></img>
+        $if(cover_image)$
+          <img class="cover mb-4" src="$cover_image$"></img>
+        $endif$
 
         $body$
     </section>
