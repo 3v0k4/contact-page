@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-
 stack runghc \
   --resolver lts-14.17 \
   --package composition-prelude-2.0.5.0 \
@@ -14,4 +13,4 @@ stack runghc \
   --package tweet-hs \
   --package optparse-applicative \
   --package directory \
-  ./tweet.hs "$@"
+  ./blog/tweet.hs "$@"
