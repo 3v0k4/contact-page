@@ -17,9 +17,5 @@ title: About
 </p>
 
 <p>
- I'm trying to give back some by co-organising <a href="https://socrates-conference.de" target="_blank">SoCraTes</a>.
-</p>
-
-<p>
   This web page is on <a href="https://github.com/3v0k4/contact-page" target="_blank">Github</a>.
 </p>
