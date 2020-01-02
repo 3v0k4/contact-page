@@ -8,7 +8,7 @@
 
 - name: "set postfix option hostname so that apt-get mailutils is non-interactive"
   debconf:
-    name: postifx
+    name: postfix
     question: postfix/mailname
     value: "{{ domain }}"
     vtype: string
