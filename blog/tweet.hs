@@ -1,3 +1,20 @@
+#!/usr/bin/env stack
+{- stack
+ script
+  --resolver nightly-2020-01-06
+  --package composition-prelude
+  --package htoml-megaparsec
+  --package frontmatter
+  --package yaml
+  --package bytestring
+  --package aeson
+  --package text
+  --package filepath
+  --package tweet-hs
+  --package optparse-applicative
+  --package directory
+-}
+
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE LambdaCase #-}
 {-# LANGUAGE DeriveGeneric #-}
@@ -5,7 +22,6 @@
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE OverloadedStrings #-}
 
-import Lib
 import Options.Applicative
 import Data.Semigroup ((<>))
 import System.Directory
