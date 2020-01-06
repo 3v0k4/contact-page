@@ -17,7 +17,7 @@ frontmatter = unlines
   [ "---"
   , "title:"
   , "description:"
-  , "author:"
+  , "author: Riccardo"
   , "cover_image:"
   , "tags:"
   , "  - FunctionalProgramming"
