@@ -6,6 +6,7 @@ tags:
   - FunctionalProgramming
   - Haskell
   - Hakyll
+  - Script
 ---
 
 In the [previous post](https://odone.io/posts/2019-12-26-scaffolding-a-blog-post.html) we have seen how to scaffold a blog post with a Haskell script. Today, we are going to automate tweeting.
