@@ -279,5 +279,152 @@ run csvFile = do
 --    ^ ..add comments that were in Kanbanery tickets to Trello tickets.
       liftIO $ Prelude.putStrLn "" >> Prelude.putStrLn "Done!"
 
--- THE REST OF THE SCRIPT WILL BE HERE NEXT WEEK ;)
+createLists :: [KanbaneryTicket] -> App (Map String String)
+createLists kanbaneryTickets = do
+  let columnNames = Data.List.nub . Data.List.sort . toListOf (folded.columnName) $ kanbaneryTickets
+--                                                   ^ From each ticket extract `columnName`.
+  Data.Map.Strict.fromList . Data.Maybe.catMaybes <$> traverse f columnNames
+  where
+    f columnName = do
+--  ^ Create column / list in Trello.
+      mId <- createListReq columnName
+      case mId of
+        Just id -> pure $ Just (columnName,id)
+--      ^ When successful..
+--                 ^ ..return `columnName` and its Trello id.
+        Nothing -> pure Nothing
+
+createListReq :: String -> App (Maybe String)
+createListReq list = do
+  env <- Control.Monad.Trans.Reader.ask
+  let opts = defaults & Network.Wreq.param "name"    .~ [Data.Text.pack list]
+                      & Network.Wreq.param "idBoard" .~ [env ^. trelloBoardId . packed]
+--                                                       ^ Using optics..
+--                                                              ^ ..extract `trelloBoardId` and..
+--                                                                              ^ ..transform to Text.
+  postReq opts "https://api.trello.com/1/lists"
+
+createCards :: Map String String -> [KanbaneryTicket] -> App (Map KanbaneryTicket String)
+createCards columnNamesByListIds kanbaneryTickets =
+  Data.Map.Strict.fromList . Data.Maybe.catMaybes <$> traverse f kanbaneryTickets
+  where
+    f kanbaneryTicket = do
+--  ^ Create ticket in Trello.
+      let listId = columnNamesByListIds ^?! ix (kanbaneryTicket ^. columnName)
+--                 ^ Using optics..
+--                                      ^ ..extract **UNSAFELY**..
+--                                          ^ ..the value from the Map at the key..
+--                                             ^ ..`columnName`.
+      mId <- createCardReq listId (kanbaneryTicket ^. title) (kanbaneryTicket ^. description)
+      case mId of
+        Just id -> pure $ Just (kanbaneryTicket,id)
+        Nothing -> pure Nothing
+
+createCardReq :: String -> String -> String -> App (Maybe String)
+createCardReq idList title description = do
+  let opts = defaults & Network.Wreq.param "name"   .~ [Data.Text.pack title]
+                      & Network.Wreq.param "desc"   .~ [Data.Text.pack description]
+                      & Network.Wreq.param "idList" .~ [Data.Text.pack idList]
+  postReq opts "https://api.trello.com/1/cards"
+
+createLabels :: [KanbaneryTicket] -> App (Map String String)
+createLabels kanbaneryTickets = do
+  let taskTypes = Data.List.nub . Data.List.sort . toListOf (folded.taskType) $ kanbaneryTickets
+  let colors = Data.List.cycle ["yellow", "purple", "blue", "red", "green", "orange", "black", "sky", "pink", "lime"]
+  Data.Map.Strict.fromList . Data.Maybe.catMaybes <$> traverse f (Data.List.zip taskTypes colors)
+  where
+    f (label,color) = do
+      mId <- createLabelReq label color
+      case mId of
+        Just id -> pure $ Just (label,id)
+        Nothing -> pure Nothing
+
+createLabelReq :: String -> String -> App (Maybe String)
+createLabelReq label color = do
+  env <- Control.Monad.Trans.Reader.ask
+  let opts = defaults & Network.Wreq.param "name"    .~ [Data.Text.pack label]
+                      & Network.Wreq.param "color"   .~ [Data.Text.pack color]
+                      & Network.Wreq.param "idBoard" .~ [env ^. trelloBoardId . packed]
+  postReq opts "https://api.trello.com/1/labels"
+
+addLabelsReq :: Map String String -> Map KanbaneryTicket String -> KanbaneryTicket -> App ()
+addLabelsReq labels tickets kanbaneryTicket =
+  case labels ^? ix (kanbaneryTicket ^. taskType) of
+    Just name -> do
+      let opts = defaults & Network.Wreq.param "value" .~ [Data.Text.pack name]
+      case tickets ^? ix kanbaneryTicket of
+        Just id -> do
+          postReq opts ("https://api.trello.com/1/cards/" <> id <> "/idLabels")
+          pure ()
+        Nothing ->
+          pure ()
+    Nothing ->
+      pure ()
+
+addSubtasksReq :: Map KanbaneryTicket String -> KanbaneryTicket -> App ()
+addSubtasksReq tickets kanbaneryTicket =
+  when (has folded $ kanbaneryTicket ^. subtasks) $
+-- ^ When there's at least on subtask..
+    case tickets ^? ix kanbaneryTicket of
+      Just cardId -> do
+        let opts = defaults & Network.Wreq.param "idCard" .~ [Data.Text.pack cardId]
+        mCheckId <- postReq opts "https://api.trello.com/1/checklists"
+--                  ^ ..create a Trello checklist and..
+        case mCheckId of
+          Just checkId -> do
+            let opts2 = defaults & Network.Wreq.param "name" .~ [kanbaneryTicket ^. subtasks . packed]
+            postReq opts2 ("https://api.trello.com/1/checklists/" <> checkId <> "/checkItems")
+--          ^ ..add all the subtasks.
+            pure ()
+          Nothing -> pure ()
+      Nothing -> pure ()
+
+addCreationReq :: Map KanbaneryTicket String -> KanbaneryTicket -> App ()
+addCreationReq tickets kanbaneryTicket =
+  case tickets ^? ix kanbaneryTicket of
+    Just id -> do
+      let creator = kanbaneryTicket ^. creatorEmail
+      let date = formatTime defaultTimeLocale "%F" . posixSecondsToUTCTime . view createdAt $ kanbaneryTicket
+      let opts = defaults & Network.Wreq.param "text" .~ [Data.Text.pack $ "Created by " <> creator <> " on " <> date]
+      postReq opts ("https://api.trello.com/1/cards/" <> id <> "/actions/comments")
+      pure ()
+    Nothing ->
+      pure ()
+
+addCommentsReq :: Map KanbaneryTicket String -> KanbaneryTicket -> App ()
+addCommentsReq tickets kanbaneryTicket =
+  when (has folded $ kanbaneryTicket ^. comments) $
+    case tickets ^? ix kanbaneryTicket of
+      Just id -> do
+        let opts = defaults & Network.Wreq.param "text" .~ [kanbaneryTicket ^. comments . packed]
+        postReq opts ("https://api.trello.com/1/cards/" <> id <> "/actions/comments")
+        pure ()
+      Nothing ->
+        pure ()
+
+postReq :: Network.Wreq.Options -> String -> App (Maybe String)
+postReq opts url = do
+  env <- Control.Monad.Trans.Reader.ask
+  let opts' = opts & Network.Wreq.param "key"     .~ [env ^. trelloApiKey . packed]
+                   & Network.Wreq.param "token"   .~ [env ^. trelloToken . packed]
+                   & Network.Wreq.header "Accept" .~ ["application/json"]
+                   & Network.Wreq.header "Content-Type" .~ ["application/json"]
+  liftIO $ delay 35000
+-- ^ Throttle requests to respect Trello API rate limits.
+  liftIO $ Control.Exception.handle (handler opts') $ do
+--                                   ^ In case of exception run `handler`.
+    r <- liftIO $ Network.Wreq.postWith opts' url ("" :: ByteString)
+    liftIO $ Prelude.putStr "."
+    let resourceId = r ^?! Network.Wreq.responseBody .
+                           Data.Aeson.Lens.key "id" .
+                           Data.Aeson.Lens._String .
+                           unpacked
+    pure . Just $ resourceId
+  where
+    handler :: Network.Wreq.Options -> HttpException -> IO (Maybe String)
+    handler opts' _ = do
+--  ^ In case of exception log it and return failure (i.e. Nothing).
+      liftIO . Prelude.putStrLn $ "Failed POST to " <> url
+      liftIO . print $ opts'
+      pure Nothing
 ```
