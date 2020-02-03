@@ -96,7 +96,7 @@ mkDevPost :: String -> Front -> String -> DevPost
 mkDevPost path Front{..} post = DevPost{..}
   where
     published = False
-    body_markdown = post
+    body_markdown = fold ["Originally posted on", " ", "[odone.io](", canonical_url, ").\n\n", post]
     canonical_url = urlFor path
 
 urlFor :: String -> String
