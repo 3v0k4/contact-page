@@ -45,7 +45,7 @@ The `do` notation gets translated to:
 ```hs
 sequence :: Maybe Int
 sequence =
-  somethingThatReturnsMaybe           >>= \x ->
+  somethingThatReturnsMaybe       >>= \x ->
   somethingElseThatReturnsMaybe x >>= \y ->
   y+1
 ```
