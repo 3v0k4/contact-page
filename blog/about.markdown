@@ -13,7 +13,7 @@ title: About
 </p>
 
 <p>
-  I'm a Software Maverick at <a href="https://lunarlogic.io/" target="_blank">Lunar Logic</a> and a Wannabe Functional Programmer.
+  Maverick & Leader at <a href="https://lunarlogic.io/" target="_blank">Lunar Logic</a>.
 </p>
 
 <p>
