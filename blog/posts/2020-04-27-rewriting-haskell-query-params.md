@@ -18,7 +18,7 @@ This is part of a series:
 - [Rewriting to Haskell–Standing on the shoulders of Rails](https://odone.io/posts/2020-03-30-rails.html)
 - [Rewriting to Haskell–Making GHC More Nitpicky](https://odone.io/posts/2020-04-06-ghc-options.html)
 - [Rewriting to Haskell–Testing](https://odone.io/posts/2020-04-13-rewriting-haskell-testing.html)
-- [Rewriting to Haskell–Linting](https://odone.io/posts/2020-04-13-rewriting-haskell-linting.html)
+- [Rewriting to Haskell–Linting](https://odone.io/posts/2020-04-20-rewriting-haskell-linting.html)
 
 ---
 
