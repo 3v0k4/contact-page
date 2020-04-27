@@ -9,98 +9,109 @@
   --package bytestring
   --package lens
   --package filepath
+  --package text
 -}
 
-{-# LANGUAGE DeriveGeneric #-}
 {-# LANGUAGE DeriveAnyClass #-}
-{-# LANGUAGE RecordWildCards #-}
-{-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE DeriveGeneric #-}
 {-# LANGUAGE DuplicateRecordFields #-}
+{-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE RecordWildCards #-}
 
-import Network.Wreq
-import Options.Applicative
-import Data.Semigroup ((<>))
-import Data.Frontmatter
+import Control.Lens hiding ((.=))
 import Data.Aeson
-import GHC.Generics
 import Data.ByteString
 import Data.ByteString.Char8
-import Control.Lens hiding ((.=))
-import System.FilePath.Posix
 import Data.Foldable
+import Data.Frontmatter
+import Data.Semigroup ((<>))
+import Data.Text
+import Data.Text.Encoding
+import GHC.Generics
+import Network.Wreq
+import Options.Applicative
+import System.FilePath.Posix
 
-data Front =
-  Front
-    { title :: String
-    , description :: String
-    , tags :: [String]
-    } deriving (Show, Generic, FromJSON)
+data Front
+  = Front
+      { title :: Text,
+        description :: Text,
+        tags :: [Text]
+      }
+  deriving (Show, Generic, FromJSON)
 
-data DevPost =
-  DevPost
-    { title :: String
-    , description :: String
-    , tags :: [String]
-    , canonical_url :: String
-    , published :: Bool
-    , body_markdown :: String
-    } deriving (Show, Generic)
+data DevPost
+  = DevPost
+      { title :: Text,
+        description :: Text,
+        tags :: [Text],
+        canonical_url :: Text,
+        published :: Bool,
+        body_markdown :: Text
+      }
+  deriving (Show, Generic)
 
 instance ToJSON DevPost where
-  toJSON DevPost{..} = object ["article" .= article]
-    where article = object
-            [ "title" .= title
-            , "description" .= description
-            , "tags" .= tags
-            , "canonical_url" .= canonical_url
-            , "published" .= published
-            , "body_markdown" .= body_markdown
-            ]
+  toJSON DevPost {..} = object ["article" .= article]
+    where
+      article =
+        object
+          [ "title" .= title,
+            "description" .= description,
+            "tags" .= tags,
+            "canonical_url" .= canonical_url,
+            "published" .= published,
+            "body_markdown" .= body_markdown
+          ]
 
 main :: IO ()
 main = uncurry crosspost =<< execParser opts
   where
-    opts = info (parser <**> helper)
-      (  fullDesc
-      <> progDesc "Crossposts POST to DevTo"
+    opts =
+      info
+        (parser <**> helper)
+        ( fullDesc
+            <> progDesc "Crossposts POST to DevTo"
+        )
+
+parser :: Options.Applicative.Parser (Text, Text)
+parser =
+  (,)
+    <$> Options.Applicative.argument
+      str
+      ( metavar "API_KEY"
+          <> help "API_KEY to post on DevTo"
+      )
+    <*> Options.Applicative.argument
+      str
+      ( metavar "POST"
+          <> help "Path to blog POST to post on DevTo"
       )
 
-parser :: Options.Applicative.Parser (String, String)
-parser = (,)
-    <$>
-      Options.Applicative.argument str
-        (  metavar "API_KEY"
-        <> help "API_KEY to post on DevTo"
-        )
-    <*>
-      Options.Applicative.argument str
-        (  metavar "POST"
-        <> help "Path to blog POST to post on DevTo"
-        )
-
-crosspost :: String -> String -> IO ()
+crosspost :: Text -> Text -> IO ()
 crosspost apiKey path = do
-  f <- Data.ByteString.readFile path
+  f <- Data.ByteString.readFile . Data.Text.unpack $ path
   case parseYamlFrontmatter f of
-      Done postBS frontmatter -> do
-        let post = Data.ByteString.Char8.unpack postBS
-        let json = toJSON $ mkDevPost path frontmatter post
-        let opts = defaults & Network.Wreq.header "api-key" .~ [Data.ByteString.Char8.pack apiKey]
-                            & Network.Wreq.header "Content-Type" .~ [Data.ByteString.Char8.pack "application/json; charset=utf-8"]
-        r <- Network.Wreq.postWith opts "https://dev.to/api/articles" json
-        print $ r ^. responseStatus
-      e ->
-        error $ show e
+    Done postBS frontmatter -> do
+      let post = decodeUtf8 postBS
+      let json = toJSON $ mkDevPost path frontmatter post
+      let opts =
+            defaults & Network.Wreq.header "api-key" .~ [encodeUtf8 apiKey]
+              & Network.Wreq.header "Content-Type" .~ [encodeUtf8 "application/json; charset=utf-8"]
+      r <- Network.Wreq.postWith opts "https://dev.to/api/articles" json
+      print $ r ^. responseStatus
+    e ->
+      error $ show e
 
-mkDevPost :: String -> Front -> String -> DevPost
-mkDevPost path Front{..} post = DevPost{..}
+mkDevPost :: Text -> Front -> Text -> DevPost
+mkDevPost path Front {..} post = DevPost {..}
   where
     published = False
     body_markdown = fold ["Originally posted on", " ", "[odone.io](", canonical_url, ").\n\n", post]
     canonical_url = urlFor path
 
-urlFor :: String -> String
+urlFor :: Text -> Text
 urlFor path = fold [base, "/", name, ".html"]
   where
     base = "https://odone.io/posts"
-    name = System.FilePath.Posix.takeBaseName path
+    name = Data.Text.pack . System.FilePath.Posix.takeBaseName . Data.Text.unpack $ path
