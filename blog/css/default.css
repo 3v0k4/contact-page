@@ -1,23 +1,63 @@
+:root {
+  --pink: #f76ca5;
+  --blue: #007bff;
+  --logo-size: 50px;
+}
+
 html {
   font-size: 1rem;
 }
 
-blockquote {
-  padding-left: 1em;
-  border-left: 0.2em solid rgb(240,240,240);
-}
-
 body {
-  font-size: 1.3rem !important;
+  font-size: 1.3rem;
 }
 
 header {
-  border-bottom: 0.2rem solid #000;
+  box-shadow: 0 0 20px rgba(0,0,0,0.05);
+  padding: 10px 0;
+}
+
+a {
+  color: var(--blue);
+}
+
+a:hover {
+  color: var(--pink);
+}
+
+.pink {
+  color: var(--pink);
+}
+
+.logo {
+  display: block;
+  margin: auto;
+  width: var(--logo-size);
+  height: var(--logo-size);
+  text-decoration: none;
+  cursor: pointer;
+  background-size: var(--logo-size);
+  background-image: url('/images/android-chrome-512x512.png');
+  -webkit-tap-highlight-color: var(--pink);
+}
+
+.logo:hover, .logo:focus, .logo:active {
+  background-image: url('/images/android-chrome-512x512-pink.png');
 }
 
 footer {
-  border-top: 0.2rem solid #000;
-  font-size: 1.2rem;
+  color: white;
+  background: var(--pink);
+  box-shadow: 0 0 10px var(--pink);
+}
+
+footer a {
+  color: white;
+  text-decoration: underline;
+}
+
+footer a:hover {
+  color: white;
 }
 
 h1 {
@@ -34,29 +74,15 @@ article .header {
   color: #555;
 }
 
-.logo {
-  font-size: 2.4rem;
-  font-weight: bold;
-}
-
-.logo a {
-  color: #000;
-  text-decoration: none;
-}
-
-.logo a:hover {
-  color: #007bff;
-  text-decoration: none;
-}
-
 @media (min-width: 320px) {
   body {
     font-size: 1.3rem;
   }
+}
 
-  .logo {
-    font-size: 1.9rem;
-  }
+blockquote {
+  padding-left: 1em;
+  border-left: 0.2em solid rgb(240,240,240);
 }
 
 div.sourceCode {
@@ -72,9 +98,9 @@ pre.sourceCode {
 
 code {
   background: rgb(240,240,240);
-  overflow: auto !important;
-  word-wrap: normal !important;
-  white-space: pre !important;
+  overflow: auto;
+  word-wrap: normal;
+  white-space: pre;
 }
 
 .cover {
