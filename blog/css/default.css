@@ -82,7 +82,7 @@ article .header {
 
 blockquote {
   padding-left: 1em;
-  border-left: 0.2em solid rgb(240,240,240);
+  border-left: 0.2em solid var(--pink);
 }
 
 div.sourceCode {
