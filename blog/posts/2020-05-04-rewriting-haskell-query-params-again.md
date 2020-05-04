@@ -23,9 +23,9 @@ This is part of a series:
 
 ---
 
-In the [previous post](https://odone.io/posts/2020-04-13-rewriting-haskell-query-params.html) we covered how to have Servant parse URL query parameters to custom data types. In this post, we see a similar technique without the use of `FromHttpApiData`.
+In the [previous post](https://odone.io/posts/2020-04-27-rewriting-haskell-query-params.html) we covered how to have Servant parse URL query parameters to custom data types. In this post, we see a similar technique without the use of `FromHttpApiData`.
 
-The search endpoint in Stream have the following type signature:
+The search endpoint in Stream has the following type signature:
 
 ```hs
 type SearchAPI =
@@ -49,7 +49,7 @@ getSearchResults
   -> Handler SearchResults
 ```
 
-Contrarily to the previous post, in this case we choose to use primitive types (e.g. `Text`, `Int`) instead of defining our own. What we do instead is to parse all the values in the first few lines of the handler:
+Contrarily to the previous post, in this case we chose to use primitive types (e.g. `Text`, `Int`) instead of defining our own. What we do instead is to parse all the values in the first few lines of the handler:
 
 ```hs
 getSearchResults configuration connection mQuery mQuantity mComments mChannel mLastId = do
@@ -61,7 +61,7 @@ getSearchResults configuration connection mQuery mQuantity mComments mChannel mL
   -- ...
 ```
 
-By doing that, we can translate `Maybe`s into something that makes sense in Stream. For example, when in the URL `query` is not present or an empty string, we want to return all posts. Otherwise, we use the value to filter:
+By doing that, we can translate `Maybe`s into something that makes sense in Stream. For example, when in the URL `query` is not present or is an empty string, we want to return all posts. Otherwise, we use the value to filter:
 
 ```hs
 data SearchQuery
