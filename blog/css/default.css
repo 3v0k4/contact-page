@@ -4,6 +4,11 @@
   --logo-size: 50px;
 }
 
+html,
+body {
+  height: 100%;
+}
+
 html {
   font-size: 1rem;
 }
@@ -15,6 +20,10 @@ body {
 header {
   box-shadow: 0 0 20px rgba(0,0,0,0.05);
   padding: 10px 0;
+}
+
+.content {
+  flex: 1 0 auto;
 }
 
 a {
@@ -49,6 +58,7 @@ footer {
   color: white;
   background: var(--pink);
   box-shadow: 0 0 10px var(--pink);
+  flex-shrink: none;
 }
 
 footer a {
