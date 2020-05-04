@@ -41,7 +41,7 @@ Which translates to the following handler function
 
 ```hs
 getSearchResults
-  -> Maybe Text
+  :: Maybe Text
   -> Maybe Int
   -> Maybe Bool
   -> Maybe Text
