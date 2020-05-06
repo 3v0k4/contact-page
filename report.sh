@@ -30,3 +30,6 @@ ssh riccardo@odone.io "$COMMAND"
 REPORT_PATH="$HOME/Desktop/$REPORT_NAME"
 scp "riccardo@odone.io:~/$REPORT_NAME" "$REPORT_PATH"
 open "$REPORT_PATH"
+
+sleep 5
+rm "$REPORT_PATH"
