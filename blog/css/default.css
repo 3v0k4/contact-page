@@ -2,6 +2,7 @@
   --pink: #f76ca5;
   --blue: #007bff;
   --logo-size: 50px;
+  --background: aliceblue;
 }
 
 html,
@@ -113,16 +114,17 @@ div.sourceCode {
 }
 
 pre.sourceCode {
-  background: rgb(240,240,240);
+  background: var(--background);
   padding: 30px 5vw 30px 5vw;
   -webkit-overflow-scrolling: touch;
 }
 
 code {
-  background: rgb(240,240,240);
+  background: var(--background);
   overflow: auto;
   word-wrap: normal;
   white-space: pre;
+  color: deeppink;
 }
 
 .cover {
