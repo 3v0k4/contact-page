@@ -22,6 +22,14 @@ header {
   padding: 10px 0;
 }
 
+ul {
+  padding-left: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
 .content {
   flex: 1 0 auto;
 }
@@ -32,6 +40,10 @@ a {
 
 a:hover {
   color: var(--pink);
+}
+
+a.post-title {
+  font-size: 1.5rem;
 }
 
 .pink {
@@ -78,7 +90,7 @@ h2 {
   font-size: 2.2rem;
 }
 
-article .header {
+.header {
   font-size: 1rem;
   font-style: italic;
   color: #555;
@@ -124,4 +136,10 @@ code {
 
 img {
   width: 100%;
+}
+
+.selfie {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
 }
