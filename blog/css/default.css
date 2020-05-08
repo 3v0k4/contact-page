@@ -74,15 +74,6 @@ footer {
   flex-shrink: none;
 }
 
-footer a {
-  color: white;
-  text-decoration: underline;
-}
-
-footer a:hover {
-  color: white;
-}
-
 h1 {
   font-size: 2.6rem;
 }
