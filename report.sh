@@ -5,7 +5,7 @@ set -e
 # --max-items=
 # --date-spec=<date|hr>
 
-LOGS='sudo find /var/log/nginx -name "access*"'
+LOGS='sudo find /var/log/nginx -name "*access*"'
 if [ -z "$1" ]
 then
     SINCE="cat"
@@ -18,7 +18,7 @@ NOW=$(date +%s)
 REPORT_NAME="report-$NOW.html"
 COMMAND="\
     $LOGS |\
-    sort -t. -k3nr |\
+    sort -t. -k1,1r -k4,4nr |\
     sudo xargs zcat -f |\
     $SINCE |\
     $FILTER |\
