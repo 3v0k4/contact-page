@@ -4,5 +4,5 @@ server {
   root /usr/share/nginx/html;
   server_name {{ domain }};
 
-  include snippets/ssl-params.conf;
+  include snippets/ssl-params;
 }

@@ -6,5 +6,5 @@ server {
 
   return 301 https://{{ domain }}$request_uri;
 
-  include snippets/ssl-params.conf;
+  include snippets/ssl-params;
 }

@@ -1,27 +1,4 @@
 ---
-- name: "add nginx apt-key repository"
-  apt_key:
-    url: http://nginx.org/keys/nginx_signing.key
-    id: 7BD9BF62
-    state: present
-
-- name: "add nginx apt repository for Ubuntu 16.04"
-  apt_repository:
-    repo: deb http://nginx.org/packages/ubuntu/ xenial nginx
-    state: present
-    update_cache: yes
-
-- name: "add nginx apt source repository for Ubuntu 16.04"
-  apt_repository:
-    repo: deb-src http://nginx.org/packages/ubuntu/ xenial nginx
-    state: present
-    update_cache: yes
-
-- name: "remove nginx-common"
-  apt:
-    name: nginx-common
-    state: absent
-
 - name: "install nginx"
   apt:
     name: nginx
@@ -33,14 +10,9 @@
     name: nginx
     state: started
 
-- name: "remove all server blocks"
-  shell: /bin/rm -f /etc/nginx/conf.d/*
-  notify:
-    - reload nginx
-
 - name: "nginx default configuration"
   copy:
-    src: default.conf
-    dest: /etc/nginx/conf.d/default.conf
+    src: default
+    dest: /etc/nginx/sites-enabled/default
   notify:
     - reload nginx

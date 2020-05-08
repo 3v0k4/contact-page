@@ -5,27 +5,8 @@
     update_cache: yes
     cache_valid_time: 3600
 
-- name: "remove all server blocks"
-  shell: /bin/rm -f /etc/nginx/conf.d/*
-  notify:
-    - reload nginx
-
-- name: "configuration for letsencrypt webroot plugin"
-  copy:
-    src: letsencrypt.conf
-    dest: /etc/nginx/conf.d/letsencrypt.conf
-  notify:
-    - reload nginx
-
 - name: "obtain certificates"
   command: letsencrypt certonly -n --agree-tos --email {{ email }} --webroot -w /usr/share/nginx/html/ -d {{ domain }} -d www.{{ domain }}
-
-- name: "remove configuration for letsencrypt webroot plugin"
-  file:
-    path: /etc/nginx/conf.d/letsencrypt.conf
-    state: absent
-  notify:
-    - reload nginx
 
 - name: "generate strong Diffie-Hellman group"
   command: openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048
@@ -34,8 +15,8 @@
 
 - name: "nginx default configuration"
   template:
-    src: default.conf
-    dest: /etc/nginx/conf.d/default.conf
+    src: default
+    dest: /etc/nginx/sites-enabled/default
   notify:
     - reload nginx
 
@@ -46,20 +27,20 @@
 
 - name: "create snippet for ssl params"
   template:
-    src: ssl-params.conf
-    dest: /etc/nginx/snippets/ssl-params.conf
+    src: ssl-params
+    dest: /etc/nginx/snippets/ssl-params
 
 - name: "nginx default configuration for ssl"
   template:
-    src: default-ssl.conf
-    dest: /etc/nginx/conf.d/default-ssl.conf
+    src: default-ssl
+    dest: /etc/nginx/sites-enabled/default-ssl
   notify:
     - reload nginx
 
 - name: "nginx configuration for ssl"
   template:
-    src: application.conf
-    dest: /etc/nginx/conf.d/{{ domain }}.conf
+    src: application
+    dest: /etc/nginx/sites-enabled/{{ domain }}
   notify:
     - reload nginx
 

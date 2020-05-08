@@ -7,6 +7,7 @@
   vars_files:
     - secrets.yml
   gather_facts: no
+  become: true
   pre_tasks:
     - name: "install python 2"
       raw: test -e /usr/bin/python || (apt-get update && apt-get install -y python-simplejson)
@@ -20,3 +21,4 @@
     - letsencrypt-nginx
     - user
     - logwatch
+    - goaccess
