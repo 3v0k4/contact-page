@@ -1,5 +1,5 @@
 ---
-title: On learning at work
+title: On Learning at Work
 description: Learning shiny new things in a commercial project is a bad idea. Here's a better way.
 author: Riccardo
 ---
