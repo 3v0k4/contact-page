@@ -3,7 +3,7 @@ title: Rewriting to Haskell–Deployment
 description: Everything needed to deploy and run Stream (Servant) on the server side
 author: Riccardo
 tags:
-  - FunctionalProgramming
+  - Functional Programming
   - Haskell
   - Servant
 ---

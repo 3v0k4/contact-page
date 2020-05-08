@@ -3,9 +3,8 @@ title: Crossposting to DevTo via command line
 description: Using a Haskell script to crosspost a blog post with a frontmatter as used in Jekyll markdown files
 author: Riccardo
 tags:
-  - FunctionalProgramming
+  - Functional Programming
   - Haskell
-  - Hakyll
   - Script
 ---
 

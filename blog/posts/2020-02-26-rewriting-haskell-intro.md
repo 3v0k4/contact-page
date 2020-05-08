@@ -3,8 +3,9 @@ title: Rewriting to Haskell–Intro
 description: Hidden in the Functional Programming basement at Lunar Logic we want to have fun, enable newcomers to approach Haskell and creating future options for the company
 author: Riccardo
 tags:
-  - FunctionalProgramming
+  - Functional Programming
   - Haskell
+  - Servant
 ---
 
 At Lunar Logic we use an [internal web application](https://lunarlogic.io/design/stream) to handle announcements. Stream has been used by the entire company for the last 6 years or so. Over time we have discovered it's a great place to run tech experiments: production enough to feel real but internal enough not to cause too much damage if stuff goes wrong.

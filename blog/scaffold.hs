@@ -6,24 +6,25 @@
   --package time
 -}
 
-import System.Directory
 import Control.Monad
 import Data.Foldable
 import Data.Time.Clock
 import Data.Time.Format
+import System.Directory
 
 frontmatter :: String
-frontmatter = unlines
-  [ "---"
-  , "title:"
-  , "description:"
-  , "published: false"
-  , "author: Riccardo"
-  , "cover_image:"
-  , "tags:"
-  , "  - FunctionalProgramming"
-  , "---"
-  ]
+frontmatter =
+  unlines
+    [ "---",
+      "title:",
+      "description:",
+      "published: false",
+      "author: Riccardo",
+      "cover_image:",
+      "tags:",
+      "  - Functional Programming",
+      "---"
+    ]
 
 main :: IO ()
 main = do

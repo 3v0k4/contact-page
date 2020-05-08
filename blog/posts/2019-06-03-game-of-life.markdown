@@ -3,6 +3,9 @@ title: Game of Life in PureScript
 author: Riccardo
 description: Interactive Programming in PureScript
 cover_image: https://odone.io/images/game-of-life.jpg
+tags:
+  - Functional Programming
+  - PureScript
 ---
 
 An example run

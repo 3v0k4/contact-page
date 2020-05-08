@@ -3,7 +3,7 @@ title: Rewriting to Haskell–Testing
 description: Using HSpec to test Stream through its endpoints
 author: Riccardo
 tags:
-  - FunctionalProgramming
+  - Functional Programming
   - Haskell
   - Servant
 ---

@@ -2,6 +2,8 @@
 title: On Learning at Work
 description: Learning shiny new things in a commercial project is a bad idea, here's a better way
 author: Riccardo
+tags:
+  - Essential Skills
 ---
 
 As a passionate software crafter I tend to find myself on the innovators side of the [curve](https://en.wikipedia.org/wiki/Diffusion_of_innovations). That is, whenever a new shiny thing comes out, then I feel the urge of reading about it, trying it and eventually using it.

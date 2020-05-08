@@ -2,6 +2,9 @@
 title: On the Scout Rule
 description: The Scout Rule by itself is a scam, context is needed
 author: Riccardo
+tags:
+  - Essential Skills
+  - Team Work
 ---
 
 > Always leave the code better than you found it.

@@ -57,6 +57,40 @@ a.post-title {
   font-size: 1.7rem;
 }
 
+.btn-tag-unselected {
+  color: #007bff;
+  background-color: #fff;
+  border-color: #007bff;
+  margin-top: 5px;
+}
+
+.btn-tag-selected:hover {
+  color: #007bff;
+  background-color: #fff;
+  border-color: #007bff;
+}
+
+.btn-tag-selected {
+  color: #fff;
+  background-color: var(--pink);
+  border-color: var(--pink);
+  margin-top: 5px;
+}
+
+.btn-tag-unselected:hover {
+  color: #fff;
+  background-color: var(--pink);
+  border-color: var(--pink);
+}
+
+.btn-sm {
+  padding: .2rem .3rem;
+  font-size: .875rem;
+  line-height: 1;
+  border-radius: .2rem;
+  margin-right: 5px;
+}
+
 .twitter-tweet {
   margin: auto;
 }

@@ -3,6 +3,9 @@ title: On Living Together as a Team
 description: Washing dishes and cooking meals as only a great team can do
 published: true
 author: Riccardo
+tags:
+  - Essential Skills
+  - Team Work
 ---
 
 Over the years I had the fortune and misfortune to share apartments with other people. One of the most difficult parts of living together is sharing a space. Everyone has their own needs, standards and wishes. Believe it or not, some people like myself fancy doing the dishes. Others would rather starve if that was price to pay.

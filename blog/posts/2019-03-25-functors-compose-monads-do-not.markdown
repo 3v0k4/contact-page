@@ -3,6 +3,11 @@ title: Functors Compose, Monads Do Not
 author: Riccardo
 description: The title says it all 😅
 cover_image: https://cdn-images-1.medium.com/max/1024/1*QM3gGl2zlucMsox-1WNirQ.jpeg
+tags:
+  - Functional Programming
+  - PureScript
+  - Functor
+  - Monad
 ---
 
 ## Functor Composition

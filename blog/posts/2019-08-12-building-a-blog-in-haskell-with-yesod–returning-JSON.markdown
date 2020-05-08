@@ -3,6 +3,10 @@ title: Building a Blog in Haskell with Yesod–Returning JSON
 description: In this post we are going to see how to return JSON in our Yesod blog
 author: Riccardo
 cover_image: https://odone.io/images/yesod.png
+tags:
+  - Functional Programming
+  - Haskell
+  - Yesod
 ---
 
 This is a series about [Yesod](https://www.yesodweb.com/): a Haskell web framework that follows a similar philosophy to [Rails](https://rubyonrails.org/). In fact, it is strongly opinionated and provides a lot of functionality out of the box.

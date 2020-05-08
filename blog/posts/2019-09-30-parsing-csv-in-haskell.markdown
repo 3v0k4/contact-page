@@ -3,6 +3,9 @@ title: Parsing CSV in Haskell
 description: Using Cassava to parse a CSV file
 author: Riccardo
 cover_image: https://odone.io/images/csv.jpg
+tags:
+  - Functional Programming
+  - Haskell
 ---
 
 Parsing CSV without header:

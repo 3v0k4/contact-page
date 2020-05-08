@@ -3,7 +3,7 @@ title: Rewriting to Haskell–Linting
 description: Using HLint to improve the code in Stream
 author: Riccardo
 tags:
-  - FunctionalProgramming
+  - Functional Programming
   - Haskell
   - Servant
 ---

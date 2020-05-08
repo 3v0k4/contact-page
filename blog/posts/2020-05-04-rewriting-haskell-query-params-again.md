@@ -3,7 +3,7 @@ title: Rewriting to Haskell–Parsing Query Params, Again
 description: Wrapping URL query params in their own types without using FromHttpApiData
 author: Riccardo
 tags:
-  - FunctionalProgramming
+  - Functional Programming
   - Haskell
   - Servant
 ---

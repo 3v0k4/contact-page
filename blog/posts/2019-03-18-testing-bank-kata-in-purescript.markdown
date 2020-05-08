@@ -3,6 +3,9 @@ title: Testing Bank Kata in PureScript
 author: Riccardo
 description: Unit testing monadic functions
 cover_image: https://cdn-images-1.medium.com/max/1024/1*CQ1bneAfNmhYuocE6f8gxg.jpeg
+tags:
+  - Functional Programming
+  - PureScript
 ---
 
 ## Intro

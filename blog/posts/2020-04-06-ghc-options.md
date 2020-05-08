@@ -3,7 +3,7 @@ title: Rewriting to Haskell–Making GHC More Nitpicky
 description: Enabling GHC compiler warnings to enforce better code
 author: Riccardo
 tags:
-  - FunctionalProgramming
+  - Functional Programming
   - Haskell
   - Servant
 ---

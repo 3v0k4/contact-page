@@ -3,9 +3,8 @@ title: Tweeting a Blog Post via command line
 description: Using a Haskell script to post a tweet about a blog post with a frontmatter as used in Jekyll markdown files
 author: Riccardo
 tags:
-  - FunctionalProgramming
+  - Functional Programming
   - Haskell
-  - Hakyll
   - Script
 ---
 

@@ -3,6 +3,9 @@ title: Mars Rover Kata in Haskell
 description: Moving a rover on Mars type-safely
 author: Riccardo
 cover_image: https://odone.io/images/mars-rover.jpg
+tags:
+  - Functional Programming
+  - Haskell
 ---
 
 Today we will TDD the [Mars Rover Kata](https://archive.codeplex.com/?p=marsroverexercise) with the T in TDD meaning Type!

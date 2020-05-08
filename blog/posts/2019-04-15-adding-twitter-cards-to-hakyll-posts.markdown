@@ -3,6 +3,10 @@ title: Adding Twitter Cards to Hakyll Posts
 author: Riccardo
 description: Make your Hakyll posts look better in Twitter
 cover_image: https://odone.io/images/card.jpg
+tags:
+  - Functional Programming
+  - Haskell
+  - Hakyll
 ---
 
 ## Intro

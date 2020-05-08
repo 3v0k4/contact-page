@@ -3,6 +3,9 @@ title: Refactoring the Mars Rover Kata in Haskell
 description: Refactoring our deployed-to-Mars rover
 author: Riccardo
 cover_image: https://odone.io/images/refactoring-mars-rover.jpg
+tags:
+  - Functional Programming
+  - Haskell
 ---
 
 Last week I received some friendly criticism cause I've ended the [post](https://odone.io/posts/2019-09-16-mars-rover-kata-in-haskell.html) by postponing the refactor step of our Type-Driven-Developed kata:

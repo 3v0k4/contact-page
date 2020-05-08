@@ -3,7 +3,7 @@ title: Scaffolding a Blog Post
 description: Using a Haskell script to bootstrap a file from a template
 author: Riccardo
 tags:
-  - FunctionalProgramming
+  - Functional Programming
   - Haskell
   - Script
 ---

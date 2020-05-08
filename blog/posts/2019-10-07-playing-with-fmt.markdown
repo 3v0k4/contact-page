@@ -3,6 +3,9 @@ title: Playing with Fmt
 description: Using Fmt to format stuff
 author: Riccardo
 cover_image: https://odone.io/images/play.jpg
+tags:
+  - Functional Programming
+  - Haskell
 ---
 
 ```hs

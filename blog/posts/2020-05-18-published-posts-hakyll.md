@@ -4,7 +4,7 @@ description: Control which posts to publish with a boolean flag in the metadata
 published: false
 author: Riccardo
 tags:
-  - FunctionalProgramming
+  - Functional Programming
   - Haskell
   - Hakyll
 ---

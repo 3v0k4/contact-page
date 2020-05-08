@@ -2,6 +2,9 @@
 title: On Productivity
 description: Personal Productivity vs Generativity – the difference between your team's outcomes with you, vs without you
 author: Riccardo
+tags:
+  - Essential Skills
+  - Team Work
 ---
 
 In my early university years I had reserved space on the wall for diplomas: I was in full exploratory mode. Among others I had certifications for cooking classes, public speaking, international cooperation, freestyle snowboarding, beer brewing.

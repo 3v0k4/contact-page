@@ -3,6 +3,9 @@ title: A Parser Combinator in PureScript (part 1/2)
 author: Riccardo
 description: Implementing and using a parser combinator
 cover_image: https://odone.io/images/parser.jpeg
+tags:
+  - Functional Programming
+  - PureScript
 ---
 
 Let's start from defining the `Parser` type. The idea is that a parser is a function that takes a string and tries to "parse" something out of it. 

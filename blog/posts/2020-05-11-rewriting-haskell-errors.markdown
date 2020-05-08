@@ -3,7 +3,7 @@ title: Rewriting to Haskell–Errors
 description: Returning the correct JSON error when parsing fails
 author: Riccardo
 tags:
-  - FunctionalProgramming
+  - Functional Programming
   - Haskell
   - Servant
 ---

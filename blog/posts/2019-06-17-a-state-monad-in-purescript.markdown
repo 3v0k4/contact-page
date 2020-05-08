@@ -3,6 +3,9 @@ title: A State Monad in PureScript
 author: Riccardo
 description: Implementing and using the State Monad
 cover_image: https://odone.io/images/state.jpg
+tags:
+  - Functional Programming
+  - PureScript
 ---
 
 Functional programmers love pure functions. Unfortunately, some things are inherently stateful. However, that doesn't mean we cannot tackle them in purely functional languages. It just means they are more naturally modelled using mutable state. Or at least, that's what a background in object oriented code could make us think.

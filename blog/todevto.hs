@@ -104,11 +104,12 @@ crosspost apiKey path = do
       error $ show e
 
 mkDevPost :: Text -> Front -> Text -> DevPost
-mkDevPost path Front {..} post = DevPost {..}
+mkDevPost path Front {..} post = devPost {tags = replace " " "" <$> tags}
   where
     published = False
     body_markdown = fold ["Originally posted on", " ", "[odone.io](", canonical_url, ").\n\n", post]
     canonical_url = urlFor path
+    devPost = DevPost {..}
 
 urlFor :: Text -> Text
 urlFor path = fold [base, "/", name, ".html"]

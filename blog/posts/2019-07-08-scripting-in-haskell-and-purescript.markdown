@@ -3,6 +3,10 @@ title: Scripting in Haskell and PureScript
 author: Riccardo
 description: Writing scripts with Haskell and PureScript is a good way of doing some functional programming at work
 cover_image: https://odone.io/images/scripting.jpg
+tags:
+  - Functional Programming
+  - Haskell
+  - PureScript
 ---
 
 When learning how to jump with the snowboard, my trainer used to say: "you need to take a lot of air". In other words, if you want to learn how to jump, you need to jump a lot.

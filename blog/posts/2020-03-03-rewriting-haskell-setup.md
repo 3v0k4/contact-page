@@ -3,7 +3,7 @@ title: Rewriting to Haskell–Project Setup
 description: Setting up Servant and CI for Stream
 author: Riccardo
 tags:
-  - FunctionalProgramming
+  - Functional Programming
   - Haskell
   - Servant
 ---

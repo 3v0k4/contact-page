@@ -3,7 +3,7 @@ title: Staring at ($), (<$>), (<*>) and (>>=)
 description: Differences and similarities between function application, Functor's `fmap`, Applicative Functor's sequential application and Monad's `bind`
 author: Riccardo
 tags:
-  - FunctionalProgramming
+  - Functional Programming
   - Haskell
   - Functor
   - Applicative

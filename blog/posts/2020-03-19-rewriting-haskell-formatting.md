@@ -3,7 +3,7 @@ title: Rewriting to Haskell–Automatic Formatting
 description: Using Ormolu to keep code pretty and stop once for all discussions on cosmetics
 author: Riccardo
 tags:
-  - FunctionalProgramming
+  - Functional Programming
   - Haskell
   - Servant
 ---

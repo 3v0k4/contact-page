@@ -3,7 +3,7 @@ title: Rewriting to Haskell–Configuration
 description: Using yaml to configure a Servant application
 author: Riccardo
 tags:
-  - FunctionalProgramming
+  - Functional Programming
   - Haskell
   - Servant
 ---

@@ -3,6 +3,9 @@ title: Fun with Typeclasses
 description: Ever heard of `Enum`, `Bounded`, `BoundedEnum` and `CyclicEnum`?
 author: Riccardo
 cover_image: https://odone.io/images/typeclasses.jpg
+tags:
+  - Functional Programming
+  - Haskell
 ---
 
 I've recently started reading ["Haskell in Depth"](https://www.manning.com/books/haskell-in-depth). The first part of the book covers the basics of the language. Here, among other cool things I've found an interesting example using two existing typeclasses (i.e. `Enum`, `Bounded`) and two new typeclasses that seem to make a lot of sense (i.e. `BoundedEnum`, `CyclicEnum`).

@@ -3,6 +3,9 @@ title: A Useless Compiler in PureScript
 author: Riccardo
 description: Dipping a toe in compilers land
 cover_image: https://cdn-images-1.medium.com/max/2400/1*rTVIrJPogxTyV4Guona3Pw.jpeg
+tags:
+  - Functional Programming
+  - PureScript
 ---
 
 ## Intro
