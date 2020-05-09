@@ -47,7 +47,7 @@ data Front =
 mkTweet :: FilePath -> Front -> String
 mkTweet path Front{..} = fold [title, " 📒 ", description, "\n\n", htags, "\n\n", url]
 --                ^ Same as `{ title = title, description = description, tags = tags }`
---                  but using two characters ;)
+--                  but using two characters 😎
 --                       ^ Fold strings to a single one.
 --                         See previous post for a more sophisticated explanation!
   where
