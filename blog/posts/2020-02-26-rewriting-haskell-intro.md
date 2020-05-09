@@ -1,6 +1,6 @@
 ---
 title: Rewriting to Haskell–Intro
-description: Hidden in the Functional Programming basement at Lunar Logic we want to have fun, enable newcomers to approach Haskell and creating future options for the company.
+description: Hidden in the Functional Programming basement at Lunar Logic we want to have fun, enable newcomers to approach Haskell and creating future options for the company
 author: Riccardo
 tags:
   - FunctionalProgramming

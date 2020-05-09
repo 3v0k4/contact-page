@@ -1,6 +1,6 @@
 ---
 title: From Kanbanery to Trello
-description: Using a Haskell script to migrate a Kanbanery board to Trello.
+description: Using a Haskell script to migrate a Kanbanery board to Trello
 author: Riccardo
 cover_image:
 tags:

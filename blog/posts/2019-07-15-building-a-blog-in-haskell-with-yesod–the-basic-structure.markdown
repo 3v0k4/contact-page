@@ -1,7 +1,7 @@
 ---
 title: Building a Blog in Haskell with Yesod–The Basic Structure
 author: Riccardo
-description: In this post we are going to develop the basic structure of our Yesod blog.
+description: In this post we are going to develop the basic structure of our Yesod blog
 cover_image: https://odone.io/images/yesod.png
 ---
 

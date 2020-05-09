@@ -1,6 +1,6 @@
 ---
 title: Merging IO and Either into one monad
-description: How to simplify code by merging two monads into one.
+description: How to simplify code by merging two monads into one
 author: Riccardo
 cover_image: https://odone.io/images/puzzle-merge.jpg
 ---

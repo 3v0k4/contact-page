@@ -1,6 +1,6 @@
 ---
 title: On the Scout Rule
-description: The Scout Rule by itself is a scam. Context is needed.
+description: The Scout Rule by itself is a scam, context is needed
 author: Riccardo
 ---
 

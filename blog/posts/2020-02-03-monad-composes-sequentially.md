@@ -1,6 +1,6 @@
 ---
 title: Why Monad Composes Operations Sequentially
-description: A deeper look at Monad's bind (i.e. >>=) to understand why the type signature implies sequential composition.
+description: A deeper look at Monad's bind (i.e. >>=) to understand why the type signature implies sequential composition
 author: Riccardo
 tags:
   - FunctionalProgramming

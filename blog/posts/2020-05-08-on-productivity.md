@@ -1,6 +1,6 @@
 ---
 title: On Productivity
-description: Personal Productivity vs Generativity – the difference between your team's outcomes with you, vs without you.
+description: Personal Productivity vs Generativity – the difference between your team's outcomes with you, vs without you
 author: Riccardo
 ---
 
