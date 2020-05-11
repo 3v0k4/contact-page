@@ -17,6 +17,7 @@ frontmatter = unlines
   [ "---"
   , "title:"
   , "description:"
+  , "published: false"
   , "author: Riccardo"
   , "cover_image:"
   , "tags:"
@@ -27,7 +28,7 @@ frontmatter = unlines
 main :: IO ()
 main = do
   today <- formatTime defaultTimeLocale "%F" <$> getCurrentTime
-  let fileName = fold ["posts", "/", today, "-"]
+  let fileName = fold ["posts", "/", today, "-todo.md"]
   fileExist <- doesFileExist fileName
   when fileExist $ error "file already exists"
   writeFile fileName frontmatter

@@ -24,7 +24,7 @@ main = hakyll $ do
   match "css/*" $ do
     route idRoute
     compile compressCssCompiler
-  match "posts/*" $ do
+  matchMetadata "posts/*" isPublished $ do
     route $ setExtension "html"
     compile $
       pandocCompiler
@@ -69,3 +69,6 @@ postCtx :: Context String
 postCtx =
   dateField "date" "%B %e, %Y"
     `mappend` defaultContext
+
+isPublished :: Metadata -> Bool
+isPublished = maybe True (== "true") . lookupString "published"
