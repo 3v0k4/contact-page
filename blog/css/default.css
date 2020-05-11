@@ -27,7 +27,7 @@ ul {
   padding-left: 0;
 }
 
-li {
+.no-list-style {
   list-style-type: none;
 }
 
