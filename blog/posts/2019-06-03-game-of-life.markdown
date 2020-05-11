@@ -7,7 +7,7 @@ cover_image: https://odone.io/images/game-of-life.jpg
 
 An example run
 
-<img src="https://odone.io/images/game-of-life.gif"></img>
+![Gif showing the evolution of the Game of Life through a few iterations in the terminal; the - character represents dead cells and 0 alive cells](https://odone.io/images/game-of-life.gif)
 
 The code
 

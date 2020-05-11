@@ -68,4 +68,4 @@ Luckily, we can easily add [Esqueleto](http://hackage.haskell.org/package/esquel
 
 Here we can see that the delete button is shown only to the owner of the post and that the author names is displayed together with title and text:
 
-![](https://odone.io/images/authorization.png)
+![Screenshot of the blog with two posts where the current user can only delete their post](https://odone.io/images/authorization.png)

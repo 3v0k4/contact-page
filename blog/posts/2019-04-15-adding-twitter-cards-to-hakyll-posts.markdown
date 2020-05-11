@@ -9,11 +9,11 @@ cover_image: https://odone.io/images/card.jpg
 
 By default Hakyll does not add the proper meta tags for Twitter Cards. For that reason, if we try to tweet a link to a Hakyll post, no card will be rendered. We can confirm that by using [Twitter's Card Validator](https://cards-dev.twitter.com/validator):
 
-<img class="content-image" src="/images/card-no-metas.png" />
+![Twitter card validator saying "Unable to render card preview"](https://odone.io/images/card-no-metas.png){.content-image}
 
 That can be fixed with a few lines of code:
 
-<img class="content-image" src="/images/card-with-metas.png" />
+![Twitter card validator showing the Twitter card with post's cover_image, title and description](https://odone.io/images/card-with-metas.png){.content-image}
 
 ## The Few Lines of Code
 

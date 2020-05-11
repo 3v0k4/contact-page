@@ -27,7 +27,7 @@ Series index:
 
 Up until now, we have used a form with username and password as a login. Turns out Yesod provides [`Yesod.Auth.Dummy`](http://hackage.haskell.org/package/yesod-auth-1.6.7/docs/Yesod-Auth-Dummy.html) to make development easy. Later on, in production [other providers](http://hackage.haskell.org/package/yesod-auth-1.6.7/docs/Yesod-Auth-Dummy.html) can be used.
 
-![](https://odone.io/images/dummy-login.png)
+![Screenshot of the Yesod dummy login form that consists of a text input and submit button](https://odone.io/images/dummy-login.png)
 
 Commit [76c4347cdf4f563e9f543e83e5558848d29826a5](https://github.com/3v0k4/yesod-blog/commit/76c4347cdf4f563e9f543e83e5558848d29826a5):
 
@@ -40,7 +40,7 @@ Commit [76c4347cdf4f563e9f543e83e5558848d29826a5](https://github.com/3v0k4/yesod
 
 Commit [aab5274c2ecb823b8c4d1c4eecfa37bf0e41c51f](https://github.com/3v0k4/yesod-blog/commit/aab5274c2ecb823b8c4d1c4eecfa37bf0e41c51f) adds the username of the logged-in user to the layout.
 
-![](https://odone.io/images/logged-in-user.png)
+![Screenshot of the blog with the username of the current user at the top](https://odone.io/images/logged-in-user.png)
 
 ## Require Authentication for the Posts Page
 
