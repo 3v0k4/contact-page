@@ -23,12 +23,9 @@ header {
   padding: 10px 0;
 }
 
-ul {
-  padding-left: 0;
-}
-
 .no-list-style {
   list-style-type: none;
+  padding-left: 0;
 }
 
 .content {
