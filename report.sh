@@ -18,7 +18,7 @@ NOW=$(date +%s)
 REPORT_NAME="report-$NOW.html"
 COMMAND="\
     $LOGS |\
-    sort -t. -k1,1r -k4,4nr |\
+    sort -t. -k1,1r -k3,3nr |\
     sudo xargs zcat -f |\
     $SINCE |\
     $FILTER |\
