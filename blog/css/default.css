@@ -47,6 +47,10 @@ a.post-title {
   font-size: 1.7rem;
 }
 
+.twitter-tweet {
+  margin: auto;
+}
+
 .pink {
   color: var(--pink);
 }
