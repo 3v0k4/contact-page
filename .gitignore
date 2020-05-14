@@ -6,3 +6,4 @@ blog/_cache
 blog/_site
 
 .DS_Store
+dist-newstyle/
