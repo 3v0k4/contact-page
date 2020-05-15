@@ -2,9 +2,14 @@
 
 --------------------------------------------------------------------------------
 
+import Data.Binary (Binary)
+import Data.Foldable (fold, traverse_)
 import Data.Monoid (mappend)
+import Data.Traversable (traverse)
+import Data.Typeable (Typeable)
 import Hakyll
 import System.Environment (getEnvironment)
+import System.FilePath (replaceExtension)
 
 --------------------------------------------------------------------------------
 feedConfiguration :: FeedConfiguration
@@ -17,17 +22,27 @@ feedConfiguration =
       feedRoot = "https://odone.io"
     }
 
+previewHost' :: String
+previewHost' = previewHost defaultConfiguration
+
+previewPort' :: Int
+previewPort' = previewPort defaultConfiguration
+
+previewUrl :: String
+previewUrl = fold ["http://", previewHost', ":", show previewPort', "/"]
+
 main :: IO ()
 main = do
   env <- getEnvironment
-  hakyll $ do
+  let configuration = defaultConfiguration {previewHost = previewHost', previewPort = previewPort'}
+  hakyllWith configuration $ do
     match "images/*" $ do
       route idRoute
       compile copyFileCompiler
     match "css/*" $ do
       route idRoute
       compile compressCssCompiler
-    matchMetadata "posts/*" (isDevelopmentOrPublished env) $ do
+    matchMetadata "posts/*" isPublished $ do
       route $ setExtension "html"
       compile $
         pandocCompiler
@@ -35,10 +50,26 @@ main = do
           >>= saveSnapshot "content"
           >>= loadAndApplyTemplate "templates/default.html" postCtx
           >>= relativizeUrls
+    matchMetadata "posts/*" (not . isPublished) $ do
+      let draftPath = ("drafts/" <>) . (`replaceExtension` "html") . toFilePath
+      route . customRoute $ draftPath
+      let putDraftUrl path =
+            traverse_
+              (unsafeCompiler . putStrLn)
+              [ "----DRAFT----",
+                (previewUrl <>) . draftPath . itemIdentifier $ path,
+                "-------------"
+              ]
+      compile $
+        pandocCompiler
+          >>= loadAndApplyTemplate "templates/post.html" postCtx
+          >>= loadAndApplyTemplate "templates/default.html" postCtx
+          >>= relativizeUrls
+          >>= (\x -> putDraftUrl x >> pure x)
     create ["archive.html"] $ do
       route idRoute
       compile $ do
-        posts <- recentFirst =<< loadAll "posts/*"
+        posts <- recentFirst =<< loadAllPublished env "posts/*"
         let archiveCtx =
               listField "posts" postCtx (return posts)
                 `mappend` constField "title" "Archives"
@@ -64,7 +95,7 @@ main = do
         let feedCtx = mconcat [bodyField "description", defaultContext]
         posts <-
           fmap (take 10) . recentFirst
-            =<< loadAllSnapshots "posts/*" "content"
+            =<< loadAllSnapshotsPublished "posts/*" "content"
         renderAtom feedConfiguration feedCtx posts
 
 --------------------------------------------------------------------------------
@@ -73,8 +104,18 @@ postCtx =
   dateField "date" "%B %e, %Y"
     `mappend` defaultContext
 
-isDevelopmentOrPublished :: [(String, String)] -> Metadata -> Bool
-isDevelopmentOrPublished env metadata = isDevelopmentEnv || isPublished
+isPublished :: Metadata -> Bool
+isPublished = maybe True (== "true") . lookupString "published"
+
+loadAllPublished :: (Binary a, Typeable a) => [(String, String)] -> Pattern -> Compiler [Item a]
+loadAllPublished env pattern_ = if isDevelopmentEnv env then all else published
   where
-    isDevelopmentEnv = lookup "HAKYLL_ENV" env == Just "development"
-    isPublished = maybe True (== "true") . lookupString "published" $ metadata
+    all = loadAll pattern_
+    published = publishedIds pattern_ >>= traverse load
+    isDevelopmentEnv env = lookup "HAKYLL_ENV" env == Just "development"
+
+loadAllSnapshotsPublished :: (Binary a, Typeable a) => Pattern -> Snapshot -> Compiler [Item a]
+loadAllSnapshotsPublished pattern_ snapshot = publishedIds pattern_ >>= traverse (`loadSnapshot` snapshot)
+
+publishedIds :: MonadMetadata m => Pattern -> m [Identifier]
+publishedIds = fmap (fmap fst . filter (isPublished . snd)) . getAllMetadata
