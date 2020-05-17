@@ -1,9 +1,19 @@
 <h2 class="text-center">Posts</h2>
 
 <div class="text-center">
-  $for(tags)$
-    <a class="btn btn-tag-$status$" href="$url$">$tag$</a>
-  $endfor$
+  <div>
+    $for(categories)$
+      <a class="btn btn-tag-$status$ mb-1" href="$url$">
+        <span class="btn-tag-icon-lg">$icon$ </span>$tag$ <span class="badge badge-white">$count$</span>
+      </a>
+    $endfor$
+  </div>
+
+  <div class="mt-2 d-none d-md-block">
+    $for(tags)$<a class="btn btn-tag-$status$ btn-sm mb-1" href="$url$">
+        <span class="btn-tag-icon">$icon$ </span>$tag$ <span class="badge badge-white badge-sm">$count$</span>
+    </a>$endfor$
+  </div>
 </div>
 
 $partial("templates/post-list.html")$

@@ -58,33 +58,41 @@ a.post-title {
 }
 
 .btn-tag-unselected {
-  color: #007bff;
-  background-color: #fff;
-  border-color: #007bff;
-  margin-top: 5px;
+  color: var(--blue);
+  background-color: white;
+  border-color: var(--blue);
+}
+
+.btn-tag-icon {
+  font-size: 1.2rem;
+  line-height: 0;
+}
+
+.btn-tag-icon-lg {
+  font-size: 1.5rem;
+  line-height: 0;
 }
 
 .btn-tag-selected:hover {
-  color: #007bff;
-  background-color: #fff;
-  border-color: #007bff;
+  color: var(--blue);
+  background-color: white;
+  border-color: var(--blue);
 }
 
 .btn-tag-selected {
-  color: #fff;
+  color: white;
   background-color: var(--pink);
   border-color: var(--pink);
-  margin-top: 5px;
 }
 
 .btn-tag-unselected:hover {
-  color: #fff;
+  color: white;
   background-color: var(--pink);
   border-color: var(--pink);
 }
 
 .btn-sm {
-  padding: .2rem .3rem;
+  padding: .4rem .3rem;
   font-size: .875rem;
   line-height: 1;
   border-radius: .2rem;
@@ -97,6 +105,15 @@ a.post-title {
 
 .pink {
   color: var(--pink);
+}
+
+.badge-white {
+  background-color: white;
+  color: var(--blue);
+}
+
+.badge-sm {
+  padding: 0.1em .4em;
 }
 
 .logo {

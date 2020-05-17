@@ -3,12 +3,12 @@
 --------------------------------------------------------------------------------
 
 import Control.Applicative ((<|>))
+import Data.Bifunctor (Bifunctor, bimap, first)
 import Data.Binary (Binary)
 import Data.Bool (bool)
 import Data.Foldable (fold, traverse_)
-import Data.List (intersperse, nub, sort)
+import Data.List (group, nub, partition, sortOn)
 import Data.Maybe (fromMaybe)
-import Data.Monoid (mappend)
 import Data.Traversable (traverse)
 import Data.Typeable (Typeable)
 import Hakyll
@@ -39,6 +39,9 @@ previewPort' = previewPort defaultConfiguration
 previewUrl :: String
 previewUrl = fold ["http://", previewHost', ":", show previewPort', "/"]
 
+postsPattern :: Pattern
+postsPattern = "posts/*"
+
 main :: IO ()
 main = do
   env <- getEnvironment
@@ -56,16 +59,17 @@ main = do
     match "404.md" $ do
       route $ setExtension "html"
       compile $ pandocCompiler >>= loadAndApplyTemplate "templates/default.html" defaultContext
-    tags <- buildTags' "posts/*" (fromCapture "tags/*.html")
-    matchMetadata "posts/*" isPublished $ do
-      route $ setExtension "html"
+    tags <- buildTags' postsPattern (fromCapture "tags/*.html")
+    matchMetadata postsPattern isPublished $ do
+      let livePath = (`replaceExtension` "html") . toFilePath
+      route . customRoute $ livePath
       compile $
         pandocCompiler
           >>= loadAndApplyTemplate "templates/post.html" (postCtx tags)
           >>= saveSnapshot "content"
           >>= loadAndApplyTemplate "templates/default.html" (postCtx tags)
           >>= relativizeUrls
-    matchMetadata "posts/*" (not . isPublished) $ do
+    matchMetadata postsPattern (not . isPublished) $ do
       let draftPath = ("drafts/" <>) . (`replaceExtension` "html") . toFilePath
       route . customRoute $ draftPath
       let putDraftUrl path =
@@ -83,10 +87,10 @@ main = do
           >>= (\x -> putDraftUrl x >> pure x)
     tagsRules tags $ \tag pattern_ -> do
       route idRoute
-      compile $ archive env tags (Just tag) "posts/*" pattern_
+      compile $ archive env tags (Just tag) postsPattern pattern_
     create ["archive.html"] $ do
       route idRoute
-      compile $ archive env tags Nothing "posts/*" "posts/*"
+      compile $ archive env tags Nothing postsPattern postsPattern
     match "index.html" $ do
       route idRoute
       compile $ do
@@ -102,23 +106,54 @@ main = do
         let feedCtx = mconcat [bodyField "description", defaultContext]
         posts <-
           fmap (take 10) . recentFirst
-            =<< loadAllSnapshotsPublished "posts/*" "content"
+            =<< loadAllSnapshotsPublished postsPattern "content"
         renderAtom feedConfiguration feedCtx posts
 
 --------------------------------------------------------------------------------
 
+type Tag = (Int, Char, String)
+
+fst' (a, _, _) = a
+
+snd' (_, b, _) = b
+
+trd' (_, _, c) = c
+
+getCategoriesAndTags :: (MonadMetadata m, MonadFail m) => [Item String] -> m ([Tag], [Tag])
+getCategoriesAndTags posts = do
+  let identifiers = fmap itemIdentifier posts
+  tags <- traverse getTags' identifiers
+  -- tags -> [[a, b], [d, e], [a, c]]
+  -- withLabel -> ([(♕,a), (♔,d), (♕,a)], [(♕,b), (♔,e), (♕,c)])
+  -- withLengthAndLabel -> ([(1,♔,d), (2,♕,a)], [(1,♔,e), (1,♕,b), (1,♕,c)])
+  pure . withLengthAndLabel . withLabel $ tags
+  where
+    -- ♔ ♕ ♖ ♗ ♘ ♙
+    toLabel "Functional Programming" = '♕'
+    toLabel "Essential Skills" = '♔'
+    bimap' :: Bifunctor p => (a -> b) -> p a a -> p b b
+    bimap' f = bimap f f
+    withCategory :: [String] -> [(String, String)]
+    withCategory ts@(t : _) = zip (repeat t) ts
+    withLabel :: [[String]] -> ([(Char, String)], [(Char, String)])
+    withLabel = bimap' (fmap (first toLabel)) . partition (uncurry (==)) . concatMap withCategory
+    withLengthAndLabel = bimap' (fmap (\xs -> (length xs, fst . head $ xs, snd . head $ xs)) . group . sortOn snd)
+
 archive :: [(String, String)] -> Tags -> Maybe String -> Pattern -> Pattern -> Compiler (Item String)
-archive env tags mSelectedTag allPattern filterPattern = do
+archive env allTags mSelectedTag allPattern filterPattern = do
   allPosts <- recentFirst =<< loadAllPublished env allPattern
-  allTags <- fmap (sort . nub . concat) . traverse getTags' . fmap itemIdentifier $ allPosts
+  (categories, tags) <- getCategoriesAndTags allPosts
   let tagsCtx =
-        field "url" (pure . (\tag -> if Just tag == mSelectedTag then "/archive.html" else "/tags/" <> tag <> ".html") . itemBody)
-          <> field "status" (pure . bool "unselected" "selected" . (==) mSelectedTag . Just . itemBody)
-          <> field "tag" (pure . itemBody)
+        field "url" (pure . (\tag -> if Just tag == mSelectedTag then "/archive.html" else "/tags/" <> tag <> ".html") . trd' . itemBody)
+          <> field "status" (pure . bool "unselected" "selected" . (==) mSelectedTag . Just . trd' . itemBody)
+          <> field "tag" (pure . trd' . itemBody)
+          <> field "icon" (pure . (: []) . snd' . itemBody)
+          <> field "count" (pure . show . fst' . itemBody)
   let filteredPosts = filter (matches filterPattern . itemIdentifier) allPosts
   let archiveCtx =
-        listField "tags" tagsCtx (traverse makeItem allTags)
-          <> listField "posts" (postCtx tags) (pure filteredPosts)
+        listField "tags" tagsCtx (traverse makeItem tags)
+          <> listField "categories" tagsCtx (traverse makeItem categories)
+          <> listField "posts" (postCtx allTags) (pure filteredPosts)
           <> constField "title" "Archives"
           <> defaultContext
   makeItem ""
