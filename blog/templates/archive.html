@@ -1,7 +1,9 @@
 <h2 class="text-center">Posts</h2>
 
-$for(tags)$
-  <a class="btn btn-tag-$status$" href="$url$">$tag$</a>
-$endfor$
+<div class="text-center">
+  $for(tags)$
+    <a class="btn btn-tag-$status$" href="$url$">$tag$</a>
+  $endfor$
+</div>
 
 $partial("templates/post-list.html")$
