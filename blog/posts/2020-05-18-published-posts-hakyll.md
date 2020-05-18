@@ -1,5 +1,5 @@
 ---
-title: Adding `published` to Hakyll posts
+title: Adding `published` to Hakyll Posts
 description: Control which posts to publish with a boolean flag in the metadata
 published: true
 author: Riccardo
