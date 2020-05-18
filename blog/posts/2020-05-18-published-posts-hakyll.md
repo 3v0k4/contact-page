@@ -1,7 +1,7 @@
 ---
 title: Adding `published` to Hakyll posts
 description: Control which posts to publish with a boolean flag in the metadata
-published: false
+published: true
 author: Riccardo
 tags:
   - Functional Programming
