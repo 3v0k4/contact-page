@@ -55,10 +55,7 @@ main = do
       compile compressCssCompiler
     match "404.md" $ do
       route $ setExtension "html"
-      compile $
-        pandocCompiler
-          >>= loadAndApplyTemplate "templates/default.html" defaultContext
-          >>= relativizeUrls
+      compile $ pandocCompiler >>= loadAndApplyTemplate "templates/default.html" defaultContext
     tags <- buildTags' "posts/*" (fromCapture "tags/*.html")
     matchMetadata "posts/*" isPublished $ do
       route $ setExtension "html"
