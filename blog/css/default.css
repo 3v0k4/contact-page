@@ -32,7 +32,7 @@ header {
   flex: 1 0 auto;
 }
 
-// Same as Bootstrap .sr-only
+/* Same as Bootstrap .sr-only */
 figcaption {
   position: absolute;
   width: 1px;
