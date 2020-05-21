@@ -32,23 +32,21 @@ import Network.Wreq
 import Options.Applicative
 import System.FilePath.Posix
 
-data Front
-  = Front
-      { title :: Text,
-        description :: Text,
-        tags :: [Text]
-      }
+data Front = Front
+  { title :: Text,
+    description :: Text,
+    tags :: [Text]
+  }
   deriving (Show, Generic, FromJSON)
 
-data DevPost
-  = DevPost
-      { title :: Text,
-        description :: Text,
-        tags :: [Text],
-        canonical_url :: Text,
-        published :: Bool,
-        body_markdown :: Text
-      }
+data DevPost = DevPost
+  { title :: Text,
+    description :: Text,
+    tags :: [Text],
+    canonical_url :: Text,
+    published :: Bool,
+    body_markdown :: Text
+  }
   deriving (Show, Generic)
 
 instance ToJSON DevPost where
@@ -85,7 +83,7 @@ parser =
     <*> Options.Applicative.argument
       str
       ( metavar "POST"
-          <> help "Path to blog POST to post on DevTo"
+          <> help "Path to blog POST to crosspost"
       )
 
 crosspost :: Text -> Text -> IO ()
@@ -107,7 +105,7 @@ mkDevPost :: Text -> Front -> Text -> DevPost
 mkDevPost path Front {..} post = devPost {tags = replace " " "" <$> tags}
   where
     published = False
-    body_markdown = fold ["Originally posted on", " ", "[odone.io](", canonical_url, ").\n\n", post]
+    body_markdown = fold ["Originally posted on", " ", "[odone.io](", canonical_url, ").\n\n---\n\n", post]
     canonical_url = urlFor path
     devPost = DevPost {..}
 
