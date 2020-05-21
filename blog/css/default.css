@@ -190,6 +190,36 @@ img {
   border-radius: 50%;
 }
 
+.accordion {
+  margin-bottom: 16px;
+}
+
+input[name="accordion"] {
+  display: none;
+}
+
+.accordion-label {
+  color: #007bff;
+  cursor: pointer;
+  margin-bottom: 0;
+}
+
+.accordion-label:hover {
+  color: var(--pink);
+  text-decoration: underline;
+}
+
+.accordion-content {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.5s ease-in;
+}
+
+input[name="accordion"]:checked ~ .accordion-content {
+  max-height: 150px;
+  transition: max-height 0.5s ease-out;
+}
+
 table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode, table.sourceCode pre
    { margin: 0; padding: 0; border: 0; vertical-align: baseline; border: none; }
 td.lineNumbers { border-right: 1px solid #AAAAAA; text-align: right; color: #AAAAAA; padding-right: 5px; padding-left: 5px; }
