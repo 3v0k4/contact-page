@@ -1,7 +1,7 @@
 ---
 title: It's Called Mistake, Not Bug
 description: Why I decided to stop using the b-word and started taking ownership instead
-published: false
+published: true
 author: Riccardo
 tags:
   - Essential Skills
@@ -9,7 +9,7 @@ tags:
 
 I have written down my apologies. You can find them, together with the content of this post, in that special page websites implement for broken links.
 
-I'm going to be checking the server logs in case you want to send me a secret message.
+I'm going to be checking the server logs in case you want to send me a secret message while accessing that page.
 
 If you don't like riddles and prefer something to click on, here's the direct link to ["It's Called Mistake, Not Bug"](/404.html?hardcoded-in-post).
 
