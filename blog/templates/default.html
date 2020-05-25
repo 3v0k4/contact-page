@@ -16,8 +16,13 @@
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@riccardoodone" />
     <meta name="twitter:creator" content="@riccardoodone" />
-    <link rel="canonical" href="https://odone.io$url$" />
-    <meta property="og:url" content="https://odone.io$url$" />
+    $if(index)$
+      <link rel="canonical" href="https://odone.io" />
+      <meta property="og:url" content="https://odone.io" />
+    $else$
+      <link rel="canonical" href="https://odone.io$url$" />
+      <meta property="og:url" content="https://odone.io$url$" />
+    $endif$
     $if(description)$
       <meta property="og:title" content="$title$" />
       <meta property="og:description" content="$description$" />

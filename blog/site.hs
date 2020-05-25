@@ -94,7 +94,7 @@ main = do
     match "index.html" $ do
       route idRoute
       compile $ do
-        let indexCtx = constField "title" "Home" <> defaultContext
+        let indexCtx = constField "title" "Home" <> constField "index" "" <> defaultContext
         getResourceBody
           >>= applyAsTemplate indexCtx
           >>= loadAndApplyTemplate "templates/default.html" indexCtx
