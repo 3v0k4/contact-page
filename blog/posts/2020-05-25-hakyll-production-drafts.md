@@ -1,7 +1,7 @@
 ---
 title: Production Drafts for Hakyll Posts
 description: Publish hidden drafts to production with a boolean flag in the metadata
-published: false
+published: true
 author: Riccardo
 tags:
   - Functional Programming
