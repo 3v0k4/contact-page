@@ -19,7 +19,7 @@ We gathered the FP aficionados in Lunar and decided to rewrite the backend to Ha
 - creating a proof of concepts for future projects;
 - small valuable iterations like we did for [AirCasting](https://blog.lunarlogic.io/2019/elm-tricks-from-production-migration/).
 
-I've personally worked in Ruby and JavaScript for a long time and the only [real contribution](https://odone.io/posts/2019-08-26-building-a-blog-in-haskell-with-yesod%E2%80%93giving-back.html) I made to OSS was to Yesod 😅
+I've personally worked in Ruby and JavaScript for a long time and the only [real contribution](https://odone.io/posts/2019-08-26-building-a-blog-in-haskell-with-yesod–giving-back.html) I made to OSS was to Yesod 😅
 We truly believe Functional Programming is a great tool and perfect place to give back, thus together with [Alex](https://www.linkedin.com/in/alexander-suminski/), my partner in crime for this project, we want to spread the joy. Therefore, we decided to share with the world our journey rewriting Stream to Haskell.
 
 Stay tuned!
