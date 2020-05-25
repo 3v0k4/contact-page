@@ -91,6 +91,18 @@ main = do
     create ["archive.html"] $ do
       route idRoute
       compile $ archive env tags Nothing postsPattern postsPattern
+    create ["sitemap.xml"] $ do
+      route idRoute
+      compile $ do
+        pages <- loadAll (fromList ["archive.html"])
+        posts <- recentFirst =<< loadAllPublished env postsPattern
+        categoriesAndTags <- uncurry (<>) <$> getCategoriesAndTags posts
+        let sitemapCtx =
+              listField "pages" defaultContext (pure pages)
+                <> listField "posts" (dateField "date" "%F" <> postCtx tags) (pure posts)
+                <> listField "tags" (tagsCtx Nothing) (traverse makeItem categoriesAndTags)
+        makeItem ""
+          >>= loadAndApplyTemplate "templates/sitemap.xml" sitemapCtx
     match "index.html" $ do
       route idRoute
       compile $ do
@@ -143,16 +155,10 @@ archive :: [(String, String)] -> Tags -> Maybe String -> Pattern -> Pattern -> C
 archive env allTags mSelectedTag allPattern filterPattern = do
   allPosts <- recentFirst =<< loadAllPublished env allPattern
   (categories, tags) <- getCategoriesAndTags allPosts
-  let tagsCtx =
-        field "url" (pure . (\tag -> if Just tag == mSelectedTag then "/archive.html" else "/tags/" <> tag <> ".html") . trd' . itemBody)
-          <> field "status" (pure . bool "unselected" "selected" . (==) mSelectedTag . Just . trd' . itemBody)
-          <> field "tag" (pure . trd' . itemBody)
-          <> field "icon" (pure . (: []) . snd' . itemBody)
-          <> field "count" (pure . show . fst' . itemBody)
   let filteredPosts = filter (matches filterPattern . itemIdentifier) allPosts
   let archiveCtx =
-        listField "tags" tagsCtx (traverse makeItem tags)
-          <> listField "categories" tagsCtx (traverse makeItem categories)
+        listField "tags" (tagsCtx mSelectedTag) (traverse makeItem tags)
+          <> listField "categories" (tagsCtx mSelectedTag) (traverse makeItem categories)
           <> listField "posts" (postCtx allTags) (pure filteredPosts)
           <> constField "title" "Archives"
           <> defaultContext
@@ -160,6 +166,16 @@ archive env allTags mSelectedTag allPattern filterPattern = do
     >>= loadAndApplyTemplate "templates/archive.html" archiveCtx
     >>= loadAndApplyTemplate "templates/default.html" archiveCtx
     >>= relativizeUrls
+
+tagsCtx :: Maybe String -> Context Tag
+tagsCtx mSelectedTag =
+  field "url" (pure . toUrl . tagUrl . trd' . itemBody)
+    <> field "status" (pure . bool "unselected" "selected" . (==) mSelectedTag . Just . trd' . itemBody)
+    <> field "tag" (pure . trd' . itemBody)
+    <> field "icon" (pure . (: []) . snd' . itemBody)
+    <> field "count" (pure . show . fst' . itemBody)
+  where
+    tagUrl tag = if Just tag == mSelectedTag then "/archive.html" else "/tags/" <> tag <> ".html"
 
 postCtx :: Tags -> Context String
 postCtx tags = tagsField' "tags" tags <> dateField "date" "%B %e, %Y" <> defaultContext
