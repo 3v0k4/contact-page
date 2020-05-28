@@ -12,5 +12,8 @@ executable site
                   , filepath
                   , blaze-html
                   , bifunctors
+                  , pandoc-types
+                  , text
+                  , HTTP
   ghc-options:      -threaded
   default-language: Haskell2010
