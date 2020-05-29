@@ -93,7 +93,7 @@ main = do
                 "-------------"
               ]
       compile $
-        pandocCompiler
+        pandocCompiler'
           >>= loadAndApplyTemplate "templates/post.html" (postCtx tags)
           >>= loadAndApplyTemplate "templates/default.html" (postCtx tags)
           >>= relativizeUrls
