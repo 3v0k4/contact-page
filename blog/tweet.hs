@@ -90,7 +90,9 @@ tweet :: String -> FilePath -> IO ()
 tweet creds path =
   parseYamlFrontmatter <$> Data.ByteString.readFile path
     >>= \case
-      Done _post frontmatter ->
-        basicTweet (mkTweet path frontmatter) creds >> pure ()
+      Done _post frontmatter -> do
+        let tweet = mkTweet path frontmatter
+        Prelude.putStrLn tweet
+      --basicTweet tweet creds >> pure ()
       e ->
         error $ show e
