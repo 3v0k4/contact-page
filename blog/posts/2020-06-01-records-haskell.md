@@ -1,7 +1,7 @@
 ---
 title: RecordDotSyntax in Haskell
-description: Records in Haskell are troublesome but the Dot is coming soon
-published: false
+description: Records in Haskell are troublesome but the Dot (syntax) is coming soon
+published: true
 author: Riccardo
 tags:
   - Functional Programming
@@ -9,7 +9,7 @@ tags:
   - PureScript
 ---
 
-I started studying hardcore functional programming by fiddling with PureScript. Back then, using records felt natural since they are first-class citizen in the language:
+I started studying hardcore functional programming by fiddling with PureScript. Back then, using records felt natural since they are first-class citizens in the language:
 
 ```hs
 -- PureScript
@@ -55,7 +55,7 @@ Of course some type system or category theory trickery would solve that but it j
 
 Luckily, the [RecordDotSyntax proposal](https://github.com/ghc-proposals/ghc-proposals/pull/282) has been accepted. We just need to hang tight while it gets implemented. But if you are like me and cannot wait to start using it, a [preprocessor](https://github.com/ndmitchell/record-dot-preprocessor) is available today!
 
-In other words, using record-dot-preprocessor, the following code is valid in Haskell:
+In other words, using record-dot-preprocessor, the following code is valid Haskell:
 
 ```hs
 -- Haskell
@@ -74,4 +74,4 @@ PureScript has a ton of other niceties. ["Differences from Haskell"](https://git
 
 ---
 
-What's your experience with records in Haskell? Hyped up about RecordDotSyntax? Tell me on [Twitter](https://twitter.com/RiccardoOdone)!
+What's your experience with records in Haskell? Hyped up about RecordDotSyntax? Let's talk on [Twitter](https://twitter.com/RiccardoOdone)!
