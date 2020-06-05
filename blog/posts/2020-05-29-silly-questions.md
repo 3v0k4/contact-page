@@ -3,12 +3,11 @@ title: From Silly Questions to Innovation
 description: At first an idea could be raw, maybe even silly. However, by thinking outside the box, it may turn into something innovative.
 published: true
 author: Riccardo
+cover_image: https://odone.io/images/silly.png
 tags:
   - Essential Skills
   - Team Work
 ---
-
-![Handmade sketch displaying a cardboard box containing two light bulbs on the left and a surprised face with a question mark in place of the nose on the right](https://odone.io/images/silly.png)
 
 I ask a ton of silly questions.
 

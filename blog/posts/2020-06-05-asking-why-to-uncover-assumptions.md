@@ -3,12 +3,11 @@ title: Asking Why to Uncover Assumptions
 description: Laddering up from solution space to problem space can save a ton of money (and timezones).
 published: true
 author: Riccardo
+cover_image: https://odone.io/images/tickets.png
 tags:
   - Essential Skills
   - Team Work
 ---
-
-![Handmade sketch displaying 3 stacked tickets each with a bug and the word timezone on the left and an astonished face on the right](https://odone.io/images/tickets.png)
 
 Stop. Consider the task you are doing.
 
