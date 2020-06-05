@@ -183,11 +183,6 @@ code {
   color: deeppink;
 }
 
-.cover {
-  margin-left: calc(50% - 50vw);
-  width: 100vw;
-}
-
 .content-image {
   width: 100%;
 }
