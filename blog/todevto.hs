@@ -24,6 +24,7 @@ import Data.ByteString
 import Data.ByteString.Char8
 import Data.Foldable
 import Data.Frontmatter
+import Data.Maybe
 import Data.Semigroup ((<>))
 import Data.Text
 import Data.Text.Encoding
@@ -35,7 +36,8 @@ import System.FilePath.Posix
 data Front = Front
   { title :: Text,
     description :: Text,
-    tags :: [Text]
+    tags :: [Text],
+    cover_image :: Maybe Text
   }
   deriving (Show, Generic, FromJSON)
 
@@ -45,7 +47,8 @@ data DevPost = DevPost
     tags :: [Text],
     canonical_url :: Text,
     published :: Bool,
-    body_markdown :: Text
+    body_markdown :: Text,
+    cover_image :: Maybe Text
   }
   deriving (Show, Generic)
 
@@ -59,7 +62,8 @@ instance ToJSON DevPost where
             "tags" .= tags,
             "canonical_url" .= canonical_url,
             "published" .= published,
-            "body_markdown" .= body_markdown
+            "body_markdown" .= body_markdown,
+            "cover_image" .= fromMaybe "" cover_image
           ]
 
 main :: IO ()
