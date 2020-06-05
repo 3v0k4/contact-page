@@ -13,7 +13,6 @@
     <link rel="icon" type="image/png" sizes="192x192" href="/images/android-chrome-192x192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="/images/android-chrome-512x512.png">
     <link rel="manifest" href="/images/site.webmanifest">
-    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@riccardoodone" />
     <meta name="twitter:creator" content="@riccardoodone" />
     $if(index)$
@@ -34,8 +33,10 @@
     $endif$
     $if(cover_image)$
       <meta property="og:image" content="$cover_image$" />
+      <meta name="twitter:card" content="summary_large_image" />
     $else$
       <meta property="og:image" content="https://odone.io/images/android-chrome-512x512.png" />
+      <meta name="twitter:card" content="summary" />
     $endif$
   </head>
 
