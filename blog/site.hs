@@ -7,7 +7,7 @@ import Data.Bifunctor (Bifunctor, bimap, first)
 import Data.Binary (Binary)
 import Data.Bool (bool)
 import Data.Foldable (fold, traverse_)
-import Data.List (group, nub, partition, sortOn)
+import Data.List (group, partition, sortOn)
 import Data.Maybe (fromJust, fromMaybe)
 import Data.String (IsString)
 import Data.Text (pack, replace, unpack)
@@ -17,6 +17,8 @@ import Hakyll
 import Network.HTTP.Base (urlEncode)
 import System.Environment (getEnvironment)
 import System.FilePath (replaceExtension)
+import System.Random (RandomGen, newStdGen)
+import System.Random.Shuffle (shuffle')
 import Text.Blaze.Html ((!), toHtml, toValue)
 import Text.Blaze.Html.Renderer.String (renderHtml)
 import qualified Text.Blaze.Html5 as H
@@ -80,6 +82,7 @@ main = do
         pandocCompiler'
           >>= loadAndApplyTemplate "templates/post.html" (constField "tweet" href <> postCtx tags)
           >>= saveSnapshot "content"
+          >>= loadAndApplyTemplate "templates/post-wrapper.html" randomPostsCtx
           >>= loadAndApplyTemplate "templates/default.html" (postCtx tags)
           >>= relativizeUrls
     matchMetadata postsPattern (not . isPublished) $ do
@@ -95,6 +98,7 @@ main = do
       compile $
         pandocCompiler'
           >>= loadAndApplyTemplate "templates/post.html" (postCtx tags)
+          >>= loadAndApplyTemplate "templates/post-wrapper.html" randomPostsCtx
           >>= loadAndApplyTemplate "templates/default.html" (postCtx tags)
           >>= relativizeUrls
           >>= (\x -> putDraftUrl x >> pure x)
@@ -135,6 +139,28 @@ main = do
         renderAtom feedConfiguration feedCtx posts
 
 --------------------------------------------------------------------------------
+
+type RandomPost = (String, String, String)
+
+randomPostsCtx :: Context String
+randomPostsCtx = listFieldWith "randomPosts" randomPostCtx randomPosts <> defaultContext
+
+randomPostCtx :: Context RandomPost
+randomPostCtx =
+  field "title" (pure . fst' . itemBody)
+    <> field "description" (pure . snd' . itemBody)
+    <> field "url" (pure . trd' . itemBody)
+
+randomPosts :: Item a -> Compiler [Item RandomPost]
+randomPosts item = do
+  gen <- unsafeCompiler newStdGen
+  ids <- filter (itemIdentifier item /=) <$> publishedIds postsPattern
+  let randomIds = take 3 $ shuffle' ids (length ids) gen
+  metas <- traverse getMetadata randomIds
+  routes <- traverse (fmap (toUrl . fromJust) . getRoute) randomIds
+  let toRandomPost (meta, ident) = (,,) <$> lookupString "title" meta <*> lookupString "description" meta <*> Just ident
+  let randoms = fromJust . toRandomPost <$> zip metas routes
+  traverse makeItem randoms
 
 type Tag = (Int, Char, String)
 

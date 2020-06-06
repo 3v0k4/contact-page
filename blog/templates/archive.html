@@ -1,19 +1,23 @@
-<h2 class="text-center">Posts</h2>
+<div class="col-sm-8 col-md-8 col-lg-6 mx-auto">
+  <h2 class="text-center">Posts</h2>
 
-<div class="text-center">
-  <div>
-    $for(categories)$
-      <a class="btn btn-tag-$status$ mb-1" href="$url$">
-        <span class="btn-tag-icon-lg">$icon$ </span>$tag$ <span class="badge badge-white">$count$</span>
-      </a>
-    $endfor$
+  <div class="text-center">
+    <div>
+      $for(categories)$
+        <a class="btn btn-tag-$status$ mb-1" href="$url$">
+          <span class="btn-tag-icon-lg">$icon$ </span>$tag$ <span class="badge badge-white">$count$</span>
+        </a>
+      $endfor$
+    </div>
+
+    <div class="mt-2 d-none d-md-block">
+      $for(tags)$<a class="btn btn-tag-$status$ btn-sm mb-1" href="$url$">
+          <span class="btn-tag-icon">$icon$ </span>$tag$ <span class="badge badge-white badge-sm">$count$</span>
+      </a>$endfor$
+    </div>
   </div>
 
-  <div class="mt-2 d-none d-md-block">
-    $for(tags)$<a class="btn btn-tag-$status$ btn-sm mb-1" href="$url$">
-        <span class="btn-tag-icon">$icon$ </span>$tag$ <span class="badge badge-white badge-sm">$count$</span>
-    </a>$endfor$
-  </div>
+  $partial("templates/post-list.html")$
 </div>
 
-$partial("templates/post-list.html")$
+$partial("templates/newsletter.html")$

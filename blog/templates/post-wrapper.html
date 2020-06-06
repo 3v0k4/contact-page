@@ -1,0 +1,16 @@
+$body$
+
+$partial("templates/newsletter.html")$
+
+<div class="read-more-container container-fluid">
+  <div class="row">
+    $for(randomPosts)$
+      <div class="col-sm-8 col-md-8 col-lg-4 text-center py-4 px-4 mx-auto">
+        <a class="read-more" href="$url$">
+          <h3>$title$</h3>
+          <p>$description$</p>
+        </a>
+      </div>
+    $endfor$
+  </div>
+</div>

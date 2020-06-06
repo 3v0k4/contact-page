@@ -1,23 +1,25 @@
-<article>
-    $if(cover_image)$
-      <img class="mb-4" src="$cover_image$"></img>
-    $endif$
+<div class="col-sm-8 col-md-8 col-lg-6 mx-auto">
+  <article>
+      $if(cover_image)$
+        <img class="mb-4" src="$cover_image$"></img>
+      $endif$
 
-    <h1>$title$</h1>
-    <section class="font-weight-light text-secondary smaller">
-        Posted on $date$
-        $if(author)$
-            by $author$
-        $endif$
-        <br />
-        $tags$
-    </section>
-    <br />
-    <section>
-        $body$
-    </section>
-    $if(tweet)$
-      <hr />
-      Support my work by <a href="$tweet$" target="_blank" rel="noopener">tweeting</a> this article! 🙏
-    $endif$
-</article>
+      <h1>$title$</h1>
+      <section class="font-weight-light text-secondary smaller">
+          Posted on $date$
+          $if(author)$
+              by $author$
+          $endif$
+          <br />
+          $tags$
+      </section>
+      <br />
+      <section>
+          $body$
+      </section>
+      $if(tweet)$
+        <hr />
+        Support my work by <a href="$tweet$" target="_blank" rel="noopener">tweeting</a> this article! 🙏
+      $endif$
+  </article>
+</div>

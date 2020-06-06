@@ -132,11 +132,24 @@ a.post-title {
   background-image: url('/images/android-chrome-512x512-pink.png');
 }
 
-footer {
+.newsletter-container {
   color: white;
   background: var(--pink);
   box-shadow: 0 0 10px var(--pink);
   flex-shrink: none;
+}
+
+.read-more-container {
+  box-shadow: 0 10px 10px -10px var(--blue);
+  background-color: var(--blue);
+}
+
+a.read-more {
+  color: black;
+}
+
+a.read-more:hover {
+  color: black;
 }
 
 h1 {
