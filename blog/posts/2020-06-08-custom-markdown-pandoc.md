@@ -1,7 +1,7 @@
 ---
 title: Custom Markdown in Pandoc
 description: Transforming Pandoc's AST to implement custom Markdown syntax.
-published: false
+published: true
 author: Riccardo
 tags:
   - Functional Programming
@@ -121,7 +121,7 @@ In a recent workshop I attended one rule was "all ideas are brilliant". Yes, at 
 
 becomes
 
-![Screenshot of a pull quote from a blog post](https://odone.io/images/pull-quote.png)
+[![Screenshot of a pull quote from a blog post](https://odone.io/images/pull-quote.png)](https://odone.io/posts/2020-05-29-silly-questions.html)
 
 ---
 
