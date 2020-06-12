@@ -3,7 +3,7 @@ title: Measuring Disagreement with Standard Deviation
 description: I treasure disagreements. I find friction is essential to team work. Discussing agreements, on the other hand, is a waste of time.
 published: true
 author: Riccardo
-cover_image: /images/stdev-2d-words.png
+cover_image: https://odone.io/images/stdev-2d-words.png
 tags:
   - Essential Skills
   - Team Work
