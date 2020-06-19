@@ -53,3 +53,5 @@ I made the mistake of starting from a solution and not from a problem. "Sidekiq 
 I spent most of the day in solution space. The wrong solution space. In fact, I was solving a problem that didn't exist. Plus, without a definition of done, I didn't even know when to stop. This is not a particularly good combo.
 
 This is a great reminder that understanding the problem is a prerequisite to finding the right solution, who would have guessed!
+
+[HackerNews Post](https://news.ycombinator.com/item?id=23572898)
