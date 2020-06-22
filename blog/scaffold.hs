@@ -16,11 +16,11 @@ frontmatter :: String
 frontmatter =
   unlines
     [ "---",
-      "title:",
-      "description:",
+      "title: TODO",
+      "description: TODO",
       "published: false",
       "author: Riccardo",
-      "cover_image:",
+      "cover_image: https://odone.io/images/TODO.png",
       "tags:",
       "  - Functional Programming",
       "---"
