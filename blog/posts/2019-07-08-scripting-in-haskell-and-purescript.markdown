@@ -7,6 +7,7 @@ tags:
   - Functional Programming
   - Haskell
   - PureScript
+  - Script
 ---
 
 When learning how to jump with the snowboard, my trainer used to say: "you need to take a lot of air". In other words, if you want to learn how to jump, you need to jump a lot.
