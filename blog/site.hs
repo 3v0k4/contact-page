@@ -69,7 +69,10 @@ main = do
       compile compressCssCompiler
     match "404.md" $ do
       route $ setExtension "html"
-      compile $ pandocCompiler >>= loadAndApplyTemplate "templates/default.html" defaultContext
+      compile $
+        pandocCompiler
+          >>= loadAndApplyTemplate "templates/404-wrapper.html" defaultContext
+          >>= loadAndApplyTemplate "templates/default.html" defaultContext
     tags <- buildTags' postsPattern (fromCapture "tags/*.html")
     matchMetadata postsPattern isPublished $ do
       let livePath = (`replaceExtension` "html") . toFilePath
