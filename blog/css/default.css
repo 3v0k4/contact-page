@@ -334,40 +334,56 @@ blockquote.pullquote {
 
 .logo-youtube {
   background: url(/images/logo-youtube.svg);
-  background-size: var(--logo-width) var(--logo-height);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .logo-twitter {
   background: url(/images/logo-twitter.svg);
-  background-size: var(--logo-width) var(--logo-height);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .logo-devto {
   background: url(/images/logo-devto.svg);
-  background-size: var(--logo-width) var(--logo-height);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .logo-medium {
   background: url(/images/logo-medium.svg);
-  background-size: var(--logo-width) var(--logo-height);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .logo-facebook {
   background: url(/images/logo-facebook.svg);
-  background-size: var(--logo-width) var(--logo-height);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .logo-linkedin {
   background: url(/images/logo-linkedin.svg);
-  background-size: var(--logo-width) var(--logo-height);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .logo-github {
   background: url(/images/logo-github.svg);
-  background-size: var(--logo-width) var(--logo-height);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .logo-goodreads {
   background: url(/images/logo-goodreads.svg);
-  background-size: var(--logo-width) var(--logo-height);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
