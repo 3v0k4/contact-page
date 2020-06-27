@@ -3,6 +3,8 @@
   --blue: #007bff;
   --logo-size: 50px;
   --background: aliceblue;
+  --logo-width: 50px;
+  --logo-height: 35px;
 }
 
 html,
@@ -26,6 +28,7 @@ header {
 .no-list-style {
   list-style-type: none;
   padding-left: 0;
+  margin-bottom: 0;
 }
 
 .content {
@@ -116,7 +119,7 @@ a.post-title {
   padding: 0.1em .4em;
 }
 
-.logo {
+.logo-odone {
   display: block;
   margin: auto;
   width: var(--logo-size);
@@ -128,7 +131,7 @@ a.post-title {
   -webkit-tap-highlight-color: var(--pink);
 }
 
-.logo:hover, .logo:focus, .logo:active {
+.logo-odone:hover, .logo-odone:focus, .logo-odone:active {
   background-image: url('/images/android-chrome-512x512-pink.png');
 }
 
@@ -306,4 +309,65 @@ blockquote.pullquote {
 .tweet-this-icon {
   height: 30px;
   margin-bottom: 4px;
+}
+
+.logos {
+  line-height: 50px;
+  margin: 20px 0 5px 0;
+}
+
+.logos > li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.logos > li:last-of-type {
+  margin-right: 0;
+}
+
+.logo {
+  display: block;
+  text-indent: -9999px;
+  width: var(--logo-width);
+  height: var(--logo-height);
+}
+
+.logo-youtube {
+  background: url(/images/logo-youtube.svg);
+  background-size: var(--logo-width) var(--logo-height);
+}
+
+.logo-twitter {
+  background: url(/images/logo-twitter.svg);
+  background-size: var(--logo-width) var(--logo-height);
+}
+
+.logo-devto {
+  background: url(/images/logo-devto.svg);
+  background-size: var(--logo-width) var(--logo-height);
+}
+
+.logo-medium {
+  background: url(/images/logo-medium.svg);
+  background-size: var(--logo-width) var(--logo-height);
+}
+
+.logo-facebook {
+  background: url(/images/logo-facebook.svg);
+  background-size: var(--logo-width) var(--logo-height);
+}
+
+.logo-linkedin {
+  background: url(/images/logo-linkedin.svg);
+  background-size: var(--logo-width) var(--logo-height);
+}
+
+.logo-github {
+  background: url(/images/logo-github.svg);
+  background-size: var(--logo-width) var(--logo-height);
+}
+
+.logo-goodreads {
+  background: url(/images/logo-goodreads.svg);
+  background-size: var(--logo-width) var(--logo-height);
 }
