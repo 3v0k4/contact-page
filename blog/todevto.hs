@@ -33,23 +33,25 @@ import Network.Wreq
 import Options.Applicative
 import System.FilePath.Posix
 
-data Front = Front
-  { title :: Text,
-    description :: Text,
-    tags :: [Text],
-    cover_image :: Maybe Text
-  }
+data Front
+  = Front
+      { title :: Text,
+        description :: Text,
+        tags :: [Text],
+        cover_image :: Maybe Text
+      }
   deriving (Show, Generic, FromJSON)
 
-data DevPost = DevPost
-  { title :: Text,
-    description :: Text,
-    tags :: [Text],
-    canonical_url :: Text,
-    published :: Bool,
-    body_markdown :: Text,
-    cover_image :: Maybe Text
-  }
+data DevPost
+  = DevPost
+      { title :: Text,
+        description :: Text,
+        tags :: [Text],
+        canonical_url :: Text,
+        published :: Bool,
+        body_markdown :: Text,
+        cover_image :: Maybe Text
+      }
   deriving (Show, Generic)
 
 instance ToJSON DevPost where
@@ -109,9 +111,20 @@ mkDevPost :: Text -> Front -> Text -> DevPost
 mkDevPost path Front {..} post = devPost {tags = replace " " "" <$> tags}
   where
     published = False
-    body_markdown = fold ["Originally posted on", " ", "[odone.io](", canonical_url, ").\n\n---\n\n", post]
-    canonical_url = urlFor path
+    body_markdown = fold [preText path, post, postText]
     devPost = DevPost {..}
+
+preText :: Text -> Text
+preText path =
+  fold
+    [ "You can keep reading here or [jump to my blog](",
+      urlFor path,
+      ") to get the full experience, including the wonderful pink, blue and white palette.\n---\n"
+    ]
+
+postText :: Text
+postText =
+  "\n---\nGet the latest content via email from me personally. Reply with your thoughts. Let's learn from each other. Subscribe to my [PinkLetter](https://odone.io#newsletter)!"
 
 urlFor :: Text -> Text
 urlFor path = fold [base, "/", name, ".html"]

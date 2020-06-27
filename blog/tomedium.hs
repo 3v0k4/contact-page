@@ -34,22 +34,24 @@ import Network.Wreq
 import Options.Applicative
 import System.FilePath.Posix
 
-data Front = Front
-  { title :: Text,
-    description :: Text,
-    tags :: [Text]
-  }
+data Front
+  = Front
+      { title :: Text,
+        description :: Text,
+        tags :: [Text]
+      }
   deriving (Show, Generic, FromJSON)
 
-data MediumPost = MediumPost
-  { title :: Text,
-    tags :: [Text],
-    canonicalUrl :: Text,
-    publishStatus :: Text,
-    content :: Text,
-    contentFormat :: Text,
-    notifyFollowers :: Bool
-  }
+data MediumPost
+  = MediumPost
+      { title :: Text,
+        tags :: [Text],
+        canonicalUrl :: Text,
+        publishStatus :: Text,
+        content :: Text,
+        contentFormat :: Text,
+        notifyFollowers :: Bool
+      }
   deriving (Show, Generic)
 
 instance ToJSON MediumPost where
@@ -98,7 +100,6 @@ crosspost apiKey path = do
               & Network.Wreq.auth ?~ Network.Wreq.oauth2Bearer (encodeUtf8 apiKey)
       r <- Network.Wreq.getWith opts "https://api.medium.com/v1/me"
       let id_ = r ^. responseBody . key "data" . key "id" . _String
-
       let post = decodeUtf8 postBS
       let json = toJSON $ mkMediumPost path frontmatter post
       let opts2 =
@@ -118,10 +119,22 @@ mkMediumPost :: Text -> Front -> Text -> MediumPost
 mkMediumPost path Front {..} post = MediumPost {..}
   where
     publishStatus = "draft"
-    content = fold ["Originally posted on", " ", "[odone.io](", canonicalUrl, ").\n\n---\n\n", post]
+    content = fold [preText path, post, postText]
     contentFormat = "markdown"
     canonicalUrl = urlFor path
     notifyFollowers = True
+
+preText :: Text -> Text
+preText path =
+  fold
+    [ "You can keep reading here or [jump to my blog](",
+      urlFor path,
+      ") to get the full experience, including the wonderful pink, blue and white palette.\n---\n"
+    ]
+
+postText :: Text
+postText =
+  "\n---\nGet the latest content via email from me personally. Reply with your thoughts. Let's learn from each other. Subscribe to my [PinkLetter](https://odone.io#newsletter)!"
 
 urlFor :: Text -> Text
 urlFor path = fold [base, "/", name, ".html"]
