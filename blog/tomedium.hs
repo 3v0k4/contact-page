@@ -119,22 +119,22 @@ mkMediumPost :: Text -> Front -> Text -> MediumPost
 mkMediumPost path Front {..} post = MediumPost {..}
   where
     publishStatus = "draft"
-    content = fold [preText path, post, postText]
+    content = fold [preText canonicalUrl, post, postText]
     contentFormat = "markdown"
     canonicalUrl = urlFor path
     notifyFollowers = True
 
 preText :: Text -> Text
-preText path =
+preText url =
   fold
     [ "You can keep reading here or [jump to my blog](",
-      urlFor path,
-      ") to get the full experience, including the wonderful pink, blue and white palette.\n---\n"
+      url,
+      ") to get the full experience, including the wonderful pink, blue and white palette.\n\n---\n\n"
     ]
 
 postText :: Text
 postText =
-  "\n---\nGet the latest content via email from me personally. Reply with your thoughts. Let's learn from each other. Subscribe to my [PinkLetter](https://odone.io#newsletter)!"
+  "\n\n---\n\nGet the latest content via email from me personally. Reply with your thoughts. Let's learn from each other. Subscribe to my [PinkLetter](https://odone.io#newsletter)!"
 
 urlFor :: Text -> Text
 urlFor path = fold [base, "/", name, ".html"]

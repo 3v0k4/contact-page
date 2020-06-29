@@ -111,20 +111,21 @@ mkDevPost :: Text -> Front -> Text -> DevPost
 mkDevPost path Front {..} post = devPost {tags = replace " " "" <$> tags}
   where
     published = False
-    body_markdown = fold [preText path, post, postText]
+    canonical_url = urlFor path
+    body_markdown = fold [preText canonical_url, post, postText]
     devPost = DevPost {..}
 
 preText :: Text -> Text
-preText path =
+preText url =
   fold
     [ "You can keep reading here or [jump to my blog](",
-      urlFor path,
-      ") to get the full experience, including the wonderful pink, blue and white palette.\n---\n"
+      url,
+      ") to get the full experience, including the wonderful pink, blue and white palette.\n\n---\n\n"
     ]
 
 postText :: Text
 postText =
-  "\n---\nGet the latest content via email from me personally. Reply with your thoughts. Let's learn from each other. Subscribe to my [PinkLetter](https://odone.io#newsletter)!"
+  "\n\n---\n\nGet the latest content via email from me personally. Reply with your thoughts. Let's learn from each other. Subscribe to my [PinkLetter](https://odone.io#newsletter)!"
 
 urlFor :: Text -> Text
 urlFor path = fold [base, "/", name, ".html"]
