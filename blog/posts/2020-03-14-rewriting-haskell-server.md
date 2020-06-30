@@ -2,17 +2,11 @@
 title: Rewriting to Haskell–Deployment
 description: Everything needed to deploy and run Stream (Servant) on the server side
 author: Riccardo
+series: Rewriting to Haskell
 tags:
   - Functional Programming
   - Haskell
   - Servant
----
-
-This is part of a series:
-
-- [Rewriting to Haskell–Intro](https://odone.io/posts/2020-02-26-rewriting-haskell-intro.html)
-- [Rewriting to Haskell–Project Setup](https://odone.io/posts/2020-03-03-rewriting-haskell-setup.html)
-
 ---
 
 ## Deploy with Hapistrano

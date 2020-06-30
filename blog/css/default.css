@@ -387,3 +387,49 @@ blockquote.pullquote {
   background-repeat: no-repeat;
   background-position: center;
 }
+
+.series-container {
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.series-heading {
+  margin: 0;
+  padding: 5px 10px;
+}
+
+.series-post {
+  display: block;
+  border-top: 1px solid black;
+  font-size: 80%;
+  font-weight: 400;
+  text-decoration: none;
+  padding: 5px 10px;
+}
+
+.series-post:hover {
+  text-decoration: none;
+}
+
+.series-post-unselected:hover {
+  background-color: var(--pink);
+  color: white;
+}
+
+.series-post-unselected:last-child:hover {
+  border-radius: 0 0 10px 10px;
+}
+
+.series-post-selected {
+  color: white;
+  background-color: var(--pink);
+}
+
+.series-post-selected:hover {
+  color: white;
+}
+
+.series-post-selected:last-child {
+  border-radius: 0 0 10px 10px;
+}

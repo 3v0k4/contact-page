@@ -2,21 +2,11 @@
 title: Rewriting to Haskell–Making GHC More Nitpicky
 description: Enabling GHC compiler warnings to enforce better code
 author: Riccardo
+series: Rewriting to Haskell
 tags:
   - Functional Programming
   - Haskell
   - Servant
----
-
-This is part of a series:
-
-- [Rewriting to Haskell–Intro](https://odone.io/posts/2020-02-26-rewriting-haskell-intro.html)
-- [Rewriting to Haskell–Project Setup](https://odone.io/posts/2020-03-03-rewriting-haskell-setup.html)
-- [Rewriting to Haskell–Deployment](https://odone.io/posts/2020-03-14-rewriting-haskell-server.html)
-- [Rewriting to Haskell–Automatic Formatting](https://odone.io/posts/2020-03-19-rewriting-haskell-formatting.html)
-- [Rewriting to Haskell–Configuration](https://odone.io/posts/2020-03-23-rewriting-haskell-configuration.html)
-- [Rewriting to Haskell–Standing on the shoulders of Rails](https://odone.io/posts/2020-03-30-rails.html)
-
 ---
 
 GHC by default compiles with some warnings enabled. But there's a ton more. Thus, we decided to turn on several. Also, we have the compiler treat them as errors with `-Wall`. Luckily, [Max Tagher](https://twitter.com/MaxTagher) did all the work for us and prepared a ["Copy-Pastable List"](https://medium.com/mercury-bank/enable-all-the-warnings-a0517bc081c3) with nice explanations for us lazy developers. Thanks Max!

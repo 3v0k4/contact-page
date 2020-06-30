@@ -1,27 +1,37 @@
 <div class="col-sm-8 col-md-8 col-lg-6 mx-auto">
   <article>
-      $if(cover_image)$
-        <img class="mb-4" src="$cover_image$"></img>
-      $endif$
+    $if(cover_image)$
+      <img class="mb-4" src="$cover_image$"></img>
+    $endif$
 
-      <h1>$title$</h1>
-      <section class="font-weight-light text-secondary smaller">
-          Posted on $date$
-          $if(author)$
-              by $author$
-          $endif$
-          <br />
-          $tags$
+    <h1>$title$</h1>
+    <section class="font-weight-light text-secondary smaller mb-4">
+        Posted on $date$
+        $if(author)$
+            by $author$
+        $endif$
+        <br />
+        $tags$
+    </section>
+
+    $if(series)$
+      <section class="series-container">
+        <h3 class="series-heading">$series$ (Series)</h3>
+        $for(seriesPosts)$
+          <a class="series-post series-post-$klass$" href="$url$">$title$</a>
+        $endfor$
       </section>
-      <br />
-      <section>
-          $body$
-      </section>
-      $if(tweet)$
-        <hr />
-        <p>
-          Support my work by <a href="$tweet$" target="_blank" rel="noopener">tweeting</a> this article! 🙏
-        </p>
-      $endif$
+    $endif$
+
+    <section>
+      $body$
+    </section>
+
+    $if(tweet)$
+      <hr />
+      <p>
+        Support my work by <a href="$tweet$" target="_blank" rel="noopener">tweeting</a> this article! 🙏
+      </p>
+    $endif$
   </article>
 </div>

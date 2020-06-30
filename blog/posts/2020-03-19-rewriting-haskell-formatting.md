@@ -2,18 +2,11 @@
 title: Rewriting to Haskell–Automatic Formatting
 description: Using Ormolu to keep code pretty and stop once for all discussions on cosmetics
 author: Riccardo
+series: Rewriting to Haskell
 tags:
   - Functional Programming
   - Haskell
   - Servant
----
-
-This is part of a series:
-
-- [Rewriting to Haskell–Intro](https://odone.io/posts/2020-02-26-rewriting-haskell-intro.html)
-- [Rewriting to Haskell–Project Setup](https://odone.io/posts/2020-03-03-rewriting-haskell-setup.html)
-- [Rewriting to Haskell–Deployment](https://odone.io/posts/2020-03-14-rewriting-haskell-server.html)
-
 ---
 
 One comment in a pull request about code formatting was enough to convince us we needed a tool to solve the problem once for all!

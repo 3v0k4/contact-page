@@ -3,6 +3,7 @@ title: Refactoring the Mars Rover Kata in Haskell
 description: Refactoring our deployed-to-Mars rover
 author: Riccardo
 cover_image: https://odone.io/images/refactoring-mars-rover.jpg
+series: Mars Rover Kata in Haskell
 tags:
   - Functional Programming
   - Haskell

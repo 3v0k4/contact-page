@@ -3,6 +3,7 @@ title: Bank Kata in PureScript
 author: Riccardo
 description: Purely functional state mutations in PureScript
 cover_image: https://cdn-images-1.medium.com/max/1024/1*wy9M28S1h8KHOav3b2DBBw.jpeg
+series: Bank Kata in PureScript
 tags:
   - Functional Programming
   - PureScript

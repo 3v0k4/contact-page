@@ -2,19 +2,11 @@
 title: Rewriting to Haskell–Configuration
 description: Using yaml to configure a Servant application
 author: Riccardo
+series: Rewriting to Haskell
 tags:
   - Functional Programming
   - Haskell
   - Servant
----
-
-This is part of a series:
-
-- [Rewriting to Haskell–Intro](https://odone.io/posts/2020-02-26-rewriting-haskell-intro.html)
-- [Rewriting to Haskell–Project Setup](https://odone.io/posts/2020-03-03-rewriting-haskell-setup.html)
-- [Rewriting to Haskell–Deployment](https://odone.io/posts/2020-03-14-rewriting-haskell-server.html)
-- [Rewriting to Haskell–Automatic Formatting](https://odone.io/posts/2020-03-19-rewriting-haskell-formatting.html)
-
 ---
 
 Coming from Rails we are used to employing yaml files to configure a web application. This is why we decided to do the same with Servant. As a matter of fact, we now have a `configuration.yml` file:

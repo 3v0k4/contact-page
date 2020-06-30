@@ -2,22 +2,11 @@
 title: Rewriting to Haskell–Testing
 description: Using HSpec to test Stream through its endpoints
 author: Riccardo
+series: Rewriting to Haskell
 tags:
   - Functional Programming
   - Haskell
   - Servant
----
-
-This is part of a series:
-
-- [Rewriting to Haskell–Intro](https://odone.io/posts/2020-02-26-rewriting-haskell-intro.html)
-- [Rewriting to Haskell–Project Setup](https://odone.io/posts/2020-03-03-rewriting-haskell-setup.html)
-- [Rewriting to Haskell–Deployment](https://odone.io/posts/2020-03-14-rewriting-haskell-server.html)
-- [Rewriting to Haskell–Automatic Formatting](https://odone.io/posts/2020-03-19-rewriting-haskell-formatting.html)
-- [Rewriting to Haskell–Configuration](https://odone.io/posts/2020-03-23-rewriting-haskell-configuration.html)
-- [Rewriting to Haskell–Standing on the shoulders of Rails](https://odone.io/posts/2020-03-30-rails.html)
-- [Rewriting to Haskell–Making GHC More Nitpicky](https://odone.io/posts/2020-04-06-ghc-options.html)
-
 ---
 
 We have managed to delay testing by [leaning on Ruby RSpec](https://odone.io/posts/2020-03-30-rails.html) for a while. It's time to do the right thing and write some tests in Haskell.

@@ -2,23 +2,11 @@
 title: Rewriting to Haskell–Linting
 description: Using HLint to improve the code in Stream
 author: Riccardo
+series: Rewriting to Haskell
 tags:
   - Functional Programming
   - Haskell
   - Servant
----
-
-This is part of a series:
-
-- [Rewriting to Haskell–Intro](https://odone.io/posts/2020-02-26-rewriting-haskell-intro.html)
-- [Rewriting to Haskell–Project Setup](https://odone.io/posts/2020-03-03-rewriting-haskell-setup.html)
-- [Rewriting to Haskell–Deployment](https://odone.io/posts/2020-03-14-rewriting-haskell-server.html)
-- [Rewriting to Haskell–Automatic Formatting](https://odone.io/posts/2020-03-19-rewriting-haskell-formatting.html)
-- [Rewriting to Haskell–Configuration](https://odone.io/posts/2020-03-23-rewriting-haskell-configuration.html)
-- [Rewriting to Haskell–Standing on the shoulders of Rails](https://odone.io/posts/2020-03-30-rails.html)
-- [Rewriting to Haskell–Making GHC More Nitpicky](https://odone.io/posts/2020-04-06-ghc-options.html)
-- [Rewriting to Haskell–Testing](https://odone.io/posts/2020-04-13-rewriting-haskell-testing.html)
-
 ---
 
 I bet most of us are not surrounded by as many haskellers as we would wish. That means we need to treasure every ounce of feedback we can get. Turns out a linter is a great way of squeezing some more.

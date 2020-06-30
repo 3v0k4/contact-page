@@ -2,26 +2,11 @@
 title: Rewriting to Haskell–Errors
 description: Returning the correct JSON error when parsing fails
 author: Riccardo
+series: Rewriting to Haskell
 tags:
   - Functional Programming
   - Haskell
   - Servant
----
-
-This is part of a series:
-
-- [Rewriting to Haskell–Intro](https://odone.io/posts/2020-02-26-rewriting-haskell-intro.html)
-- [Rewriting to Haskell–Project Setup](https://odone.io/posts/2020-03-03-rewriting-haskell-setup.html)
-- [Rewriting to Haskell–Deployment](https://odone.io/posts/2020-03-14-rewriting-haskell-server.html)
-- [Rewriting to Haskell–Automatic Formatting](https://odone.io/posts/2020-03-19-rewriting-haskell-formatting.html)
-- [Rewriting to Haskell–Configuration](https://odone.io/posts/2020-03-23-rewriting-haskell-configuration.html)
-- [Rewriting to Haskell–Standing on the shoulders of Rails](https://odone.io/posts/2020-03-30-rails.html)
-- [Rewriting to Haskell–Making GHC More Nitpicky](https://odone.io/posts/2020-04-06-ghc-options.html)
-- [Rewriting to Haskell–Testing](https://odone.io/posts/2020-04-13-rewriting-haskell-testing.html)
-- [Rewriting to Haskell–Linting](https://odone.io/posts/2020-04-20-rewriting-haskell-linting.html)
-- [Rewriting to Haskell–Parsing Query Params](https://odone.io/posts/2020-04-27-rewriting-haskell-query-params.html)
-- [Rewriting to Haskell–Parsing Query Params, Again](https://odone.io/posts/2020-05-04-rewriting-haskell-query-params-again.html)
-
 ---
 
 The frontend code for Stream expects errors to have the following shape:

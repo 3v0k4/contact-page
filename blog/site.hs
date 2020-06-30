@@ -8,7 +8,7 @@ import Data.Binary (Binary)
 import Data.Bool (bool)
 import Data.Foldable (fold, traverse_)
 import Data.List (group, partition, sortOn)
-import Data.Maybe (fromJust, fromMaybe)
+import Data.Maybe (fromJust, fromMaybe, mapMaybe)
 import Data.String (IsString)
 import Data.Text (pack, replace, unpack)
 import Data.Traversable (traverse)
@@ -221,7 +221,36 @@ tagsCtx mSelectedTag =
     tagUrl tag = if Just tag == mSelectedTag then "/archive.html" else "/tags/" <> tag <> ".html"
 
 postCtx :: Tags -> Context String
-postCtx tags = tagsField' "tags" tags <> dateField "date" "%B %e, %Y" <> defaultContext
+postCtx tags =
+  listFieldWith "seriesPosts" seriesPostsCtx seriesPosts
+    <> tagsField' "tags" tags
+    <> dateField "date" "%B %e, %Y"
+    <> defaultContext
+
+type Serie = (String, String, String)
+
+seriesPostsCtx :: Context Serie
+seriesPostsCtx =
+  field "title" (pure . fst' . itemBody)
+    <> field "url" (pure . snd' . itemBody)
+    <> field "klass" (pure . trd' . itemBody)
+
+seriesPosts :: Item a -> Compiler [Item Serie]
+seriesPosts item = do
+  seriesMeta <- fmap (lookupString "series") . getMetadata . itemIdentifier $ item
+  ids <- publishedIds postsPattern
+  metas <- traverse getMetadata ids
+  routes <- traverse (fmap (toUrl . fromJust) . getRoute) ids
+  let toSeriesTriple (meta, route, id_) =
+        (,,,) <$> lookupString "series" meta <*> lookupString "title" meta <*> Just route <*> Just id_
+  let matchingSeries series (s, _, _, _) = Just s == series
+  let toSeriesTuple (_, title, route, id_) =
+        (title, route, if id_ == itemIdentifier item then "selected" else "unselected")
+  traverse makeItem
+    . fmap toSeriesTuple
+    . filter (matchingSeries seriesMeta)
+    . mapMaybe toSeriesTriple
+    $ zip3 metas routes ids
 
 loadAllPublished :: (Binary a, Typeable a) => [(String, String)] -> Pattern -> Compiler [Item a]
 loadAllPublished env pattern_ = if isDevelopmentEnv env then all else published

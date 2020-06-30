@@ -2,16 +2,11 @@
 title: Rewriting to Haskell–Project Setup
 description: Setting up Servant and CI for Stream
 author: Riccardo
+series: Rewriting to Haskell
 tags:
   - Functional Programming
   - Haskell
   - Servant
----
-
-This is part of a series:
-
-- [Rewriting to Haskell–Intro](https://odone.io/posts/2020-02-26-rewriting-haskell-intro.html)
-
 ---
 
 We decided to go with [Servant](https://www.servant.dev/) to rewrite the current Rails API for Stream. We don't really have a strong reason for that. We just like it and we believe it will allow us to do some cool stuff down the line!
