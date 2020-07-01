@@ -19,7 +19,7 @@ import System.Environment (getEnvironment)
 import System.FilePath (replaceExtension)
 import System.Random (RandomGen, newStdGen)
 import System.Random.Shuffle (shuffle')
-import Text.Blaze.Html ((!), toHtml, toValue)
+import Text.Blaze.Html (toHtml, toValue, (!))
 import Text.Blaze.Html.Renderer.String (renderHtml)
 import qualified Text.Blaze.Html5 as H
 import qualified Text.Blaze.Html5.Attributes as A
@@ -138,6 +138,7 @@ main = do
         let feedCtx = mconcat [bodyField "description", defaultContext]
         posts <-
           fmap (take 10) . recentFirst
+            =<< traverse (loadAndApplyTemplate "templates/post-wrapper-atom.html" defaultContext)
             =<< loadAllSnapshotsPublished postsPattern "content"
         renderAtom feedConfiguration feedCtx posts
 
@@ -244,11 +245,11 @@ tagsField' = tagsFieldWith getTags' simpleRenderLink' mconcat
 simpleRenderLink' :: String -> Maybe FilePath -> Maybe H.Html
 simpleRenderLink' _ Nothing = Nothing
 simpleRenderLink' tag (Just filePath) =
-  Just
-    $ H.a
+  Just $
+    H.a
       ! A.href (toValue $ toUrl filePath)
       ! A.class_ "btn btn-tag-unselected btn-sm"
-    $ toHtml tag
+      $ toHtml tag
 
 buildTags' :: MonadMetadata m => Pattern -> (String -> Identifier) -> m Tags
 buildTags' = buildTagsWith getTags'
@@ -256,8 +257,9 @@ buildTags' = buildTagsWith getTags'
 getTags' :: MonadMetadata m => Identifier -> m [String]
 getTags' identifier = do
   metadata <- getMetadata identifier
-  pure $ fromMaybe ["_untagged_"] $
-    lookupStringList "tags" metadata <|> (map trim . splitAll "," <$> lookupString "tags" metadata)
+  pure $
+    fromMaybe ["_untagged_"] $
+      lookupStringList "tags" metadata <|> (map trim . splitAll "," <$> lookupString "tags" metadata)
 
 pandocCompiler' :: Compiler (Item String)
 pandocCompiler' = pandocCompilerWithTransformM defaultHakyllReaderOptions defaultHakyllWriterOptions (walkM transform)
@@ -265,20 +267,20 @@ pandocCompiler' = pandocCompilerWithTransformM defaultHakyllReaderOptions defaul
     transform :: Block -> Compiler Block
     transform (CodeBlock (_, ["pullquote"], []) content) = do
       href <- pack <$> tweetLink (unpack content)
-      pure
-        $ RawBlock "html"
-        $ fold
-          [ "<blockquote class=\"pullquote\">",
-            "<span>",
-            content,
-            "</span>",
-            "<a target=\"_blank\" rel=\"noopener\" href=",
-            href,
-            ">",
-            twitterIcon,
-            "</a>",
-            "</blockquote>"
-          ]
+      pure $
+        RawBlock "html" $
+          fold
+            [ "<blockquote class=\"pullquote\">",
+              "<span>",
+              content,
+              "</span>",
+              "<a target=\"_blank\" rel=\"noopener\" href=",
+              href,
+              ">",
+              twitterIcon,
+              "</a>",
+              "</blockquote>"
+            ]
     transform x = pure x
 
 tweetLink :: String -> Compiler String
