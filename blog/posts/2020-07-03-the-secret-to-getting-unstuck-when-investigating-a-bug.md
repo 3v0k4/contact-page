@@ -3,7 +3,7 @@ title: The Secret to Getting Unstuck when Investigating a Bug
 description: "When Radek asked me to pair on investigating a bug I was skeptical. But I had something he lacked: ignorance."
 published: false
 author: Riccardo
-cover_image: https://odone.io/images/TODO.png
+cover_image: https://odone.io/images/investigator.png
 tags:
   - Essential Skills
   - Team Work
