@@ -433,3 +433,7 @@ blockquote.pullquote {
 .series-post-selected:last-child {
   border-radius: 0 0 10px 10px;
 }
+
+strong {
+  font-weight: 600;
+}
