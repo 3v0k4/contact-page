@@ -15,12 +15,17 @@
     <link rel="manifest" href="/images/site.webmanifest">
     <meta name="twitter:site" content="@riccardoodone" />
     <meta name="twitter:creator" content="@riccardoodone" />
-    $if(index)$
-      <link rel="canonical" href="https://odone.io" />
-      <meta property="og:url" content="https://odone.io" />
+    $if(canonical_url)$
+      <link rel="canonical" href="$canonical_url$" />
+      <meta property="og:url" content="$canonical_url$" />
     $else$
-      <link rel="canonical" href="https://odone.io$url$" />
-      <meta property="og:url" content="https://odone.io$url$" />
+      $if(index)$
+        <link rel="canonical" href="https://odone.io" />
+        <meta property="og:url" content="https://odone.io" />
+      $else$
+        <link rel="canonical" href="https://odone.io$url$" />
+        <meta property="og:url" content="https://odone.io$url$" />
+      $endif$
     $endif$
     $if(description)$
       <meta property="og:title" content="$title$" />
