@@ -1,7 +1,7 @@
 ---
 title: Elm Tricks from Production–Intro
 description: How Elm enabled fast iterations, cutting costs and keeping everybody happy in one of our projects at work—AirCasting
-published: false
+published: true
 author: Riccardo
 cover_image: https://odone.io/images/elm.jpg
 canonical_url: https://blog.lunarlogic.io/2019/elm-tricks-from-production-intro/
