@@ -20,7 +20,7 @@ Earlier in the day, I received an email informing me I was granted access to the
 
 > FIXME: ...this is kinda useless, isn't it? Not sure why I put this here.
 
-I already know the backend is written in Rails. Not the latest version but it's something I can live with. However, I'm shocked when I open the frontend repository. Not only it's an old release of Angular, also I find TypeScript, NGRX (Angular bindings for ReactiveX) and a ton of additional depencies. This is frustrating. I truly believe those are fine technologies when the complexity they introduce reduces the overall complexity of the project. But this is not the case. I really want to start screaming but my discipline puts me back on track. I need to install the application.
+I already know the backend is written in Rails. Not the latest version but it's something I can live with. However, I'm shocked when I open the frontend repository. Not only it's an old release of Angular, also I find TypeScript, NGRX (Angular bindings for ReactiveX) and a ton of additional dependencies. This is frustrating. I truly believe those are fine technologies when the complexity they introduce reduces the overall complexity of the project. But this is not the case. I really want to start screaming but my discipline puts me back on track. I need to install the application.
 
 > FIXME: DHH says this should be in its own controller, and DHH is never wrong.
 
@@ -48,7 +48,7 @@ I cannot help but think:
 
 As soon as I catch myself saying that, alarm bells start ringing. If I give ground to those thoughts, I'll slip into a vicious cycle. Especially, in this situation where reminders are jumping at me. Line by line. Comment by comment.
 
-I think ranting a bit in a private space is fine. It's like screaming in the pillow. But that should be it. Nobody gets to work thinking *cool, how can I screw up today?*. I'm sure **the original developer was doing their best crafting the code**.
+I think ranting a bit in a private space is fine. It's like screaming in the pillow. But that should be it. Nobody gets to work thinking *cool, how can I screw up today?* I'm sure **the original developer was doing their best crafting the code**.
 
 Sure, mistakes were made. But I'm tasked with being part of the solution not part of the problem. Most of all, **legacy systems are an opportunity**. For something to be legacy means providing some sort of value. Otherwise it would be called trash.
 
