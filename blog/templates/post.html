@@ -6,12 +6,18 @@
 
     <h1>$title$</h1>
     <section class="font-weight-light text-secondary smaller mb-4">
+      <div class="mb-2">
         Posted on $date$
         $if(author)$
-            by $author$
+          by $author$$endif$.
+        $if(canonical_url)$
+          Originally posted at <a href="$canonical_url$" target="_blank" rel="noopener">$canonical_url$</a>.
         $endif$
-        <br />
+      </div>
+
+      <div>
         $tags$
+      </div>
     </section>
 
     $if(series)$

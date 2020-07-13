@@ -11,10 +11,6 @@ tags:
   - Elm
 ---
 
-Originally posted on the [LunarLogic blog](https://blog.lunarlogic.io/2019/elm-tricks-from-production-migration/).
-
----
-
 ## Intro
 
 The previous post left us hanging with a [cliffhanger](https://en.wikipedia.org/wiki/Cliffhanger):

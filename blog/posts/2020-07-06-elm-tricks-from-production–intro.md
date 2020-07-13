@@ -11,10 +11,6 @@ tags:
   - Elm
 ---
 
-Originally posted on the [LunarLogic blog](https://blog.lunarlogic.io/2019/elm-tricks-from-production-intro/).
-
----
-
 We are happy to announce the release of a new version of [AirCasting](http://aircasting.org)!
 
 This is exciting for us because the application not only has a new look and many new features. There's also been a lot of work on the infrastructure, performance and technology.
