@@ -5,6 +5,7 @@ published: true
 author: Riccardo
 cover_image: https://odone.io/images/elm.jpg
 canonical_url: https://blog.lunarlogic.io/2019/elm-tricks-from-production-intro/
+series: Elm Tricks from Production
 tags:
   - Functional Programming
   - Elm
