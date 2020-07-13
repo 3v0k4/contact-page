@@ -83,10 +83,10 @@ main = do
         let description = fromJust . lookupString "description" $ meta
         href <- tweetLink . fold $ [title, "📒", description]
         pandocCompiler'
-          >>= loadAndApplyTemplate "templates/post.html" (constField "tweet" href <> postCtx tags)
+          >>= loadAndApplyTemplate "templates/post.html" (constField "tweet" href <> postCtx env tags)
           >>= saveSnapshot "content"
           >>= loadAndApplyTemplate "templates/post-wrapper.html" randomPostsCtx
-          >>= loadAndApplyTemplate "templates/default.html" (postCtx tags)
+          >>= loadAndApplyTemplate "templates/default.html" (postCtx env tags)
           >>= relativizeUrls
     matchMetadata postsPattern (not . isPublished) $ do
       let draftPath = ("drafts/" <>) . (`replaceExtension` "html") . toFilePath
@@ -100,9 +100,9 @@ main = do
               ]
       compile $
         pandocCompiler'
-          >>= loadAndApplyTemplate "templates/post.html" (postCtx tags)
+          >>= loadAndApplyTemplate "templates/post.html" (postCtx env tags)
           >>= loadAndApplyTemplate "templates/post-wrapper.html" randomPostsCtx
-          >>= loadAndApplyTemplate "templates/default.html" (postCtx tags)
+          >>= loadAndApplyTemplate "templates/default.html" (postCtx env tags)
           >>= relativizeUrls
           >>= (\x -> putDraftUrl x >> pure x)
     tagsRules tags $ \tag pattern_ -> do
@@ -119,7 +119,7 @@ main = do
         categoriesAndTags <- uncurry (<>) <$> getCategoriesAndTags posts
         let sitemapCtx =
               listField "pages" defaultContext (pure pages)
-                <> listField "posts" (dateField "date" "%F" <> postCtx tags) (pure posts)
+                <> listField "posts" (dateField "date" "%F" <> postCtx env tags) (pure posts)
                 <> listField "tags" (tagsCtx Nothing) (traverse makeItem categoriesAndTags)
         makeItem ""
           >>= loadAndApplyTemplate "templates/sitemap.xml" sitemapCtx
@@ -202,7 +202,7 @@ archive env allTags mSelectedTag allPattern filterPattern = do
   let archiveCtx =
         listField "tags" (tagsCtx mSelectedTag) (traverse makeItem tags)
           <> listField "categories" (tagsCtx mSelectedTag) (traverse makeItem categories)
-          <> listField "posts" (postCtx allTags) (pure filteredPosts)
+          <> listField "posts" (postCtx env allTags) (pure filteredPosts)
           <> constField "title" "Archives"
           <> defaultContext
   makeItem ""
@@ -220,9 +220,9 @@ tagsCtx mSelectedTag =
   where
     tagUrl tag = if Just tag == mSelectedTag then "/archive.html" else "/tags/" <> tag <> ".html"
 
-postCtx :: Tags -> Context String
-postCtx tags =
-  listFieldWith "seriesPosts" seriesPostsCtx seriesPosts
+postCtx :: [(String, String)] -> Tags -> Context String
+postCtx env tags =
+  listFieldWith "seriesPosts" seriesPostsCtx (seriesPosts env)
     <> tagsField' "tags" tags
     <> dateField "date" "%B %e, %Y"
     <> defaultContext
@@ -235,10 +235,10 @@ seriesPostsCtx =
     <> field "url" (pure . snd' . itemBody)
     <> field "klass" (pure . trd' . itemBody)
 
-seriesPosts :: Item a -> Compiler [Item Serie]
-seriesPosts item = do
+seriesPosts :: [(String, String)] -> Item a -> Compiler [Item Serie]
+seriesPosts env item = do
   seriesMeta <- fmap (lookupString "series") . getMetadata . itemIdentifier $ item
-  ids <- publishedIds postsPattern
+  ids <- if isDevelopmentEnv env then allIds postsPattern else publishedIds postsPattern
   metas <- traverse getMetadata ids
   routes <- traverse (fmap (toUrl . fromJust) . getRoute) ids
   let toSeriesTriple (meta, route, id_) =
@@ -257,10 +257,15 @@ loadAllPublished env pattern_ = if isDevelopmentEnv env then all else published
   where
     all = loadAll pattern_
     published = publishedIds pattern_ >>= traverse load
-    isDevelopmentEnv env = lookup "HAKYLL_ENV" env == Just "development"
+
+isDevelopmentEnv :: [(String, String)] -> Bool
+isDevelopmentEnv env = lookup "HAKYLL_ENV" env == Just "development"
 
 loadAllSnapshotsPublished :: (Binary a, Typeable a) => Pattern -> Snapshot -> Compiler [Item a]
 loadAllSnapshotsPublished pattern_ snapshot = publishedIds pattern_ >>= traverse (`loadSnapshot` snapshot)
+
+allIds :: MonadMetadata m => Pattern -> m [Identifier]
+allIds = fmap (fmap fst) . getAllMetadata
 
 publishedIds :: MonadMetadata m => Pattern -> m [Identifier]
 publishedIds = fmap (fmap fst . filter (isPublished . snd)) . getAllMetadata
