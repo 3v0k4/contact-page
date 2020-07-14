@@ -49,7 +49,7 @@ In the end, we selected the sessions list to become the first functionality to b
 
 ![Screenshot of AirCasting with the sessions list indicated](/images/aircasting_sessions_list.png)
 
-Commit [4cff375d6b9d83ab58ff16bd69b8069c27eb51d1](https://github.com/HabitatMap/AirCasting/commit/4cff375d6b9d83ab58ff16bd69b8069c27eb51d1) is where the magic happened. In particular, we first replace the list with an empty div:
+Commit [4cff375](https://github.com/HabitatMap/AirCasting/commit/4cff375d6b9d83ab58ff16bd69b8069c27eb51d1) is where the magic happened. In particular, we first replace the list with an empty div:
 
 ```diff
 -      <ul>
@@ -98,7 +98,7 @@ angular.element(document).ready(() => {
 
 In more detail:
 
-- the `angular.element(document).ready()` is needed to wait for the DOM to be safe to manipulate;
+- the `angular.element().ready()` is needed to wait for the DOM to be safe to manipulate;
 - the sessions are still managed by Angular, Elm just displays them; that’s why they are formatted and passed as “flags” (initial values) to the Elm application;
 - since each session in Elm can be selected, we subscribe to the `checkedSession` port. That way, Elm can communicate to JavaScript that a session was selected / deselected which in turns delegates to Angular with `$scope.toggleSession()`;
 - the sessions list is paginated therefore we need to subscribe to `loadMoreSessions`.
@@ -193,7 +193,7 @@ if (process.env.NODE_ENV !== "test") {
 
 Whenever the checkbox to enable / disable the Crowd Map changes, the subscriber to the `toggleCrowdMap` port is notified. Also, whenever the slider is moved by the user, the callback registered to the `updateResolutionPort` port is invoked.
 
-And again, the rest is straightforward Elm! See the commit [d9c2f60280013e399187586dd8b77b3330bfe9fa](https://github.com/HabitatMap/AirCasting/commit/d9c2f60280013e399187586dd8b77b3330bfe9fa) for more details.
+And again, the rest is straightforward Elm! See the commit [d9c2f60](https://github.com/HabitatMap/AirCasting/commit/d9c2f60280013e399187586dd8b77b3330bfe9fa) for more details.
 
 This is the exact same strategy we employed to build the proof of concept. And the same one we repeated for other filters:
 
@@ -203,7 +203,7 @@ This is the exact same strategy we employed to build the proof of concept. And t
 
 ## Merge Elm Applications into One
 
-Eventually, we got to the point where the Elm applications needed to communicate among themselves. That is where we decided to go from a single Angular application with multiple Elm applications on top to a single Elm application with some Angular sprinkled on top. Commit [bbb7a7c74a02e56971f680704058609b6f6c8496](https://github.com/HabitatMap/AirCasting/commit/bbb7a7c74a02e56971f680704058609b6f6c8496) is where it all happened.
+Eventually, we got to the point where the Elm applications needed to communicate among themselves. That is where we decided to go from a single Angular application with multiple Elm applications on top to a single Elm application with some Angular sprinkled on top. Commit [bbb7a7c](https://github.com/HabitatMap/AirCasting/commit/bbb7a7c74a02e56971f680704058609b6f6c8496) is where it all happened.
 
 First of all, we created a JavaScript pack to initialize the single Elm application:
 
