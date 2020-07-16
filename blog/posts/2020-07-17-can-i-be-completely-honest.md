@@ -3,7 +3,7 @@ title: Can I be Completely Honest?
 description: I bombed it. I knew as soon as Grzester started the feedback session with those words. But this was great news. I wasn't looking for a pat in the back, I wanted to improve.
 published: false
 author: Riccardo
-cover_image: https://odone.io/images/TODO.png
+cover_image: https://odone.io/images/bomb.png
 tags:
   - Essential Skills
 ---
