@@ -1,7 +1,7 @@
 ---
-title: Can I be Completely Honest?
+title: Can I be Completely Honest? – A Short Mentoring Story
 description: I bombed it. I knew as soon as Grzester started the feedback session with those words. But this was great news. I wasn't looking for a pat in the back, I wanted to improve.
-published: false
+published: true
 author: Riccardo
 cover_image: https://odone.io/images/bomb.png
 tags:
