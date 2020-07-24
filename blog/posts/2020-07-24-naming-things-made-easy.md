@@ -37,4 +37,4 @@ I have a secret. **The code I write sucks until I edit it**. I name things with 
 
 ## Back to the Office
 
-I wish I had a picture of me, Mateusz and the whiteboard to share here. But it's more than enough to have such a great story in my heart. I like to think that, given our shared passion for whisky, we kinda sticked to the "write drunk, edit sober" plan. And it worked wonders. Thanks Mat!
+I wish I had a picture of me, [Mateusz](https://www.linkedin.com/in/luterek/) and the whiteboard to share here. But it's more than enough to have such a great story in my heart. I like to think that, given our shared passion for whisky, we kinda sticked to the "write drunk, edit sober" plan. And it worked wonders. Thanks Mat!
