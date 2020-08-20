@@ -1,6 +1,6 @@
 ---
 title: Code Quality is Free (if You Do it Right)
-description: "The secret is simple: the first version of the code must be as close to perfection as possible."
+description: "The secret is simple: the first version of the code must be as close to perfection as possible. Here's how to do it."
 published: true
 author: Riccardo
 cover_image: https://odone.io/images/hill.jpg
