@@ -100,4 +100,4 @@ viewSessionsOrSelectedSession selectedSession =
 
 In other words, if the request for the selected session is not ongoing, show all the sessions. If the selected session is loading show its view while waiting for the data to come. If the request was successful show the selected session view for it. If the request failed show the error message.
 
-If you are not using Elm you can still [apply the pattern successfully](https://www.youtube.com/watch?v=RQ5BEaRD7V0). Unfortunately, there won’t be a nice compiler helping guaranteeing an error free application 😉.
+If you are not using Elm you can still [apply the pattern successfully](https://www.youtube.com/watch?v=TjxicgU0rQQ). Unfortunately, there won’t be a nice compiler helping guaranteeing an error free application 😉.
