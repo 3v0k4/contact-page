@@ -94,6 +94,6 @@ I explored the problem until I grokked it, I came up with validated and performa
 
 ## Outro
 
-Nowadays, I would have deferred coding more. You know what I would have done instead? You bet it is more whiteboarding. Candidate solutions were still too abstract. Today I would have used [Pipelines](https://odone.io/posts/2020-06-29-decomposing-features-into-pipelines.html) and made sure to get [Code Quality for Free](https://odone.io/posts/2020-08-20-code-quality-is-free-if-you-do-it-right.html).
+Nowadays, I would have deferred coding more. You know what I would have done instead? You bet it is more whiteboarding. Candidate solutions were still too abstract. Today I would have [Decomposed the Feature Into a Pipeline](https://odone.io/posts/2020-06-29-decomposing-features-into-pipelines.html) and made sure to get [Code Quality for Free](https://odone.io/posts/2020-08-20-code-quality-is-free-if-you-do-it-right.html).
 
 Besides consuming more markers, I would also overcommunicate more throughout the process. Unfortunately, it's **not common to see a developer spending time on the whiteboard**. Thus, it's better to raise the objection and explain what's going on. I highlight the complexity of the problem by making the shake list visible. I employ the process to propose shortcuts or better alternatives. I advertise the many silly mistakes I avoided. I show by example that my work is faster and better by the nature of my process.
