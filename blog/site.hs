@@ -126,7 +126,7 @@ main = do
     match "index.html" $ do
       route idRoute
       compile $ do
-        let indexCtx = constField "title" "Home" <> constField "index" "" <> defaultContext
+        let indexCtx = constField "title" "Riccardo Odone - Home" <> constField "index" "" <> defaultContext
         getResourceBody
           >>= applyAsTemplate indexCtx
           >>= loadAndApplyTemplate "templates/default.html" indexCtx
@@ -203,7 +203,7 @@ archive env allTags mSelectedTag allPattern filterPattern = do
         listField "tags" (tagsCtx mSelectedTag) (traverse makeItem tags)
           <> listField "categories" (tagsCtx mSelectedTag) (traverse makeItem categories)
           <> listField "posts" (postCtx env allTags) (pure filteredPosts)
-          <> constField "title" "Archives"
+          <> constField "title" "Riccardo Odone - Archives"
           <> defaultContext
   makeItem ""
     >>= loadAndApplyTemplate "templates/archive.html" archiveCtx
