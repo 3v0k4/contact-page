@@ -60,4 +60,4 @@ Great, there are no blockers. On the plus side, there are a ton of pros:
 
 - We are the users. Performance can be measured into a single number, but UX is interaction, not math, at the end of the day. By putting ourselves in the shoes of the customers, we can make better decisions.
 
-This looks promising. I'll let you know in the [newsletter](http://odone.io/#newsletter) whether I crashed and burned or if I can move to rant about the next legacy issue in this codebase.
+This looks promising. I'll let you know in the [newsletter](https://odone.io/#newsletter) whether I crashed and burned or if I can move to rant about the next legacy issue in this codebase.
