@@ -6,6 +6,7 @@ author: Riccardo
 cover_image: https://odone.io/images/camping.jpg
 tags:
   - Essential Skills
+series: Permanent Knowledge
 ---
 
 It's a sunny day, like many others. You just got to the trash room to throw away the rubbish. Something strange jumps to your eyes as soon as you open one of the bins. It's a metal box. Lifting it up, you notice it ticks the seconds, and it displays a countdown on a red LED screen. Currently, it's marking 01:14 and going down. A jolt of adrenaline starts circulating in your blood: **it's a bomb**.

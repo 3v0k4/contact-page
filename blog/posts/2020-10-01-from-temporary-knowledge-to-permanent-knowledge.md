@@ -6,6 +6,7 @@ author: Riccardo
 cover_image: https://odone.io/images/old-books.jpg
 tags:
   - Essential Skills
+series: Permanent Knowledge
 ---
 
 My professional career started under the wings of two exceptional people: [Ania](https://twitter.com/szynszyliszys) and [Marcin](https://www.linkedin.com/in/marcinkostrzewa). They taught me something that stayed with me ever since.
