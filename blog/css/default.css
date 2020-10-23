@@ -155,6 +155,15 @@ a.read-more:hover {
   color: black;
 }
 
+.newsletter-container a {
+  color: white;
+  text-decoration: underline;
+}
+
+.newsletter-container a:hover {
+  text-decoration: none;
+}
+
 h1 {
   font-size: 2.6rem;
 }
