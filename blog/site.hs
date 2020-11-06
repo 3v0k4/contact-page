@@ -126,7 +126,12 @@ main = do
     match "index.html" $ do
       route idRoute
       compile $ do
-        let indexCtx = constField "title" "Riccardo Odone - Home" <> constField "index" "" <> defaultContext
+        posts <- fmap (take 3) . recentFirst =<< loadAllPublished env postsPattern
+        let indexCtx =
+              listField "posts" (dateField "date" "%F" <> postCtx env tags) (pure posts)
+                <> constField "title" "Riccardo Odone - Home"
+                <> constField "index" ""
+                <> defaultContext
         getResourceBody
           >>= applyAsTemplate indexCtx
           >>= loadAndApplyTemplate "templates/default.html" indexCtx

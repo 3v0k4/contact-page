@@ -1,55 +1,67 @@
-<div class="col-sm-8 col-md-8 col-lg-6 mx-auto">
-  <div class="text-center">
-    <h2>Ciao, I'm Riccardo!</h2>
-
-    <p>
-      I ramble about software on the <a href="/archive.html">blog</a> and on <a href="https://www.youtube.com/channel/UCqoYTAX09Ico3T_NCRy-iSg" target="_blank" rel="noopener">YouTube</a>.
-    </p>
-
-    <p>
-      I like <span class="pink">pink</span> and <a href="http://my.pronoun.is/he" target="_blank" rel="noopener">my.pronoun.is/he</a>.
-      <br />
-      I'm a Maverick & Leader at <a href="https://lunarlogic.io/" target="_blank" rel="noopener">Lunar Logic</a>.
-    </p>
-
-    <ul class="no-list-style logos">
-      <li>
-        <a href="https://www.youtube.com/channel/UCqoYTAX09Ico3T_NCRy-iSg" class="logo logo-youtube" target="_blank" rel="noopener">YouTube</a>
-      </li>
-
-      <li>
-        <a href="https://twitter.com/riccardoodone" class="logo logo-twitter" target="_blank" rel="noopener">Twitter</a>
-      </li>
-
-      <li>
-        <a href="https://dev.to/riccardoodone" class="logo logo-devto" target="_blank" rel="noopener">DevTO</a>
-      </li>
-
-      <li>
-        <a href="https://medium.com/@riccardoodone" class="logo logo-medium" target="_blank" rel="noopener">Medium</a>
-      </li>
-
-      <li>
-        <a href="https://www.facebook.com/riccardo.odone" class="logo logo-facebook" target="_blank" rel="noopener">Facebook</a>
-      </li>
-
-      <li>
-        <a href="https://it.linkedin.com/in/riccardoodone" class="logo logo-linkedin" target="_blank" rel="noopener">Linkedin</a>
-      </li>
-
-      <li>
-        <a href="https://github.com/3v0k4" class="logo logo-github" target="_blank" rel="noopener">Github</a>
-      </li>
-
-      <li>
-        <a href="https://www.goodreads.com/review/list/75221217-riccardo?shelf=read&sort=rating" class="logo logo-goodreads" target="_blank" rel="noopener">GoodReads</a>
-      </li>
-    </ul>
-
-    <p>
-      This is powered by <a href="http://jaspervdj.be/hakyll" target="_blank" rel="noopener">Hakyll</a> and on <a href="https://github.com/3v0k4/contact-page" target="_blank" rel="noopener">Github</a>.
-    </p>
+<div class="hero">
+  <div class="hero-content">
+    <h1 class="hero-heading">
+      Ciao, I'm Riccardo!
+      <br/>
+      I craft web software and lead as a maverick.
+    </h1>
+    <h2 class="hero-subheading">
+      My pronoun is he and I like <span class="pink">pink</span>.
+    </h2>
   </div>
+</div>
+
+<div class="col-sm-8 col-md-8 col-lg-6 mx-auto mt-4">
+  <h2>Latest from the <a href="/archive.html">blog</a></h2>
+
+  <ul class="no-list-style">
+    $for(posts)$
+      <li class="my-4">
+        <div class="smaller text-secondary font-weight-light">$date$</div>
+        <div><a class="post-title" href="$url$">$title$</a></div>
+        <p class="text-secondary">$description$</p>
+      </li>
+    $endfor$
+  </ul>
+
+  <h2>I'm also on</h2>
+  <ul class="no-list-style logos">
+    <li>
+      <a href="https://www.youtube.com/channel/UCqoYTAX09Ico3T_NCRy-iSg" class="logo logo-youtube" target="_blank" rel="noopener">YouTube</a>
+    </li>
+
+    <li>
+      <a href="https://twitter.com/riccardoodone" class="logo logo-twitter" target="_blank" rel="noopener">Twitter</a>
+    </li>
+
+    <li>
+      <a href="https://dev.to/riccardoodone" class="logo logo-devto" target="_blank" rel="noopener">DevTO</a>
+    </li>
+
+    <li>
+      <a href="https://medium.com/@riccardoodone" class="logo logo-medium" target="_blank" rel="noopener">Medium</a>
+    </li>
+
+    <li>
+      <a href="https://www.facebook.com/riccardo.odone" class="logo logo-facebook" target="_blank" rel="noopener">Facebook</a>
+    </li>
+
+    <li>
+      <a href="https://it.linkedin.com/in/riccardoodone" class="logo logo-linkedin" target="_blank" rel="noopener">Linkedin</a>
+    </li>
+
+    <li>
+      <a href="https://github.com/3v0k4" class="logo logo-github" target="_blank" rel="noopener">Github</a>
+    </li>
+
+    <li>
+      <a href="https://www.goodreads.com/review/list/75221217-riccardo?shelf=read&sort=rating" class="logo logo-goodreads" target="_blank" rel="noopener">GoodReads</a>
+    </li>
+  </ul>
+
+  <p class="mt-5">
+    This is powered by <a href="http://jaspervdj.be/hakyll" target="_blank" rel="noopener">Hakyll</a> and on <a href="https://github.com/3v0k4/contact-page" target="_blank" rel="noopener">Github</a>.
+  </p>
 </div>
 
 $partial("templates/newsletter.html")$

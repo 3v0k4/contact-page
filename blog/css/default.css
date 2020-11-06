@@ -25,6 +25,54 @@ header {
   padding: 10px 0;
 }
 
+.hero {
+  display: flex;
+  background-position: 70% 0%;
+  height: 700px;
+  background-image: url("/images/hero.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.hero-content {
+  margin-left: 5%;
+  margin-right: 5%;
+  color: white;
+  text-shadow: 1px 1px 2px #000;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+@media all and (min-width: 992px) {
+  .hero-content {
+    max-width: 50%;
+    text-shadow: none;
+  }
+}
+
+.hero-heading {
+  font-size: 3rem;
+  line-height: 1.2;
+  font-weight: 200;
+  text-transform: uppercase;
+}
+
+.hero-subheading {
+  font-weight: 150;
+  margin-top: 3rem;
+}
+
+@media all and (min-width: 400px) {
+  .hero-heading {
+    font-size: 4rem;
+  }
+}
+
+.pink {
+  color: var(--pink);
+  text-shadow: 1px 1px 1px white;
+}
+
 .no-list-style {
   list-style-type: none;
   padding-left: 0;
@@ -106,10 +154,6 @@ a.post-title {
   margin: auto;
 }
 
-.pink {
-  color: var(--pink);
-}
-
 .badge-white {
   background-color: white;
   color: var(--blue);
@@ -181,12 +225,6 @@ article h2 {
 
 .smaller {
   font-size: 1rem;
-}
-
-@media (min-width: 320px) {
-  body {
-    font-size: 1.3rem;
-  }
 }
 
 div.sourceCode {
