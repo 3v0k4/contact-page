@@ -26,9 +26,7 @@ header {
 }
 
 .hero {
-  display: flex;
   background-position: 70% 0%;
-  height: 700px;
   background-image: url("/images/hero.png");
   background-size: cover;
   background-repeat: no-repeat;
@@ -39,8 +37,8 @@ header {
   margin-right: 5%;
   color: white;
   text-shadow: 1px 1px 2px #000;
-  margin-top: auto;
-  margin-bottom: auto;
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
 
 @media all and (min-width: 992px) {
