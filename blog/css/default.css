@@ -30,21 +30,35 @@ header {
   background-image: url("/images/hero.png");
   background-size: cover;
   background-repeat: no-repeat;
+  position: relative;
 }
 
 .hero-content {
-  margin-left: 5%;
-  margin-right: 5%;
+  padding-left: 5%;
+  padding-right: 5%;
   color: white;
-  text-shadow: 1px 1px 2px #000;
   padding-top: 100px;
   padding-bottom: 100px;
+}
+
+.hero-content::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background: black;
+  opacity: 0.2;
 }
 
 @media all and (min-width: 992px) {
   .hero-content {
     max-width: 50%;
-    text-shadow: none;
+  }
+  .hero-content::before {
+    background: none;
+    opacity: 1;
   }
 }
 
@@ -208,10 +222,12 @@ a.read-more:hover {
 
 h1 {
   font-size: 2.6rem;
+  position: relative;
 }
 
 h2 {
   font-size: 2.2rem;
+  position: relative;
 }
 
 article h2 {
