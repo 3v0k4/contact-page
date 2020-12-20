@@ -158,7 +158,13 @@ data Card = Card
 instance FromJSON Card
 ```
 
-Since [`HttpResponse`](https://hackage.haskell.org/package/req-3.8.0/docs/Network-HTTP-Req.html#t:HttpResponse) has an instance for `FromJSON a => HttpResponse (JsonResponse a)`, we just need to change one type:
+Since [`HttpResponse`](https://hackage.haskell.org/package/req-3.8.0/docs/Network-HTTP-Req.html#t:HttpResponse) has an instance for
+
+```hs
+FromJSON a => HttpResponse (JsonResponse a)
+```
+
+we just need to change one type:
 
 ```hs
 httpGet :: IO ()
