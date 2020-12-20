@@ -918,3 +918,5 @@ httpPost opts card =
     liftIO $ threadDelay 100000
     liftIO $ print (responseBody r :: Value)
 ```
+
+Thanks [Advent of Haskell](https://adventofhaskell.com) for featuring this article.
