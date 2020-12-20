@@ -1,7 +1,7 @@
 ---
 title: Scripting the Hell out of Trello with Haskell
 description: Want to use Haskell for something real but don't want to risk it at work? This is how I do it.
-published: false
+published: true
 author: Riccardo
 cover_image: https://odone.io/images/bash.jpg
 tags:
