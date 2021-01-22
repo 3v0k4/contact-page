@@ -1,7 +1,7 @@
 #!/usr/bin/env stack
 {- stack
   script
-  --resolver lts-14.17
+  --resolver lts-16.31
   --package wreq
   --package optparse-applicative
   --package frontmatter
@@ -21,7 +21,7 @@
 
 import Control.Lens hiding ((.=))
 import Data.Aeson
-import Data.Aeson.Lens (_String, key)
+import Data.Aeson.Lens (key, _String)
 import Data.ByteString
 import Data.ByteString.Char8
 import Data.Foldable
@@ -34,24 +34,22 @@ import Network.Wreq
 import Options.Applicative
 import System.FilePath.Posix
 
-data Front
-  = Front
-      { title :: Text,
-        description :: Text,
-        tags :: [Text]
-      }
+data Front = Front
+  { title :: Text,
+    description :: Text,
+    tags :: [Text]
+  }
   deriving (Show, Generic, FromJSON)
 
-data MediumPost
-  = MediumPost
-      { title :: Text,
-        tags :: [Text],
-        canonicalUrl :: Text,
-        publishStatus :: Text,
-        content :: Text,
-        contentFormat :: Text,
-        notifyFollowers :: Bool
-      }
+data MediumPost = MediumPost
+  { title :: Text,
+    tags :: [Text],
+    canonicalUrl :: Text,
+    publishStatus :: Text,
+    content :: Text,
+    contentFormat :: Text,
+    notifyFollowers :: Bool
+  }
   deriving (Show, Generic)
 
 instance ToJSON MediumPost where

@@ -1,7 +1,7 @@
 #!/usr/bin/env stack
 {- stack
   script
-  --resolver lts-14.17
+  --resolver lts-16.31
   --package directory
   --package time
 -}

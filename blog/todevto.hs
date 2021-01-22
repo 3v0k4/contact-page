@@ -1,7 +1,7 @@
 #!/usr/bin/env stack
 {- stack
   script
-  --resolver lts-14.17
+  --resolver lts-16.31
   --package wreq
   --package optparse-applicative
   --package frontmatter
@@ -33,25 +33,23 @@ import Network.Wreq
 import Options.Applicative
 import System.FilePath.Posix
 
-data Front
-  = Front
-      { title :: Text,
-        description :: Text,
-        tags :: [Text],
-        cover_image :: Maybe Text
-      }
+data Front = Front
+  { title :: Text,
+    description :: Text,
+    tags :: [Text],
+    cover_image :: Maybe Text
+  }
   deriving (Show, Generic, FromJSON)
 
-data DevPost
-  = DevPost
-      { title :: Text,
-        description :: Text,
-        tags :: [Text],
-        canonical_url :: Text,
-        published :: Bool,
-        body_markdown :: Text,
-        cover_image :: Maybe Text
-      }
+data DevPost = DevPost
+  { title :: Text,
+    description :: Text,
+    tags :: [Text],
+    canonical_url :: Text,
+    published :: Bool,
+    body_markdown :: Text,
+    cover_image :: Maybe Text
+  }
   deriving (Show, Generic)
 
 instance ToJSON DevPost where

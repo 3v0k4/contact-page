@@ -1,7 +1,7 @@
 #!/usr/bin/env stack
 {- stack
  script
-  --resolver nightly-2020-01-06
+  --resolver lts-16.31
   --package composition-prelude
   --package htoml-megaparsec
   --package frontmatter
@@ -36,18 +36,16 @@ import System.Directory
 import System.FilePath.Posix
 import Web.Tweet
 
-data Opts
-  = Opts
-      { creds :: String,
-        post :: String
-      }
+data Opts = Opts
+  { creds :: String,
+    post :: String
+  }
 
-data Front
-  = Front
-      { title :: Text,
-        description :: Text,
-        tags :: [Text]
-      }
+data Front = Front
+  { title :: Text,
+    description :: Text,
+    tags :: [Text]
+  }
   deriving (Show, Generic, FromJSON)
 
 main :: IO ()
