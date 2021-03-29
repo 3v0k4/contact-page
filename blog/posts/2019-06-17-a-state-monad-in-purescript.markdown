@@ -271,11 +271,12 @@ manip = do
 
 main :: Effect Unit
 main = do
-  let stack           = 3 : 2 : 1 : Nil
-      stack4          = push 4 stack
-      Tuple m4 stack3 = pop stack4
-      Tuple m3 stack2 = pop stack3
-    logShow stack
+  let
+    stack = 3 : 2 : 1 : Nil
+    stack4 = push 4 stack
+    Tuple m4 stack3 = pop stack4
+    Tuple m3 stack2 = pop stack3
+  logShow stack
   -- (3 : 2 : 1 : Nil)
   logShow stack4
   -- (4 : 3 : 2 : 1 : Nil)
@@ -287,9 +288,9 @@ main = do
   -- (Just 3)
   logShow stack2
   -- (2 : 1 : Nil)
-  logShow $ runStat3 manip (3 : 2 : 1 : Nil)
+  logShow $ runStat3 m4nip (3 : 2 : 1 : Nil)
   -- (2 : 1 : Nil)
-  logShow $ runState manip' (3 : 2 : 1 : Nil)
+  logShow $ runState manip (3 : 2 : 1 : Nil)
   -- (2 : 1 : Nil)
 
 ```
