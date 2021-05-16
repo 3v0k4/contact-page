@@ -16,3 +16,8 @@
     dest: /etc/nginx/sites-enabled/default
   notify:
     - reload nginx
+
+- name: "logrotate nginx logs"
+  template:
+    src: logrotate.j2
+    dest: /etc/logrotate.d/nginx
