@@ -225,6 +225,11 @@ h1 {
   position: relative;
 }
 
+h1 a, h2 a, h3 a {
+  color: inherit;
+  text-decoration: underline;
+}
+
 h2 {
   font-size: 2.2rem;
   position: relative;
