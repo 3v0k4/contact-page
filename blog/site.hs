@@ -126,9 +126,11 @@ main = do
     match "index.html" $ do
       route idRoute
       compile $ do
-        posts <- fmap (take 3) . recentFirst =<< loadAllPublished env postsPattern
+        posts <- recentFirst =<< loadAllPublished env postsPattern
+        (categories_, tags_) <- getCategoriesAndTags posts
         let indexCtx =
-              listField "posts" (dateField "date" "%F" <> postCtx env tags) (pure posts)
+              listField "tags" (tagsCtx Nothing) (traverse makeItem tags_)
+                <> listField "categories" (tagsCtx Nothing) (traverse makeItem categories_)
                 <> constField "title" "Riccardo Odone - Home"
                 <> constField "index" ""
                 <> defaultContext
