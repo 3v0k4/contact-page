@@ -10,6 +10,16 @@
     name: nginx
     state: started
 
+- name: "add mjs to mimes"
+  lineinfile:
+    path: /etc/nginx/nginx.conf
+    insertafter: "include /etc/nginx/mime.types;"
+    line: "types { application/javascript mjs; }"
+    firstmatch: yes
+    state: present
+  notify:
+    - reload nginx
+
 - name: "nginx default configuration"
   copy:
     src: default

@@ -16,3 +16,8 @@ rsync \
   _site/ riccardo@odone.io:/usr/share/nginx/html/
 git checkout -- templates/default.html
 cd -
+rsync \
+  --rsync-path="sudo rsync" \
+  -a \
+  --delete-excluded \
+  curves riccardo@odone.io:/usr/share/nginx/html/
