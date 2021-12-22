@@ -508,3 +508,7 @@ blockquote.pullquote {
 strong {
   font-weight: 600;
 }
+
+.mt-30 {
+  margin-top: 30px;
+}
