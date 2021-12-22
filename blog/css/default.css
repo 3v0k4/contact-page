@@ -71,7 +71,7 @@ header {
 
 .hero-subheading {
   font-weight: 150;
-  margin-top: 3rem;
+  margin-top: 40px;
 }
 
 @media all and (min-width: 400px) {
@@ -155,10 +155,10 @@ a.post-title {
 }
 
 .btn-sm {
-  padding: .4rem .3rem;
+  padding: 7px 5px;
   font-size: .875rem;
   line-height: 1;
-  border-radius: .2rem;
+  border-radius: 3px;
   margin-right: 5px;
 }
 
@@ -239,12 +239,12 @@ article h2 {
   font-size: 1.5rem;
   text-align: center;
   text-transform: uppercase;
-  margin-bottom: 1rem;
+  margin-bottom: 20px;
 }
 
 article h3 {
   font-size: 1.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 20px;
 }
 
 .smaller {
@@ -286,7 +286,7 @@ img {
 }
 
 .accordion {
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
 input[name="accordion"] {
