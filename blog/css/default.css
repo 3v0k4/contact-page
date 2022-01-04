@@ -203,6 +203,20 @@ a.post-title {
   background-color: var(--blue);
 }
 
+.read-more-wrapper {
+  margin-bottom: 3rem;
+}
+
+.read-more-wrapper:last-of-type {
+  margin-bottom: 0;
+}
+
+@media all and (min-width: 768px) {
+  .read-more-wrapper {
+    margin-bottom: 0;
+  }
+}
+
 a.read-more {
   color: black;
 }
