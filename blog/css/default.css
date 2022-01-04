@@ -530,3 +530,7 @@ strong {
 .fs-bigger {
   font-size: 1.25rem;
 }
+
+.white-space-normal {
+   white-space: normal;
+}
