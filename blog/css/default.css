@@ -512,3 +512,7 @@ strong {
 .mt-30 {
   margin-top: 30px;
 }
+
+.fs-bigger {
+  font-size: 1.25rem;
+}

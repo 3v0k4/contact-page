@@ -1,4 +1,4 @@
-<div id="newsletter" class="newsletter-container text-center py-4 mt-5">
+<div id="newsletter" class="newsletter-container text-center py-5 mt-5">
   <h2>Tired of RELEARNING webdev stuff every other week?</h2>
   <p>
     I help you cultivate timeless skills about software development.
@@ -11,13 +11,16 @@
     method="post"
     target="popupwindow"
     onsubmit="window.open('https://buttondown.email/riccardo.odone', 'popupwindow')"
-    class="my-3"
+    class="my-5"
   >
-    <div class="col-12 col-sm-8 col-md-6 col-xl-4 input-group input-group-lg mx-auto">
-      <label class="sr-only" for="bd-email">Email</label>
-      <input placeholder="What's your email?" class="input-lg form-control rounded" type="email" name="email" id="bd-email" required>
+    <div class="col-12 col-sm-8 col-md-6 col-xl-4 mx-auto">
+      <div class="text-left"><label for="bd-email" class="font-weight-bold">Email</label></div>
+      <input class="input-lg form-control fs-bigger" type="email" name="email" id="bd-email" required>
       <input type="hidden" value="1" name="embed"></input>
-      <div class="input-group-append"><input class="btn btn-primary" type="submit" value="YES!"></input></div>
+
+      <div class="mt-4 text-left">
+        <input class="btn btn-primary fs-bigger w-100" type="submit" value="Send me evergreen software wisdom!"></input>
+      </div>
     </div>
   </form>
 
