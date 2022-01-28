@@ -29,6 +29,27 @@
     </div>
   </div>
 
+  <h2 class="mt-5">I worked on</h2>
+  <ul class="no-list-style projects">
+    $for(projects)$
+      <li class="mt-5 kard">
+        <div class="kard__main">
+          <a href="$url$" target="_blank" rel="noopener">
+            <h3 class="link">$name$</h3>
+          </a>
+          <p>$description$</p>
+          <p>$details$</p>
+        </div>
+
+        <ul class="no-list-style">
+          $for(techs)$
+            <li class="tech">$tech$</li>
+          $endfor$
+        </ul>
+      </li>
+    $endfor$
+  </ul>
+
   <h2 class="mt-5">I'm also on</h2>
   <ul class="no-list-style logos mt-4">
     <li>

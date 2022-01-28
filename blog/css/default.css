@@ -116,6 +116,14 @@ a:hover {
   color: var(--pink);
 }
 
+.link {
+  color: var(--blue);
+}
+
+.link:hover {
+  color: var(--pink);
+}
+
 a.post-title {
   font-size: 1.7rem;
 }
@@ -533,4 +541,39 @@ strong {
 
 .white-space-normal {
    white-space: normal;
+}
+
+.projects {
+  display: flex;
+  flex-flow: row wrap;
+  margin-top: -1.5rem;
+}
+
+@media all and (min-width: 992px) {
+  .projects {
+    justify-content: space-between;
+  }
+}
+
+.kard {
+  display: flex;
+  flex-direction: column;
+  flex: 0 1 100%;
+}
+
+@media all and (min-width: 992px) {
+  .kard {
+    flex: 0 1 49%;
+  }
+}
+
+.kard__main {
+  flex: 1;
+}
+
+.tech {
+  color: var(--pink);
+  display: inline-block;
+  font-size: 0.875rem;
+  margin-right: 10px;
 }
