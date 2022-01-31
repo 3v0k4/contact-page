@@ -288,6 +288,20 @@ projects =
     , details = "Six-week email course for diabetic developers."
     , techs = ["Copywriting", "Diabetes"]
     }
+  , Project
+    { name = "Insulin and Food"
+    , url = "https://odone.io/curves"
+    , description = "Visualization of the impact of insulin and food on your blood sugars."
+    , details = "Insulin and food is a matching game and you will be wrong on either dosing or timing. Most likely, both."
+    , techs = ["Canvas", "WebComponents", "Diabetes"]
+    }
+  , Project
+    { name = "Yesod.Auth.Dummy"
+    , url = "https://github.com/yesodweb/yesod/pull/1619"
+    , description = "Contribution to Haskell Yesod."
+    , details = "I added JSON support to Yesod.Auth.Dummy."
+    , techs = ["Haskell", "Yesod"]
+    }
   ]
 
 postCtx :: [(String, String)] -> Tags -> Context String
