@@ -7,3 +7,7 @@ blog/_site
 
 .DS_Store
 dist-newstyle/
+
+xpath/node_modules/
+xpath/public/index.js
+xpath/yarn-error.log
