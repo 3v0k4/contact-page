@@ -5,5 +5,9 @@ server {
   error_page 404 /404.html;
   server_name {{ domain }};
 
+  {% for redirect in redirects %}
+  rewrite ^{{ redirect.from }}(.*)$ {{ redirect.to }} redirect;
+  {% endfor %}
+
   include snippets/ssl-params;
 }

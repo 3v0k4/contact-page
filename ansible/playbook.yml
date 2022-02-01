@@ -18,7 +18,10 @@
     - send-only-smtp
     - firewall
     - nginx
-    - letsencrypt-nginx
+    - role: letsencrypt-nginx
+      redirects:
+        - { from: "/newsletter", to: "/#newsletter" }
+        - { from: "/tips", to: "https://ko-fi.com/odone" }
     - user
     - logwatch
     - goaccess
