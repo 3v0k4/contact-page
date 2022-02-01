@@ -1,4 +1,4 @@
-!#/usr/bin/env bash
+#!/usr/bin/env bash
 set -euxo pipefail
 
 if [[ ! -z $(git status -s) ]]
