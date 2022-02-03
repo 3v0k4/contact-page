@@ -9,5 +9,9 @@ server {
   rewrite ^{{ redirect.from }}(.*)$ {{ redirect.to }} redirect;
   {% endfor %}
 
+  location ~ ^/.+\.pdf$ {
+    expires -1;
+  }
+
   include snippets/ssl-params;
 }
