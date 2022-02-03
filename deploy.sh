@@ -39,3 +39,9 @@ rsync \
   public/ riccardo@odone.io:/usr/share/nginx/html/xpath/
 git checkout public/index.html
 cd -
+
+rsync \
+  --rsync-path="sudo rsync" \
+  -a \
+  timeless-software-wisdom.pdf \
+  riccardo@odone.io:/usr/share/nginx/html/
