@@ -428,7 +428,7 @@ by [Justin Searls](https://twitter.com/searls)
 
 Is there anything we can do to make legacy Ruby more maintainable?
 
-That question led me to this talk. In it, I introduces a new gem that we designed to help wrangle legacy refactors. It’s called Suture, and along with providing some interesting functionality to make refactoring less mysterious and scary, it also prescribes a clear, careful, and repeatable workflow for increasing our confidence when changing legacy code.
+That question led me to this talk. In it, I introduce a new gem that we designed to help wrangle legacy refactors. It’s called Suture, and along with providing some interesting functionality to make refactoring less mysterious and scary, it also prescribes a clear, careful, and repeatable workflow for increasing our confidence when changing legacy code.
 
 # Rust
 
