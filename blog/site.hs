@@ -302,6 +302,20 @@ projects =
     , details = "I added JSON support to Yesod.Auth.Dummy."
     , techs = ["Haskell", "Yesod"]
     }
+  , Project
+    { name = "SoCraTes"
+    , url = "https://www.socrates-conf.de"
+    , description = "International (Un)Conference for Software Craft and Testing."
+    , details = "I co-organized in 2018 and 2019."
+    , techs = ["Lead"]
+    }
+  , Project
+    { name = "GDCR"
+    , url = "https://www.facebook.com/events/1785896421544978/"
+    , description = "Global Day of Coderetreat Kraków."
+    , details = "I co-organized in 2019."
+    , techs = ["Lead"]
+    }
   ]
 
 postCtx :: [(String, String)] -> Tags -> Context String
