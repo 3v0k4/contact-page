@@ -131,7 +131,6 @@ main = do
         let indexCtx =
               listField "tags" (tagsCtx Nothing) (traverse makeItem tags_)
                 <> listField "categories" (tagsCtx Nothing) (traverse makeItem categories_)
-                <> listField "projects" projectsCtx (traverse makeItem projects)
                 <> constField "title" "Riccardo Odone - Home"
                 <> constField "index" ""
                 <> defaultContext
@@ -227,96 +226,6 @@ tagsCtx mSelectedTag =
     <> field "count" (pure . show . fst' . itemBody)
   where
     tagUrl tag = if Just tag == mSelectedTag then "/archive.html" else "/tags/" <> tag <> ".html"
-
-data Project = Project
-  { name :: String
-  , url :: String
-  , description :: String
-  , details :: String
-  , techs :: [String]
-}
-
-projectsCtx :: Context Project
-projectsCtx =
-  field "name" (pure . name . itemBody)
-    <> field "url" (pure . url . itemBody)
-    <> field "description" (pure . description . itemBody)
-    <> field "details" (pure . details . itemBody)
-    <> listFieldWith "techs" (field "tech" (pure . itemBody)) (traverse makeItem . techs . itemBody)
-
-projects :: [Project]
-projects =
-  [ Project
-    { name = "Rictionary"
-    , url = "http://rictionary.odone.io/"
-    , description = "I created Rictionary to help me survive with Polish."
-    , details = "I used xpaths to scrape stuff. Also, I designed and styled it."
-    , techs = ["Rails", "JavaScript", "Design", "Heroku"]
-    }
-  , Project
-    { name = "BarBack"
-    , url = "https://github.com/3v0k4/bar_back"
-    , description = "BarBack is the Rails Console for non-technical people."
-    , details = "I crafted it from mood board to Rails Engine."
-    , techs = ["Rails", "JavaScript"]
-    }
-  , Project
-    { name = "AirCasting"
-    , url = "https://habitatmap.org/aircasting"
-    , description = "AirCasting is one of the largest open-source databases of air quality measurements."
-    , details = "I lead the team to a new design, updates to the Android and iOS apps, and rescue of the legacy web app."
-    , techs = ["Lead", "Rails", "Elm", "Ansible"]
-    }
-  , Project
-    { name = "OrderNova"
-    , url = "https://ordernova.com/"
-    , description = "OrderNova is an ecommerce, in-store, and wholesale bakery order management."
-    , details = "I took over as a product owner after a failed launch, salvaged the legacy codebase, and grew it to USD 1000 MRR."
-    , techs = ["Product", "Rails", "TypeScript", "Angular"]
-    }
-  , Project
-    { name = "Hypoguide"
-    , url = "https://hypoguide.ch/"
-    , description = "Hypoguide is an online mortgage application platform."
-    , details = "I developed the app and lead the team until it was acquired."
-    , techs = ["Lead", "Rails", "React"]
-    }
-  , Project
-    { name = "Increase your TIR"
-    , url = "https://tir.odone.io"
-    , description = "Increase your Time In Range by 10% in six weekly iterations."
-    , details = "Six-week email course for diabetic developers."
-    , techs = ["Copywriting", "Diabetes"]
-    }
-  , Project
-    { name = "Insulin and Food"
-    , url = "https://odone.io/curves"
-    , description = "Visualization of the impact of insulin and food on your blood sugars."
-    , details = "Insulin and food is a matching game and you will be wrong on either dosing or timing. Most likely, both."
-    , techs = ["Canvas", "WebComponents", "Diabetes"]
-    }
-  , Project
-    { name = "Yesod.Auth.Dummy"
-    , url = "https://github.com/yesodweb/yesod/pull/1619"
-    , description = "Contribution to Haskell Yesod."
-    , details = "I added JSON support to Yesod.Auth.Dummy."
-    , techs = ["Haskell", "Yesod"]
-    }
-  , Project
-    { name = "SoCraTes"
-    , url = "https://www.socrates-conf.de"
-    , description = "International (Un)Conference for Software Craft and Testing."
-    , details = "I co-organized in 2018 and 2019."
-    , techs = ["Lead"]
-    }
-  , Project
-    { name = "GDCR"
-    , url = "https://www.facebook.com/events/1785896421544978/"
-    , description = "Global Day of Coderetreat Kraków."
-    , details = "I co-organized in 2019."
-    , techs = ["Lead"]
-    }
-  ]
 
 postCtx :: [(String, String)] -> Tags -> Context String
 postCtx env tags =
