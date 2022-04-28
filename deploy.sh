@@ -48,3 +48,15 @@ rsync \
   timeless-software-wisdom.pdf \
   riccardo@odone.io:/usr/share/nginx/html/
 cd -
+
+cd typescript.tips
+npm install
+npx tailwindcss -i input.css -o dist/output.css --minify
+cp index.html dist/
+sed -i '' -e "s/VERSION/$(date +%s)/g" dist/index.html
+rsync \
+  --rsync-path="sudo rsync" \
+  -a \
+  --delete-excluded \
+  dist/ riccardo@odone.io:/usr/share/nginx/html/typescript.tips
+cd -

@@ -6,17 +6,32 @@
     cache_valid_time: 3600
 
 - name: "obtain certificates"
-  command: letsencrypt certonly -n --agree-tos --email {{ email }} --webroot -w /usr/share/nginx/html/ -d {{ domain }} -d www.{{ domain }}
+  command: letsencrypt certonly -n --agree-tos --email {{ email }} --webroot -w /usr/share/nginx/html/ -d {{ item.domain }} -d www.{{ item.domain }}
+  with_items: "{{ domains }}"
 
 - name: "generate strong Diffie-Hellman group"
   command: openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048
   args:
     creates: /etc/ssl/certs/dhparam.pem
 
-- name: "nginx default configuration"
+- name: "nginx default catch-all configuration"
   template:
     src: default
     dest: /etc/nginx/sites-enabled/default
+  vars:
+    domain: "{{ domains[0].domain }}"
+    server_name: "_"
+  notify:
+    - reload nginx
+
+- name: "nginx https redirects"
+  template:
+    src: redirect
+    dest: /etc/nginx/sites-enabled/http-redirect-for-{{ domain }}
+  vars:
+    domain: "{{ item.domain }}"
+    server_name: "{{ item.domain }}"
+  with_items: "{{ domains }}"
   notify:
     - reload nginx
 
@@ -28,12 +43,17 @@
 - name: "create snippet for ssl params"
   template:
     src: ssl-params
-    dest: /etc/nginx/snippets/ssl-params
+    dest: /etc/nginx/snippets/ssl-params-for-{{ domain }}
+  vars:
+    domain: "{{ item.domain }}"
+  with_items: "{{ domains }}"
 
 - name: "nginx default configuration for ssl"
   template:
     src: default-ssl
     dest: /etc/nginx/sites-enabled/default-ssl
+  vars:
+    domain: "{{ domains[0].domain }}"
   notify:
     - reload nginx
 
@@ -41,6 +61,10 @@
   template:
     src: application
     dest: /etc/nginx/sites-enabled/{{ domain }}
+  vars:
+    domain: "{{ item.domain }}"
+    redirects: "{{ item.redirects }}"
+  with_items: "{{ domains }}"
   notify:
     - reload nginx
 

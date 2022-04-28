@@ -13,5 +13,5 @@ server {
     expires -1;
   }
 
-  include snippets/ssl-params;
+  include snippets/ssl-params-for-{{ domain }};
 }

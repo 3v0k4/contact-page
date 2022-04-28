@@ -2,7 +2,7 @@ server {
   listen 80 default_server;
   listen [::]:80 default_server;
   root /usr/share/nginx/html;
-  server_name _;
+  server_name {{ server_name }};
 
   return 301 https://{{ domain }}$request_uri;
 }
