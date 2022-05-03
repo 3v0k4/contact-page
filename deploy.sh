@@ -18,7 +18,6 @@ rsync \
   --filter='P .git/' \
   --filter='P .gitignore' \
   --filter='P .stack-work' \
-  --delete-excluded \
   _site/ riccardo@odone.io:/usr/share/nginx/html/
 git checkout -- templates/default.html
 cd -
@@ -26,7 +25,6 @@ cd -
 rsync \
   --rsync-path="sudo rsync" \
   -a \
-  --delete-excluded \
   curves riccardo@odone.io:/usr/share/nginx/html/
 
 cd xpath
@@ -35,7 +33,6 @@ sed -i '' -e "s/VERSION/$(date +%s)/g" public/index.html
 rsync \
   --rsync-path="sudo rsync" \
   -a \
-  --delete-excluded \
   public/ riccardo@odone.io:/usr/share/nginx/html/xpath/
 git checkout public/index.html
 cd -
@@ -57,6 +54,5 @@ sed -i '' -e "s/VERSION/$(date +%s)/g" dist/index.html
 rsync \
   --rsync-path="sudo rsync" \
   -a \
-  --delete-excluded \
   dist/ riccardo@odone.io:/usr/share/nginx/html/typescript.tips
 cd -
