@@ -314,8 +314,8 @@ type SlideDeck = {
       prevButton.addEventListener('click', () => update(-1))
       nextBtn.addEventListener('click', () => update(+1))
       document.addEventListener('keyup', event => {
-        if (event.code === "ArrowLeft") { prev() }
-        else if (event.code === "ArrowRight") { next() }
+        if (event.code === "ArrowLeft") { update(-1) }
+        else if (event.code === "ArrowRight") { update(+1) }
       })
     </script>
   </body>
