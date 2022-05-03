@@ -270,7 +270,13 @@ type CssProperty =
         setTimeout(highlight, 100)
       }
 
-      const update = index => {
+      const update = delta => {
+        const search = new URLSearchParams(window.location.search)
+        const i = parseInt(search.get('index'), 10) || 0
+        const index = (i + delta + TIPS.length) % TIPS.length
+        search.delete('index')
+        search.append('index', index)
+        window.history.pushState(null, null, '?' + search.toString())
         code.style.display = 'block'
         image.style.display = 'none'
         title.textContent = TIPS[index].title
@@ -283,20 +289,10 @@ type CssProperty =
         image.style.display = 'block'
       }
 
-      let i = 0
-      update(i)
+      update(0)
 
-      const prev = () => {
-        i = i === 0 ? TIPS.length - 1 : (i-1) % TIPS.length
-        update(i)
-      }
-      const next = () => {
-        i = (i+1) % TIPS.length
-        update(i)
-      }
-
-      prevButton.addEventListener('click', prev)
-      nextBtn.addEventListener('click', next)
+      prevButton.addEventListener('click', () => update(-1))
+      nextBtn.addEventListener('click', () => update(+1))
       document.addEventListener('keyup', event => {
         if (event.code === "ArrowLeft") { prev() }
         else if (event.code === "ArrowRight") { next() }
