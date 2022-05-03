@@ -247,6 +247,26 @@ type CssProperty =
   \`\${Prefix}\${"" | \`-\${Suffix}\`}\` // ✅ Includes "margin" and "padding"
 `,
         }, {
+        title: "Type-safe carousel",
+        description: "Instead of keeping the index and array separated, use a zip list.",
+        badCode: `
+type SlideDeck = {
+  slides: Slide[],
+  selected: number,
+}
+
+const carousel: SlideDeck = {
+  slides: [], // ⛔️ There should be at least one
+  selected: -10, // ⛔️ WTH?
+}`,
+        goodCode: `
+type SlideDeck = {
+  before: Slide[],
+  current: Slide,
+  after: Slide[],
+} // ✅ Always one slide with 0 or more before and after
+`,
+        }, {
         title: "I promise you..",
         description: "I'll add each tip I send via email to this page, so if you really really hate newsletters you can come here each week and get your dose of TypeScript.",
         badCode: ``,
