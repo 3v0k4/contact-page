@@ -305,7 +305,7 @@ type SlideDeck = {
         const index = (i + delta + TIPS.length) % TIPS.length
         search.delete('index')
         search.append('index', index)
-        window.history.pushState(null, null, '?' + search.toString())
+        window.history.pushState(null, null, '?' + search.toString() + window.location.hash)
         code.style.display = 'block'
         image.style.display = 'none'
         title.textContent = TIPS[index].title
