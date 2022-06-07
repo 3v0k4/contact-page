@@ -2,11 +2,302 @@
 
 /* @tailwind components; */
 
+.tw-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0
+}
+
+.tw-relative {
+  position: relative
+}
+
 .tw-mt-2 {
   margin-top: 0.5rem
 }
 
-.tw-bg-gray-500 {
+.tw-mt-28 {
+  margin-top: 7rem
+}
+
+.tw-mt-10 {
+  margin-top: 2.5rem
+}
+
+.tw-block {
+  display: block
+}
+
+.tw-flex {
+  display: flex
+}
+
+.tw-h-20 {
+  height: 5rem
+}
+
+.tw-h-12 {
+  height: 3rem
+}
+
+.tw-w-20 {
+  width: 5rem
+}
+
+.tw-w-12 {
+  width: 3rem
+}
+
+.tw-flex-shrink-0 {
+  flex-shrink: 0
+}
+
+.tw-basis-auto {
+  flex-basis: auto
+}
+
+.tw-cursor-pointer {
+  cursor: pointer
+}
+
+.tw-flex-col {
+  flex-direction: column
+}
+
+.tw-rounded-full {
+  border-radius: 9999px
+}
+
+.tw-bg-\[url\:url\(\'\/images\/android-chrome-512x512\.png\'\)\] {
+  background-image: url('/images/android-chrome-512x512.png')
+}
+
+.tw-bg-\[image\:url\(\'\/images\/android-chrome-512x512\.png\'\)\] {
+  background-image: url('/images/android-chrome-512x512.png')
+}
+
+.tw-bg-\[image\:url\(\'\/images\/hero\.png\'\)\] {
+  background-image: url('/images/hero.png')
+}
+
+.tw-bg-\[length\:50px\] {
+  background-size: 50px
+}
+
+.tw-bg-cover {
+  background-size: cover
+}
+
+.tw-bg-\[position\:70\%_0\%\] {
+  background-position: 70% 0%
+}
+
+.tw-bg-no-repeat {
+  background-repeat: no-repeat
+}
+
+.tw-py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem
+}
+
+.tw-px-\[5\%\] {
+  padding-left: 5%;
+  padding-right: 5%
+}
+
+.tw-py-24 {
+  padding-top: 6rem;
+  padding-bottom: 6rem
+}
+
+.tw-text-center {
+  text-align: center
+}
+
+.tw-text-5xl {
+  font-size: 3rem;
+  line-height: 1
+}
+
+.tw-text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem
+}
+
+.tw-text-6xl {
+  font-size: 3.75rem;
+  line-height: 1
+}
+
+.tw-text-7xl {
+  font-size: 4.5rem;
+  line-height: 1
+}
+
+.tw-font-extralight {
+  font-weight: 200
+}
+
+.tw-uppercase {
+  text-transform: uppercase
+}
+
+.tw-leading-tight {
+  line-height: 1.25
+}
+
+.tw-text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity))
+}
+
+.tw-text-\[\#f76ca5\] {
+  --tw-text-opacity: 1;
+  color: rgb(247 108 165 / var(--tw-text-opacity))
+}
+
+.tw-no-underline {
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none
+}
+
+.tw-content-none {
+  --tw-content: none;
+  content: var(--tw-content)
+}
+
+.tw-content-\[\'\'\] {
+  --tw-content: '';
+  content: var(--tw-content)
+}
+
+.\[text-shadow\:1px_1px_1px_white\] {
+  text-shadow: 1px 1px 1px white
+}
+
+.before\:tw-absolute::before {
+  content: var(--tw-content);
+  position: absolute
+}
+
+.before\:tw-top-0::before {
+  content: var(--tw-content);
+  top: 0px
+}
+
+.before\:tw-right-0::before {
+  content: var(--tw-content);
+  right: 0px
+}
+
+.before\:tw-left-0::before {
+  content: var(--tw-content);
+  left: 0px
+}
+
+.before\:tw-bottom-0::before {
+  content: var(--tw-content);
+  bottom: 0px
+}
+
+.before\:tw-divide-opacity-\[0\.2\] > :not([hidden]) ~ :not([hidden])::before {
+  content: var(--tw-content);
+  --tw-divide-opacity: 0.2
+}
+
+.before\:tw-bg-black::before {
+  content: var(--tw-content);
   --tw-bg-opacity: 1;
-  background-color: rgb(107 114 128 / var(--tw-bg-opacity))
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity))
+}
+
+.before\:tw-bg-black\/0::before {
+  content: var(--tw-content);
+  background-color: rgb(0 0 0 / 0)
+}
+
+.before\:tw-bg-black\/\[0\.2\]::before {
+  content: var(--tw-content);
+  background-color: rgb(0 0 0 / 0.2)
+}
+
+.before\:tw-bg-black\/\[\.2\]::before {
+  content: var(--tw-content);
+  background-color: rgb(0 0 0 / .2)
+}
+
+.before\:tw-content-\[\'\'\]::before {
+  --tw-content: '';
+  content: var(--tw-content)
+}
+
+@media (min-width: 640px) {
+  .sm\:tw-text-6xl {
+    font-size: 3.75rem;
+    line-height: 1
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:tw-content-none {
+    --tw-content: none;
+    content: var(--tw-content)
+  }
+
+  .md\:before\:tw-absolute::before {
+    content: var(--tw-content);
+    position: absolute
+  }
+
+  .md\:before\:tw-top-0::before {
+    content: var(--tw-content);
+    top: 0px
+  }
+
+  .md\:before\:tw-right-0::before {
+    content: var(--tw-content);
+    right: 0px
+  }
+
+  .md\:before\:tw-left-0::before {
+    content: var(--tw-content);
+    left: 0px
+  }
+
+  .md\:before\:tw-bottom-0::before {
+    content: var(--tw-content);
+    bottom: 0px
+  }
+
+  .md\:before\:tw-bg-black\/\[0\.2\]::before {
+    content: var(--tw-content);
+    background-color: rgb(0 0 0 / 0.2)
+  }
+
+  .md\:before\:tw-content-\[\'\'\]::before {
+    --tw-content: '';
+    content: var(--tw-content)
+  }
+
+  .md\:before\:tw-content-none::before {
+    --tw-content: none;
+    content: var(--tw-content)
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:tw-max-w-none {
+    max-width: none
+  }
+
+  .lg\:tw-max-w-\[50\%\] {
+    max-width: 50%
+  }
 }
