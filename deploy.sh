@@ -11,6 +11,7 @@ cd blog
 sed -i '' -e "s/VERSION/$(date +%s)/g" templates/default.html
 stack build
 stack exec site rebuild
+npx tailwindcss -i css/input.css -o _site/css/output.css --minify
 rsync \
   --rsync-path="sudo rsync" \
   -a --filter='P _site/' \

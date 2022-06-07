@@ -1,0 +1,12 @@
+/* @tailwind base; */
+
+/* @tailwind components; */
+
+.tw-mt-2 {
+  margin-top: 0.5rem
+}
+
+.tw-bg-gray-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(107 114 128 / var(--tw-bg-opacity))
+}
