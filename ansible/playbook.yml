@@ -26,6 +26,7 @@
             ]
           }
         - { domain: "typescript.tips", redirects: [] }
+        - { domain: "featnesse.com", redirects: [] }
     - user
     - logwatch
     - goaccess

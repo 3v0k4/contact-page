@@ -19,14 +19,14 @@ rsync \
   --filter='P .git/' \
   --filter='P .gitignore' \
   --filter='P .stack-work' \
-  _site/ riccardo@odone.io:/usr/share/nginx/html/
+  _site/ riccardo@odone.io:/usr/share/nginx/html/odone.io/
 git checkout -- templates/default.html
 cd -
 
 rsync \
   --rsync-path="sudo rsync" \
   -a \
-  curves riccardo@odone.io:/usr/share/nginx/html/
+  curves riccardo@odone.io:/usr/share/nginx/html/odone.io/
 
 cd xpath
 yarn compile
@@ -34,7 +34,7 @@ sed -i '' -e "s/VERSION/$(date +%s)/g" public/index.html
 rsync \
   --rsync-path="sudo rsync" \
   -a \
-  public/ riccardo@odone.io:/usr/share/nginx/html/xpath/
+  public/ riccardo@odone.io:/usr/share/nginx/html/odone.io/xpath/
 git checkout public/index.html
 cd -
 
@@ -44,7 +44,7 @@ rsync \
   --rsync-path="sudo rsync" \
   -a \
   timeless-software-wisdom.pdf \
-  riccardo@odone.io:/usr/share/nginx/html/
+  riccardo@odone.io:/usr/share/nginx/html/odone.io/
 cd -
 
 cd typescript.tips
@@ -55,5 +55,5 @@ sed -i '' -e "s/VERSION/$(date +%s)/g" dist/index.html
 rsync \
   --rsync-path="sudo rsync" \
   -a \
-  dist/ riccardo@odone.io:/usr/share/nginx/html/typescript.tips
+  dist/ riccardo@odone.io:/usr/share/nginx/html/typescript.tips/
 cd -
