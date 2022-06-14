@@ -11,21 +11,28 @@
 </div>
 
 <div class="col-sm-8 col-md-8 col-lg-6 mx-auto mt-5">
-  <h2>Topics from the <a href="/archive.html">blog</a></h2>
+  <div class="tw-mt-5">
+    <h2>PinkLetter</h2>
+    <a class="tw-mt-4" target="_blank" rel="noopener" href="https://buttondown.email/riccardo.odone/archive">Check the archives</a>
+  </div>
 
-  <div class="mt-4">
-    <div>
-      $for(categories)$
-        <a class="btn btn-tag-$status$ mb-1" href="$url$">
-          <span class="btn-tag-icon-lg">$icon$ </span>$tag$ <span class="badge badge-white">$count$</span>
-        </a>
-      $endfor$
-    </div>
+  <div class="tw-mt-5">
+    <h2>Blog</h2>
 
-    <div class="mt-3 d-none d-md-block">
-      $for(tags)$<a class="btn btn-tag-$status$ btn-sm mb-1" href="$url$">
-          <span class="btn-tag-icon">$icon$ </span>$tag$ <span class="badge badge-white badge-sm">$count$</span>
-      </a>$endfor$
+    <div class="tw-mt-4">
+      <div>
+        $for(categories)$
+          <a class="btn btn-tag-$status$ mb-1" href="$url$">
+            <span class="btn-tag-icon-lg">$icon$ </span>$tag$ <span class="badge badge-white">$count$</span>
+          </a>
+        $endfor$
+      </div>
+
+      <div class="mt-3 d-none d-md-block">
+        $for(tags)$<a class="btn btn-tag-$status$ btn-sm mb-1" href="$url$">
+            <span class="btn-tag-icon">$icon$ </span>$tag$ <span class="badge badge-white badge-sm">$count$</span>
+        </a>$endfor$
+      </div>
     </div>
   </div>
 
