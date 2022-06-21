@@ -231,6 +231,8 @@
         description.textContent = TIPS[index].description
         badCode.textContent = TIPS[index].badCode
         goodCode.textContent = TIPS[index].goodCode
+        const shareButton = document.getElementsByClassName('shareTip')[0]
+        shareButton.innerText = 'Share tip'
         highlight()
         if (index < TIPS.length-1) { return }
         code.style.display = 'none'
@@ -255,9 +257,7 @@
         })
         clipboard.on('success', () => {
           const shareButton = document.getElementsByClassName('shareTip')[0]
-          const label = shareButton.innerText
-          shareButton.innerText = 'Copied to clipbard'
-          setTimeout(() => shareButton.innerText = label, 2000)
+          shareButton.innerText = 'Copied to clipboard'
         })
       })
     </script>
