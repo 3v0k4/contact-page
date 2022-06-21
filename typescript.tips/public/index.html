@@ -211,6 +211,7 @@
 
       const highlight = () => {
         if ('hljs' in window) {
+        hljs.configure({ languages: ['typescript'] })
           hljs.highlightAll()
           return
         }
