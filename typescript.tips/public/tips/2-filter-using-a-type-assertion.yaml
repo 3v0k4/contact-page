@@ -1,0 +1,15 @@
+title: Filter using a type assertion
+description: When you filter an array of union types, make sure it gets reflected in the type.
+badCode: |
+  type Admin = { _kind: 'admin', adminId: number }
+  type Member = { _kind: 'member', userId: number }
+  type User = Admin | Member
+
+  const onlyAdmins = users.filter(x => x._kind === 'admin')
+  //    ^? const onlyAdmins: User[]
+  //    ⛔️ Should be Admin[]
+goodCode: |
+  const isAdmin = (user: User): user is Admin =>
+    user._kind === 'admin'
+  const onlyAdmins = users.filter(isAdmin)
+  //    ^? const onlyAdmins: Admin[] ✅

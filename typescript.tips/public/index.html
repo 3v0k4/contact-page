@@ -62,7 +62,7 @@
 
     <div id="tip" class="mt-24">
       <div class="flex flex-col items-center px-5 mx-auto max-w-4xl">
-        <h2 class="text-4xl text-center capitalize" id="tipTitle">Do not throw</h2>
+        <h2 class="text-4xl text-center capitalize" id="tipTitle"></h2>
         <div class="flex flex-col mt-4 text-sm leading-6 text-center text-gray-400 sm:flex-row">
           <span><a class="underline underline-offset-4" href="https://twitter.com/RiccardoOdone" target="_blank">@RiccardoOdone</a></span>
           <span class="mx-4">•</span>
@@ -70,7 +70,7 @@
           <span class="mx-4">•</span>
           <span><button class="shareTip underline underline-offset-4">Share tip</button></span>
         </div>
-        <p class="mt-10 text-lg" id="tipDescription">Model operations that could fail with a type, so that you can't forget to catch.</p>
+        <p class="mt-10 text-lg" id="tipDescription"></p>
 
         <div class="flex justify-between mt-10 flew-row w-[150px]">
           <button aria-label="Previous tip" id="prev" class="w-14 h-14 bg-gray-200 rounded border-2 border-gray-400 hover:shadow-[-3px_3px_2px_rgba(0,0,0,0.25)] active:shadow-none" type="button">
@@ -198,91 +198,7 @@
         head.appendChild(resource)
       })
 
-      const TIPS = [{
-        title: "Do not throw",
-        description: "Model operations that could fail with a type, so that you can't forget to catch.",
-        badCode: `
-const couldFail = () => {
-  throw new Error("Boom") // ⛔️ Oops, forgot to catch
-}
-`,
-        goodCode: `
-type Result<Error, Value> =
-  { _kind: "ok", value: Value } |
-  { _kind: "error", value: Error }
-
-const couldFail = (): Result<string, number> => {
-  return { _kind: "ok", value: 1 } // or
-  return { _kind: "error", value: "no worries!" }
-} // ✅ You cannot forget to handle the error
-`,
-        }, {
-        title: "Filter using a type assertion",
-        description: "When you filter an array of union types, make sure it gets reflected in the type.",
-        badCode: `
-type Admin = { _kind: "admin", adminId: number }
-type Member = { _kind: "member", userId: number }
-type User = Admin | Member
-
-const onlyAdmins = users.filter(x => x._kind === "admin")
-//    ^? const onlyAdmins: User[]
-//    ⛔️ Should be Admin[]
-`,
-        goodCode: `
-const isAdmin = (user: User): user is Admin =>
-  user._kind === "admin"
-const onlyAdmins = users.filter(isAdmin)
-//    ^? const onlyAdmins: Admin[] ✅
-`,
-        }, {
-        title: "Use precise types",
-        description: "Limit the possible values to the ones that make sense.",
-        badCode: `
-type CssProperty = string
-const property: CssProperty = "margin-top"
-const property: CssProperty =
-  "biuutiful" // ⛔️ Not yet in the standard unfortunately
-`,
-        goodCode: `
-type CssProperty =
-  "margin-top" | "margin-right" | "margin-bottom" | "margin-left" |
-  "padding-top" | "padding-right" | "padding-bottom" | "padding-left"
-
-// Or if you are as lazy as I am
-
-type Prefix = "margin" | "padding"
-type Suffix = "top" | "right" | "bottom" | "left"
-
-type CssProperty =
-  \`\${Prefix}-\${Suffix}\` // ✅ Same as the above \`CssProperty\`
-  \`\${Prefix}\${"" | \`-\${Suffix}\`}\` // ✅ Includes "margin" and "padding"
-`,
-        }, {
-        title: "Type-safe carousel",
-        description: "Instead of keeping the index and array separated, use a zip list.",
-        badCode: `
-type SlideDeck = {
-  slides: Slide[],
-  selected: number,
-}
-
-const carousel: SlideDeck = {
-  slides: [], // ⛔️ There should be at least one
-  selected: -10, // ⛔️ WTH?
-}`,
-        goodCode: `
-type SlideDeck = {
-  before: Slide[],
-  current: Slide,
-  after: Slide[],
-} // ✅ Always one slide with 0 or more before and after
-`,
-        }, {
-        title: "I promise you..",
-        description: "I'll add each tip I send via email to this page, so if you really really hate newsletters you can come here each week and get your dose of TypeScript.",
-        badCode: ``,
-        goodCode: ``,
-      }]
+      const TIPS = [] // Filled by script that parses .yaml tips
 
       const title = document.getElementById("tipTitle")
       const description = document.getElementById("tipDescription")

@@ -1,0 +1,20 @@
+title: Use precise types
+description: Limit the possible values to the ones that make sense.
+badCode: |
+  type CssProperty = string
+  const property: CssProperty = "margin-top"
+  const property: CssProperty =
+    "biuutiful" // ⛔️ Not yet in the standard unfortunately
+goodCode: |
+  type CssProperty =
+    "margin-top" | "margin-right" | "margin-bottom" | "margin-left" |
+    "padding-top" | "padding-right" | "padding-bottom" | "padding-left"
+
+  // Or if you are as lazy as I am
+
+  type Prefix = "margin" | "padding"
+  type Suffix = "top" | "right" | "bottom" | "left"
+
+  type CssProperty =
+    `${Prefix}-${Suffix}` // ✅ Same as the above `CssProperty`
+    `${Prefix}${"" | `-${Suffix}`}` // ✅ Includes "margin" and "padding"

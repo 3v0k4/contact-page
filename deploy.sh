@@ -50,8 +50,9 @@ cd -
 cd typescript.tips
 npm install
 npx tailwindcss -i input.css -o dist/output.css --minify
-cp -f public/* dist/
+cp -rf public/* dist/
 sed -i '' -e "s/VERSION/$(date +%s)/g" dist/index.html
+./tips.sh dist
 rsync \
   --rsync-path="sudo rsync" \
   -a \
