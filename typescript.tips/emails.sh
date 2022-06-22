@@ -44,11 +44,11 @@ const toHtml = ({ index, title, description, badCode, goodCode }) => `
 
       <div>
         <img  style="width: 61px; height: 64px; margin: auto;" src="http://typescript.tips/x.png" alt="red circle containing a white x" />
-        <div style="padding: 10px 15px; text-align: left; border-radius: 5px;">
+        <div style="padding: 10px 0; text-align: left; border-radius: 5px;">
           <div style="background-color: rgb(243, 244, 246); filter: drop-shadow(rgba(0, 0, 0, 0.04) 0px 10px 8px) drop-shadow(rgba(0, 0, 0, 0.1) 0px 4px 3px); border-radius: 5px;">
-            <span style="margin-top: 12px; border-radius: 50%; width: 15px; height: 15px; display: inline-block; margin-left: 20px; background-color: rgb(209, 213, 219);"></span>
-            <span style="margin-top: 12px; border-radius: 50%; width: 15px; height: 15px; display: inline-block; margin-left: 8px; background-color: rgb(209, 213, 219);"></span>
-            <span style="margin-top: 12px; border-radius: 50%; width: 15px; height: 15px; display: inline-block; margin-left: 8px; background-color: rgb(209, 213, 219);"></span>
+            <span style="margin-top: 12px; border-radius: 50%; width: 13px; height: 13px; display: inline-block; margin-left: 20px; background-color: rgb(209, 213, 219);"></span>
+            <span style="margin-top: 12px; border-radius: 50%; width: 13px; height: 13px; display: inline-block; margin-left: 8px; background-color: rgb(209, 213, 219);"></span>
+            <span style="margin-top: 12px; border-radius: 50%; width: 13px; height: 13px; display: inline-block; margin-left: 8px; background-color: rgb(209, 213, 219);"></span>
             <pre style="background-color: rgb(243, 244, 246); padding: 0 20px 20px 20px; font-size: 0.9rem;"><code>${hljs.highlight(badCode || '', {language: 'typescript'}).value}</code></pre>
           </div>
         </div>
@@ -59,11 +59,11 @@ const toHtml = ({ index, title, description, badCode, goodCode }) => `
       <div>
         <img  style="width: 61px; height: 64px; margin: auto;" src="http://typescript.tips/v.png" alt="green circle containing a white v" />
 
-        <div style="padding: 10px 15px; text-align: left; border-radius: 5px;">
-          <div style="background-color: rgb(243, 244, 246); filter: drop-shadow(rgba(0, 0, 0, 0.04) 0px 10px 8px) drop-shadow(rgba(0, 0, 0, 0.1) 0px 4px 3px);">
-            <span style="margin-top: 12px; border-radius: 50%; width: 15px; height: 15px; display: inline-block; margin-left: 20px; background-color: rgb(209, 213, 219);"></span>
-            <span style="margin-top: 12px; border-radius: 50%; width: 15px; height: 15px; display: inline-block; margin-left: 8px; background-color: rgb(209, 213, 219);"></span>
-            <span style="margin-top: 12px; border-radius: 50%; width: 15px; height: 15px; display: inline-block; margin-left: 8px; background-color: rgb(209, 213, 219);"></span>
+        <div style="padding: 10px 0; text-align: left; border-radius: 5px;">
+          <div style="background-color: rgb(243, 244, 246); filter: drop-shadow(rgba(0, 0, 0, 0.04) 0px 10px 8px) drop-shadow(rgba(0, 0, 0, 0.1) 0px 4px 3px); border-radius: 5px;">
+            <span style="margin-top: 12px; border-radius: 50%; width: 13px; height: 13px; display: inline-block; margin-left: 20px; background-color: rgb(209, 213, 219);"></span>
+            <span style="margin-top: 12px; border-radius: 50%; width: 13px; height: 13px; display: inline-block; margin-left: 8px; background-color: rgb(209, 213, 219);"></span>
+            <span style="margin-top: 12px; border-radius: 50%; width: 13px; height: 13px; display: inline-block; margin-left: 8px; background-color: rgb(209, 213, 219);"></span>
 
             <pre style="background-color: rgb(243, 244, 246); padding: 0 20px 20px 20px; font-size: 0.9rem;"><code>${hljs.highlight(goodCode || '', {language: 'typescript'}).value}</code></pre>
           </div>
