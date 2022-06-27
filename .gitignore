@@ -4,6 +4,7 @@ ansible/secrets.yml
 blog/.stack-work
 blog/_cache
 blog/_site
+blog/css/output.css
 
 .DS_Store
 dist-newstyle/

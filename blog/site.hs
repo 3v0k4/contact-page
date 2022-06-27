@@ -123,6 +123,18 @@ main = do
                 <> listField "tags" (tagsCtx Nothing) (traverse makeItem categoriesAndTags)
         makeItem ""
           >>= loadAndApplyTemplate "templates/sitemap.xml" sitemapCtx
+    match "tir.html" $ do
+      route idRoute
+      compile $ do
+        posts <- recentFirst =<< loadAllPublished env postsPattern
+        (categories_, tags_) <- getCategoriesAndTags posts
+        let indexCtx =
+              constField "title" "Riccardo Odone - Debug your Time in Range"
+                <> defaultContext
+        getResourceBody
+          >>= applyAsTemplate indexCtx
+          >>= loadAndApplyTemplate "templates/default.html" indexCtx
+          >>= relativizeUrls
     match "index.html" $ do
       route idRoute
       compile $ do
