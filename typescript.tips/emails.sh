@@ -8,7 +8,7 @@ const indexHtml = `${__dirname}/${process.argv[2]}/index.html`
 const tipsDir = `${__dirname}/public/tips`
 
 const toHtml = ({ index, title, description, badCode, goodCode }) => `
-  <div>
+  <div data-index="${index}" data-title="${title.replace(/\s/g, '-')}">
     <div style="text-align: center; margin-top: 20px;">
       <a style="color: rgb(156, 163, 175);" href="https://typescript.tips/?index=${index}#tipTitle">View this tip in your browser</a>
     </div>
