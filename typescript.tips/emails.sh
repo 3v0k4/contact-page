@@ -49,7 +49,7 @@ const toHtml = ({ index, title, description, badCode, goodCode }) => `
             <span style="margin-top: 12px; border-radius: 50%; width: 13px; height: 13px; display: inline-block; margin-left: 20px; background-color: rgb(209, 213, 219);"></span>
             <span style="margin-top: 12px; border-radius: 50%; width: 13px; height: 13px; display: inline-block; margin-left: 8px; background-color: rgb(209, 213, 219);"></span>
             <span style="margin-top: 12px; border-radius: 50%; width: 13px; height: 13px; display: inline-block; margin-left: 8px; background-color: rgb(209, 213, 219);"></span>
-            <pre style="background-color: rgb(243, 244, 246); padding: 0 20px 20px 20px; font-size: 0.9rem;"><code>${hljs.highlight(badCode || '', {language: 'typescript'}).value}</code></pre>
+            <pre style="background-color: rgb(243, 244, 246); padding: 0 20px 20px 20px; font-size: 0.9rem;"><code>${hljs.highlight((badCode || '').replace(/⛔️/g, '⛔️'.charAt(0)), {language: 'typescript'}).value}</code></pre>
           </div>
         </div>
       </div>
@@ -65,7 +65,7 @@ const toHtml = ({ index, title, description, badCode, goodCode }) => `
             <span style="margin-top: 12px; border-radius: 50%; width: 13px; height: 13px; display: inline-block; margin-left: 8px; background-color: rgb(209, 213, 219);"></span>
             <span style="margin-top: 12px; border-radius: 50%; width: 13px; height: 13px; display: inline-block; margin-left: 8px; background-color: rgb(209, 213, 219);"></span>
 
-            <pre style="background-color: rgb(243, 244, 246); padding: 0 20px 20px 20px; font-size: 0.9rem;"><code>${hljs.highlight(goodCode || '', {language: 'typescript'}).value}</code></pre>
+            <pre style="background-color: rgb(243, 244, 246); padding: 0 20px 20px 20px; font-size: 0.9rem;"><code>${hljs.highlight((goodCode || '').replace(/✅/g, '✅'.charAt(0)), {language: 'typescript'}).value}</code></pre>
           </div>
         </div>
       </div>
