@@ -1,0 +1,22 @@
+title: Type-safe string templating
+description: Let the compiler ensure that every placeholder in the template string is specified in the values to replace.
+badCode: |
+  const replace =
+    (template: string, values: Record<string, string>): string =>
+      template.replace(/{{(\w+)}}/g, (_, capture) => values[capture])
+
+  replace("hello, {{name}}", {}) // ⛔️ "hello, undefined"
+goodCode: |
+  type Values<Template> = Template extends
+    `${infer _Ignore}{{${infer Capture}}}${infer Rest}` ?
+      Record<Capture, string> | Values<Rest> :
+      never
+
+  const replace =
+    <Template extends string>
+      (template: Template, values: Values<Template>): string =>
+        template.replace(/{{(\w+)}}/g, (_, capture) => values[capture])
+
+  replace("hello, {{name}}", {name: "mary"}) // ✅ "hello, mary"
+  replace("hello, {{name}}", {}) // ✅ Does not compile
+  replace("hello, {{name}}", { namme: "mary"} // ✅ Does not compile
