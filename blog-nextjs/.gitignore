@@ -33,3 +33,7 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+
+public/atom.xml
+public/sitemap*.xml
+public/robots.txt

@@ -7,20 +7,8 @@ then
   exit 1
 fi
 
-cd blog
-sed -i '' -e "s/VERSION/$(date +%s)/g" templates/default.html
-stack build
-stack exec site rebuild
-npx tailwindcss -i css/input.css -o _site/css/output.css --minify
-rsync \
-  --rsync-path="sudo rsync" \
-  -a --filter='P _site/' \
-  --filter='P _cache/' \
-  --filter='P .git/' \
-  --filter='P .gitignore' \
-  --filter='P .stack-work' \
-  _site/ riccardo@odone.io:/usr/share/nginx/html/odone.io/
-git checkout -- templates/default.html
+cd blog-nextjs
+./deploy.sh
 cd -
 
 rsync \

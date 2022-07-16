@@ -1,0 +1,548 @@
+:root {
+  --pink: #f76ca5;
+  --blue: #007bff;
+  --logo-size: 50px;
+  --logo-width: 50px;
+  --logo-height: 35px;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  font-size: 1rem;
+}
+
+body {
+  font-size: 1.3rem;
+}
+
+header {
+  box-shadow: 0 0 20px rgba(0,0,0,0.05);
+  padding: 10px 0;
+}
+
+.hero {
+  background-position: 70% 0%;
+  background-image: url("/images/hero.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.hero-content {
+  padding-left: 5%;
+  padding-right: 5%;
+  color: white;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.hero-content::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background: black;
+  opacity: 0.2;
+}
+
+@media all and (min-width: 992px) {
+  .hero-content {
+    max-width: 50%;
+  }
+  .hero-content::before {
+    background: none;
+    opacity: 1;
+  }
+}
+
+.hero-heading {
+  font-size: 3rem;
+  line-height: 1.2;
+  font-weight: 200;
+  text-transform: uppercase;
+}
+
+.hero-subheading {
+  font-weight: 150;
+  margin-top: 40px;
+}
+
+@media all and (min-width: 400px) {
+  .hero-heading {
+    font-size: 4rem;
+  }
+}
+
+.pink {
+  color: var(--pink);
+  text-shadow: 1px 1px 1px white;
+}
+
+.no-list-style {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.content {
+  flex: 1 0 auto;
+}
+
+/* Same as Bootstrap .sr-only */
+figcaption {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+a {
+  color: var(--blue);
+}
+
+a:hover {
+  color: var(--pink);
+}
+
+a.post-title {
+  font-size: 1.7rem;
+}
+
+.btn-tag-unselected {
+  color: var(--blue);
+  background-color: white;
+  border-color: var(--blue);
+  margin-right: 5px;
+}
+
+.btn-tag-icon {
+  font-size: 1.2rem;
+  line-height: 0;
+}
+
+.btn-tag-icon-lg {
+  font-size: 1.5rem;
+  line-height: 0;
+}
+
+.btn-tag-selected:hover {
+  color: var(--blue);
+  background-color: white;
+  border-color: var(--blue);
+}
+
+.btn-tag-selected {
+  color: white;
+  background-color: var(--pink);
+  border-color: var(--pink);
+  margin-right: 5px;
+}
+
+.btn-tag-unselected:hover {
+  color: white;
+  background-color: var(--pink);
+  border-color: var(--pink);
+}
+
+.btn-sm {
+  padding: 7px 5px;
+  font-size: .875rem;
+  line-height: 1;
+  border-radius: 3px;
+}
+
+.twitter-tweet {
+  margin: auto;
+}
+
+.badge-white {
+  background-color: white;
+  color: var(--blue);
+}
+
+.badge-sm {
+  padding: 0.1em .4em;
+}
+
+.logo-odone {
+  display: block;
+  margin: auto;
+  width: var(--logo-size);
+  height: var(--logo-size);
+  text-decoration: none;
+  cursor: pointer;
+  background-size: var(--logo-size);
+  background-image: url('/images/android-chrome-512x512.png');
+  -webkit-tap-highlight-color: var(--pink);
+}
+
+.logo-odone:hover, .logo-odone:focus, .logo-odone:active {
+  background-image: url('/images/android-chrome-512x512-pink.png');
+}
+
+.newsletter-container {
+  background: var(--pink);
+  box-shadow: 0 0 10px var(--pink);
+  color: white;
+  display: flex;
+  flex-shrink: none;
+  flex-wrap: wrap-reverse;
+}
+
+.w-80 {
+  width: 80%;
+}
+
+.list-style-circle {
+  list-style: circle;
+}
+
+.p-0 {
+  padding: 0;
+}
+
+.m-0 {
+  margin: 0;
+}
+
+.list-style-inside {
+  list-style-position: inside;
+}
+
+.read-more-container {
+  box-shadow: 0 10px 10px -10px var(--blue);
+  background-color: var(--blue);
+}
+
+.read-more-wrapper {
+  margin-bottom: 3rem;
+}
+
+.read-more-wrapper:last-of-type {
+  margin-bottom: 0;
+}
+
+@media all and (min-width: 768px) {
+  .read-more-wrapper {
+    margin-bottom: 0;
+  }
+}
+
+a.read-more {
+  color: black;
+}
+
+a.read-more:hover {
+  color: black;
+}
+
+.newsletter-container a {
+  color: white;
+  text-decoration: underline;
+}
+
+.newsletter-container a:hover {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 2.6rem;
+  position: relative;
+}
+
+h1 a, h2 a, h3 a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+h2 {
+  font-size: 2.2rem;
+  position: relative;
+}
+
+article h2 {
+  font-size: 1.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+article h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.smaller {
+  font-size: 1rem;
+}
+
+pre {
+  margin-left: calc(50% - 50vw);
+  width: 100vw;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+code {
+  overflow: auto;
+  word-wrap: normal;
+  white-space: pre;
+}
+
+.content-image {
+  width: 100%;
+}
+
+img {
+  width: 100%;
+}
+
+.selfie {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.accordion {
+  margin-bottom: 20px;
+}
+
+input[name="accordion"] {
+  display: none;
+}
+
+.accordion-label {
+  color: #007bff;
+  cursor: pointer;
+  margin-bottom: 0;
+}
+
+.accordion-label:hover {
+  color: var(--pink);
+  text-decoration: underline;
+}
+
+.accordion-content {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.5s ease-in;
+}
+
+input[name="accordion"]:checked ~ .accordion-content {
+  max-height: 150px;
+  transition: max-height 0.5s ease-out;
+}
+
+blockquote:before {
+  content: "\201C";
+  font-size: 5rem;
+  position: absolute;
+  top: 19px;
+  left: -12px;
+  font-family: lato;
+  color: var(--pink);
+}
+
+blockquote {
+  position: relative;
+  padding-left: 2em;
+  line-height: 2.2rem;
+  font-size: 1.4rem;
+  font-style: italic;
+  letter-spacing: 0.07rem;
+  color: #666;
+  font-weight: 300;
+}
+
+blockquote.pullquote:before {
+  content: "";
+}
+
+blockquote.pullquote {
+  border-left: 0.2em solid var(--pink);
+  padding-left: 1em;
+  color: black;
+  font-weight: 400;
+  letter-spacing: 0.03rem;
+}
+
+@media all and (min-width: 992px) {
+  blockquote.pullquote{
+    padding: 0 20px;
+    max-width: 300px;
+    float: right;
+    margin: 20px -10% 20px 20px;
+  }
+}
+
+.tweet-this-icon {
+  height: 30px;
+  margin-bottom: 4px;
+}
+
+.logos {
+  line-height: 50px;
+}
+
+.logos > li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.logos > li:last-of-type {
+  margin-right: 0;
+}
+
+.logo {
+  display: block;
+  text-indent: -9999px;
+  width: var(--logo-width);
+  height: var(--logo-height);
+}
+
+.logo-youtube {
+  background: url(/images/logo-youtube.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.logo-twitter {
+  background: url(/images/logo-twitter.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.logo-devto {
+  background: url(/images/logo-devto.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.logo-medium {
+  background: url(/images/logo-medium.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.logo-facebook {
+  background: url(/images/logo-facebook.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.logo-linkedin {
+  background: url(/images/logo-linkedin.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.logo-github {
+  background: url(/images/logo-github.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.logo-goodreads {
+  background: url(/images/logo-goodreads.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.series-container {
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.series-heading {
+  margin: 0;
+  padding: 5px 10px;
+}
+
+.series-post {
+  display: block;
+  border-top: 1px solid black;
+  font-size: 80%;
+  font-weight: 400;
+  text-decoration: none;
+  padding: 5px 10px;
+}
+
+.series-post:hover {
+  text-decoration: none;
+}
+
+.series-post-unselected:hover {
+  background-color: var(--pink);
+  color: white;
+}
+
+.series-post-unselected:last-child:hover {
+  border-radius: 0 0 10px 10px;
+}
+
+.series-post-selected {
+  color: white;
+  background-color: var(--pink);
+}
+
+.series-post-selected:hover {
+  color: white;
+}
+
+.series-post-selected:last-child {
+  border-radius: 0 0 10px 10px;
+}
+
+strong {
+  font-weight: 600;
+}
+
+.mt-5- {
+  margin-top: 5px;
+}
+
+.mt-25 {
+  margin-top: 25px;
+}
+
+.mt-30 {
+  margin-top: 30px;
+}
+
+.mt-sm-50 {
+  margin-top: 50px;
+}
+
+@media all and (min-width: 768px) {
+  .mt-sm-50 {
+    margin-top: 0;
+  }
+}
+
+.fs-bigger {
+  font-size: 1.25rem;
+}
+
+.white-space-normal {
+   white-space: normal;
+}
