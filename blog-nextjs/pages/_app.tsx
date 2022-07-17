@@ -1,3 +1,5 @@
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'highlight.js/styles/mono-blue.css'
 import '../styles/base.css'
 import '../styles/tailwind.css'
 import type { AppProps } from 'next/app'
