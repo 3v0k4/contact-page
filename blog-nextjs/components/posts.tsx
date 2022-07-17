@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import { InternalLink } from '../components/internal-link'
 import { TagLink } from '../components/tag-link'
 
 type Tag = {
@@ -46,7 +46,7 @@ export const Posts = ({ categories, tags, posts }: Props) => (
     <ul className="no-list-style mt-5">
       {posts.map(({ title, description, slug }) => (
         <li key={slug} className="my-5">
-          <div><Link href={`/posts/${slug}${process.env.NODE_ENV === 'production' ? '.html' : ''}`}><a className="post-title">{title}</a></Link></div>
+          <div><InternalLink href={`/posts/${slug}`}><a className="post-title">{title}</a></InternalLink></div>
           <p className="text-secondary">{description}</p>
         </li>
       ))}

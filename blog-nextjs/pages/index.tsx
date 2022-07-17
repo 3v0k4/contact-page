@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { InternalLink } from '../components/internal-link'
 import Link from 'next/link'
 import Newsletter from '../components/newsletter'
 import { TagLink } from '../components/tag-link'
@@ -69,7 +70,7 @@ const Home = ({ categories, tags }: Props) => {
           <h2>Courses</h2>
 
           <div className="tw-mt-4 tw-text-center">
-            <Link href={`/tir${process.env.NODE_ENV === 'production' ? '.html' : ''}`}>
+            <InternalLink href={`/tir`}>
               <a>
                 <picture>
                   <source type="image/webp" srcSet="/images/tir.webp" />
@@ -77,7 +78,7 @@ const Home = ({ categories, tags }: Props) => {
                   <img width="345" height="533" className="md:tw-w-[50%]" alt="Cover of a book: Debug your time in range - The 6-week course for diabetic developers to increase TIR by 10%" src="/images/tir.png" />
                 </picture>
               </a>
-            </Link>
+            </InternalLink>
           </div>
         </div>
 

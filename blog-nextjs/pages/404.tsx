@@ -1,10 +1,10 @@
-import Link from 'next/link'
+import { InternalLink } from '../components/internal-link'
 
 const Custom404 = () => (
   <div className="col-sm-8 col-md-8 col-lg-6 mx-auto mt-4">
     <h1 id="page-not-found">Page Not Found</h1>
 
-    <p>You may want to visit the <Link href="/"><a>homepage</a></Link>. Or keep reading for my apologies.</p>
+    <p>You may want to visit the <InternalLink href="/"><a>homepage</a></InternalLink>. Or keep reading for my apologies.</p>
 
     <figure>
       <img src="/images/404.png" alt="Scan of a hand-drawn sketch representing the number 404 with two hands counting four and a bug in the middle" />

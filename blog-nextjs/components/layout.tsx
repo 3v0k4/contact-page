@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { InternalLink } from './internal-link'
 import Link from 'next/link'
 import React from 'react'
 import hljs from 'highlight.js'
@@ -36,7 +37,7 @@ const Layout = ({ children }: React.PropsWithChildren<{}>) => {
       <div className="tw-flex-grow-1 tw-flex-shrink-0 tw-basis-auto">
         <header>
           <div className="tw-text-center">
-            <Link href="/"><a className="tw-block tw-mx-auto tw-w-12 tw-h-12 tw-no-underline tw-cursor-pointer tw-bg-[length:50px] tw-bg-[image:url('/images/android-chrome-512x512.png')]"><span className="tw-sr-only">Home</span></a></Link>
+            <InternalLink href="/"><a className="tw-block tw-mx-auto tw-w-12 tw-h-12 tw-no-underline tw-cursor-pointer tw-bg-[length:50px] tw-bg-[image:url('/images/android-chrome-512x512.png')]"><span className="tw-sr-only">Home</span></a></InternalLink>
           </div>
         </header>
 
@@ -44,7 +45,7 @@ const Layout = ({ children }: React.PropsWithChildren<{}>) => {
       </div>
 
       <footer className="tw-text-center tw-py-4 tw-mt-2">
-        <Link href="/"><a><img height="80" width="80" alt="Picture (headshot) of Riccardo Odone" className="tw-w-20 tw-h-20 tw-rounded-full" src="/images/selfie.png" /></a></Link>
+        <InternalLink href="/"><a><img height="80" width="80" alt="Picture (headshot) of Riccardo Odone" className="tw-w-20 tw-h-20 tw-rounded-full" src="/images/selfie.png" /></a></InternalLink>
         <h3 className="tw-mt-2">Gimme a shout on <Link href="https://twitter.com/riccardoodone"><a target="_blank" rel="noopener">Twitter</a></Link>!</h3>
       </footer>
     </div>

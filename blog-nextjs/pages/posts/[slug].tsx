@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { InternalLink } from '../../components/internal-link'
 import Link from 'next/link'
 import Newsletter from '../../components/newsletter'
 import markdownToHtml from '../../lib/markdownToHtml'
@@ -80,12 +81,12 @@ const Post = ({ post }: Props) => (
       <div className="row">
         { post.randomPosts.map(randomPost => (
           <div key={randomPost.title} className="col-sm-8 col-md-8 col-lg-4 text-center px-4 mx-auto read-more-wrapper">
-            <Link href={`/posts/${randomPost.slug}${process.env.NODE_ENV === 'production' ? '.html' : ''}`}>
+            <InternalLink href={`/posts/${randomPost.slug}`}>
               <a className="read-more">
                 <h3>{randomPost.title}</h3>
                 <p>{randomPost.description}</p>
               </a>
-            </Link>
+            </InternalLink>
           </div>
         ))}
       </div>
@@ -145,14 +146,13 @@ export const getStaticPaths = async () => {
 const SeriesLink = ({ slug, title }: { slug: string, title: string }) => {
   const router = useRouter()
   const href = `/posts/${encodeURIComponent(slug)}`
-  const hrefExt = `${href}${process.env.NODE_ENV === 'production' ? '.html' : ''}`
-  const isActive = [href, hrefExt].includes(router.asPath.replaceAll('%E2%80%93', '–').replaceAll('%2B', '+'))
+  const isActive = href === router.asPath.replaceAll('%E2%80%93', '–').replaceAll('%2B', '+')
 
   return(
-    <Link href={hrefExt}>
+    <InternalLink href={href}>
       <a className={`series-post ${isActive ? 'series-post-selected' : 'series-post-unselected'}`}>
         {title}
       </a>
-    </Link>
+    </InternalLink>
   )
 }
