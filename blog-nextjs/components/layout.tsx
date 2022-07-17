@@ -45,7 +45,15 @@ const Layout = ({ children }: React.PropsWithChildren<{}>) => {
       </div>
 
       <footer className="tw-text-center tw-py-4 tw-mt-2">
-        <InternalLink href="/"><a><img height="80" width="80" alt="Picture (headshot) of Riccardo Odone" className="tw-w-20 tw-h-20 tw-rounded-full" src="/images/selfie.png" /></a></InternalLink>
+        <InternalLink href="/">
+          <a>
+            <picture>
+              <source type="image/webp" srcSet="/images/selfie.webp" />
+              <source type="image/png" srcSet="/images/selfie.png" />
+              <img height="80" width="80" alt="Picture (headshot) of Riccardo Odone" className="tw-w-20 tw-h-20 tw-rounded-full" src="/images/selfie.png" />
+            </picture>
+          </a>
+        </InternalLink>
         <h3 className="tw-mt-2">Gimme a shout on <Link href="https://twitter.com/riccardoodone"><a target="_blank" rel="noopener">Twitter</a></Link>!</h3>
       </footer>
     </div>

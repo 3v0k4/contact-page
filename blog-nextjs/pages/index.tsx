@@ -25,7 +25,7 @@ const Home = ({ categories, tags }: Props) => {
         <title>Riccardo Odone - Home</title>
       </Head>
 
-      <div className="tw-relative tw-bg-[position:70%_0%] tw-bg-[image:url('/images/hero.png')] tw-bg-cover tw-bg-no-repeat">
+      <div className="hero tw-relative tw-bg-[position:70%_0%] tw-bg-cover tw-bg-no-repeat">
         <div className="tw-px-[5%] tw-text-white tw-py-24 lg:tw-max-w-[50%] before:tw-top-0 before:tw-right-0 before:tw-left-0 before:tw-bottom-0 before:tw-bg-black/[0.2] before:tw-content-[''] before:tw-absolute md:before:tw-content-none">
           <h1 className="tw-leading-tight tw-uppercase tw-text-5xl sm:tw-text-6xl tw-font-extralight">
             <p>Ciao, I&apos;m Riccardo!</p>
