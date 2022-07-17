@@ -69,7 +69,7 @@ const Home = ({ categories, tags }: Props) => {
           <h2>Courses</h2>
 
           <div className="tw-mt-4 tw-text-center">
-            <Link href="/tir">
+            <Link href={`/tir${process.env.NODE_ENV === 'production' ? '.html' : ''}`}>
               <a>
                 <picture>
                   <source type="image/webp" srcSet="/images/tir.webp" />

@@ -46,7 +46,7 @@ export const Posts = ({ categories, tags, posts }: Props) => (
     <ul className="no-list-style mt-5">
       {posts.map(({ title, description, slug }) => (
         <li key={slug} className="my-5">
-          <div><Link href={`/posts/${slug}`}><a className="post-title">{title}</a></Link></div>
+          <div><Link href={`/posts/${slug}${process.env.NODE_ENV === 'production' ? '.html' : ''}`}><a className="post-title">{title}</a></Link></div>
           <p className="text-secondary">{description}</p>
         </li>
       ))}
