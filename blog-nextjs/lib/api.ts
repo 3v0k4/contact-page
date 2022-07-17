@@ -14,19 +14,24 @@ type Post = {
   canonical_url: string,
   tags: string[],
   series: string,
-  seriesPosts: { slug: string, title: string }[]
+  seriesPosts: { slug: string, title: string }[],
+  randomPosts: { slug: string, tile: string, description: string }[],
   content: string,
   tweet: string,
 }
 
+type SerializablePost = Omit<Post, 'date'> & { date: string }
+
+type ParsedPost = Partial<Post> & { slug: string } & { date: Date } & { title: string }
+
 const POSTS_DIRECTORY = join(process.cwd(), '_posts')
 
-export const parsePost = (slug: string): Record<string, any> => {
+export const parsePost = (slug: string) => {
   const fullPath = join(POSTS_DIRECTORY, `${slug}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
   const date = new Date(slug.split('-').slice(0, 3).join('-'))
   const { data, content } = matter(fileContents)
-  return { ...data, slug, date, content }
+  return { ...data, slug, date, content } as ParsedPost
 }
 
 export const getPostSlugs = () =>
@@ -41,47 +46,49 @@ const randomIndex = (max: number, randoms: number[]): number => {
 const randomIndexes = (length: number, xs: unknown[]): number[] =>
   Array
     .from({ length })
-    .reduce((acc: any) => [...acc, randomIndex(xs.length, acc)], []) as number[]
+    .reduce((acc: number[]) => [...acc, randomIndex(xs.length, acc)], [])
 
 const randomElements = <T>(length: number, xs: T[]): T[] =>
   randomIndexes(length, xs)
     .map(index => xs[index])
 
-const getPostBySlug_ = (slug: string, fields: string[] = []): Post => {
+type Fields = (keyof Post)[]
+
+const getPostBySlug_ = (slug: string, fields: Fields = []): Post => {
   const post = parsePost(slug)
 
   const seriesPosts = getPostSlugs()
     .map(parsePost)
-    .filter((p: any) => p.series && p.series === post.series)
-    .map((p: any) => ({ slug: p.slug.replace(/\.md$/, ''), title: p.title }))
+    .filter(p => p.series && p.series === post.series)
+    .map(p => ({ slug: p.slug.replace(/\.md$/, ''), title: p.title }))
 
   const randomPosts = randomElements(3, getPostSlugs())
     .map(parsePost)
-    .map((p: any) => ({ slug: p.slug.replace(/\.md$/, ''), title: p.title, description: p.description }))
+    .map(p => ({ slug: p.slug.replace(/\.md$/, ''), title: p.title, description: p.description }))
 
   return fields.length === 0 ?
-    { ...post, seriesPosts } :
-    fields.reduce((acc: any, field) => {
+    post as Post :
+    fields.reduce((acc, field) => {
       if (field === 'seriesPosts') { return { ...acc, [field]: seriesPosts } }
       if (field === 'randomPosts') { return { ...acc, [field]: randomPosts } }
       if (typeof post[field] !== 'undefined') { return { ...acc, [field]: post[field] } }
       return acc
-    }, {})
+    }, {}) as Post
   }
 
-const toStringifiedDate = (post: any): any =>
+const toStringifiedDate = (post: Post): SerializablePost =>
   ({ ...post, date: post.date.toLocaleDateString('en', { year: 'numeric', month: 'long', day: 'numeric' }) })
 
-export const getPostBySlug = (slug: string, fields: string[] = []): any =>
+export const getPostBySlug = (slug: string, fields: Fields = []): SerializablePost =>
   toStringifiedDate(getPostBySlug_(slug, fields))
 
-export const getAllPosts = (fields: string[] = []) =>
+export const getAllPosts = (fields: Fields = []) =>
   getPostSlugs()
     .map((slug) => getPostBySlug_(slug, fields.length === 0 ? fields : fields.concat(['date'])))
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
     .map(toStringifiedDate)
 
-export const getPostsByTag = (tag: string, fields: string[] = []) =>
+export const getPostsByTag = (tag: string, fields: Fields = []) =>
   getPostSlugs()
     .map((slug) => getPostBySlug_(slug, fields.length === 0 ? fields : fields.concat(['date', 'tags'])))
     .filter(post => post.tags.includes(tag))
@@ -93,9 +100,9 @@ const ICONS: Record<string, string> = {
   "Essential Skills": '♔',
 }
 
-const toTally = (acc: any, category: any) => {
-  if (acc[category]) { return { ...acc, [category]: acc[category] + 1 } }
-  return { ...acc, [category]: 1 }
+const toTally = (acc: Record<string, number>, label: string) => {
+  if (acc[label]) { return { ...acc, [label]: acc[label] + 1 } }
+  return { ...acc, [label]: 1 }
 }
 
 export const getCategories = () => {
@@ -113,7 +120,7 @@ export const getCategories = () => {
 export const getTags = () => {
   const tally = getAllPosts()
     .map(post => post.tags)
-    .map((tags: any) => tags.slice(1).map((tag: any) => [tags[0], tag]))
+    .map(tags => tags.slice(1).map(tag => [tags[0], tag].join(',')))
     .flat()
     .reduce(toTally, {})
 
