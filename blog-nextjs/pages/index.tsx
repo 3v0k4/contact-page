@@ -1,24 +1,11 @@
 import Head from 'next/head'
-import { InternalLink } from '../components/internal-link'
 import Link from 'next/link'
 import Newsletter from '../components/newsletter'
-import { TagLink } from '../components/tag-link'
+import { InternalLink } from '../components/internal-link'
+import { Tags, Props as TagsProps } from '../components/tags'
 import { getCategories, getTags } from './../lib/api'
 
-type Tag = {
-  icon: string,
-  tag: string,
-  count: number,
-}
-
-type Category = Tag
-
-type Props = {
-  categories: Category[],
-  tags: Tag[],
-}
-
-const Home = ({ categories, tags }: Props) => {
+const Home = ({ categories, tags }: TagsProps) => {
   return (
     <>
       <Head>
@@ -26,7 +13,7 @@ const Home = ({ categories, tags }: Props) => {
       </Head>
 
       <div className="hero tw-relative tw-bg-[position:70%_0%] tw-bg-cover tw-bg-no-repeat">
-        <div className="tw-px-[5%] tw-text-white tw-py-24 lg:tw-max-w-[50%] before:tw-top-0 before:tw-right-0 before:tw-left-0 before:tw-bottom-0 before:tw-bg-black/[0.2] before:tw-content-[''] before:tw-absolute md:before:tw-content-none">
+        <div className="tw-px-[5%] tw-text-white tw-py-24 lg:tw-bg-transparent lg:tw-max-w-[50%] tw-bg-black/[0.6]">
           <h1 className="tw-leading-tight tw-uppercase tw-text-5xl sm:tw-text-6xl tw-font-extralight">
             <p>Ciao, I&apos;m Riccardo!</p>
             <p className="tw-mt-10">I craft web software and lead as a maverick.</p>
@@ -37,88 +24,60 @@ const Home = ({ categories, tags }: Props) => {
         </div>
       </div>
 
-      <div className="col-sm-8 col-md-8 col-lg-6 mx-auto mt-5">
-        <div className="tw-mt-5">
-          <h2>PinkLetter</h2>
-          <Link href="https://buttondown.email/riccardo.odone/archive"><a target="_blank" rel="noopener" className="tw-mt-4">Check the archives</a></Link>
+      <div className="tw-mt-20 tw-mx-auto tw-max-w-3xl tw-px-4">
+        <div>
+          <h2 className="tw-text-4xl tw-font-semibold tw-mb-4">PinkLetter</h2>
+          <Link href="https://buttondown.email/riccardo.odone/archive">
+            <a target="_blank" rel="noopener" className="tw-underline tw-text-[color:var(--blue)]">Check the archives</a>
+          </Link>
         </div>
 
-        <div className="tw-mt-5">
-          <h2>Blog</h2>
+        <div className="tw-mt-20">
+          <h2 className="tw-text-4xl tw-font-semibold tw-mb-4">Blog</h2>
 
-          <div className="tw-mt-4">
-
-            <div>
-              { categories.map(({ icon, tag, count }) => (
-                <TagLink key={tag} tag={tag}>
-                  <span className="btn-tag-icon-lg">{icon} </span>{tag} <span className="badge badge-white">{count}</span>
-                </TagLink>
-              ))}
-            </div>
-
-            <div className="mt-3 d-none d-md-block">
-              { tags.map(({ icon, tag, count }) => (
-                <TagLink key={tag} tag={tag} klass="btn-sm">
-                  <span className="btn-tag-icon-lg">{icon} </span>{tag} <span className="badge badge-white badge-sm">{count}</span>
-                </TagLink>
-              ))}
-            </div>
-          </div>
+          <Tags categories={categories} tags={tags} />
         </div>
 
-        <div className="tw-mt-5">
-          <h2>Courses</h2>
+        <div className="tw-mt-20">
+          <h2 className="tw-text-4xl tw-font-semibold tw-mb-4">Courses</h2>
 
-          <div className="tw-mt-4 tw-text-center">
-            <InternalLink href={`/tir`}>
-              <a>
-                <picture>
-                  <source type="image/webp" srcSet="/images/tir.webp" />
-                  <source type="image/jpeg" srcSet="/images/tir.png" />
-                  <img width="345" height="533" className="md:tw-w-[50%]" alt="Cover of a book: Debug your time in range - The 6-week course for diabetic developers to increase TIR by 10%" src="/images/tir.png" />
-                </picture>
-              </a>
-            </InternalLink>
-          </div>
+          <InternalLink href={`/tir`}>
+            <a>
+              <picture>
+                <source type="image/webp" srcSet="/images/tir.webp" />
+                <source type="image/jpeg" srcSet="/images/tir.png" />
+                <img width="345" height="533" className="md:tw-w-[50%] tw-mx-auto" alt="Cover of a book: Debug your time in range - The 6-week course for diabetic developers to increase TIR by 10%" src="/images/tir.png" />
+              </picture>
+            </a>
+          </InternalLink>
         </div>
 
-        <h2 className="mt-5">I&apos;m also on</h2>
-        <ul className="no-list-style logos mt-4">
-          <li>
-            <Link href="https://www.youtube.com/channel/UCqoYTAX09Ico3T_NCRy-iSg"><a className="logo logo-youtube" target="_blank" rel="noopener">YouTube</a></Link>
-          </li>
+        <div className="tw-mt-20">
+          <h2 className="tw-text-4xl tw-font-semibold tw-mb-4">I&apos;m also on</h2>
 
-          <li>
-            <Link href="https://twitter.com/riccardoodone"><a className="logo logo-twitter" target="_blank" rel="noopener">Twitter</a></Link>
-          </li>
-
-          <li>
-            <Link href="https://dev.to/riccardoodone"><a className="logo logo-devto" target="_blank" rel="noopener">DevTO</a></Link>
-          </li>
-
-          <li>
-            <Link href="https://medium.com/@riccardoodone"><a className="logo logo-medium" target="_blank" rel="noopener">Medium</a></Link>
-          </li>
-
-          <li>
-            <Link href="https://www.facebook.com/riccardo.odone"><a className="logo logo-facebook" target="_blank" rel="noopener">Facebook</a></Link>
-          </li>
-
-          <li>
-            <Link href="https://it.linkedin.com/in/riccardoodone"><a className="logo logo-linkedin" target="_blank" rel="noopener">Linkedin</a></Link>
-          </li>
-
-          <li>
-            <Link href="https://github.com/3v0k4"><a className="logo logo-github" target="_blank" rel="noopener">Github</a></Link>
-          </li>
-
-          <li>
-            <Link href="https://www.goodreads.com/review/list/75221217-riccardo?shelf=read&sort=rating"><a className="logo logo-goodreads" target="_blank" rel="noopener">GoodReads</a></Link>
-          </li>
-        </ul>
+          <ul className="tw-list-none tw-flex tw-flex-wrap tw-gap-8">
+            {
+              [
+                { href: "https://www.youtube.com/channel/UCqoYTAX09Ico3T_NCRy-iSg", klass: "tw-bg-[url(/images/logo-youtube.svg)]", label: "YouTube" },
+                { href: "https://twitter.com/riccardoodone", klass: "tw-bg-[url(/images/logo-twitter.svg)]", label: "Twitter" },
+                { href: "https://dev.to/riccardoodone", klass: "tw-bg-[url(/images/logo-devto.svg)]", label: "DevTO" },
+                { href: "https://medium.com/@riccardoodone", klass: "tw-bg-[url(/images/logo-medium.svg)]", label: "Medium" },
+                { href: "https://www.facebook.com/riccardo.odone", klass: "tw-bg-[url(/images/logo-facebook.svg)]", label: "Facebook" },
+                { href: "https://it.linkedin.com/in/riccardoodone", klass: "tw-bg-[url(/images/logo-linkedin.svg)]", label: "Linkedin" },
+                { href: "https://github.com/3v0k4", klass: "tw-bg-[url(/images/logo-github.svg)]", label: "Github" },
+                { href: "https://www.goodreads.com/review/list/75221217-riccardo?shelf=read&sort=rating", klass: "tw-bg-[url(/images/logo-goodreads.svg)]", label: "GoodReads" },
+              ].map(({ href, klass, label }) => (
+                <li key={href}>
+                  <Link href={href}><a className={`tw-block tw-indent-[-9999px] tw-h-14 tw-w-14 tw-bg-contain tw-bg-no-repeat tw-bg-center ${klass}`} target="_blank" rel="noopener">{label}</a></Link>
+                </li>
+            ))}
+          </ul>
+        </div>
       </div>
 
-      <Newsletter />
+      <div className="tw-mt-20">
+        <Newsletter />
+      </div>
     </>
   )
 }

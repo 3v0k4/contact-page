@@ -1,13 +1,5 @@
-import { InternalLink } from '../components/internal-link'
-import { TagLink } from '../components/tag-link'
-
-type Tag = {
-  icon: string,
-  tag: string,
-  count: number,
-}
-
-type Category = Tag
+import { InternalLink } from './internal-link'
+import { Tags, Props as TagsProps } from './tags'
 
 type Post = {
   title: string,
@@ -16,38 +8,26 @@ type Post = {
 }
 
 type Props = {
-  categories: Category[],
-  tags: Tag[],
   posts: Post[],
-}
+} & TagsProps
 
 export const Posts = ({ categories, tags, posts }: Props) => (
-  <div className="col-sm-8 col-md-8 col-lg-6 mx-auto mt-4">
-    <h1 className="text-center">Posts</h1>
+  <div className="tw-mx-auto tw-max-w-3xl tw-px-4 tw-mt-10">
+    <h1 className="tw-text-center tw-text-4xl tw-font-semibold">
+      Posts
+    </h1>
 
-    <div className="text-center mt-4">
-      <div>
-        { categories.map(({ icon, tag, count }) => (
-          <TagLink key={tag} tag={tag}>
-            <span className="btn-tag-icon-lg">{icon} </span>{tag} <span className="badge badge-white">{count}</span>
-          </TagLink>
-        ))}
-      </div>
-
-      <div className="mt-3 d-none d-md-block">
-        { tags.map(({ icon, tag, count }) => (
-          <TagLink key={tag} tag={tag} klass="btn-sm">
-            <span className="btn-tag-icon-lg">{icon} </span>{tag} <span className="badge badge-white badge-sm">{count}</span>
-          </TagLink>
-        ))}
-      </div>
+    <div className="tw-text-center tw-mt-10">
+      <Tags categories={categories} tags={tags} />
     </div>
 
-    <ul className="no-list-style mt-5">
+    <ul className="tw-list-none tw-mt-10">
       {posts.map(({ title, description, slug }) => (
-        <li key={slug} className="my-5">
-          <div><InternalLink href={`/posts/${slug}`}><a className="post-title">{title}</a></InternalLink></div>
-          <p className="text-secondary">{description}</p>
+        <li key={slug} className="tw-my-10">
+          <InternalLink href={`/posts/${slug}`}>
+            <a className="tw-text-2xl tw-text-[color:var(--blue)] hover:tw-text-[color:var(--pink)]">{title}</a>
+          </InternalLink>
+          <p className="tw-text-gray-500">{description}</p>
         </li>
       ))}
     </ul>

@@ -1,8 +1,8 @@
 import Head from 'next/head'
-import { InternalLink } from './internal-link'
 import Link from 'next/link'
 import React from 'react'
 import hljs from 'highlight.js'
+import { InternalLink } from './internal-link'
 import { useRouter } from 'next/router'
 
 const Layout = ({ children }: React.PropsWithChildren<{}>) => {
@@ -50,11 +50,11 @@ const Layout = ({ children }: React.PropsWithChildren<{}>) => {
             <picture>
               <source type="image/webp" srcSet="/images/selfie.webp" />
               <source type="image/png" srcSet="/images/selfie.png" />
-              <img height="80" width="80" alt="Picture (headshot) of Riccardo Odone" className="tw-w-20 tw-h-20 tw-rounded-full" src="/images/selfie.png" />
+              <img height="80" width="80" alt="Picture (headshot) of Riccardo Odone" className="tw-w-20 tw-h-20 tw-rounded-full tw-mx-auto" src="/images/selfie.png" />
             </picture>
           </a>
         </InternalLink>
-        <h3 className="tw-mt-2">Gimme a shout on <Link href="https://twitter.com/riccardoodone"><a target="_blank" rel="noopener">Twitter</a></Link>!</h3>
+        <h3 className="tw-mt-2 tw-font-bold">Gimme a shout on <Link href="https://twitter.com/riccardoodone"><a target="_blank" rel="noopener" className="tw-underline">Twitter</a></Link>!</h3>
       </footer>
     </div>
   </>

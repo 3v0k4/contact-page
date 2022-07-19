@@ -1,17 +1,8 @@
 import Head from 'next/head'
 import Newsletter from '../../components/newsletter'
 import { Posts } from '../../components/posts'
+import { Props as TagsProps } from '../../components/tags'
 import { getCategories, getTags, getPostsByTag, getAllPosts } from '../../lib/api'
-
-type Tag = {
-  icon: string,
-  tag: string,
-  count: number,
-  url: string,
-  status: string,
-}
-
-type Category = Tag
 
 type Post = {
   title: string,
@@ -20,11 +11,9 @@ type Post = {
 }
 
 type Props = {
-  categories: Category[],
-  tags: Tag[],
   posts: Post[],
   tag: string,
-}
+} & TagsProps
 
 const Tag = ({ categories, tags, posts, tag }: Props) => (
   <>
