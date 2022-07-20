@@ -29,9 +29,8 @@ We jumped in and started moving tickets from to-do to done. We were working fast
 > But why do they do that?
 > Because.. Because.. Well, that's a good question!
 
-```pullquote
-We actually spent the next several hours using the developers' favourite key: backspace.
-```
+> We actually spent the next several hours using the developers' favourite key: backspace.
+
 Turns out, timezones were not *really really* needed. With that in mind, we went back and continued fixing the issues. No! Of course we didn't. We actually spent the next several hours using the developers' favourite key: backspace.
 
 We made a mistake. We started with a solution (i.e. timezones). Asking why allowed us to ladder up to the problem. This is where we uncovered the assumption (i.e. users need to compare across timezones). Finally, we found a cheap way to validate it and discovered the problem was not there in the first place.

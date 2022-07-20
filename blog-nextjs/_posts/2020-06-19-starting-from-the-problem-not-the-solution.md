@@ -45,9 +45,7 @@ It's the end of the day. Looking back I feel like a champion: I found the issue 
 
 Well, not really. Sure I have a good story for a blog post. Still, I could have found the issue within five minutes of reading the email. Instead, it took me an entire day.
 
-```pullquote
-I made the mistake of starting from a solution and not from a problem
-```
+> I made the mistake of starting from a solution and not from a problem
 I made the mistake of starting from a solution and not from a problem. "Sidekiq Frozen" is a problem with a (wrong) solution embedded. Unfortunately, once I read that line bias kicked in and I started fixating on Sidekiq being the issue. Moreover, when I noticed some strange things in the Sidekiq logs I got even more confident I was on the right tracks.
 
 I spent most of the day in solution space. The wrong solution space. In fact, I was solving a problem that didn't exist. Plus, without a definition of done, I didn't even know when to stop. This is not a particularly good combo.

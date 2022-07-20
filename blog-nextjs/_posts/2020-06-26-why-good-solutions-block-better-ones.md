@@ -33,7 +33,6 @@ Indeed what I had experienced was a bias. Unfortunately, as any other bias, it h
 
 The number one trick I found to beat Einstellung is to **talk to somebody else**, a person with a different background and problem solving approach. If possible, it would be best not to bias them with our own solutions: individually solve the problem and only then discuss pros and cons. Not that it was needed, but here's another reason to support diversity.
 
-```pullquote
-Ask yourself: why is this solution a bad one?
-```
+> Ask yourself: why is this solution a bad one?
+
 Trying to outsmart biases by oneselves is probably not a great strategy: they grow smarter as we do. But should the need arise here's a couple of other tricks to mitigate Einstellung: always devise multiple solutions and confront them. Most importantly, ask yourself "why is this solution a bad one?" then answer with as many reasons as possible.
