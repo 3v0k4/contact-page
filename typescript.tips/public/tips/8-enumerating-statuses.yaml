@@ -1,0 +1,17 @@
+title: Enumerating statuses
+description: Explicitly enumerate the valid responses in a union type instead of adding boolean flags.
+badCode: |
+  type Response = { fetched: boolean, errored: boolean, data?: Data }
+  const response: Response = // ⛔️ Error before fetch?!
+    { fetched: false, errored: true, data: null }
+
+  // ⛔️ There are more combinations that don't make any sense.
+goodCode: |
+  type Response<Error, Success> =
+    { _kind: 'not_requested' } |
+    { _kind: 'loading' } |
+    { _kind: 'error', error: Error } |
+    { _kind: 'success', data: Success }
+
+  const response: Response = // ✅ Does not compile.
+    { fetched: false, errored: true, data: null }

@@ -1,0 +1,18 @@
+title: Numbers with units
+description: Keep track of the currency with a generic class to avoid mixing them.
+badCode: |
+  const dollars: number = 2
+  const euros: number = 3
+  dollars + euros // ⛔️ Oops!
+goodCode: |
+  class Money<Currency extends string> {
+    constructor(readonly currency: Currency, readonly amount: number) {}
+
+    sum(other: Money<Currency>) {
+      return new Money(this.currency, this.amount + other.amount)
+    }
+  }
+
+  const dollars = new Money('USD', 2)
+  const euros = new Money('EUR', 3)
+  dollars.sum(euros) // ✅ Does not compile
