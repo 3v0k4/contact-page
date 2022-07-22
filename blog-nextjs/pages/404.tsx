@@ -1,18 +1,18 @@
 import { InternalLink } from '../components/internal-link'
 
 const Custom404 = () => (
-  <div className="tw-mx-auto tw-max-w-3xl tw-px-4 tw-my-10">
+  <div className="mx-auto max-w-3xl px-4 my-10">
     <div className="post">
-      <h1 className="tw-text-4xl tw-font-semibold">Page Not Found</h1>
+      <h1 className="text-4xl font-semibold">Page Not Found</h1>
 
-      <p className="tw-mt-4">You may want to visit the <InternalLink href="/"><a>homepage</a></InternalLink>. Or keep reading for my apologies.</p>
+      <p className="mt-4">You may want to visit the <InternalLink href="/"><a>homepage</a></InternalLink>. Or keep reading for my apologies.</p>
 
-      <figure className="tw-mt-4">
+      <figure className="mt-4">
         <img src="/images/404.png" alt="Scan of a hand-drawn sketch representing the number 404 with two hands counting four and a bug in the middle" />
         <figcaption aria-hidden="true">Scan of a hand-drawn sketch representing the number 404 with two hands counting four and a bug in the middle</figcaption>
       </figure>
 
-      <p className="tw-mt-4">I am sorry.</p>
+      <p className="mt-4">I am sorry.</p>
 
       <p>If you got here by clicking on a link and you are not an internet bot, then I made a mistake.</p>
 

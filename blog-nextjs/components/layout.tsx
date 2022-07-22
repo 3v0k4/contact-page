@@ -33,28 +33,28 @@ const Layout = ({ children }: React.PropsWithChildren<{}>) => {
       <meta name="twitter:card" content="summary" />
     </Head>
 
-    <div className="tw-flex tw-flex-col">
-      <div className="tw-flex-grow-1 tw-flex-shrink-0 tw-basis-auto">
+    <div className="flex flex-col">
+      <div className="flex-grow-1 flex-shrink-0 basis-auto">
         <header>
-          <div className="tw-text-center">
-            <InternalLink href="/"><a className="tw-block tw-mx-auto tw-w-12 tw-h-12 tw-no-underline tw-cursor-pointer tw-bg-[length:50px] tw-bg-[image:url('/images/android-chrome-512x512.png')]"><span className="tw-sr-only">Home</span></a></InternalLink>
+          <div className="text-center">
+            <InternalLink href="/"><a className="block mx-auto w-12 h-12 no-underline cursor-pointer bg-[length:50px] bg-[image:url('/images/android-chrome-512x512.png')]"><span className="sr-only">Home</span></a></InternalLink>
           </div>
         </header>
 
         <main role="main">{children}</main>
       </div>
 
-      <footer className="tw-text-center tw-py-4 tw-mt-2">
+      <footer className="text-center py-4 mt-2">
         <InternalLink href="/">
           <a>
             <picture>
               <source type="image/webp" srcSet="/images/selfie.webp" />
               <source type="image/png" srcSet="/images/selfie.png" />
-              <img height="80" width="80" alt="Picture (headshot) of Riccardo Odone" className="tw-w-20 tw-h-20 tw-rounded-full tw-mx-auto" src="/images/selfie.png" />
+              <img height="80" width="80" alt="Picture (headshot) of Riccardo Odone" className="w-20 h-20 rounded-full mx-auto" src="/images/selfie.png" />
             </picture>
           </a>
         </InternalLink>
-        <h3 className="tw-mt-2 tw-font-bold">Gimme a shout on <Link href="https://twitter.com/riccardoodone"><a target="_blank" rel="noopener" className="tw-underline">Twitter</a></Link>!</h3>
+        <h3 className="mt-2 font-bold">Gimme a shout on <Link href="https://twitter.com/riccardoodone"><a target="_blank" rel="noopener" className="underline">Twitter</a></Link>!</h3>
       </footer>
     </div>
   </>
