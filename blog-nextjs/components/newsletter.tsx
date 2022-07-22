@@ -29,7 +29,7 @@ const Newsletter = () => (
 
           <div className="">
             <ul className="text-left list-[circle] list-inside">
-              <li>A 79-page book with the best links I curated over the years</li>
+              <li>A 100+ page book with the best links I curated over the years</li>
               <li className="mt-1">An email once a week full of timeless software wisdom</li>
               <li className="mt-1">Your recommended weekly dose of pink</li>
               <li className="mt-1"><span className="font-bold">Try before you buy? </span>

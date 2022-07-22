@@ -58,6 +58,13 @@ by [Dillon Kearns](https://twitter.com/dillontkearns)
 
 Elm's Opaque Types are a powerful tool for narrowing the surface area where you check a constraint. TypeScript's Branded Types give similar functionality but without closing outside use, so you can't be sure the constraints are enforced everywhere. 
 
+&nbsp;
+
+## [Make Data Structures](https://www.youtube.com/watch?v=x1FU3e0sT1I)
+by [Richard Feldman](https://twitter.com/rtfeldman)
+
+Start by thinking about what data structures I'm going to use to represent my application.
+
 # Haskell / PureScript
 
 &nbsp;
@@ -339,7 +346,63 @@ by [Ryan Lee](https://twitter.com/ryanleecode)
 
 This post is an introduction to fp-ts, a functional programming library for Typescript. Why should you be learning fp-ts? The first reason is better type safety. Fp‑ts allows you to make assertions about your data structures without writing user-defined type guards or using the as operator. The second reason is expressiveness and readability. Fp-ts gives you the tools necessary to elegantly model a sequence of operations that can fail. All in all, you should add fp-ts to your repertoire of tools because it will help you write better Typescript programs.
 
-# React
+&nbsp;
+
+## [TypeScript Tips](https://typescript.tips/)
+by [Riccardo Odone](https://twitter.com/RiccardoOdone)
+
+Make Bugs Impossible. One TypeScript Tip At A Time.
+
+&nbsp;
+
+## [The TypeScript converging point](https://fettblog.eu/slides/the-typescript-converging-point/)
+by [Stefan Baumgartner](https://twitter.com/ddprrt)
+
+What we got is type safety for programs that live by using a flexible, string-based API. We transformed string types to strong types. All with just a couple lines of code and some of the more advanced features of TypeScript.
+
+&nbsp;
+
+## [How the TypeScript Compiler Compiles](https://www.youtube.com/watch?v=X8k_4tZ16qU)
+by [Orta Therox](https://twitter.com/orta)
+
+A systems-level look at the TypeScript compiler. How it converts a file into something into data, checks the validity of that data and finally creates .js files on the disk. 
+
+&nbsp;
+
+## [TypeScript / How some utility types are implemented](https://www.huy.rocks/everyday/03-30-2022-typescript-how-some-utility-types-are-implemented)
+by [Huy](https://twitter.com/huytd189)
+
+TypeScript provides several utility types◹ to help us manipulate types easier, like: Partial<T>, Required<T>, Pick<T, Keys>,…
+
+&nbsp;
+
+## [Opaque Types](https://blog.beraliv.dev/2021-05-07-opaque-type-in-typescript)
+by [Alexey Berezin](https://twitter.com/beraliv)
+
+TypeScript, (un)like Elm and Haskell, has a structural type system.
+
+&nbsp;
+
+## [Get the best of TypeScript Control Flow Analysis](https://retool.com/blog/typescript-control-flow-analysis-best-of/)
+by [Charly Poly](https://twitter.com/whereischarly)
+
+This article will show some simple type construction patterns, code writing habits, and compiler options that you can use to improve your application's type inference without increasing its complexity.
+
+&nbsp;
+
+## [A Complete Guide To TypeScript’s Never Type](https://www.zhenghao.io/posts/ts-never)
+by [Zhenghao He](https://twitter.com/he_zhenghao)
+
+TypeScript’s never type is very under-discussed, because it’s not nearly as ubiquitous or inescapable as other types. A TypeScript beginner can probably ignore never type as it only appears when dealing with advanced types, such as conditional types, or reading their cryptic type error messages.
+
+&nbsp;
+
+## [Gary Bernhardt - TypeScript and Testing](https://fullstackradio.com/144)
+by [Full Stack Radio](https://twitter.com/adamwathan)
+
+In this episode, Adam talks to Gary Bernhardt about building Execute Program, why he chose to build it as a full-stack TypeScript application, and the implications using TypeScript has on what you need to test.
+
+# React / Next / Remix
 
 &nbsp;
 
@@ -389,7 +452,48 @@ But what is a fiber? How does it relate to a coroutine? What are algebraic effec
 
 This talk will go over these computer science topics in the context of React Fiber, to help shed some light on how React Fiber is implemented and the control flow concepts behind the new APIs.
 
+&nbsp;
+
+## [The Story of Next.js](https://www.youtube.com/watch?v=BILxV_vrZO0)
+by uidotdev
+
+This is the story of how Next.js took over the world.
+
+&nbsp;
+
+## [Remix](https://remix.run)
+
+Remix is a full stack web framework that lets you focus on the user interface and work back through web fundamentals to deliver a fast, slick, and resilient user experience. People are gonna love using your stuff.
+
+&nbsp;
+
+## [Building my first Remix app!](https://www.youtube.com/watch?v=RwVrEQRI1HU)
+by [Sam Selikoff](https://twitter.com/samselikoff)
+
+Follow along as I build a simple tracking app for my workouts using Remix! We end up with a form to create new entries and a homepage to view them, and the whole thing gets deployed to Fly.io.
+
+&nbsp;
+
+## [Data Flow in Remix](https://remix.run/blog/remix-data-flow)
+by [Jim Nielsen](https://twitter.com/jimniels)
+
+With Remix, your UI becomes a function of state across the network, not just locally.
+
+&nbsp;
+
+## [RemixConf 2022 - Videos](https://www.youtube.com/playlist?list=PLXoynULbYuEC36XutMMWEuTu9uuh171wx)
+by Remix
+
+Remix is a web framework with a laser focus on web fundamentals and modern user experience. Remix Conf is intended to feature members of the Remix community and give them an opportunity to inspire each other to build excellent apps with Remix. #RemixConf 2022 was the first year #RemixConf was held.
+
 \includepdf[pages=1]{intermission.pdf}
+
+&nbsp;
+
+## [Why you should lift component state up to the URL](https://www.youtube.com/watch?v=sFTGEs2WXQ4)
+by [Sam Selikoff](https://twitter.com/samselikoff)
+
+"How can I sync component state with the URL?" This is one of the most common questions I see asked in the React community, and in this video we're going to learn why trying to synchronize state between your React app and the URL is a bad idea – and the right way to address this issue.
 
 # Ruby
 
@@ -430,6 +534,13 @@ Is there anything we can do to make legacy Ruby more maintainable?
 
 That question led me to this talk. In it, I introduce a new gem that we designed to help wrangle legacy refactors. It’s called Suture, and along with providing some interesting functionality to make refactoring less mysterious and scary, it also prescribes a clear, careful, and repeatable workflow for increasing our confidence when changing legacy code.
 
+&nbsp;
+
+## [The Turbo Rails Tutorial](https://www.hotrails.dev)
+by [Alexandre Ruban](https://twitter.com/alexandre_ruban)
+
+Learn how to create modern, single-page, reactive web applications with Ruby on Rails 7 without writing any custom JavaScript code.
+
 # Rust
 
 &nbsp;
@@ -464,7 +575,53 @@ by [Lily Mara](https://twitter.com/thelily_mara)
 
 In this talk I will show that these optimizations are often unnecessary to get performance that beats highly dynamic languages like Python. For new Rust developers, breaking the temptation to over-optimize can lead to higher productivity and satisfaction with Rust.
 
-# Sql / Postgres
+# Other Programming Languages
+
+&nbsp;
+
+## [Tackling Concurrency Bugs with TLA+](https://www.youtube.com/watch?v=_9B__0S21y8)
+by [Hillel Wayne](https://twitter.com/hillelogram)
+
+Concurrency is hard. How do you test your system when it's spread across three services and four languages? Unit testing and type systems only take us so far. At some point we need new tools.
+
+Enter TLA+. TLA+ is a specification language that describes your system and the properties you want. This makes it a fantastic complement to testing: not only can you check your code, you can check your design, too! TLA+ is especially effective for testing concurrency problems, like stalling, race conditions, and dropped messages.
+
+&nbsp;
+
+## [Darklang - Demo: Office Sign-in Application](https://www.youtube.com/watch?v=orRn2kTtRXQ)
+by [Ellen Chisa](https://twitter.com/ellenchisa)
+
+A demo of using Dark to build an office sign in application (API, data storage, external API connections and background workers).
+
+&nbsp;
+
+## [The Unison Programming Language with Rúnar Bjarnason](https://mobile.twitter.com/sw_unscripted/status/1517588731150188546)
+by [Richard Feldman](https://twitter.com/rtfeldman)
+
+Richard talks with Unison Programming Language co-creator Rúnar Bjarnason about the things that make Unison unlike any other programming language in the world.
+
+&nbsp;
+
+## [A (Not So Gentle) Introduction To Systems Programming In ATS](https://www.youtube.com/watch?v=zt0OQb1DBko)
+by [Aditya Siram](https://twitter.com/deech)
+
+The recent surge of interest in secure memory management has sparked a renaissance of type safe systems programming languages. ATS is a statically typed ML that compiles to C and offers what almost no other modern systems language including Rust has: type safe pointer arithmetic.
+
+&nbsp;
+
+## [Lua in 100 Seconds](https://www.youtube.com/watch?v=jUuqBZwwkQw)
+by Fireship
+
+Lua is a lightweight dynamic scripting language often embedded into other programs like World of Warcraft and Roblox. It's minimal syntax makes it easier to learn than Python, while being much more performant than other interpreted languages. 
+
+&nbsp;
+
+## [Generate web forms from pure functions](https://www.haskellforall.com/2022/05/generate-web-forms-from-pure-functions.html)
+by [Gabriella Gonzalez](https://twitter.com/GabriellaG439)
+
+This project is a web page which can dynamically convert a wide variety of functional programming expressions to their equivalent HTML. This conversion can even auto-generate interactive web forms from functions, which means that people without web programming knowledge can use the Grace browser to create and share simple and interactive web pages.
+
+# Sql / NoSql
 
 &nbsp;
 
@@ -649,6 +806,88 @@ PostgreSQL is the world’s most advanced open source relational database, and i
 
 In this talk, we learn advanced SQL techniques and how to reason about which part of the backend code should be done in the database, and which part of the backend code is better written as an SQL query.
 
+&nbsp;
+
+## [Postgres SQL Lessons From Advent of Code Challenges](https://heap.io/blog/lessons-from-completing-a-few-advent-of-code-problems-in-postgres-sql)
+by Heap
+
+We did something odd for Advent of Code this year: We solved a few challenges in javascript and then in PostgreSQL. We learned a few interesting things about SQL that we'd like to share here.
+
+&nbsp;
+
+## [Efficient Pagination Using Deferred Joins](https://aaronfrancis.com/2022/efficient-pagination-using-deferred-joins)
+by [Aaron Francis](https://twitter.com/aarondfrancis)
+
+Paginating records across large datasets in a web application seems like an easy problem that can actually be pretty tough to scale. The two main pagination strategies are offset/limit and cursors.
+
+We'll first take a look at the two methods and then a slight modification that can make offset/limit extremely performant.
+
+&nbsp;
+
+## [Changing Tires at 100mph: A Guide to Zero Downtime Migrations](https://kiranrao.ca/2022/05/04/zero-downtime-migrations.html)
+by Kiran Rao
+
+This guide will go through the step-by-step process of migrating tables in PostgreSQL. While the examples are for a PostgreSQL table migration, the same steps can apply to almost any migration.
+
+&nbsp;
+
+## [SQL tricks and concepts you didn't know about](https://www.youtube.com/watch?v=QoCGmvVCqto)
+by [Aleksandra Sikora](https://twitter.com/aleksandrasays)
+
+Did you know that some SQL variants are Turing complete and let you write any program in SQL? Of course, no one's that crazy... But what are the limits of SQL? What are some crazy things we can do with it? I'm going to go over a few of them in this talk. It won't be only fun stuff, though! I'm going to show some more practical but lesser-known concepts too. Let's discover some hidden SQL traits together!
+
+&nbsp;
+
+## [Five Easy to Miss PostgreSQL Query Performance Bottlenecks](https://pawelurbanek.com/postgresql-query-bottleneck)
+by [Paweł Urbanek](https://twitter.com/_pawurb)
+
+PostgreSQL query planner is full of surprises, so a common-sense approach to writing performant queries is sometimes misleading. In this blog post, I’ll describe examples of optimizing seemingly obvious queries with the help of EXPLAIN ANALYZE and Postgres metadata analysis.
+
+&nbsp;
+
+## [A Hairy PostgreSQL Incident](https://ardentperf.com/2022/02/10/a-hairy-postgresql-incident/)
+by [Jeremy Schneider](https://twitter.com/jer_s)
+
+It was 5:17pm today, just as I was wrapping up work for the day, and my manager pinged me with the following chat:
+
+&nbsp;
+
+## [Automating my job by using GPT-3 to generate database-ready SQL to answer business questions](https://blog.seekwell.io/gpt3)
+by [Brian Kane](https://www.linkedin.com/in/brian-kane-214a97ba/)
+
+I want to be able to describe a question in plain English and have GPT-3 convert it into the SQL code that, if executed on my Postgres database, would answer the question. 
+
+&nbsp;
+
+## [AWS Aurora VS DynamoDB](https://www.youtube.com/watch?v=crHwekf0gTA)
+by [Daniel](https://twitter.com/BeABetterDevv)
+
+RDS Aurora is a popular SQL based Database Engine offered by AWS. DynamoDB is the competitor, a NoSQL database engine that enables limitless scaling potential with excellent performance. Wondering what the difference is between them and which one is right for your new project? Then this is the video for you. 
+
+&nbsp;
+
+## [Cloud SQLite](https://brandur.org/nanoglyphs/034-cloud-sqlite)
+by [Brandur](https://twitter.com/brandur)
+
+This is one of those moments where we might legitimately be looking at a turning point for web technology – like when the combination of MySQL and PHP made it possible for anyone to build a dynamic, stateful application, or when Amazon changed the world with S3 and EC2. We could look back on this moment in ten years and think of monolithic programs like Postgres akin to how we think about Oracle today – hopelessly outdated in our modern world of fully distributed, streaming databases.
+
+# Graphql
+
+&nbsp;
+
+## [GraphQL is a trap](https://twitter.com/jmhodges/status/1522282897905840128)
+by [Jeff Hodges](https://twitter.com/jmhodges)
+
+GraphQL makes your public API equal to a generic database and -- worse -- a generic graph database. The amount of maintenance work is sky high. Locking the query capabilities down means you're just doing normal APIs but not locking it down means infinite performance work
+
+&nbsp;
+
+## [GraphQL is a Trap?](https://xuorig.medium.com/graphql-is-a-trap-e83ca380aa8f)
+by [Marc-André Giroux](https://twitter.com/__xuorig__)
+
+This [twitter thread](https://twitter.com/jmhodges/status/1522385068974432256) blew up on twitter yesterday and I thought I’d go over some of the author’s points in a longer format so we can clear up some misconceptions. Let’s go over them one by one!
+
+
 # Test
 
 &nbsp;
@@ -696,6 +935,12 @@ There’s a certain class of problems that’s hard to test:
 2. The output doesn’t have “mathematical” properties, like invertibility or commutativity.
 3. Errors in the function can be “subtle”: there can be a bug that affects only a small subset of possible inputs, so that a set of individual test examples would still be correct.
 
+&nbsp;
+
+## [Boundaries](https://www.youtube.com/watch?v=yTkzNHF6rMs)
+by [Gary Bernhardt](https://twitter.com/garybernhardt)
+
+Some people test in isolation, mocking everything except the class under test. We'll start with that idea, quickly examine the drawbacks, and ask how we might fix them without losing the benefits. This will send us on a trip through behavior vs. data, mutation vs. immutability, interface vs. data dependencies, how data shape affords parallelism, and what a system optimizing each of these for natural isolation might look like.
 
 # Performance
 
@@ -920,6 +1165,32 @@ by [Amberley](https://twitter.com/amber1ey)
 
 Pick your serving size of web accessibility information.
 
+&nbsp;
+
+## [How to use undocumented web APIs](https://jvns.ca/blog/2022/03/10/how-to-use-undocumented-web-apis/)
+by [Julia Evans](https://twitter.com/b0rk)
+
+A couple of days I wrote about tiny personal programs, and I mentioned that it can be fun to use “secret” undocumented APIs where you need to copy your cookies out of the browser to get access to them.
+
+&nbsp;
+
+## [We're all living on it. But what exactly is The Edge?](https://whitep4nth3r.com/blog/what-is-the-edge-serverless-functions/)
+by [Salma Alam-Naylor](https://twitter.com/whitep4nth3r)
+
+More and more cloud hosting providers and software-as-a-service platforms are offering serverless functions at The Edge. But what is The Edge? What are Edge Functions? And why does it matter?
+
+&nbsp;
+
+## [In Defence of the Single Page Application](https://williamkennedy.ninja/javascript/2022/05/03/in-defence-of-the-single-page-application/)
+by [William Kennedy](https://twitter.com/_williamkennedy)
+
+&nbsp;
+
+## [How to design better APIs](https://r.bluethl.net/how-to-design-better-apis)
+by [Ronald Blüthl](https://twitter.com/rbluethl)
+
+15 language-agnostic, actionable tips on REST API design.
+
 # Http
 
 &nbsp;
@@ -1073,6 +1344,55 @@ by [Jeff Atwood](https://twitter.com/codinghorror)
 
 Wouldn't it be nice to use a language designed to keep you from falling into the pit of despair? But avoiding horrific, trainwreck failure modes isn't a particularly laudable goal. Wouldn't it be even better if you used a language that let you effortlessly fall into The Pit of Success?
 
+&nbsp;
+
+## [Preemptive Pluralization is (Probably) Not Evil](https://www.swyx.io/preemptive-pluralization)
+by [Swyx](https://twitter.com/swyx)
+
+Before you write any code — ask if you could ever possibly want multiple kinds of the thing you are coding. If yes, just do it. Now, not later.
+
+&nbsp;
+
+## [Ramblings About Clean Code](https://mailchi.mp/4b5982e14519/rambling-about-clean-code)
+by [Alex Kondov](https://twitter.com/alexanderkondov)
+
+I would advise you not to worry that much about whether your code will be considered clean but whether it serves its purpose.
+
+&nbsp;
+
+## [Functional Programming for Pragmatists](https://www.youtube.com/watch?v=3n17wHe5wEw)
+by [Richard Feldman](https://twitter.com/rtfeldman)
+
+People like functional programming for different reasons. Some like it for the conceptual elegance, or the mathematical properties. Richard? He likes to build things. He likes it when the software he builds works well and is easy to maintain.
+
+&nbsp;
+
+## [Code Smells - Developing Design Sense for your Code](https://www.youtube.com/watch?v=H3L0aN9KItA)
+by [Llewellyn Falco](https://twitter.com/LlewellynFalco)
+
+'In order to make delicious food, you must eat delicious food…. you need to develop a palate capable of discerning good and bad. Without good taste, you can't make good food.' - Jiro Ono (World’s Best Sushi Chef). The same is true for great code. 
+
+&nbsp;
+
+## [José Valim, creator of Elixir and form Rails core contributor](https://remoteruby.transistor.fm/178)
+by [Remote Ruby](https://twitter.com/remote_ruby)
+
+Today, our discussions take us through José’s background, being a Rails core member, and the story of how he created Elixir. He also goes in depth about LiveView, distributed systems, how using Elixir and Phoenix is a great developer experience, new and exciting things he’s working on with Elixir, and he fills us in on Nerves, FarmBot, Broadway, and Numerical Elixir. Go ahead and download this episode now to find out more!
+
+&nbsp;
+
+## [Falsehoods programmers believe about time zones](https://www.zainrizvi.io/blog/falsehoods-programmers-believe-about-time-zones/)
+by [Zain Rizvi](https://twitter.com/zainrzv)
+
+I soon discovered just how wrong I was. One after another, I kept learning the falsehood of yet another "fact" that had seemed obviously true.
+
+&nbsp;
+
+## [Serverless TACTICAL DD(R)](https://levelup.gitconnected.com/serverless-tactical-dd-r-23d18d529fa1)
+by [Lee James Gilmore](https://twitter.com/LeeJamesGilmore)
+
+Serverless TACTICAL DD(R) as a tactical approach to DoR and DoD aims to ensure we ‘consider’ and ‘validate’ key areas which are in my experience typically forgotten about when teams are quickly trying to realise business value when building out their solutions, and unfortunately are rarely back-ported, and typically forgotten about until issues arise!
+
 # Team
 
 &nbsp;
@@ -1142,7 +1462,24 @@ by [Corinna Baldauf](https://twitter.com/CorinnaBaldauf)
 
 Are you new to facilitating retrospectives? Then you’re probably wondering how to best get started. For what it’s worth, here’s my “Given that I know nothing about you or the team’s situation here’s my best shot at a multi-purpose, easy to facilitate retrospective plan”.
 
+&nbsp;
+
+## [Manifesto—Build a company you want to work for](https://tighten.com/manifesto/)
+by Tighten
+
+We imagined that there might be a better way to run a company, where the primary purpose was to provide a space for people to care for one another, and the actual work output was a crucial but secondary purpose. So we set out to create the company we would want to work for.
+
 # Project Management
+
+&nbsp;
+
+## [The Joy of Small Projects](https://schroer.ca/2022/04/10/the-joy-of-small-projects/)
+by Dominick Schroer
+
+1. Pick the best project you can think of
+2. Pick a very aggressive and limiting timeline
+3. Reduce the project to its absolute minimum
+4. Execute that plan to completion
 
 &nbsp;
 
@@ -1165,7 +1502,438 @@ by [Simón Muñoz](https://twitter.com/simonvlc)
 
 The graveyard is filled with exquisitely designed startups and products to scale to millions of users who never got the slightest bit of traction. Don’t become one of them.
 
-# Self Development
+\includepdf[pages=1]{intermission.pdf}
+
+# Stories
+
+&nbsp;
+
+## [Half a Billion in Bitcoin, Lost in the Dump](https://www.newyorker.com/magazine/2021/12/13/half-a-billion-in-bitcoin-lost-in-the-dump)
+by [D.T. Max](https://twitter.com/dtmax)
+
+For years, a Welshman who threw away the key to his cybercurrency stash has been fighting to excavate the local landfill.
+
+&nbsp;
+
+## [The Art of Code - Dylan Beattie](https://www.youtube.com/watch?v=6avJHaC3C2U)
+by [Dylan Beattie](https://twitter.com/dylanbeattie)
+
+But what about the code that only exists because somebody wanted to write it? Code created just to make people smile, laugh, maybe even dance? Maybe even code that does nothing at all, created just to see if it was possible?
+
+&nbsp;
+
+## [Inventing on Principle](https://www.youtube.com/watch?v=PUv66718DII)
+by [Bret Victor](https://twitter.com/worrydream)
+
+This is one of my favorite talks about programming. Bret Victor is a visionary and you should watch this talk.
+
+&nbsp;
+
+## [The Future of Programming](https://www.youtube.com/watch?v=8pTEmbeENF4)
+by [Bret Victor](https://twitter.com/worrydream)
+
+I would make you a disservice if I didn't link the other one by Bret. This talk is from 1973, or is it?
+
+&nbsp;
+
+## [A Brief Rant on the Future of Interaction Design](http://worrydream.com/ABriefRantOnTheFutureOfInteractionDesign/)
+by [Bret Victor](https://twitter.com/worrydream)
+
+With an entire body at your command, do you seriously think the Future Of Interaction should be a single finger?
+
+&nbsp;
+
+## [Edsger Dijkstra—The Man Who Carried Computer Science on His Shoulders](https://inference-review.com/article/the-man-who-carried-computer-science-on-his-shoulders)
+by [Krzysztof R. Apt](https://homepages.cwi.nl/~apt/)
+
+A pioneer whose work shaped his field like few others.
+
+&nbsp;
+
+## [The Cold War Bunker That Became Home to a Dark-Web Empire](https://www.newyorker.com/magazine/2020/08/03/the-cold-war-bunker-that-became-home-to-a-dark-web-empire)
+by [Ed Caesar](https://twitter.com/edcaesar)
+
+An eccentric Dutchman began living in a giant underground facility built by the German military—and ran a server farm beloved by cybercriminals.
+
+&nbsp;
+
+## [Growing a Language](https://www.youtube.com/watch?v=_ahvzDzKdB0)
+by [Guy Steele](https://en.wikipedia.org/wiki/Guy_L._Steele_Jr.)
+
+Guy Steele's keynote at the 1998 ACM OOPSLA conference on "Growing a Language" discusses the importance of and issues associated with designing a programming language that can be grown by its users.
+
+&nbsp;
+
+## [I programmed some creatures. They Evolved](https://www.youtube.com/watch?v=N3tRFayqVtk)
+by [Dave Miller](http://www.millermattson.com/dave/)
+
+This is a report of a software project that created the conditions for evolution in an attempt to learn something about how evolution works in nature. This is for the programmer looking for ideas for interdisciplinary programming projects, or for anyone interested in how evolution and natural selection work.
+
+&nbsp;
+
+## [To the Moon](https://www.youtube.com/watch?v=l3XwpSKqNZw)
+by [Russ Olsen](https://twitter.com/russolsen)
+
+We all have moments that change the way we think, the way that we look at the world, the things we want to do with our lives. On July 20, 1969 a whole generation of Americans had one of those transforming experiences: Two men landed on the Moon and nothing was ever the same again. 
+
+&nbsp;
+
+## [Vue.js: The Documentary](https://cult.honeypot.io/originals/vue-js-the-documentary)
+by Honeypot
+
+What began as a side project of a Google developer now shares the JS leaderboard with React and Angular. With the help of Sarah Drasner, Taylor Otwell, Thorsten Lünborg and many others from the Vue.js community, Evan You tells the story of how he fought against the odds to bring Vuejs to life.
+
+&nbsp;
+
+## [Laravel Origins: The Documentary](https://www.youtube.com/watch?v=127ng7botO4)
+by OfferZen
+
+Featuring Laravel creator Taylor Otwell and many others who’ve contributed to making Laravel the technology and community that it is today, Laravel Origins tells the story of why Laravel came to be, how it's grown over the last 10 years and what the future may hold for Taylor and the wider Laravel community.
+
+&nbsp;
+
+## [How Imaginary Numbers Were Invented](https://www.youtube.com/watch?v=cUzklzVXJwo)
+by [Veritasium](https://twitter.com/veritasium)
+
+A general solution to the cubic equation was long considered impossible, until we gave up the requirement that math reflect reality.
+
+&nbsp;
+
+## [Understanding the bin, sbin, usr/bin , usr/sbin split](http://lists.busybox.net/pipermail/busybox/2010-December/074114.html)
+by [Rob Landley](https://twitter.com/landley)
+
+When the operating system grew too big to fit on the first RK05 disk pack (their root filesystem) they let it leak into the second one, which is where all the user home directories lived (which is why the mount was called /usr).  They replicated all the OS directories under there (/bin, /sbin, /lib, /tmp...) and wrote files to those new directories because their original disk was out of space.
+
+# Design
+
+&nbsp;
+
+## [Reviewing your design portfolios!](https://www.youtube.com/watch?v=2cn6wzH1xMo&list=PLrJQSKQvgHS5P_0m5DjXfDUMq2uW_3r_g)
+by [Charli Marie](https://twitter.com/charliprangley)
+
+I hope you enjoy getting a look at some awesome viewers work, and hearing the advice I give them! My hope with this series is that even if it's not your portfolio being reviewed you can get some useful insights that perhaps you could apply to your own design portfolio. I'm not critiquing the work in it, but rather the design and layout of your portfolio itself and looking critically at the type of work included to see if it aligns with your goals. I'd love to hear what you think of the series in the comments!
+
+&nbsp;
+
+## [UX request: Tell, don’t hide](https://jessitron.com/2020/11/30/ux-request-tell-dont-hide/)
+by [Jessica Kerr](https://twitter.com/jessitron)
+
+Y’know how sometimes a particular logged-in user isn’t authorized for some option, so you don’t show it to them?
+
+Don’t do that to people. Tell me it’s there, tell me I can’t do it, tell me who can.
+
+&nbsp;
+
+## [Pride Backgrounds](https://www.dropbox.com/sh/m5kde7lj3ffqfi2/AAAtWTJ6g_rVCOQjGevl8CINa?dl=0)
+by [Gosia Nowak](https://dribbble.com/designaur)
+
+Happy Pride, folks!
+
+&nbsp;
+
+## [Christopher Alexander: A Primer](https://vimeo.com/491222729)
+by [Ryan Singer](https://twitter.com/rjs)
+
+Christopher Alexander’s work is hard to get into. He’s written over 15 books, and there isn't one that serves as a general intro or overview for the rest. In this livestream, I gave an informal introduction to what I think are the most important ideas in his body of work.
+
+&nbsp;
+
+## [How Designers Can Prevent User Errors](https://uxtools.co/blog/how-designers-can-prevent-user-errors)
+by [Jordan Bowman](https://twitter.com/jrdnbwmn)
+
+The term “user error” implies that it’s the user’s fault when they do something wrong.
+
+But in the vast majority of cases, the fault actually rests with the designer for having created an interface that is confusing or makes it too easy for the user to make a mistake.
+
+&nbsp;
+
+## [7 Practical Tips for Cheating at Design](https://medium.com/refactoring-ui/7-practical-tips-for-cheating-at-design-40c736799886)
+by [Adam Wathan](https://twitter.com/adamwathan) & [Steve Schoger](https://twitter.com/steveschoger)
+
+It’s easy to throw your hands up and say, “I’ll never be able to make this look good, I’m not an artist!” but it turns out there are a ton of tricks you can use to level up your work that don’t require a background in graphic design.
+
+&nbsp;
+
+## [The Right Space Around Headings in Web Typography](https://www.youtube.com/watch?v=vBEIJa6KJ-Y)
+by [Oliver Schöndorfer](https://twitter.com/glyphe)
+
+We dive into the spacing around his headings, to structure his website better, talk about font sizes for headings, how to style captions, and I adore his marginalia and favicon.
+
+# Css
+
+&nbsp;
+
+## [How to Find and Remove Dead CSS](https://blog.testdouble.com/talks/2021-06-03-how-to-find-and-remove-dead-css/)
+by [Justin Searls](https://twitter.com/searls)
+
+Do you have a pile of old CSS styles that you’re pretty sure are no longer referenced anywhere, but that you’re nevertheless afraid to delete because you have no way to be sure that no musty corners of your site somehow depend on them to render correctly?
+
+&nbsp;
+
+## [CSS Utility Classes and "Separation of Concerns"](https://adamwathan.me/css-utility-classes-and-separation-of-concerns/)
+by [Adam Wathan](https://twitter.com/adamwathan)
+
+Why “separation of concerns” is the wrong way to think about CSS and why presentational classes scale better than semantic classes.
+
+&nbsp;
+
+## [Flexbox Zombies](https://geddski.teachable.com/p/flexbox-zombies)
+by [Dave Geddes](https://twitter.com/geddski)
+
+Flexbox is incredibly powerful. But it's also crazy hard to learn well. So we all end up depending on a cheat sheet and some mad guessing in the dev tools.
+
+This is an Educational Game. Each section unravels part of the plot, gives you expertise over a new flexbox concept, and presents zombie survival challenges that force you to solidify your new skills like your life depends on it.
+
+&nbsp;
+
+## [10 modern layouts in 1 line of CSS](https://www.youtube.com/watch?v=qm0IfG1GyZU)
+by [Una Kravets](https://twitter.com/una)
+
+In this dynamic talk, Una goes over the power of modern CSS layout techniques by highlighting a few key terms and how much detail can be described in a single line of code. Learn a few layout tricks you can implement in your codebase today, and be able to write entire swaths of layout with just a few lines of code.
+
+&nbsp;
+
+## [Tailwind CSS Tips, Tricks & Best Practices](https://www.youtube.com/watch?v=nqNIy8HkEQ8)
+by [Sam Selikoff](https://twitter.com/samselikoff)
+
+# Git
+
+&nbsp;
+
+## [Git's Best And Most Unknown Feature](https://www.youtube.com/watch?v=2uEqYw-N8uE)
+by [ThePrimeagen](https://www.youtube.com/c/ThePrimeagen/about)
+
+HOW HAVE I NOT HEARD OF GIT WORK TREES??? WHAT THE EFF.  They are so incredible.  You have to check them out!!! In this video I go over them briefly, assuming you are smart enough to understand them, and also show you my workflow with vim!  Its fantastic!
+
+&nbsp;
+
+## [13 Advanced (but useful) Git Techniques and Shortcuts](https://www.youtube.com/watch?v=ecK3EnyGD8o)
+by Fireship
+
+Productive programmers tend to be really good at Git. Take a look at 13 advanced git tips and tricks to supercharge your development workflow.
+
+&nbsp;
+
+## [Oh My Git!](https://ohmygit.org)
+by [bleeptrack](https://twitter.com/bleeptrack) and [blinry](https://twitter.com/blinry)
+
+An open source game about learning Git!
+
+&nbsp;
+
+## [Little Things I Like to Do with Git](https://csswizardry.com/2017/05/little-things-i-like-to-do-with-git/)
+by [Harry Roberts](https://twitter.com/csswizardry)
+
+I thought I would note down some useful little Git snippets that I use the most frequently.
+
+&nbsp;
+
+## [Strategies For Small, Focused Pull Requests](https://artsy.github.io/blog/2021/03/09/strategies-for-small-focused-pull-requests/)
+by [Steve Hicks](https://twitter.com/pepopowitz)
+
+A common suggestion for improving pull requests (PRs) is to "make your PR small and focused". I myself gave this suggestion in a recent article on this very blog about including context in PRs.
+
+Like most internet advice, this can feel like the "draw the rest of the owl" meme. Even if we're in agreement that I should make a PR smaller...how do I do it? How do I avoid a big PR when there's a lot of cross-cutting changes to make? How do I create small, focused units of work when I'm building a large feature? How can I overcome my perfectionism and submit a PR that feels incomplete to me because the edges aren't all polished?
+
+&nbsp;
+
+## [Learn Git Branching](https://learngitbranching.js.org/)
+by [Peter Cottle](https://twitter.com/petermcottle)
+
+"Learn Git Branching" is the most visual and interactive way to learn Git on the web; you'll be challenged with exciting levels, given step-by-step demonstrations of powerful features, and maybe even have a bit of fun along the way.
+
+# Tools
+
+&nbsp;
+
+## [An Introduction to JQ](https://earthly.dev/blog/jq-select/)
+by [Adam Gordon Bell](https://twitter.com/adamgordonbell)
+
+In this article, I’m going to go over the basics building blocks of jq in enough depth that you will be able to understand how jq works. Of course, you still might occasionally need to head to google to find a function name or check your syntax, but at least you’ll have a firm grounding in the basics.
+
+&nbsp;
+
+## [Developer Tools secrets that shouldn’t be secrets](https://christianheilmann.com/2021/11/01/developer-tools-secrets-that-shouldnt-be-secrets/)
+by [Chris Heilmann](https://twitter.com/codepo8)
+
+This is a talk that I’ve given at CityJS this September. I am a principal product manager for developer tools in Microsoft Edge and these are things I encountered during working on the tools, documenting them and going through user feedback.
+
+&nbsp;
+
+## [ShellCheck](https://www.shellcheck.net)
+by [Vidar Holen](https://www.vidarholen.net)
+
+Finds bugs in your shell scripts.
+
+&nbsp;
+
+## [Ray.so](https://ray.so)
+by [Nichlas W. Andersen](https://twitter.com/nichlaswa)
+
+Turn your code into beautiful images. Choose from a range of syntax colors, hide or show the background, and toggle between a dark and light window.
+
+&nbsp;
+
+## [Visualizing a codebase](https://next.github.com/projects/repo-visualization)
+by [Amelia Wattenberger](https://twitter.com/Wattenberger)
+
+How can we “fingerprint” a codebase to see its structure at a glance? Let’s explore ways to automatically visualize a GitHub repo, and how that could be useful.
+
+&nbsp;
+
+## [My workflow using Vim, 2021](https://www.youtube.com/watch?v=2WPC8rZQvQU)
+by [ThePrimeagen](https://twitter.com/ThePrimeagen)
+
+This is my workflow using vim. I wanted the kind of showcase how I jump around and how I think about things. this isn't meant to be a super technical video, more a video just describing how I approach using vim.
+
+&nbsp;
+
+## [Spying on your programs with strace](https://wizardzines.com/zines/strace/)
+by [Julia Evans](https://twitter.com/b0rk)
+
+strace is my favorite program. I think that it doesn’t get enough attention from programmers, so I wrote a zine about it to teach more people about how to use it.
+
+&nbsp;
+
+## [Understanding AWK](https://earthly.dev/blog/awk-examples/)
+by [Adam Gordon Bell](https://twitter.com/adamgordonbell)
+
+If you read through the article and maybe even try an example or two, you should have no problem writing Awk scripts by the end of it.
+
+&nbsp;
+
+## [cheat.sh](https://cheat.sh)
+by [Igor Chubin](https://twitter.com/igor_chubin)
+
+Unified access to the best community driven cheat sheets repositories of the world
+
+&nbsp;
+
+## [ShortcutFoo](https://www.shortcutfoo.com)
+
+ShortcutFoo was created by programmers for programmers in an attempt to make learning your editor fun, easy, and effective. Akin to the days of first learning how to type on a keyboard, shortcutFoo aims to help programmers accomplish more in less time and with fewer keystrokes.
+
+&nbsp;
+
+## [Security Headers scanner](https://securityheaders.com)
+by [Scott Helme](https://twitter.com/Scott_Helme)
+
+There are services out there that will analyse the HTTP response headers of other sites but I also wanted to add a rating system to the results. The HTTP response headers that this site analyses provide huge levels of protection and it's important that sites deploy them. Hopefully, by providing an easy mechanism to assess them, and further information on how to deploy missing headers, we can drive up the usage of security based headers across the web.
+
+&nbsp;
+
+## [exa](https://the.exa.website)
+by [Ben S](https://twitter.com/cairnrefinery)
+
+A modern replacement for ls.
+
+You list files hundreds of times a day. Why spend your time squinting at black and white text?
+
+&nbsp;
+
+## [Include diagrams in your Markdown files with Mermaid](https://github.blog/2022-02-14-include-diagrams-markdown-files-mermaid/)
+by [Martin Woodward](https://twitter.com/martinwoodward) and [Adam Biagianti](http://availableforfriendship.com)
+
+A picture tells a thousand words, but up until now the only way to include pictures and diagrams in your Markdown files on GitHub has been to embed an image. We added support for embedding SVGs recently, but sometimes you want to keep your diagrams up to date with your docs and create something as easily as doing ASCII art, but a lot prettier.
+
+&nbsp;
+
+## [Text Aesthetics: Command Line UI/UX](https://blog.mikecordell.com/2022/01/02/text-aesthetics-command-line-ui-ux/)
+by [Michael Cordell](https://twitter.com/mike_cordell)
+
+In this post I’ll show the many ways you can customize your command line. Through this customization, you can have a more pleasant and efficient experience while retaining the power and flexibility of text-only software. We will start with the terminal emulator, the main window to your CLI. We’ll move on to the text and colors that style the interface. We’ll close with using prompts and status lines to bring context to your text interface.
+
+&nbsp;
+
+## [Github Copilot MAKES A CLI GAME IN GOLANG FROM SCRATCH?!?!](https://www.youtube.com/watch?v=Xw_qbJp52cY)
+by [ThePrimeagen](https://twitter.com/ThePrimeagen)
+
+Yes the dang AI MAKES A GAME!!! I could not believe it and the ending just blew me away.
+
+# Fun Stuff
+
+&nbsp;
+
+## [Proposal: Downward assignments](https://bugs.ruby-lang.org/issues/17768)
+by [Yusuke Endoh](https://mametter.hatenablog.com)
+
+Rightward assignments have been introduced since 3.0.
+To be honest, I'm not a big fan of the syntax because it does not add a new dimension to Ruby.
+Why don't we bring Ruby to the next dimension?
+
+
+&nbsp;
+
+## [Blob Opera](https://artsandculture.google.com/experiment/blob-opera/AAHWrq360NcGbw)
+by [David Li](https://twitter.com/daviddotli)
+
+Create your own opera inspired song with Blob Opera - no music skills required! A machine learning experiment by David Li in collaboration with Google Arts & Culture
+
+&nbsp;
+
+## [If PHP Were British](https://aloneonahill.com/blog/if-php-were-british/)
+by [Dave Child](https://twitter.com/Dave_Child)
+
+PHP developers in Britain have been grumpy about this ever since. What was he thinking? And more importantly, how do we undo this travesty? How do we developers ensure the traditions of the British Empire continue to be upheld, even in the digital age?
+
+&nbsp;
+
+## [Terms & Conditions Apply Game](https://termsandconditions.game/)
+by [Wieden Kennedy](https://twitter.com/wklondon), [Jon Plackett](https://twitter.com/jonplackett), [Alex Bellos](https://twitter.com/AlexBellos), [Adam Hunt](https://twitter.com/iam_adam)
+
+A mini-game about pop ups, and the deviousness of websites and apps
+EVIL CORP wants your data. It will use every trick in the book (and a few more, just for fun).
+
+&nbsp;
+
+## [Sound of Colleagues](https://soundofcolleagues.com/)
+by STHLM & Red Pipe Studios
+
+We missed the sound of our colleagues so much that we created this website as a substitute.
+
+&nbsp;
+
+## [Wat](https://www.destroyallsoftware.com/talks/wat)
+by [Gary Bernhardt](https://twitter.com/garybernhardt)
+
+# Health
+
+&nbsp;
+
+## [Hands-Free Coding](https://joshwcomeau.com/accessibility/hands-free-coding/)
+by [Joshua Comeau](https://twitter.com/joshwcomeau)
+
+Earlier this year, I developed Cubital Tunnel Syndrome, a repetitive-strain injury, in both of my elbows. As a result, I pretty much can't use a mouse or keyboard; after a few minutes, I get a burning pain shooting down my arms. Even if I try to limit my computer usage to 60-second bursts, I wind up inadvertently making the situation worse.
+
+&nbsp;
+
+## [Reverse Engineering the source code of the BioNTech/Pfizer SARS-CoV-2 Vaccine](https://berthub.eu/articles/posts/reverse-engineering-source-code-of-the-biontech-pfizer-vaccine/)
+by [Bert Hubert](https://twitter.com/PowerDNS_Bert)
+
+Welcome! In this post, we’ll be taking a character-by-character look at the source code of the BioNTech/Pfizer SARS-CoV-2 mRNA vaccine.
+
+&nbsp;
+
+## [How Affordable Insulin Happened](https://www.juiceboxpodcast.com/episodes/jbp675)
+by [Martin Van Trieste](https://twitter.com/MgVantrieste) on Juicebox Podcast
+
+Martin Van Trieste is the President and Chief Executive Officer, Civica Rx. Civica is making affordable insulin.
+
+&nbsp;
+
+[The levels endorsement that can't be bought Betsy McLaughlin](https://mixtape.swyx.io/episodes/the-levels-endorsement-that-cant-be-bought-betsy-mclaughlin)
+by [Swyx](https://twitter.com/swyx)
+
+One CEO's struggle with her glucose levels despite trying everything.
+
+# Career
+
+&nbsp;
+
+## [People don't work as much as you think](https://drmaciver.substack.com/p/people-dont-work-as-much-as-you-think)
+by [David R. MacIver](https://twitter.com/DRMacIver)
+
+If you do not realise this, and assume that everyone who says they are working eight hours per day actually is, you are probably going to wreck your mental health trying to keep up with them. Stop it at once.
 
 &nbsp;
 
@@ -1275,291 +2043,6 @@ Psychologist Barry Schwartz takes aim at a central tenet of western societies: f
 ## [Deep Questions with Cal Newport Ep. 39: DAVID EPSTEIN on Skills, Practice, and the Subtle Art of Cultivating a Meaningful Career](https://www.calnewport.com/podcast/)
 by [Cal Newport](https://www.calnewport.com)
 
-\includepdf[pages=1]{intermission.pdf}
-
-# Stories
-
-&nbsp;
-
-## [Half a Billion in Bitcoin, Lost in the Dump](https://www.newyorker.com/magazine/2021/12/13/half-a-billion-in-bitcoin-lost-in-the-dump)
-by [D.T. Max](https://twitter.com/dtmax)
-
-For years, a Welshman who threw away the key to his cybercurrency stash has been fighting to excavate the local landfill.
-
-&nbsp;
-
-## [The Art of Code - Dylan Beattie](https://www.youtube.com/watch?v=6avJHaC3C2U)
-by [Dylan Beattie](https://twitter.com/dylanbeattie)
-
-But what about the code that only exists because somebody wanted to write it? Code created just to make people smile, laugh, maybe even dance? Maybe even code that does nothing at all, created just to see if it was possible?
-
-&nbsp;
-
-## [Inventing on Principle](https://www.youtube.com/watch?v=PUv66718DII)
-by [Bret Victor](https://twitter.com/worrydream)
-
-This is one of my favorite talks about programming. Bret Victor is a visionary and you should watch this talk.
-
-&nbsp;
-
-## [The Future of Programming](https://www.youtube.com/watch?v=8pTEmbeENF4)
-by [Bret Victor](https://twitter.com/worrydream)
-
-I would make you a disservice if I didn't link the other one by Bret. This talk is from 1973, or is it?
-
-&nbsp;
-
-## [A Brief Rant on the Future of Interaction Design](http://worrydream.com/ABriefRantOnTheFutureOfInteractionDesign/)
-by [Bret Victor](https://twitter.com/worrydream)
-
-With an entire body at your command, do you seriously think the Future Of Interaction should be a single finger?
-
-&nbsp;
-
-## [Edsger Dijkstra—The Man Who Carried Computer Science on His Shoulders](https://inference-review.com/article/the-man-who-carried-computer-science-on-his-shoulders)
-by [Krzysztof R. Apt](https://homepages.cwi.nl/~apt/)
-
-A pioneer whose work shaped his field like few others.
-
-&nbsp;
-
-## [The Cold War Bunker That Became Home to a Dark-Web Empire](https://www.newyorker.com/magazine/2020/08/03/the-cold-war-bunker-that-became-home-to-a-dark-web-empire)
-by [Ed Caesar](https://twitter.com/edcaesar)
-
-An eccentric Dutchman began living in a giant underground facility built by the German military—and ran a server farm beloved by cybercriminals.
-
-&nbsp;
-
-## [Growing a Language](https://www.youtube.com/watch?v=_ahvzDzKdB0)
-by [Guy Steele](https://en.wikipedia.org/wiki/Guy_L._Steele_Jr.)
-
-Guy Steele's keynote at the 1998 ACM OOPSLA conference on "Growing a Language" discusses the importance of and issues associated with designing a programming language that can be grown by its users.
-
-&nbsp;
-
-## [I programmed some creatures. They Evolved](https://www.youtube.com/watch?v=N3tRFayqVtk)
-by [Dave Miller](http://www.millermattson.com/dave/)
-
-This is a report of a software project that created the conditions for evolution in an attempt to learn something about how evolution works in nature. This is for the programmer looking for ideas for interdisciplinary programming projects, or for anyone interested in how evolution and natural selection work.
-
-# Design
-
-&nbsp;
-
-## [Reviewing your design portfolios!](https://www.youtube.com/watch?v=2cn6wzH1xMo&list=PLrJQSKQvgHS5P_0m5DjXfDUMq2uW_3r_g)
-by [Charli Marie](https://twitter.com/charliprangley)
-
-I hope you enjoy getting a look at some awesome viewers work, and hearing the advice I give them! My hope with this series is that even if it's not your portfolio being reviewed you can get some useful insights that perhaps you could apply to your own design portfolio. I'm not critiquing the work in it, but rather the design and layout of your portfolio itself and looking critically at the type of work included to see if it aligns with your goals. I'd love to hear what you think of the series in the comments!
-
-&nbsp;
-
-## [UX request: Tell, don’t hide](https://jessitron.com/2020/11/30/ux-request-tell-dont-hide/)
-by [Jessica Kerr](https://twitter.com/jessitron)
-
-Y’know how sometimes a particular logged-in user isn’t authorized for some option, so you don’t show it to them?
-
-Don’t do that to people. Tell me it’s there, tell me I can’t do it, tell me who can.
-
-&nbsp;
-
-## [Pride Backgrounds](https://www.dropbox.com/sh/m5kde7lj3ffqfi2/AAAtWTJ6g_rVCOQjGevl8CINa?dl=0)
-by [Gosia Nowak](https://dribbble.com/designaur)
-
-Happy Pride, folks!
-
-&nbsp;
-
-## [Christopher Alexander: A Primer](https://vimeo.com/491222729)
-by [Ryan Singer](https://twitter.com/rjs)
-
-Christopher Alexander’s work is hard to get into. He’s written over 15 books, and there isn't one that serves as a general intro or overview for the rest. In this livestream, I gave an informal introduction to what I think are the most important ideas in his body of work.
-
-# Css
-
-&nbsp;
-
-## [How to Find and Remove Dead CSS](https://blog.testdouble.com/talks/2021-06-03-how-to-find-and-remove-dead-css/)
-by [Justin Searls](https://twitter.com/searls)
-
-Do you have a pile of old CSS styles that you’re pretty sure are no longer referenced anywhere, but that you’re nevertheless afraid to delete because you have no way to be sure that no musty corners of your site somehow depend on them to render correctly?
-
-&nbsp;
-
-## [CSS Utility Classes and "Separation of Concerns"](https://adamwathan.me/css-utility-classes-and-separation-of-concerns/)
-by [Adam Wathan](https://twitter.com/adamwathan)
-
-Why “separation of concerns” is the wrong way to think about CSS and why presentational classes scale better than semantic classes.
-
-&nbsp;
-
-## [Flexbox Zombies](https://geddski.teachable.com/p/flexbox-zombies)
-by [Dave Geddes](https://twitter.com/geddski)
-
-Flexbox is incredibly powerful. But it's also crazy hard to learn well. So we all end up depending on a cheat sheet and some mad guessing in the dev tools.
-
-This is an Educational Game. Each section unravels part of the plot, gives you expertise over a new flexbox concept, and presents zombie survival challenges that force you to solidify your new skills like your life depends on it.
-
-# Git
-
-&nbsp;
-
-## [Git's Best And Most Unknown Feature](https://www.youtube.com/watch?v=2uEqYw-N8uE)
-by [ThePrimeagen](https://www.youtube.com/c/ThePrimeagen/about)
-
-HOW HAVE I NOT HEARD OF GIT WORK TREES??? WHAT THE EFF.  They are so incredible.  You have to check them out!!! In this video I go over them briefly, assuming you are smart enough to understand them, and also show you my workflow with vim!  Its fantastic!
-
-&nbsp;
-
-## [13 Advanced (but useful) Git Techniques and Shortcuts](https://www.youtube.com/watch?v=ecK3EnyGD8o)
-by Fireship
-
-Productive programmers tend to be really good at Git. Take a look at 13 advanced git tips and tricks to supercharge your development workflow.
-
-&nbsp;
-
-## [Oh My Git!](https://ohmygit.org)
-by [bleeptrack](https://twitter.com/bleeptrack) and [blinry](https://twitter.com/blinry)
-
-An open source game about learning Git!
-
-&nbsp;
-
-## [Little Things I Like to Do with Git](https://csswizardry.com/2017/05/little-things-i-like-to-do-with-git/)
-by [Harry Roberts](https://twitter.com/csswizardry)
-
-I thought I would note down some useful little Git snippets that I use the most frequently.
-
-&nbsp;
-
-## [Strategies For Small, Focused Pull Requests](https://artsy.github.io/blog/2021/03/09/strategies-for-small-focused-pull-requests/)
-by [Steve Hicks](https://twitter.com/pepopowitz)
-
-A common suggestion for improving pull requests (PRs) is to "make your PR small and focused". I myself gave this suggestion in a recent article on this very blog about including context in PRs.
-
-Like most internet advice, this can feel like the "draw the rest of the owl" meme. Even if we're in agreement that I should make a PR smaller...how do I do it? How do I avoid a big PR when there's a lot of cross-cutting changes to make? How do I create small, focused units of work when I'm building a large feature? How can I overcome my perfectionism and submit a PR that feels incomplete to me because the edges aren't all polished?
-
-
-# Tools
-
-&nbsp;
-
-## [An Introduction to JQ](https://earthly.dev/blog/jq-select/)
-by [Adam Gordon Bell](https://twitter.com/adamgordonbell)
-
-In this article, I’m going to go over the basics building blocks of jq in enough depth that you will be able to understand how jq works. Of course, you still might occasionally need to head to google to find a function name or check your syntax, but at least you’ll have a firm grounding in the basics.
-
-&nbsp;
-
-## [Developer Tools secrets that shouldn’t be secrets](https://christianheilmann.com/2021/11/01/developer-tools-secrets-that-shouldnt-be-secrets/)
-by [Chris Heilmann](https://twitter.com/codepo8)
-
-This is a talk that I’ve given at CityJS this September. I am a principal product manager for developer tools in Microsoft Edge and these are things I encountered during working on the tools, documenting them and going through user feedback.
-
-&nbsp;
-
-## [ShellCheck](https://www.shellcheck.net)
-by [Vidar Holen](https://www.vidarholen.net)
-
-Finds bugs in your shell scripts.
-
-&nbsp;
-
-## [Remix](https://remix.run)
-
-Remix is a full stack web framework that lets you focus on the user interface and work back through web fundamentals to deliver a fast, slick, and resilient user experience. People are gonna love using your stuff.
-
-&nbsp;
-
-## [Ray.so](https://ray.so)
-by [Nichlas W. Andersen](https://twitter.com/nichlaswa)
-
-Turn your code into beautiful images. Choose from a range of syntax colors, hide or show the background, and toggle between a dark and light window.
-
-&nbsp;
-
-## [Visualizing a codebase](https://next.github.com/projects/repo-visualization)
-by [Amelia Wattenberger](https://twitter.com/Wattenberger)
-
-How can we “fingerprint” a codebase to see its structure at a glance? Let’s explore ways to automatically visualize a GitHub repo, and how that could be useful.
-
-&nbsp;
-
-## [My workflow using Vim, 2021](https://www.youtube.com/watch?v=2WPC8rZQvQU)
-by [ThePrimeagen](https://twitter.com/ThePrimeagen)
-
-This is my workflow using vim. I wanted the kind of showcase how I jump around and how I think about things. this isn't meant to be a super technical video, more a video just describing how I approach using vim.
-
-&nbsp;
-
-## [Spying on your programs with strace](https://wizardzines.com/zines/strace/)
-by [Julia Evans](https://twitter.com/b0rk)
-
-strace is my favorite program. I think that it doesn’t get enough attention from programmers, so I wrote a zine about it to teach more people about how to use it.
-
-&nbsp;
-
-## [Understanding AWK](https://earthly.dev/blog/awk-examples/)
-by [Adam Gordon Bell](https://twitter.com/adamgordonbell)
-
-If you read through the article and maybe even try an example or two, you should have no problem writing Awk scripts by the end of it.
-
-&nbsp;
-
-## [cheat.sh](https://cheat.sh)
-by [Igor Chubin](https://twitter.com/igor_chubin)
-
-Unified access to the best community driven cheat sheets repositories of the world
-
-&nbsp;
-
-## [ShortcutFoo](https://www.shortcutfoo.com)
-
-ShortcutFoo was created by programmers for programmers in an attempt to make learning your editor fun, easy, and effective. Akin to the days of first learning how to type on a keyboard, shortcutFoo aims to help programmers accomplish more in less time and with fewer keystrokes.
-
-
-# Fun Stuff
-
-&nbsp;
-
-## [Proposal: Downward assignments](https://bugs.ruby-lang.org/issues/17768)
-by [Yusuke Endoh](https://mametter.hatenablog.com)
-
-Rightward assignments have been introduced since 3.0.
-To be honest, I'm not a big fan of the syntax because it does not add a new dimension to Ruby.
-Why don't we bring Ruby to the next dimension?
-
-
-&nbsp;
-
-## [Blob Opera](https://artsandculture.google.com/experiment/blob-opera/AAHWrq360NcGbw)
-by [David Li](https://twitter.com/daviddotli)
-
-Create your own opera inspired song with Blob Opera - no music skills required! A machine learning experiment by David Li in collaboration with Google Arts & Culture
-
-&nbsp;
-
-## [If PHP Were British](https://aloneonahill.com/blog/if-php-were-british/)
-by [Dave Child](https://twitter.com/Dave_Child)
-
-PHP developers in Britain have been grumpy about this ever since. What was he thinking? And more importantly, how do we undo this travesty? How do we developers ensure the traditions of the British Empire continue to be upheld, even in the digital age?
-
-&nbsp;
-
-## [Terms & Conditions Apply Game](https://termsandconditions.game/)
-by [Wieden Kennedy](https://twitter.com/wklondon), [Jon Plackett](https://twitter.com/jonplackett), [Alex Bellos](https://twitter.com/AlexBellos), [Adam Hunt](https://twitter.com/iam_adam)
-
-A mini-game about pop ups, and the deviousness of websites and apps
-EVIL CORP wants your data. It will use every trick in the book (and a few more, just for fun).
-
-
-# Misc
-
-&nbsp;
-
-## [NFTs Weren’t Supposed to End Like This](https://www.theatlantic.com/ideas/archive/2021/04/nfts-werent-supposed-end-like/618488/)
-by [Anil Dash](https://anildash.com)
-
-When we invented non-fungible tokens, we were trying to protect artists. But tech-world opportunism has struck again.
 
 &nbsp;
 
@@ -1567,6 +2050,45 @@ When we invented non-fungible tokens, we were trying to protect artists. But tec
 by [Charli Marie](https://twitter.com/charliprangley)
 
 Intellectual property and your rights surrounding it can be a complex topic. In this video I'm breaking them down for you and giving you tips on things to watch out for. 
+
+&nbsp;
+
+## [Freelancing Full-Time](https://livedoinganything.com)
+by Tommaso Manca
+
+Making a living doing what you love is hard. On this website, you'll find resources to help you figure out how to make it happen in a way that suits you and actually makes the world better.
+
+&nbsp;
+
+## [Career checkup template](https://lethain.com/career-checkup/)
+by [Will Larson](https://twitter.com/Lethain)
+
+This is similar to a career narrative, but with more focus on self-diagnosis than something presentable to others.
+
+&nbsp;
+
+## [Rejecting Specialization](https://tomcritchlow.com/2022/06/16/rejecting-specialization/)
+by [Tom Critchlow](https://twitter.com/tomcritchlow)
+
+So in this post I’m going to reject the commonly accepted wisdom and look at why specializing is hard, why it fails and what an alternative path looks like. The answer lies in developing strong opinions and a distinctive vibe.
+
+# Crypto
+
+&nbsp;
+
+## [NFTs Weren’t Supposed to End Like This](https://www.theatlantic.com/ideas/archive/2021/04/nfts-werent-supposed-end-like/618488/)
+by [Anil Dash](https://twitter.com/anildash)
+
+When we invented non-fungible tokens, we were trying to protect artists. But tech-world opportunism has struck again.
+
+&nbsp;
+
+## [Learn to Code Blockchain DApps By Building Simple Games](https://cryptozombies.io)
+by CleverFlare
+
+CryptoZombies is an interactive school that teaches you all things technical about blockchains. Learn to make smart contracts in Solidity or Libra by making your own crypto-collectibles game.
+
+# Misc
 
 &nbsp;
 
@@ -1615,7 +2137,7 @@ Is software engineering “really” engineering? A lot of us call ourselves sof
 &nbsp;
 
 ## [Why Electron apps are fine](https://nielsleenheer.com/articles/2021/why-electron-apps-are-fine/)
-by [Niels Leenheer](https://nielsleenheer.com)
+by [Niels Leenheer](https://twitter.com/html5test)
 
 It is not difficult to find some incredibly shitty takes on Electron, and every time it boils down to: It’s slow. Downloads are huge, and it uses a lot of memory. Electron apps are just websites. Developers that are using Electron are taking the lazy or easy approach to cross-platform development. Native apps are just better in every single way. 
 
@@ -1632,50 +2154,6 @@ It was stubborn optimism, she says, that convinced those nations to sign the fir
 
 &nbsp;
 
-## [Tackling Concurrency Bugs with TLA+](https://www.youtube.com/watch?v=_9B__0S21y8)
-by [Hillel Wayne](https://twitter.com/hillelogram)
-
-Concurrency is hard. How do you test your system when it's spread across three services and four languages? Unit testing and type systems only take us so far. At some point we need new tools.
-
-Enter TLA+. TLA+ is a specification language that describes your system and the properties you want. This makes it a fantastic complement to testing: not only can you check your code, you can check your design, too! TLA+ is especially effective for testing concurrency problems, like stalling, race conditions, and dropped messages.
-
-&nbsp;
-
-## [Falsehoods programmers believe about time zones](https://www.zainrizvi.io/blog/falsehoods-programmers-believe-about-time-zones/)
-by [Zain Rizvi](https://twitter.com/zainrzv)
-
-I soon discovered just how wrong I was. One after another, I kept learning the falsehood of yet another "fact" that had seemed obviously true.
-
-&nbsp;
-
-## [Learn to Code Blockchain DApps By Building Simple Games](https://cryptozombies.io)
-by CleverFlare
-
-CryptoZombies is an interactive school that teaches you all things technical about blockchains. Learn to make smart contracts in Solidity or Libra by making your own crypto-collectibles game.
-
-&nbsp;
-
-## [Reverse Engineering the source code of the BioNTech/Pfizer SARS-CoV-2 Vaccine](https://berthub.eu/articles/posts/reverse-engineering-source-code-of-the-biontech-pfizer-vaccine/)
-by [Bert Hubert](https://twitter.com/PowerDNS_Bert)
-
-Welcome! In this post, we’ll be taking a character-by-character look at the source code of the BioNTech/Pfizer SARS-CoV-2 mRNA vaccine.
-
-&nbsp;
-
-## [Hands-Free Coding](https://joshwcomeau.com/accessibility/hands-free-coding/)
-by [Joshua Comeau](https://twitter.com/joshwcomeau)
-
-Earlier this year, I developed Cubital Tunnel Syndrome, a repetitive-strain injury, in both of my elbows. As a result, I pretty much can't use a mouse or keyboard; after a few minutes, I get a burning pain shooting down my arms. Even if I try to limit my computer usage to 60-second bursts, I wind up inadvertently making the situation worse.
-
-&nbsp;
-
-## [Automating my job by using GPT-3 to generate database-ready SQL to answer business questions](https://blog.seekwell.io/gpt3)
-by [Brian Kane](https://www.linkedin.com/in/brian-kane-214a97ba/)
-
-I want to be able to describe a question in plain English and have GPT-3 convert it into the SQL code that, if executed on my Postgres database, would answer the question. 
-
-&nbsp;
-
 ## [Why Is Apple’s M1 Chip So Fast?](https://debugger.medium.com/why-is-apples-m1-chip-so-fast-3262b158cba2)
 by [Erik Engheim](https://twitter.com/erikengheim/)
 
@@ -1683,9 +2161,39 @@ Real-world experience with the new M1 Macs has started ticking in. They are fast
 
 &nbsp;
 
-## [Github Copilot MAKES A CLI GAME IN GOLANG FROM SCRATCH?!?!](https://www.youtube.com/watch?v=Xw_qbJp52cY)
-by [ThePrimeagen](https://twitter.com/ThePrimeagen)
+## [The Beauty of Bézier Curves](https://www.youtube.com/watch?v=aVwxzDHniEw)
+by [Freya Holmér](https://twitter.com/FreyaHolmer)
 
-Yes the dang AI MAKES A GAME!!! I could not believe it and the ending just blew me away.
+They're used for animation, text rendering, and all sorts of curved shapes! But how do they actually work? well, like, that's what the video is about, so, watch it to find out etc!!
+
+&nbsp;
+
+## [What the Version aka WTV?](https://gist.github.com/3v0k4/3625f3922e3035811e937155fd635e55)
+by [yours truly](https://twitter.com/RiccardoOdone)
+
+Version ranges in different languages: Ruby, JavaScript, Rust.
+
+It's clear what >, >=, <, or <= mean. But what about those other cryptic symbols?
+
+&nbsp;
+
+## [Declarative Programming Streamers](https://declarative.tv)
+
+We are a community of Functional and Declarative Programming streamers.
+
+&nbsp;
+
+## [Developer relations: (more than) the art of talking good](https://emilyfreeman.io/blog/developer-relations-more-than-the-art-of-talking-good)
+by [Emily Freeman](https://twitter.com/editingemily)
+
+In my opinion, someone in developer relations serves as an advocate for the tech community within their company. And we do a lot more than go to conferences.
+
+&nbsp;
+
+## [IT Burnout Index](https://burnoutindex.yerbo.co/survey)
+by Yerbo
+
+With the IT Burnout Index you can measure your own burnout risk levels at the present time, see the detailed result for each of the four burnout factors considered
+
 
 \includepdf[pages=1]{intermission.pdf}
