@@ -11,7 +11,7 @@ tags:
 
 Last week I deployed the blog and published by mistake a post that I was keeping for the future:
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Damn, I inadvertently published the post that was supposed to be out on Monday 😅</p>&mdash; Riccardo Odone (@RiccardoOdone) <a href="https://twitter.com/RiccardoOdone/status/1258722267338596354?ref_src=twsrc%5Etfw">May 8, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Damn, I inadvertently published the post that was supposed to be out on Monday 😅</p>&mdash; Riccardo Odone (@RiccardoOdone) <a href="https://twitter.com/RiccardoOdone/status/1258722267338596354?ref_src=twsrc%5Etfw">May 8, 2020</a></blockquote>
 
 I guess that was just a matter of time cause I always keep some unpublished posts around. Up until now, I was doing some hacky manual git stuff to schedule them. Not anymore!
 

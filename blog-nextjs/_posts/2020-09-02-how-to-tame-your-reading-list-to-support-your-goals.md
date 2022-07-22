@@ -8,7 +8,7 @@ tags:
   - Essential Skills
 ---
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">I won&#39;t try to tame my reading list anymore. No way I can stop this madness.<br><br>Hopefully I can treat it as a black hole of good pointers. Maybe, eventually, in the future I&#39;ll read some of them. Maybe.</p>&mdash; Riccardo Odone (@RiccardoOdone) <a href="https://twitter.com/RiccardoOdone/status/936727904100208640?ref_src=twsrc%5Etfw">December 1, 2017</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">I won&#39;t try to tame my reading list anymore. No way I can stop this madness.<br><br>Hopefully I can treat it as a black hole of good pointers. Maybe, eventually, in the future I&#39;ll read some of them. Maybe.</p>&mdash; Riccardo Odone (@RiccardoOdone) <a href="https://twitter.com/RiccardoOdone/status/936727904100208640?ref_src=twsrc%5Etfw">December 1, 2017</a></blockquote>
 
 This is what happens when completionism, obsession for learning, and fear of missing out meet for a party. Welcome to my life.
 
@@ -36,6 +36,6 @@ Over time, you will start **building trust in specific authors**, treasure it. D
 
 From time to time, make sure to **groom your sources**. Jobs and goals change, this is true for both you and your authors of choice. Thus, when things get misaligned, it's time to look for better material.
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Took me one year but I&#39;m down to 1 item in my reading list from ~900. What a journey!</p>&mdash; Riccardo Odone (@RiccardoOdone) <a href="https://twitter.com/RiccardoOdone/status/1184191219955576832?ref_src=twsrc%5Etfw">October 15, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Took me one year but I&#39;m down to 1 item in my reading list from ~900. What a journey!</p>&mdash; Riccardo Odone (@RiccardoOdone) <a href="https://twitter.com/RiccardoOdone/status/1184191219955576832?ref_src=twsrc%5Etfw">October 15, 2019</a></blockquote>
 
 There's already enough people scrolling down seeking the bottom of their favorite social network. Be mindful of how you spend cognitive energies. **Step up, don't do the easy thing, do the right thing**.

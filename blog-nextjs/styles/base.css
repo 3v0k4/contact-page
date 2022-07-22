@@ -65,6 +65,7 @@ a.post-title {
 
 .post .twitter-tweet {
   margin: auto;
+  margin-bottom: 1rem;
 }
 
 /* Same as Bootstrap .sr-only */

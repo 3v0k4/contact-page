@@ -11,7 +11,7 @@ tags:
 
 Last week I was asked to review a draft of a blog post:
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr"><a href="https://twitter.com/RiccardoOdone?ref_src=twsrc%5Etfw">@RiccardoOdone</a> I just found your blog and am really digging your Haskell content. I&#39;m working on a blog explaining property based testing options, could I ask you to take a look at it? I&#39;d love your feedback / opinion :)</p>&mdash; Maxfield Chen (@_nihliphobe) <a href="https://twitter.com/_nihliphobe/status/1260669421099446272?ref_src=twsrc%5Etfw">May 13, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr"><a href="https://twitter.com/RiccardoOdone?ref_src=twsrc%5Etfw">@RiccardoOdone</a> I just found your blog and am really digging your Haskell content. I&#39;m working on a blog explaining property based testing options, could I ask you to take a look at it? I&#39;d love your feedback / opinion :)</p>&mdash; Maxfield Chen (@_nihliphobe) <a href="https://twitter.com/_nihliphobe/status/1260669421099446272?ref_src=twsrc%5Etfw">May 13, 2020</a></blockquote>
 
 That made me realize I don't have a way to do a similar trick. However, last week I worked on ["Adding `published` to Hakyll Posts"](https://odone.io/posts/2020-05-18-published-posts-hakyll.html). Thus, I already did the hard work on understanding the internals, so I could just sit back and code it.
 
