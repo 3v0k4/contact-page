@@ -37,6 +37,7 @@ const Post = ({ post }: Props) => (
       <meta property="og:type" content="article" />
       <meta property="og:image" content={post.cover_image} />
       <meta name="twitter:card" content="summary_large_image" />
+      <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
     </Head>
 
     <div className="mx-auto max-w-3xl px-4 my-10">
