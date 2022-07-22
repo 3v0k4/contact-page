@@ -28,6 +28,7 @@ html {
 
 body {
   font-size: 1.3rem;
+  overflow-x: hidden;
 }
 
 img {
