@@ -14,13 +14,15 @@ const Home = ({ categories, tags }: TagsProps) => {
 
       <div className="hero relative bg-[position:70%_0%] bg-cover bg-no-repeat">
         <div className="px-[5%] text-white py-24 lg:bg-transparent lg:max-w-[50%] bg-black/[0.6]">
-          <h1 className="leading-tight uppercase text-5xl sm:text-6xl font-extralight">
-            <p>Ciao, I&apos;m Riccardo!</p>
-            <p className="mt-10">I craft web software and lead as a maverick.</p>
-          </h1>
-          <h2 className="text-4xl font-extralight mt-10">
-            My pronoun is he and I like <span className="text-[#f76ca5] [text-shadow:1px_1px_1px_white]">pink</span>.
-          </h2>
+          <div className="slide-in">
+            <h1 className="leading-tight uppercase text-5xl sm:text-6xl font-extralight">
+              <p>Ciao, I&apos;m Riccardo!</p>
+              <p className="mt-10">I craft web software and lead as a maverick.</p>
+            </h1>
+            <h2 className="text-4xl font-extralight mt-10">
+              My pronoun is he and I like <span className="text-[#f76ca5] [text-shadow:1px_1px_1px_white]">pink</span>.
+            </h2>
+          </div>
         </div>
       </div>
 

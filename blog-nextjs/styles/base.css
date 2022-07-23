@@ -10,6 +10,22 @@
   --bs-body-color: #212529;
 }
 
+.slide-in {
+  animation: slide-in 1s ease;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-30%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 html,
 body {
   height: 100%;
