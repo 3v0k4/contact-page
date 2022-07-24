@@ -2,6 +2,15 @@
 const config = {
   siteUrl: process.env.SITE_URL || 'https://odone.io',
   generateRobotsTxt: true,
+  transform: async (config, path) => {
+    return {
+      loc: path === '/' ? '/' : `${path}.html`,
+      changefreq: config.changefreq,
+      priority: config.priority,
+      lastmod: config.autoLastmod ? new Date().toISOString() : undefined,
+      alternateRefs: config.alternateRefs ?? [],
+    }
+  },
 }
 
 export default config

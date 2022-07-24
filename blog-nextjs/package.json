@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build && next export",
-    "sitemap": "next-sitemap --config next-sitemap.config.mjs",
+    "sitemap": "rm -f public/sitemap-0.xml && next-sitemap --config next-sitemap.config.mjs",
     "prebuild": "yarn feed",
     "postbuild": "yarn sitemap",
     "start": "next start",
