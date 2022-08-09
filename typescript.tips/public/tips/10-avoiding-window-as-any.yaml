@@ -1,0 +1,20 @@
+title: Avoiding window as any
+description: You can avoid type casts by defining globals in a d.ts file.
+badCode: |
+  const myGlobal = (window as any).__MY_GLOBAL__
+  //    ^? const myGlobal: any ⛔️
+goodCode: |
+  // global.d.ts
+
+  declare global {
+    interface Window {
+      __MY_GLOBAL__: number
+    }
+  }
+
+  export {} // Needed to augment global scope
+
+  // main.ts
+
+  const myGlobal = window.__MY_GLOBAL__
+  //    ^? const myGlobal: number ✅
