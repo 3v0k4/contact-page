@@ -1,0 +1,7 @@
+title: Use descriptive values
+description: Prefer enums instead of booleans to make code descriptive and extendable.
+badCode: |
+  order.isDoing = true
+goodCode: |
+  type Status = 'todo' | 'doing' | 'done'
+  order.status = 'doing'
