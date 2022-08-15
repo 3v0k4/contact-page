@@ -133,7 +133,7 @@ a.post-title {
   font-size: 1.1rem;
 }
 
-.post p > code {
+.post p > code, .post ul code {
   color: var(--pink);
 }
 
