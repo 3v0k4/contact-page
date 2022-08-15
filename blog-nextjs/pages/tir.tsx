@@ -27,6 +27,56 @@ const Tir = () => (
       This is also available as a <Link href="https://tir.odone.io"><a target="_blank" rel="noopener" className="underline text-[color:var(--blue)]">six-week email course</a></Link>.
       </p>
 
+      <div className="mt-32 mb-5">
+        <p className="mb-4 font-bold">
+        How did you feel the last time you were out of range?
+        </p>
+
+        <p className="mb-4 font-bold">
+        It sucked, huh?!
+        </p>
+
+        <p className="mb-4 mt-10">
+        I’ve been a Type 1 for 25 years and I feel you: every injection, test, activity is yet another opportunity to screw it up.
+        </p>
+
+        <p className="mb-4">
+        Remember the last time you rage bolussed a high and got low as a result? What about the time you ate the entire kitchen to correct a low and skyrocketed—and then rage bolussed?
+        </p>
+
+        <p className="mb-4">
+        You tried so many times to reverse-engineer what the hell is going on. Even the exact same things that worked yesterday don’t work today.
+        </p>
+
+        <p className="mb-4">
+        They told you that training is good for your diabetes, but forgot to say exercise makes it harder to control blood sugars.
+        </p>
+
+        <p className="mb-4">
+        Let’s not mention weekends and days off are even worse than your week days.
+        </p>
+
+        <p className="mt-10 mb-4 font-bold">
+        No shit, you are exhausted!
+        </p>
+
+        <hr className="mt-10" />
+
+        <div className="mt-10 text-gray-500">
+          <p className="mb-4">
+          Ciao, this is Riccardo. I’ve been a type 1 for 25 years and a web developer for more than 10 years.
+          </p>
+
+          <p className="mb-4">
+          I’m here to help you Increase your Time In Range by 10% in six weekly iterations.
+          </p>
+
+          <p className="mb-4">
+          As a sofware developer, I like to keep it simple—boring if you will—and diabetes is no exception.
+          </p>
+        </div>
+      </div>
+
       <h2 className="mt-32 mb-5 text-2xl uppercase text-center">
         Table of content
       </h2>
