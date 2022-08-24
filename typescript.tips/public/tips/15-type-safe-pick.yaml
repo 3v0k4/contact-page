@@ -1,0 +1,21 @@
+title: Type-safe pick
+description: You can prevent accessing undefined properties at compile time
+badCode: |
+  const pick = (keys: string[], object: Record<string, any>): Record<string, any> =>
+    keys.reduce((acc, key) => ({ ...acc, [key]: object[key] }), {})
+
+  pick(['name', 'age'], { name: 'riccardo', age: 18, color: 'pink' })
+  // { "name": "riccardo", "age": 18 }
+
+  pick(['hah!'], { name: 'riccardo', age: 18, color: 'pink' })
+  // ⛔️ { "hah!": undefined }
+goodCode: |
+  const pick = <R extends Record<string, unknown>>
+    (keys: (keyof R)[], object: R): Record<string, unknown> =>
+      keys.reduce((acc, key) => ({ ...acc, [key]: object[key] }), {})
+
+  pick(['name', 'age'], { name: 'riccardo', age: 18, color: 'pink' })
+  // { "name": "riccardo", "age": 18 }
+
+  pick(['hah!'], { name: 'riccardo', age: 18, color: 'pink' })
+  // ✅ Does not compile
