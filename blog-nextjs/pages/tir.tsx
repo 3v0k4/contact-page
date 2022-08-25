@@ -141,8 +141,8 @@ const Tir = () => (
       Here&apos;s what you need to know about it:
       </p>
 
-      <div className="text-center">
-        <iframe className="mx-auto" width="560" height="315" src="https://www.youtube.com/embed/heIyhPhwqFY" title="YouTube: The Spreadsheet" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+      <div className="text-center w-[100%] h-96 relative overflow-hidden">
+        <iframe className="absolute top-0 left-0 w-[100%] h-[100%]" width="560" height="315" src="https://www.youtube.com/embed/heIyhPhwqFY" title="YouTube: The Spreadsheet" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
       </div>
 
       <p className="mt-10">
@@ -213,8 +213,8 @@ const Tir = () => (
       Here&apos;s how I do it:
       </p>
 
-      <div className="text-center">
-        <iframe className="mx-auto" width="560" height="315" src="https://www.youtube.com/embed/1o3rTq6tAQA" title="YouTube: Daily Review" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+      <div className="text-center w-[100%] h-96 relative overflow-hidden">
+        <iframe className="absolute top-0 left-0 w-[100%] h-[100%]" width="560" height="315" src="https://www.youtube.com/embed/1o3rTq6tAQA" title="YouTube: Daily Review" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
       </div>
 
       <p className="mt-10">
@@ -427,8 +427,8 @@ const Tir = () => (
       I hope you can take some inspiration, but I encourage you to find your way. There are many people out there with better results than mine making different compromises and following a different strategy. With some hard work, I&apos;m sure you can tailor a lifestyle around your values, needs, and wishes.
       </p>
 
-      <div className="text-center">
-        <iframe className="mx-auto" width="560" height="315" src="https://www.youtube.com/embed/OoR5lnyMyK4" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+      <div className="text-center w-[100%] h-96 relative overflow-hidden">
+        <iframe className="absolute top-0 left-0 w-[100%] h-[100%]" width="560" height="315" src="https://www.youtube.com/embed/OoR5lnyMyK4" title="YouTube: This is how I do it" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
       </div>
 
       <div className="mt-32 text-center">
