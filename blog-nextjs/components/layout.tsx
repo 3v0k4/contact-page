@@ -8,6 +8,7 @@ import { useRouter } from 'next/router'
 const Layout = ({ children }: React.PropsWithChildren<{}>) => {
   React.useEffect(() => { hljs.highlightAll() })
   const router = useRouter()
+  const canonical = router.asPath === '/' ? '/' : `${router.asPath}.html`
 
   return (
   <>
@@ -23,8 +24,8 @@ const Layout = ({ children }: React.PropsWithChildren<{}>) => {
       <link rel="manifest" href="/site.webmanifest" />
       <meta name="twitter:site" content="@riccardoodone" />
       <meta name="twitter:creator" content="@riccardoodone" />
-      <link rel="canonical" href={`https://odone.io${router.asPath}`} />
-      <meta property="og:url" content={`https://odone.io${router.asPath}`} />
+      <link rel="canonical" href={`https://odone.io${canonical}`} />
+      <meta property="og:url" content={`https://odone.io${canonical}`} />
       <meta property="og:title" content="Riccardo Odone" />
       <meta property="og:description" content="Official website of Riccardo Odone. I craft web software and lead as a maverick. I teach and study timeless software skills on the blog." />
       <meta name="description" content="Official website of Riccardo Odone. I craft web software and lead as a maverick. I teach and study timeless software skills on the blog." />
