@@ -1,0 +1,19 @@
+title: Model with different types
+description: By using different types you can make the compiler check you are passing the right things to the right functions.
+badCode: |
+  type User = { id?: number, name: string }
+
+  const createUser = (user: User) => {}
+  const updateUser = (user: User) => {}
+
+  createUser(persistedUser) // ⛔️
+  updateUser(newUser) // ⛔️
+goodCode: |
+  type User = { name: string }
+  type PersistedUser =  User & { id: number }
+
+  const updateUser = (user: User) => {}
+  const createUser = (user: PersistedUser) => {}
+
+  createUser(persistedUser) // ✅ Does not compile
+  updateUser(newUser) // ✅ Does not compile
