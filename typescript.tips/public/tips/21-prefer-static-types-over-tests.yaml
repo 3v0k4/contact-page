@@ -27,7 +27,7 @@ goodCode: |
   // Does not compile if:
   // ✅ doA() changes the return type
   // ✅ doB() changes the input type
-  // ✅ doC() changes the input type?
+  // ✅ doC() changes the input type
   // ✅ doB() and doC() stop returning the same type
   // ✅ doB() and doC() are not passed a T
   // ✅ condition is 0, '', NaN, null, undefined
