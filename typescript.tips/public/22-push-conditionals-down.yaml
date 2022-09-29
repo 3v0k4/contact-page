@@ -1,0 +1,17 @@
+title: Push conditionals down
+description: If you lean on static types and push conditionals down, you may be able to avoid testing glue code with integration tests.
+badCode: |
+  const go = () => {
+    const x = doA()
+    return is(x) ? doB(x) : doC(x)
+  }
+  // ⛔️ Need two integration tests due to the conditional
+  // ⛔️ If two conditionals are added, need eight tests
+goodCode: |
+  const go = () => {
+    const x = doA()
+    doBOrC(x)
+  }
+  // ✅ Need two unit tests in doBOrC()
+  // ✅ If two conditionals are added,
+  //    doBOrC() still needs two unit tests.

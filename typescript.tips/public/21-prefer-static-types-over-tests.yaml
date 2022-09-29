@@ -1,0 +1,33 @@
+title: Prefer static types over tests
+description: Static types are automated tests that run continuously (and prevent the wrong types from propagating through your program).
+badCode: |
+  const doA = (): any => {}
+  const doB = (x: any): any => {}
+  const doC = (x: any): any=> {}
+
+  const go = (condition: any): any => {
+    const x = doA()
+    return condition ? doB(x) : doC(x)
+  }
+  // ⛔️ What if doA() changes the return type?
+  // ⛔️ What if doB() changes the input type?
+  // ⛔️ What if doC() changes the input type?
+  // ⛔️ Are doB() and doC() returning the same type?
+  // ⛔️ Do doB() and doC() work with any x?
+  // ⛔️ What if condition is 0, '', NaN, null, undefined?
+goodCode: |
+  const doA = (): T => {}
+  const doB = (x: T): R => {}
+  const doC = (x: T): R => {}
+
+  const go = (condition: boolean): R => {
+    const x = doA()
+    return condition ? doB(x) : doC(x)
+  }
+  // Does not compile if:
+  // ✅ doA() changes the return type
+  // ✅ doB() changes the input type
+  // ✅ doC() changes the input type?
+  // ✅ doB() and doC() stop returning the same type
+  // ✅ doB() and doC() are not passed a T
+  // ✅ condition is 0, '', NaN, null, undefined
