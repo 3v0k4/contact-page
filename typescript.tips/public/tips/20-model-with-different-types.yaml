@@ -12,8 +12,8 @@ goodCode: |
   type User = { name: string }
   type PersistedUser =  User & { id: number }
 
-  const updateUser = (user: User) => {}
-  const createUser = (user: PersistedUser) => {}
+  const createUser = (user: User) => {}
+  const updateUser = (user: PersistedUser) => {}
 
   createUser(persistedUser) // ✅ Does not compile
   updateUser(newUser) // ✅ Does not compile
