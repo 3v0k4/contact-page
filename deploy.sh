@@ -27,12 +27,7 @@ git checkout public/index.html
 cd -
 
 cd timeless-software-wisdom
-./pdf.sh
-rsync \
-  --rsync-path="sudo rsync" \
-  -a \
-  timeless-software-wisdom.pdf \
-  riccardo@odone.io:/usr/share/nginx/html/odone.io/
+./deploy.sh
 cd -
 
 cd typescript.tips
