@@ -1153,7 +1153,7 @@ The web is single-threaded. This makes it increasingly hard to write smooth and 
 
 &nbsp;
 
-## [A Look at Server-Sent Events](https://medium.com/conectric-networks/a-look-at-server-sent-events-54a77f8d6ff7)
+## [A Look at Server-Sent Events](https://simonprickett.dev/a-look-at-server-sent-events/)
 by [Simon Prickett](https://twitter.com/simon_prickett)
 
 Server Sent Events are a standard allowing browser clients to receive a stream of updates from a server over a HTTP connection without resorting to polling. Unlike WebSockets, Server Sent Events are a one way communications channel - events flow from server to client only.
