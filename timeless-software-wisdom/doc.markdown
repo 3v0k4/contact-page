@@ -1318,10 +1318,10 @@ Everything you see in Notion is a block. Text, images, lists, a row in a databas
 
 &nbsp;
 
-## [How to deal with money in software](https://cs-syd.eu/posts/2020-07-28-how-to-deal-with-money-in-software)
+## [How to deal with money in software](https://cs-syd.eu/posts/2022-08-22-how-to-deal-with-money-in-software)
 by [Tom Sydney Kerckhove](https://twitter.com/kerckhove_ts)
 
-I recently did my accounting for my investment account. I noticed a significant amount of errors in the account statement that my broker gave me. After a bit of a rant on twitter, I want to explain what they likely did wrong and how to deal with money correctly.
+Dealing with money in software is difficult and dangerous.
 
 &nbsp;
 
