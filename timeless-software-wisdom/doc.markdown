@@ -1945,8 +1945,6 @@ by [Mike Crittenden](https://twitter.com/mcrittenden)
 ## [The biggest networking opportunity you're missing out on](https://www.youtube.com/watch?v=SJ3cXmRX7mM)
 by [Mayuko](https://twitter.com/hellomayuko)
 
-<hr class="elsewhere" />
-
 &nbsp;
 
 ## [Stop Looking For Mentors](https://staysaasy.com/career/2021/10/16/mentorship.html)
