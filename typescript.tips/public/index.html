@@ -105,7 +105,7 @@
 
       <div id="tipCode" class="mx-auto mt-10 max-w-6xl">
         <div class="flex flex-col w-full lg:flex-row">
-          <div class="relative p-5 mt-10 lg:w-1/2">
+          <div class="relative p-5 mt-10 lg:w-1/2" id="tipBadCodeContainer">
             <span class="absolute top-[-28px] left-[calc(50%-30px)]">
               <svg width="61" height="64" viewBox="0 0 61 64" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="61" height="64" rx="30.5" fill="#FF0000"/>
@@ -128,7 +128,7 @@
             </div>
           </div>
 
-          <div class="relative p-5 mt-10 lg:w-1/2">
+          <div class="relative p-5 mt-10 lg:w-1/2" id="tipGoodCodeContainer">
             <span class="absolute top-[-28px] left-[calc(50%-30px)]">
               <svg width="61" height="64" viewBox="0 0 61 64" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="61" height="64" rx="30.5" fill="#4FC631"/>
@@ -213,7 +213,9 @@
       const description = document.getElementById("tipDescription")
       const code = document.getElementById("tipCode")
       const badCode = document.getElementById("tipBadCode")
+      const badCodeContainer = document.getElementById("tipBadCodeContainer")
       const goodCode = document.getElementById("tipGoodCode")
+      const goodCodeContainer = document.getElementById("tipGoodCodeContainer")
       const prevButton = document.getElementById("prev")
       const nextBtn = document.getElementById("next")
       const image = document.getElementById("image")
@@ -239,6 +241,12 @@
         title.textContent = TIPS[index].title
         description.textContent = TIPS[index].description
         badCode.textContent = TIPS[index].badCode
+        badCodeContainer.style.display = 'block'
+        goodCodeContainer.style.width = ''
+        if (!TIPS[index].badCode) {
+          badCodeContainer.style.display = 'none'
+          goodCodeContainer.style.width = '100%'
+        }
         goodCode.textContent = TIPS[index].goodCode
         const shareButton = document.getElementsByClassName('shareTip')[0]
         shareButton.innerText = 'Share tip'
