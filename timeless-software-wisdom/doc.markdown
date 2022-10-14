@@ -954,7 +954,7 @@ Anyone that ever monitored or analyzed an application uses or has used averages.
 &nbsp;
 
 ## [Speed is the killer feature](https://bdickason.com/posts/speed-is-the-killer-feature/)
-by [Brad Dickason](https://www.linkedin.com/in/braddickason/)
+by [Brad Dickason](https://twitter.com/bdickason)
 
 Speed is a killer feature. Speed is a differentiator.
 
