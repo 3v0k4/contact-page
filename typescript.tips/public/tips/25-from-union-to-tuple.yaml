@@ -1,0 +1,16 @@
+title: From Union to Tuple
+description: Going from tuple to union is easy but sometimes you need the opposite.
+badCode: |
+  type Screens = "Home" | "Login"
+  const allScreens: Screens[] = ["Home"] // ⛔️ Missing "Login"
+goodCode: |
+  type TuplifyUnion<U extends string, R extends any[] = []> = {
+    [S in U]: // for each variant in the union
+      Exclude<U, S> extends never // remove it and..
+        ? [...R, S] // ..stop recursion if it was the last variant
+        : TuplifyUnion<Exclude<U, S>, [...R, S]> // ..recur if not
+  }[U] // extract all values from the object
+
+  type Screens = "Home" | "Login"
+  type AllScreens = TuplifyUnion<Screens>
+  const allScreens: AllScreens = ["Home"] // ✅ Does not compile
