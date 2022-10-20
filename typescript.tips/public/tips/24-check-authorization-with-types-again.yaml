@@ -2,9 +2,7 @@ title: Check Authorization With Types (again)
 description: Moving authorization from value to type level can make your code simpler and bullet-proof.
 badCode: |
   const dropDatabase = (performedBy: User) => {
-    if (performedBy.type === "AMDIN" || performedBy.type === "EDTIOR") { // ⛔️ Typos
-      return
-    }
+    if (performedBy._kind !== 'user') { return } // ⛔️ Should be ===
     // ...
   }
 
