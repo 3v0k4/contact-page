@@ -120,7 +120,7 @@ It discusses hot news in the Haskell ecosystem, describes recent events, educate
 
 &nbsp;
 
-## [(((Wait a moment .) .) .) - Composing Functions with Multiple Arguments](https://ubikium.gitlab.io/portfolio/2021-03-13-wait-a-moment.html)
+## [(((Wait a moment .) .) .) - Composing Functions with Multiple Arguments](https://ubikium.gitlab.io/portfolio/wait-a-moment.html)
 by [Ubik](https://ubikium.gitlab.io)
 
 The goal of the point-free style is the same as all other forms of abstraction: to express your intention in a concise (to write), clear (to read), and general (to change) way.
