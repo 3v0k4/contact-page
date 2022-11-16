@@ -1,0 +1,27 @@
+title: Callable types
+description: You can create powerful APIs by enriching a function with properties.
+goodCode: |
+  type Path = {
+    (params: Record<string, any>): string
+    path: (pattern: string) => Path
+  }
+
+  const path = (pattern: string): Path => {
+    const paramsToPath = (params: Record<string, string>) => {
+      return pattern.replace(/{{(\w+)}}/g, (_, capture) => params[capture])
+    }
+
+    paramsToPath.path = (p: string) => {
+      return path(pattern + p)
+    }
+
+    return paramsToPath
+  }
+
+  const person = path('/people/:id')
+
+  person({ id: 1 })
+  // "/people/1"
+
+  person.path('/details')({ id: 1 })
+  // "/people/1/details"
