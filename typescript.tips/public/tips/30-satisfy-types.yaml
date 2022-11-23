@@ -1,0 +1,29 @@
+title: Satisfy types
+description: With satisfies, you can ensure a value matches some type while keeping the most specific type inference.
+badCode: |
+  type Colors = "red" | "green" | "blue";
+  type RGB = [red: number, green: number, blue: number];
+
+  const palette: Record<Colors, RGB | string> = {
+      red: [255, 0, 0],
+      green: "#00ff00",
+      blue: [0, 0, 255]
+  }
+
+  palette.green.replace('#', '') // ⛔️ Does not compile
+  // Property 'replace' does not exist on type 'string | RGB'.
+  // Property 'replace' does not exist on type 'RGB'.
+goodCode: |
+  type Colors = "red" | "green" | "blue";
+  type RGB = [red: number, green: number, blue: number];
+
+  const palette = {
+      red: [255, 0, 0],
+      green: "#00ff00",
+      blue: [0, 0, 255]
+  } satisfies Record<Colors, RGB | string>
+
+  type Palette = typeof palette
+  //   ^? { red: RGB; green: string; blue: RGB }
+
+  palette.green.replace('#', '') // ✅
