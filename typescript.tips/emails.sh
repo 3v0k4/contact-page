@@ -43,7 +43,7 @@ const toHtml = ({ index, title, description, badCode, goodCode }) => `
       <br />
 
       <div>
-        <img  style="width: 61px; height: 64px; margin: auto;" src="http://typescript.tips/x.png" alt="red circle containing a white x" />
+        <img  style="width: 64px; height: 64px; margin: auto;" src="http://typescript.tips/x.png" alt="red circle containing a white x" />
         <div style="padding: 10px 0; text-align: left; border-radius: 5px;">
           <div style="background-color: rgb(243, 244, 246); filter: drop-shadow(rgba(0, 0, 0, 0.04) 0px 10px 8px) drop-shadow(rgba(0, 0, 0, 0.1) 0px 4px 3px); border-radius: 5px;">
             <span style="margin-top: 12px; border-radius: 50%; width: 13px; height: 13px; display: inline-block; margin-left: 20px; background-color: rgb(209, 213, 219);"></span>
@@ -57,7 +57,7 @@ const toHtml = ({ index, title, description, badCode, goodCode }) => `
       <br />
 
       <div>
-        <img  style="width: 61px; height: 64px; margin: auto;" src="http://typescript.tips/v.png" alt="green circle containing a white v" />
+        <img  style="width: 64px; height: 64px; margin: auto;" src="http://typescript.tips/v.png" alt="green circle containing a white v" />
 
         <div style="padding: 10px 0; text-align: left; border-radius: 5px;">
           <div style="background-color: rgb(243, 244, 246); filter: drop-shadow(rgba(0, 0, 0, 0.04) 0px 10px 8px) drop-shadow(rgba(0, 0, 0, 0.1) 0px 4px 3px); border-radius: 5px;">
