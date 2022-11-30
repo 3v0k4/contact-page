@@ -1,0 +1,17 @@
+title: Parse, don't cast
+description: APIs could return something that doesn't adhere to your expected response. It's always a good idea to parse values at the boundary of the system before they are sent in.
+badCode: |
+  fetch(URL)
+    .then(res => res.json())
+    .then((user: User) => ...) // ⛔️
+goodCode: |
+  fetch(URL)
+    .then(res => res.json())
+    .then(json => parse(json))
+    .then((parsed: ParsedUser) => {
+      if (parsed.success) {
+        // happy path
+      } else {
+        // ✅ must handle bad response
+      }
+    })
