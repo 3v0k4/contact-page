@@ -3,7 +3,7 @@ description: Static types are automated tests that run continuously (and prevent
 badCode: |
   const doA = (): any => {}
   const doB = (x: any): any => {}
-  const doC = (x: any): any=> {}
+  const doC = (x: any): any => {}
 
   const go = (condition: any): any => {
     const x = doA()
