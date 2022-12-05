@@ -42,4 +42,4 @@ A great leader is a great follower:
 
 ---
 
-Sarah Mei's [Livable Code](https://vimeo.com/231672897) has been a huge inspiration to me as a fellow tenant in software teams. Thank you Sarah! 🙏
+Sarah Mei's [Livable Code](https://www.youtube.com/watch?v=lI77oMKr5EY) has been a huge inspiration to me as a fellow tenant in software teams. Thank you Sarah! 🙏

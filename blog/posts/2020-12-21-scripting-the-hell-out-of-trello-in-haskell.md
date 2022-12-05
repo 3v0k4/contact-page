@@ -27,7 +27,7 @@ We will develop a script that:
 1. Fetches templates and their intervals from a list of "recurring cards".
 2. Creates cards for the upcoming week in a target list.
 
-For example, I send the [PinkLetter](http://odone.io/#newsletter) on Sundays, check my Twitter stats on the first of the month, and YouTube channel on the fifteenth. In Trello, I keep three template cards named "Sun | Send PinkLetter", "D01 | Check Twitter stats", and "D15 | Check YouTube channel".
+For example, I send the [PinkLetter](https://odone.io/#newsletter) on Sundays, check my Twitter stats on the first of the month, and YouTube channel on the fifteenth. In Trello, I keep three template cards named "Sun | Send PinkLetter", "D01 | Check Twitter stats", and "D15 | Check YouTube channel".
 
 The script is aware of what day is today, so it only creates tasks that are due in the next seven days. Also, all the labels included in the templates are preserved.
 

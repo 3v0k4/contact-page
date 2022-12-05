@@ -9,7 +9,7 @@ tags:
   - Servant
 ---
 
-At Lunar Logic we use an [internal web application](https://lunarlogic.io/design/stream) to handle announcements. Stream has been used by the entire company for the last 6 years or so. Over time we have discovered it's a great place to run tech experiments: production enough to feel real but internal enough not to cause too much damage if stuff goes wrong.
+At Lunar Logic we use an internal web application to handle announcements: Stream has been used by the entire company for the last 6 years or so. Over time we have discovered it's a great place to run tech experiments: production enough to feel real but internal enough not to cause too much damage if stuff goes wrong.
 
 Stream was born as a Rails application, then transitioned to Rails API + Ember and after that Rails API + Elm. Rewriting the frontend to a functional language got some of us hooked into Functional Programming. As a matter of fact, on Slack somebody said "We've rewritten the frontend 100%. Do we really want to not have types in the backend too? 😏". This seed has been growing for a couple of years, until today we decided to take action.
 
