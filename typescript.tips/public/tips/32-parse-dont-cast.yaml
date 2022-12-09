@@ -7,11 +7,11 @@ badCode: |
 goodCode: |
   fetch(URL)
     .then(res => res.json())
-    .then(json => parse(json))
-    .then((parsed: ParsedUser) => {
+    .then(json => parse(json)) // ✅
+    .then(parsed => {
       if (parsed.success) {
-        // happy path
+        // Exactly what's expected
       } else {
-        // ✅ must handle bad response
+        // Must handle bad response
       }
     })
