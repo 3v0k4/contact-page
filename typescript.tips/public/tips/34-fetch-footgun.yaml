@@ -1,0 +1,25 @@
+title: Fetch footgun
+description: Prevent unsafe type casts by patching `json()` at the project level.
+badCode: |
+  fetch(URL)
+    .then(res => res.json())
+    .then((user: User) => ...) // ⛔️
+goodCode: |
+  // global.d.ts
+
+  declare global {
+    interface Body {
+      json(): Promise<unknown>
+    }
+  }
+
+  export {} // Needed to augment global scope
+
+  // index.ts
+
+  fetch(URL)
+    .then(res => res.json())
+    .then((user: User) => ...)
+    // ✅ Does not compile:
+    // Type 'unknown' is not assignable to type 'User'
+    // ✅ You have to parse it.
