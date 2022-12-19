@@ -7,13 +7,12 @@ const Newsletter = () => (
         <h2 className="text-4xl font-semibold mb-4">PinkLetter</h2>
 
         <form
-          action="https://buttondown.email/api/emails/embed-subscribe/riccardo.odone"
+          action="https://app.convertkit.com/forms/3877254/subscriptions"
           method="post"
-          target="popupwindow"
-          onSubmit={() => window.open('https://buttondown.email/riccardo.odone', 'popupwindow')}
           className="mx-auto max-w-[400px]"
+          target="popupwindow"
         >
-          <input className="w-[100%] px-3 py-2 rounded-md" type="email" name="email" id="bd-email" placeholder="Email address" required />
+          <input className="w-[100%] px-3 py-2 rounded-md text-black" type="email" name="email_address" placeholder="Email address" required />
           <input type="hidden" value="1" name="embed" />
           <input className="whitespace-normal w-[100%] mt-4 bg-[color:var(--blue)] hover:bg-[color:var(--dark-blue)] px-3 py-2 rounded-md cursor-pointer" type="submit" value="Send me evergreen software wisdom!"></input>
         </form>
