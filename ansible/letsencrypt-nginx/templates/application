@@ -19,5 +19,11 @@ server {
     add_header Cache-Control "public, max-age=31536000, immutable";
   }
 
+  {% if is_spa %}
+  location / {
+    try_files $uri $uri/ /index.html =404;
+  }
+  {% endif %}
+
   include snippets/ssl-params-for-{{ domain }};
 }

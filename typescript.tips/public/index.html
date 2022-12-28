@@ -229,13 +229,23 @@
         setTimeout(highlight, 100)
       }
 
-      const update = delta => {
+      const encode = string => {
+        return encodeURIComponent(string.toLowerCase().replace(/\s+/g, '-'))
+      }
+
+      const getCurrentIndex = () => {
         const search = new URLSearchParams(window.location.search)
-        const i = parseInt(search.get('index'), 10) || 0
-        const index = (i + delta + TIPS.length) % TIPS.length
-        search.delete('index')
-        search.append('index', index)
-        window.history.pushState(null, null, '?' + search.toString() + window.location.hash)
+        if (window.location.pathname !== '/') {
+          const title = window.location.pathname.slice(1)
+          return TIPS.findIndex(t => encode(t.title) === title)
+        } else {
+          return parseInt(search.get('index'), 10) || 0
+        }
+      }
+
+      const update = delta => {
+        const index = (getCurrentIndex() + delta + TIPS.length) % TIPS.length
+        window.history.pushState(null, null, '/' + encode(TIPS[index].title))
         code.style.display = 'block'
         image.style.display = 'none'
         title.textContent = TIPS[index].title
@@ -251,11 +261,28 @@
         const shareButton = document.getElementsByClassName('shareTip')[0]
         shareButton.innerText = 'Share tip'
         highlight()
+        document.title = TIPS[index].title + ' ' + ' | TypeScript Tips'
+        ;[{
+          selector: 'meta[property="og:title"]',
+          content: TIPS[index].title + ' ' + ' | TypeScript Tips',
+        }, {
+          selector: 'meta[name="twitter:title"]',
+          content: TIPS[index].title + ' ' + ' | TypeScript Tips',
+        }, {
+          selector: 'meta[name="description"]',
+          content: TIPS[index].description,
+        }, {
+          selector: 'meta[name="twitter:description"]',
+          content: TIPS[index].description,
+        }].forEach(({ selector, content }) => {
+          document.head.querySelector(selector).content = content
+        })
         if (index < TIPS.length-1) { return }
         code.style.display = 'none'
         image.style.display = 'block'
       }
 
+      if (window.location.pathname !== '/') { tipTitle.scrollIntoView() }
       update(0)
 
       prevButton.addEventListener('click', () => update(-1))
@@ -270,7 +297,7 @@
     <script>
       document.addEventListener('DOMContentLoaded', () => {
         const clipboard = new ClipboardJS('.shareTip', {
-          text: () => window.location.href + '#tipTitle'
+          text: () => window.location.origin + window.location.pathname
         })
         clipboard.on('success', () => {
           const shareButton = document.getElementsByClassName('shareTip')[0]

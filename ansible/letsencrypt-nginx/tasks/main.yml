@@ -64,6 +64,7 @@
   vars:
     domain: "{{ item.domain }}"
     redirects: "{{ item.redirects }}"
+    is_spa: "{{ item.is_spa | default(false) }}"
   with_items: "{{ domains }}"
   notify:
     - reload nginx
