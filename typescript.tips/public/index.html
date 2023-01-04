@@ -18,6 +18,7 @@
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="stylesheet" href="/output.css?VERSION">
+    <link rel="canonical" href="https://typescript.tips" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js" defer></script>
   </head>
   <body>
@@ -245,7 +246,8 @@
 
       const update = delta => {
         const index = (getCurrentIndex() + delta + TIPS.length) % TIPS.length
-        window.history.pushState(null, null, '/' + encode(TIPS[index].title))
+        const path = '/' + encode(TIPS[index].title)
+        window.history.pushState(null, null, path)
         code.style.display = 'block'
         image.style.display = 'none'
         title.textContent = TIPS[index].title
@@ -262,6 +264,7 @@
         shareButton.innerText = 'Share tip'
         highlight()
         document.title = TIPS[index].title + ' ' + ' | TypeScript Tips'
+        document.querySelector('link[rel="canonical"]').href = 'https://typescript.tips' + path
         ;[{
           selector: 'meta[property="og:title"]',
           content: TIPS[index].title + ' ' + ' | TypeScript Tips',

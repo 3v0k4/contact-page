@@ -1,3 +1,4 @@
+./sitemap.sh
 npm install
 npx tailwindcss -i input.css -o dist/output.css --minify
 cp -rf public/* dist/
