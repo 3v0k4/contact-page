@@ -18,7 +18,6 @@
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="stylesheet" href="/output.css?VERSION">
-    <link rel="canonical" href="https://typescript.tips" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js" defer></script>
   </head>
   <body>
@@ -244,6 +243,13 @@
         }
       }
 
+      const createTagLinkCanonical = (href) => {
+        const linkTag = document.createElement ('link')
+        linkTag.setAttribute('rel', 'canonical')
+        linkTag.href = href
+        document.head.appendChild(linkTag)
+      }
+
       const update = delta => {
         const index = (getCurrentIndex() + delta + TIPS.length) % TIPS.length
         const path = '/' + encode(TIPS[index].title)
@@ -264,7 +270,7 @@
         shareButton.innerText = 'Share tip'
         highlight()
         document.title = TIPS[index].title + ' ' + ' | TypeScript Tips'
-        document.querySelector('link[rel="canonical"]').href = 'https://typescript.tips' + path
+        createTagLinkCanonical('https://typescript.tips' + path)
         ;[{
           selector: 'meta[property="og:title"]',
           content: TIPS[index].title + ' ' + ' | TypeScript Tips',
