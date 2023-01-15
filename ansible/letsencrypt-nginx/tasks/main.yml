@@ -6,8 +6,8 @@
     cache_valid_time: 3600
 
 - name: "obtain certificates"
-  command: letsencrypt certonly -n --agree-tos --email {{ email }} --webroot -w /usr/share/nginx/html/ -d {{ item.domain }} -d www.{{ item.domain }}
-  with_items: "{{ domains }}"
+  command: letsencrypt certonly -n --agree-tos --email {{ email }} --webroot -w /usr/share/nginx/html/ -d {{ item }}
+  with_items: "{{ certs }}"
 
 - name: "generate strong Diffie-Hellman group"
   command: openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048

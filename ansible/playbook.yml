@@ -19,6 +19,14 @@
     - firewall
     - nginx
     - role: letsencrypt-nginx
+      certs:
+        - "odone.io"
+        - "www.odone.io"
+        - "typescript.tips"
+        - "www.typescript.tips"
+        - "featnesse.com"
+        - "www.featnesse.com"
+        - "basal.odone.io"
       domains:
         - { domain: "odone.io", redirects: [
               { from: "/newsletter", to: "/#newsletter" },
@@ -27,6 +35,7 @@
           }
         - { domain: "typescript.tips", redirects: [], is_spa: true }
         - { domain: "featnesse.com", redirects: [] }
+        - { domain: "basal.odone.io", redirects: [] }
     - user
     - logwatch
     - goaccess

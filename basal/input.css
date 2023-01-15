@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.slide-in {
+  animation: slide-in 1.5s ease forwards;
+}
+
+.slide-in-1 {
+  animation-delay: 0ms;
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+.slide-in-2 {
+  animation-delay: 150ms;
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+.slide-in-3 {
+  animation-delay: 300ms;
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
