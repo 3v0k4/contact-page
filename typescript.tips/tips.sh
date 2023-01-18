@@ -3,7 +3,7 @@
 const fs = require('fs')
 const readYaml = require('node-read-yaml')
 
-const indexHtml = `${__dirname}/${process.argv[2]}/index.html`
+const indexHtml = `${__dirname}/${process.argv[2]}`
 const tipsDir = `${__dirname}/public/tips`
 
 const tips = fs
