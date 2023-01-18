@@ -1,4 +1,4 @@
-title: "& types"
+title: And types
 description: Dry up code by extracting the common type.
 badCode: |
   type Alpha = { a: string, b: number, c: boolean, d: Date, w: W }
