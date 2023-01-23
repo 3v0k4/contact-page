@@ -6,7 +6,7 @@ const tipsDir = `${__dirname}/public/tips`
 
 const toXml = (path) => `
   <url>
-    <loc>https://typescript.tips/${path}</loc>
+    <loc>https://typescript.tips/${path}/</loc>
   </url>
 `
 
