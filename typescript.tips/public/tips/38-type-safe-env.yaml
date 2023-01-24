@@ -6,14 +6,14 @@ badCode: |
   // ⛔️       ^ string | undefined
   // ⛔️ No autocomplete
 goodCode: |
-  import { z } from "zod";
+  import { z } from "zod"
 
   const EnvSchema = z.object({
     LOG_LEVEL: z
       .union([z.literal("debug"), z.literal("info")])
       .default("info"),
     LOG_FILE: z.string(),
-  });
+  })
 
   declare global {
     namespace NodeJS {
@@ -21,7 +21,7 @@ goodCode: |
     }
   }
 
-  process.env = { ...process.env, ...EnvSchema.parse(process.env) };
+  process.env = { ...process.env, ...EnvSchema.parse(process.env) }
   // ✅ Throws if LOG_FILE is missing
   // ✅ Defaults LOG_LEVEL to "info" if missing
 
