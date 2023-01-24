@@ -1,0 +1,34 @@
+title: Type-safe env
+description: Make your NodeJS env both type-safe and autocompletable in a few lines of code.
+badCode: |
+  process.env.LOG_LEVEL
+  process.env.LOG_FILE
+  // ⛔️       ^ string | undefined
+  // ⛔️ No autocomplete
+goodCode: |
+  import { z } from "zod";
+
+  const EnvSchema = z.object({
+    LOG_LEVEL: z
+      .union([z.literal("debug"), z.literal("info")])
+      .default("info"),
+    LOG_FILE: z.string(),
+  });
+
+  declare global {
+    namespace NodeJS {
+      interface ProcessEnv extends z.infer<typeof EnvSchema> {}
+    }
+  }
+
+  process.env = { ...process.env, ...EnvSchema.parse(process.env) };
+  // ✅ Throws if LOG_FILE is missing
+  // ✅ Defaults LOG_LEVEL to "info" if missing
+
+  process.env.LOG_LEVEL
+  // ✅       ^ "debug" | "info"
+  // ✅ Autocomplete
+
+  process.env.LOG_FILE
+  // ✅       ^ string
+  // ✅ Autocomplete
