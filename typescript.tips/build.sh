@@ -13,7 +13,7 @@ const dict = {
   title: ({ tip }) => `${tip.title} | TypeScript Tips`,
   description: ({ tip }) => tip.description,
   canonical: ({ filename }) => {
-    return `https://typescript.tips/${encodeURIComponent(path(filename))}`
+    return `https://typescript.tips/${encodeURIComponent(path(filename))}/`
   },
   version: () => new Date().getTime()
 }
