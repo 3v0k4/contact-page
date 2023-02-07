@@ -1,0 +1,19 @@
+title: const Type Parameters
+description: Make TypeScript v5+ infer the more specific type (instead of the most generic).
+badCode: |
+  const first = (xs: unknown[]) => xs[0]
+  pick(["a", "b"])
+  // ^? unknown
+
+  const first = (xs: any[]) => xs[0]
+  pick(["a", "b"])
+  // ^? any
+
+  const first = <T>(xs: T[]) => xs[0]
+  pick(["a", "b"])
+  // ^? string
+goodCode: |
+  const pick = <const T>(xs: T[]) => xs[0]
+
+  pick(["a", "b"])
+  // ^? "a" | "b"
