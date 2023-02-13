@@ -1,14 +1,26 @@
-#!/usr/bin/env node
+import fs from "fs";
+import { parse } from "yaml";
+import hljs from "highlight.js";
+import { exec } from "child_process";
 
-const fs = require('fs')
-const readYaml = require('node-read-yaml')
-const hljs = require('highlight.js')
+const tipsDir = `${__dirname}/../tips`;
 
-const indexHtml = `${__dirname}/${process.argv[2]}/index.html`
-const tipsDir = `${__dirname}/public/tips`
-
-const toHtml = ({ index, title, description, badCode, goodCode, path }) => `
-  <div data-index="${index}" data-title="${title.replace(/\s/g, '-')}">
+const toHtml = ({
+  index,
+  title,
+  description,
+  badCode,
+  goodCode,
+  path,
+}: {
+  index: string;
+  title: string;
+  description: string;
+  badCode: string;
+  goodCode: string;
+  path: string;
+}) => `
+  <div data-index="${index}" data-title="${title.replace(/\s/g, "-")}">
     <div style="text-align: center; margin-top: 20px;">
       <a style="color: rgb(156, 163, 175);" href="https://typescript.tips/${path}/">View this tip in your browser</a>
     </div>
@@ -49,7 +61,11 @@ const toHtml = ({ index, title, description, badCode, goodCode, path }) => `
             <span style="margin-top: 12px; border-radius: 50%; width: 13px; height: 13px; display: inline-block; margin-left: 20px; background-color: rgb(209, 213, 219);"></span>
             <span style="margin-top: 12px; border-radius: 50%; width: 13px; height: 13px; display: inline-block; margin-left: 8px; background-color: rgb(209, 213, 219);"></span>
             <span style="margin-top: 12px; border-radius: 50%; width: 13px; height: 13px; display: inline-block; margin-left: 8px; background-color: rgb(209, 213, 219);"></span>
-            <pre style="background-color: rgb(243, 244, 246); padding: 0 20px 20px 20px; font-size: 0.9rem;"><code>${hljs.highlight((badCode || '').replace(/⛔️/g, '⛔️'.charAt(0)), {language: 'typescript'}).value}</code></pre>
+            <pre style="background-color: rgb(243, 244, 246); padding: 0 20px 20px 20px; font-size: 0.9rem;"><code>${
+              hljs.highlight((badCode || "").replace(/⛔️/g, "⛔️".charAt(0)), {
+                language: "typescript",
+              }).value
+            }</code></pre>
           </div>
         </div>
       </div>
@@ -65,15 +81,19 @@ const toHtml = ({ index, title, description, badCode, goodCode, path }) => `
             <span style="margin-top: 12px; border-radius: 50%; width: 13px; height: 13px; display: inline-block; margin-left: 8px; background-color: rgb(209, 213, 219);"></span>
             <span style="margin-top: 12px; border-radius: 50%; width: 13px; height: 13px; display: inline-block; margin-left: 8px; background-color: rgb(209, 213, 219);"></span>
 
-            <pre style="background-color: rgb(243, 244, 246); padding: 0 20px 20px 20px; font-size: 0.9rem;"><code>${hljs.highlight((goodCode || '').replace(/✅/g, '✅'.charAt(0)), {language: 'typescript'}).value}</code></pre>
+            <pre style="background-color: rgb(243, 244, 246); padding: 0 20px 20px 20px; font-size: 0.9rem;"><code>${
+              hljs.highlight((goodCode || "").replace(/✅/g, "✅".charAt(0)), {
+                language: "typescript",
+              }).value
+            }</code></pre>
           </div>
         </div>
       </div>
     </div>
   </div>
-`
+`;
 
-const layout = html => `
+const layout = (html: string) => `
   <html lang="en">
     <head>
       <meta charset="utf-8">
@@ -113,31 +133,41 @@ const layout = html => `
       }
     </script>
   </html>
-`
+`;
 
-const path = (filename) =>
-  filename.split('-').slice(1).join('-').split('.')[0]
+const path = (filename: string) =>
+  filename.split("-").slice(1).join("-").split(".")[0];
 
 const html = layout(
   fs
-  .readdirSync(tipsDir)
-  .sort((a, b) => Number(a.split('-')[0]) - Number(b.split('-')[0]))
-  .map((filename) => [filename, { ...readYaml.sync(`${tipsDir}/${filename}`) }])
-  .map(([filename, props]) => toHtml({ ...props, index: filename.split('-')[0], path: path(filename) }))
-  .join('')
-)
+    .readdirSync(tipsDir)
+    .sort((a, b) => Number(a.split("-")[0]) - Number(b.split("-")[0]))
+    .map((filename) => [
+      filename,
+      { ...parse(fs.readFileSync(`${tipsDir}/${filename}`).toString()) },
+    ])
+    .map(([filename, props]) =>
+      toHtml({ ...props, index: filename.split("-")[0], path: path(filename) })
+    )
+    .join("")
+);
 
-fs.writeFile('./emails.html', html, 'utf8', (err) => {
-  if (err) { return console.log(err) }
-})
+fs.writeFile("./emails.html", html, "utf8", (err) => {
+  if (err) {
+    return console.log(err);
+  }
+});
 
-const exec = require('child_process').exec
-exec('open ./emails.html', function(err) {
-  if (err) { return console.log(err) }
+exec("open ./emails.html", function (err) {
+  if (err) {
+    return console.log(err);
+  }
 
   setTimeout(() => {
-    exec('rm ./emails.html', function(err) {
-      if (err) { return console.log(err) }
-    })
-  }, 1000)
-})
+    exec("rm ./emails.html", function (err) {
+      if (err) {
+        return console.log(err);
+      }
+    });
+  }, 1000);
+});
