@@ -4,9 +4,9 @@ const fs = require('fs')
 
 const tipsDir = `${__dirname}/public/tips`
 
-const toXml = (path) => `
+const toXml = (slug) => `
   <url>
-    <loc>https://typescript.tips/${path}/</loc>
+    <loc>https://typescript.tips/${slug}/</loc>
   </url>
 `
 

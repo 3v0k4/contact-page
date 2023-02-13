@@ -7,10 +7,10 @@ const hljs = require('highlight.js')
 const indexHtml = `${__dirname}/${process.argv[2]}/index.html`
 const tipsDir = `${__dirname}/public/tips`
 
-const toHtml = ({ index, title, description, badCode, goodCode }) => `
+const toHtml = ({ index, title, description, badCode, goodCode, path }) => `
   <div data-index="${index}" data-title="${title.replace(/\s/g, '-')}">
     <div style="text-align: center; margin-top: 20px;">
-      <a style="color: rgb(156, 163, 175);" href="https://typescript.tips/?index=${index}#tipTitle">View this tip in your browser</a>
+      <a style="color: rgb(156, 163, 175);" href="https://typescript.tips/${path}/">View this tip in your browser</a>
     </div>
 
     <div style="margin-top: 20px; text-align: center;">
@@ -115,12 +115,15 @@ const layout = html => `
   </html>
 `
 
+const path = (filename) =>
+  filename.split('-').slice(1).join('-').split('.')[0]
+
 const html = layout(
   fs
   .readdirSync(tipsDir)
   .sort((a, b) => Number(a.split('-')[0]) - Number(b.split('-')[0]))
-  .map(filename => [filename, readYaml.sync(`${tipsDir}/${filename}`)])
-  .map(([filename, props]) => toHtml({ ...props, index: filename.split('-')[0] }))
+  .map((filename) => [filename, { ...readYaml.sync(`${tipsDir}/${filename}`) }])
+  .map(([filename, props]) => toHtml({ ...props, index: filename.split('-')[0], path: path(filename) }))
   .join('')
 )
 

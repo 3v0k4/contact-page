@@ -1,9 +1,10 @@
 {
   "devDependencies": {
     "node-read-yaml": "^1.0.1",
-    "tailwindcss": "^3.0.24"
+    "tailwindcss": "^3.2.6"
   },
   "dependencies": {
+    "handlebars": "^4.7.7",
     "highlight.js": "^11.5.1"
   }
 }
