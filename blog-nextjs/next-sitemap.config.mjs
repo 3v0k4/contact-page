@@ -4,7 +4,7 @@ const config = {
   generateRobotsTxt: true,
   transform: async (config, path) => {
     return {
-      loc: path === '/' ? '/' : `${path}.html`,
+      loc: path,
       changefreq: config.changefreq,
       priority: config.priority,
       lastmod: config.autoLastmod ? new Date().toISOString() : undefined,

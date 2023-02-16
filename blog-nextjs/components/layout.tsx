@@ -8,10 +8,7 @@ import { useRouter } from 'next/router'
 const Layout = ({ children }: React.PropsWithChildren<{}>) => {
   React.useEffect(() => { hljs.highlightAll() })
   const router = useRouter()
-  const canonical = router.asPath === '/' ?
-    '/' :
-    router.asPath.endsWith('.html') ?
-      router.asPath : `${router.asPath}.html`
+  const canonical = router.asPath
 
   return (
   <>
