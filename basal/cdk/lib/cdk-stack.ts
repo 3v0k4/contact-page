@@ -6,7 +6,7 @@ import * as s3 from "aws-cdk-lib/aws-s3";
 import * as s3deploy from "aws-cdk-lib/aws-s3-deployment";
 import { Construct } from "constructs";
 
-const DOMAIN_NAME = "typescript.tips";
+const DOMAIN_NAME = "basal.odone.io";
 const ASSETS_PATH = "../dist";
 
 export class CdkStack extends cdk.Stack {

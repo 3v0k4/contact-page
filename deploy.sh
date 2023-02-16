@@ -14,7 +14,7 @@ cd -
 rsync \
   --rsync-path="sudo rsync" \
   -a \
-  curves riccardo@odone.io:/usr/share/nginx/html/odone.io/
+  curves/public riccardo@odone.io:/usr/share/nginx/html/odone.io/
 
 cd xpath
 yarn compile

@@ -6,8 +6,8 @@ import * as s3 from "aws-cdk-lib/aws-s3";
 import * as s3deploy from "aws-cdk-lib/aws-s3-deployment";
 import { Construct } from "constructs";
 
-const DOMAIN_NAME = "typescript.tips";
-const ASSETS_PATH = "../dist";
+const DOMAIN_NAME = "odone.io";
+const ASSETS_PATH = "../out";
 
 export class CdkStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
@@ -32,20 +32,9 @@ export class CdkStack extends cdk.Stack {
       this,
       `${DOMAIN_NAME}-cloudfront-function`,
       {
-        code: cloudfront.FunctionCode.fromInline(
-          `function handler(event) {
-            var request = event.request;
-            var uri = request.uri;
-
-            if (uri.endsWith('/')) {
-                request.uri += 'index.html';
-            } else if (!uri.includes('.')) {
-                request.uri += '/index.html';
-            }
-
-            return request;
-          }`
-        ),
+        code: cloudfront.FunctionCode.fromFile({
+          filePath: "lib/cloudfrontFunction.js",
+        }),
       }
     );
 

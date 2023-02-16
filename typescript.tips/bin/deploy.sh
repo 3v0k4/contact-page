@@ -13,5 +13,7 @@ rsync \
   --rsync-path="sudo rsync" \
   -a \
   dist/ riccardo@odone.io:/usr/share/nginx/html/typescript.tips/
-  # typescript.tips
-aws s3 sync ./dist s3://typescript.tips # aws2.typescript.tips
+aws s3 sync ./dist s3://typescript.tips
+aws cloudfront create-invalidation \
+    --distribution-id E2K2FTV79X2003 \
+    --paths "/*"
