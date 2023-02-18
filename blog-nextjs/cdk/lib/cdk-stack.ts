@@ -24,6 +24,7 @@ export class CdkStack extends cdk.Stack {
       `${DOMAIN_NAME}-acm-certificate`,
       {
         domainName: DOMAIN_NAME,
+        subjectAlternativeNames: [`www.${DOMAIN_NAME}`],
         validation: acm.CertificateValidation.fromDns(),
       }
     );
@@ -44,7 +45,7 @@ export class CdkStack extends cdk.Stack {
       {
         priceClass: cloudfront.PriceClass.PRICE_CLASS_100,
         certificate,
-        domainNames: [DOMAIN_NAME],
+        domainNames: [DOMAIN_NAME, `www.${DOMAIN_NAME}`],
         defaultBehavior: {
           viewerProtocolPolicy:
             cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,

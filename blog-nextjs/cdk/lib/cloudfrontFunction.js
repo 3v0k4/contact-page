@@ -109,7 +109,25 @@ var PATHS = [
 ];
 
 function handler(event) {
-  var path = PATHS.find((path) => event.request.uri.endsWith(path));
+  var request = event.request;
+  var uri = request.uri;
+  var host = request.headers.host.value;
+
+  if (host.startsWith('www.')) {
+    return {
+      statusCode: 302,
+      statusDescription: 'Found',
+      headers: {
+        location: {
+          value: `https://odone.io${uri}`
+        }
+      }
+    };
+  }
+
+
+
+  var path = PATHS.find((path) => uri.endsWith(path));
 
   if (path) {
     return {
@@ -123,7 +141,7 @@ function handler(event) {
     };
   }
 
-  if (event.request.uri.match(/\/newsletter(.*)$/)) {
+  if (uri.match(/\/newsletter(.*)$/)) {
     return {
       statusCode: 302,
       statusDescription: "Found",
@@ -135,7 +153,7 @@ function handler(event) {
     };
   }
 
-  if (event.request.uri.match(/\/tips(.*)$/)) {
+  if (uri.match(/\/tips(.*)$/)) {
     return {
       statusCode: 302,
       statusDescription: "Found",
@@ -146,9 +164,6 @@ function handler(event) {
       },
     };
   }
-
-  var request = event.request;
-  var uri = request.uri;
 
   if (uri.endsWith('/')) {
       request.uri += 'index.html';
