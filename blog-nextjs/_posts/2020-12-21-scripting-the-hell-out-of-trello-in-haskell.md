@@ -12,7 +12,7 @@ tags:
 
 When I started learning Haskell, I struggled to find places to deploy it. Doing silly textbook exercises was boring. At the same time, committing substantial work to it would have been a risk.
 
-Somebody encouraged me to try writing scripts at Monadic Party last year. I [never looked back](https://odone.io/tags/Script.html): it's approachable, useful, and fun.
+Somebody encouraged me to try writing scripts at Monadic Party last year. I [never looked back](https://odone.io/tags/Script/): it's approachable, useful, and fun.
 
 Let's write one step-by-step. If you cannot resist the urge, feel free to [go to the bottom](#the-whole-script) to see the final result.
 
@@ -223,7 +223,7 @@ Wait, wat?
    |     ^^^^
 ```
 
-It turns out, [records in Haskell are a pain in the dot](https://odone.io/posts/2020-06-01-records-haskell.html). We could use some type-trickery, but also no:
+It turns out, [records in Haskell are a pain in the dot](https://odone.io/posts/2020-06-01-records-haskell/). We could use some type-trickery, but also no:
 
 ```hs
 data Card = Card
@@ -305,7 +305,7 @@ instance FromJSON Card where
       <*> pure "INTERVAL" -- CHANGED
 ```
 
-The interval is part of the name. However, applicative does not allow to express a dependency between name and interval, but [monads can be sequenced](https://odone.io/posts/2020-02-03-monad-composes-sequentially.html).
+The interval is part of the name. However, applicative does not allow to express a dependency between name and interval, but [monads can be sequenced](https://odone.io/posts/2020-02-03-monad-composes-sequentially/).
 
 Let's make the change easy...
 
@@ -691,7 +691,7 @@ If you don't give a damn about portability, don't have colleagues complaining th
 
 At first, it's strange to type-drive a script, but having Haskell's full power and the maintainability provided by types, is a game-changer.
 
-Want to see more scripts? Smash [this link](https://odone.io/tags/Script.html)!
+Want to see more scripts? Smash [this link](https://odone.io/tags/Script/)!
 
 ## The Whole Script
 

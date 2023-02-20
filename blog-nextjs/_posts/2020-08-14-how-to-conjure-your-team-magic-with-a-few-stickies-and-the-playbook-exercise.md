@@ -33,7 +33,7 @@ If we cannot give answers to those questions, we cannot expect to do great work 
 
 It's not enough to hand off a computer, a Kanban board and a git repository to make somebody part of the team. Moving tickets to done is not how we provide value. We need to support each other's work. Not having a formal structure doesn't make it easier, it makes it harder. This is true not only of others people's contributions, but also of ours. Luckily, the solution is simple.
 
-Different people conjure a different team alchemy. Including the same team after somebody leaves or joins. There is no right or wrong, only different journeys. It's by [embracing the friction, being curious and supporting each other's uniqueness](https://odone.io/posts/2020-05-15-living-together-team.html) that we make the team a power of nature. Because, let's be honest, the other option is to focus inwards on our personal productivity. But if we want teams to be more than the sum of their parts we better [focus on enabling others first](https://odone.io/posts/2020-05-08-on-productivity.html).
+Different people conjure a different team alchemy. Including the same team after somebody leaves or joins. There is no right or wrong, only different journeys. It's by [embracing the friction, being curious and supporting each other's uniqueness](https://odone.io/posts/2020-05-15-living-together-team/) that we make the team a power of nature. Because, let's be honest, the other option is to focus inwards on our personal productivity. But if we want teams to be more than the sum of their parts we better [focus on enabling others first](https://odone.io/posts/2020-05-08-on-productivity/).
 
 ## Create a playbook. Together as a team.
 

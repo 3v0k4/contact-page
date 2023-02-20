@@ -9,7 +9,7 @@ tags:
   - PureScript
 ---
 
-In the [previous post](https://odone.io/posts/2019-06-24-a-parser-combinator-in-purescript-part-1.html) we've created the basic building blocks of a parser combinator library. Now it's time to add some more fancy stuff.
+In the [previous post](https://odone.io/posts/2019-06-24-a-parser-combinator-in-purescript-part-1/) we've created the basic building blocks of a parser combinator library. Now it's time to add some more fancy stuff.
 
 ## Choice and Failure
 

@@ -36,7 +36,7 @@ type Params = {
 }
 
 export const getStaticProps = async ({ params }: Params) => {
-  const tag = params.tag.replaceAll('+', ' ')
+  const tag = params.tag
   const categories = getCategories()
   const tags = getTags()
   const posts = getPostsByTag(tag, ['title', 'description', 'slug'])
@@ -53,7 +53,7 @@ export const getStaticPaths = async () => {
     paths: posts.map(post => post.tags).flat().map(tag => {
       return {
         params: {
-          tag: `${tag.replaceAll(/\s/g, '+')}`,
+          tag
         },
       }
     }),

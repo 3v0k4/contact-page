@@ -8,7 +8,7 @@ tags:
   - Essential Skills
 ---
 
-Last week I prepared a [script to reproduce performance issues](https://odone.io/posts/2020-09-16-how-to-investigate-performance-issues-in-a-web-app-with-a-simple-script.html). The goal was to populate the database with realistic data to test speed and UX on development and staging. As a result, we realized **some screens in the application not only are slow, but they also break when displaying a big dataset**.
+Last week I prepared a [script to reproduce performance issues](https://odone.io/posts/2020-09-16-how-to-investigate-performance-issues-in-a-web-app-with-a-simple-script/). The goal was to populate the database with realistic data to test speed and UX on development and staging. As a result, we realized **some screens in the application not only are slow, but they also break when displaying a big dataset**.
 
 We started working on the page that lists all the orders submitted by customers. The script inserts in the database an incremental number of them. Since in the screen it's possible to filter by date, this setup allowed us to **check how fast the application loads compared to the number of items**:
 
@@ -26,7 +26,7 @@ By taking a look at analytics, we identified **where the application spends time
 - about 85% on the backend (more than 90% time is spent in the JSON serializer);
 - about 15% on the frontend.
 
-Given this is a [rescue project](https://odone.io/posts/2020-07-10-grateful-for-the-opportunity-of-working-on-legacy-code.html), we are aiming for good enough, not perfect. But **what does fast enough mean in our context?**
+Given this is a [rescue project](https://odone.io/posts/2020-07-10-grateful-for-the-opportunity-of-working-on-legacy-code/), we are aiming for good enough, not perfect. But **what does fast enough mean in our context?**
 
 We went back to staging and loaded different amounts of orders on the screen to get a feel for it. There are more scientific ways of defining a performance budget, but we didn't want to overengineer.
 

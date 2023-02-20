@@ -6,8 +6,8 @@ type Props = React.PropsWithChildren<{tag: string, klass: string}>
 
 export const TagLink = ({ tag, klass, children }: Props) => {
   const router = useRouter()
-  const href = `/tags/${tag.replaceAll(/\s/g, '+')}`
-  const isActive = href === router.asPath.replaceAll('%2B', '+')
+  const href = `/tags/${tag}`
+  const isActive = href === router.asPath
   const defaultKlass = [
     "border-[1px]",
     "border-solid",

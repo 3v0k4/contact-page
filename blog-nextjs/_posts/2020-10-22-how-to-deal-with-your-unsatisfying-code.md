@@ -78,8 +78,8 @@ If it's likely to change, try to make sure it works correctly, and it reveals in
 
 You can structure your process to (almost) guarantee code that is both correct and intention revealing. Should you accept the challenge, here's some food for thoughts:
 
-- [Decomposing Features into Pipelines](https://odone.io/posts/2020-06-29-decomposing-features-into-pipelines.html)
-- [How to Tame Complexity Into Simplicity with a Shake List](https://odone.io/posts/2020-08-28-how-to-tame-complexity-into-simplicity-with-a-shake-list.html)
-- [Code Quality is Free (if You Do it Right)](https://odone.io/posts/2020-08-20-code-quality-is-free-if-you-do-it-right.html)
-- [Naming Things Made Easy](https://odone.io/posts/2020-07-24-naming-things-made-easy.html)
-- [Starting from the Problem not the Solution](https://odone.io/posts/2020-06-19-starting-from-the-problem-not-the-solution.html)
+- [Decomposing Features into Pipelines](https://odone.io/posts/2020-06-29-decomposing-features-into-pipelines/)
+- [How to Tame Complexity Into Simplicity with a Shake List](https://odone.io/posts/2020-08-28-how-to-tame-complexity-into-simplicity-with-a-shake-list/)
+- [Code Quality is Free (if You Do it Right)](https://odone.io/posts/2020-08-20-code-quality-is-free-if-you-do-it-right/)
+- [Naming Things Made Easy](https://odone.io/posts/2020-07-24-naming-things-made-easy/)
+- [Starting from the Problem not the Solution](https://odone.io/posts/2020-06-19-starting-from-the-problem-not-the-solution/)

@@ -8,7 +8,7 @@ tags:
   - Script
 ---
 
-The scripting spree is not ended yet! To write the last few posts here I've fruitfully used ["Scaffolding a Blog Post"](https://odone.io/posts/2019-12-26-scaffolding-a-blog-post.html), ["Tweeting a Blog Post via command line"](https://odone.io/posts/2020-01-06-posting-a-tweet-with-haskell.html) and ["Crossposting to DevTo via command line"](https://odone.io/posts/2020-01-13-crossposting-via-command-line.html). Now it's time to see a script that was written for a work-related task.
+The scripting spree is not ended yet! To write the last few posts here I've fruitfully used ["Scaffolding a Blog Post"](https://odone.io/posts/2019-12-26-scaffolding-a-blog-post/), ["Tweeting a Blog Post via command line"](https://odone.io/posts/2020-01-06-posting-a-tweet-with-haskell/) and ["Crossposting to DevTo via command line"](https://odone.io/posts/2020-01-13-crossposting-via-command-line/). Now it's time to see a script that was written for a work-related task.
 
 In particular, we wanted to move a few of our project kanban boards from [Kanbanery](https://kanbanery.com/) to [Trello](https://trello.com/). Since I wrote the script after reading the awesome ["Optics by Example"](https://leanpub.com/optics-by-example), the code uses optics.
 

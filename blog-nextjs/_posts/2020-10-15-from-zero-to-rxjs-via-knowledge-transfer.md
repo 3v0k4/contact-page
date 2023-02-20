@@ -9,7 +9,7 @@ tags:
 series: Permanent Knowledge
 ---
 
-A couple of weeks ago, I talked about going [From Temporary Knowledge to Permanent Knowledge](https://odone.io/posts/2020-10-01-from-temporary-knowledge-to-permanent-knowledge.html). Last week, I shared [10 Knowledge Transfers that Make me Thrive with Legacy Code](https://odone.io/posts/2020-10-09-10-knowledge-transfers-that-make-me-thrive-with-legacy-code.html). Today, I want to ride the momentum and focus on how permanent knowledge got me up to speed with RxJs.
+A couple of weeks ago, I talked about going [From Temporary Knowledge to Permanent Knowledge](https://odone.io/posts/2020-10-01-from-temporary-knowledge-to-permanent-knowledge/). Last week, I shared [10 Knowledge Transfers that Make me Thrive with Legacy Code](https://odone.io/posts/2020-10-09-10-knowledge-transfers-that-make-me-thrive-with-legacy-code/). Today, I want to ride the momentum and focus on how permanent knowledge got me up to speed with RxJs.
 
 RxJs is a complex library. It's confusing because it requires solving problems differently. In particular, it makes heavy use of four concepts that are not straightforward by themselves: async programming, streams, event-driven modeling, and functional programming.
 

@@ -9,7 +9,7 @@ tags:
   - Script
 ---
 
-This post is heavily based on ["Crossposting to DevTo via Command Line"](https://odone.io/posts/2020-01-13-crossposting-via-command-line.html). However, that is not a prerequisite reading.
+This post is heavily based on ["Crossposting to DevTo via Command Line"](https://odone.io/posts/2020-01-13-crossposting-via-command-line/). However, that is not a prerequisite reading.
 
 Let's see how to crosspost a local Jekyll-like blog post to [Medium](https://medium.com). First, we have the `crosspost` function:
 

@@ -19,7 +19,7 @@ When Radek asked me to pair on investigating a bug I was skeptical. My experienc
 
 ## Being stuck on a bug is a self-reinforcing process
 
-We build a mental model of the code that is incorrect, we convince ourselves the problem is in a specific place and **we limit the investigation to the wrong area**. As [described last week](https://odone.io/posts/2020-06-26-why-good-solutions-block-better-ones.html), the Einstullung effect makes us ignore aspects that are not aligned with our mental model, looking more at what confirms it.
+We build a mental model of the code that is incorrect, we convince ourselves the problem is in a specific place and **we limit the investigation to the wrong area**. As [described last week](https://odone.io/posts/2020-06-26-why-good-solutions-block-better-ones/), the Einstullung effect makes us ignore aspects that are not aligned with our mental model, looking more at what confirms it.
 
 The best strategy to unstucking oneself is to **take a step back**. Unfortunately, it is incredibly hard. When debugging, the root cause seems to be five minutes away from being found. It's an infinite cycle of believing the next try is going to be the good one.
 

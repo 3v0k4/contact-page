@@ -9,7 +9,7 @@ tags:
   - Script
 ---
 
-[Have](https://odone.io/posts/2019-07-08-scripting-in-haskell-and-purescript.html) I [ever](https://odone.io/posts/2019-12-26-scaffolding-a-blog-post.html) mentioned [how](https://odone.io/posts/2020-01-06-posting-a-tweet-with-haskell.html) scripts [are](https://odone.io/posts/2020-01-13-crossposting-via-command-line.html) a [great](https://odone.io/posts/2020-01-20-kanbanery-to-trello.html) way [to](https://odone.io/posts/2020-06-15-crossposting-to-medium-via-command-line.html) put Haskell to use? Here comes another one. In fact, the first Haskell script I have ever wrote. Believe it or not I put it together on the train back from Monadic Party last year.
+[Have](https://odone.io/posts/2019-07-08-scripting-in-haskell-and-purescript/) I [ever](https://odone.io/posts/2019-12-26-scaffolding-a-blog-post/) mentioned [how](https://odone.io/posts/2020-01-06-posting-a-tweet-with-haskell/) scripts [are](https://odone.io/posts/2020-01-13-crossposting-via-command-line/) a [great](https://odone.io/posts/2020-01-20-kanbanery-to-trello/) way [to](https://odone.io/posts/2020-06-15-crossposting-to-medium-via-command-line/) put Haskell to use? Here comes another one. In fact, the first Haskell script I have ever wrote. Believe it or not I put it together on the train back from Monadic Party last year.
 
 Today I would write code in a different way. However, the beauty of Haskell is that after several months I can easily make sense of it and refactor without breaking a sweat. It would not be the same had I coded it in Bash.
 

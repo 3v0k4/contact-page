@@ -8,7 +8,7 @@ tags:
   - Script
 ---
 
-It's been two months since the [last post](https://odone.io/posts/2019-10-07-playing-with-fmt.html).
+It's been two months since the [last post](https://odone.io/posts/2019-10-07-playing-with-fmt/).
 I had a chance to learn a lot of cool stuff that I cannot wait to share! But let's start with something eazy.
 
 Today, we are going to take a look at a short script written in Haskell with a simple goal in mind: scaffolding
@@ -20,7 +20,7 @@ Including how helpful is to have a strong type system holding our hands in the p
 We won't be covering the specifics of the
 [Stack script interpreter](https://docs.haskellstack.org/en/stable/GUIDE/#script-interpreter). That has been
 already covered in
-["Scripting in Haskell and PureScript"](https://odone.io/posts/2019-07-08-scripting-in-haskell-and-purescript.html).
+["Scripting in Haskell and PureScript"](https://odone.io/posts/2019-07-08-scripting-in-haskell-and-purescript/).
 
 Suffice to say we need to have an executable file (i.e. `chmod +x file.hs`) and the following at the top of
 the file:

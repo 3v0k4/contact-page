@@ -10,7 +10,7 @@ tags:
 
 > What happens when you build for several months without testing with real users and real data? An application that doesn't work with real users and real data happens.
 
-This is what I wrote in my [rant about 99 Percent Done](https://odone.io/posts/2020-09-10-99-percent-done.html). But I'm tasked with being [part of the solution not part of the problem](https://odone.io/posts/2020-07-10-grateful-for-the-opportunity-of-working-on-legacy-code.html). So let's make performance right.
+This is what I wrote in my [rant about 99 Percent Done](https://odone.io/posts/2020-09-10-99-percent-done/). But I'm tasked with being [part of the solution not part of the problem](https://odone.io/posts/2020-07-10-grateful-for-the-opportunity-of-working-on-legacy-code/). So let's make performance right.
 
 The first step to solve any coding issue is to be able to reproduce at will. In this case, the endpoints are slow, and I'm ready to bet all-in that it's due to database calls and JSON rendering. Not only that, the application monitoring service we employ draws the same conclusions. Thus, I could jump right in, gold master test, and rewrite queries and serializers. However, there are a couple of problems with this approach.
 
@@ -20,7 +20,7 @@ Secondly, I don't want to optimize the entire application. It would take forever
 
 Lastly and most importantly, I need to share performance issues with the rest of the team. We have to experience features to decide when they are both fast enough and usable. Technically the application could render thousands of things on the screen, but the user experience would likely suffer.
 
-Given the [shake list](https://odone.io/posts/2020-08-28-how-to-tame-complexity-into-simplicity-with-a-shake-list.html) mentioned above, I got a bunch of options:
+Given the [shake list](https://odone.io/posts/2020-08-28-how-to-tame-complexity-into-simplicity-with-a-shake-list/) mentioned above, I got a bunch of options:
 
 - Tweak performance without any feedback. Nope.
 

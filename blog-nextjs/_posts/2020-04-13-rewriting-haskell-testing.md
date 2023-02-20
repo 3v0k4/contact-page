@@ -9,7 +9,7 @@ tags:
   - Servant
 ---
 
-We have managed to delay testing by [leaning on Ruby RSpec](https://odone.io/posts/2020-03-30-rails.html) for a while. It's time to do the right thing and write some tests in Haskell.
+We have managed to delay testing by [leaning on Ruby RSpec](https://odone.io/posts/2020-03-30-rails/) for a while. It's time to do the right thing and write some tests in Haskell.
 
 We peaked at the ["How To Test Servant Applications"](https://docs.servant.dev/en/stable/cookbook/testing/Testing.html) cookbook page and decided to go the [`hspec-wai`](https://hackage.haskell.org/package/hspec-wai) way. In fact, using `servant-client` seemed a bit too involved and coupled with Servant. The former, on the other hand, enables us to test any wai application.
 
