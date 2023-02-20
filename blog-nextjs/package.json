@@ -6,8 +6,7 @@
     "dev": "next dev",
     "build": "next build && next export",
     "sitemap": "rm -f public/sitemap-0.xml && next-sitemap --config next-sitemap.config.mjs",
-    "prebuild": "yarn feed",
-    "postbuild": "yarn sitemap",
+    "prebuild": "yarn feed && yarn sitemap",
     "start": "next start",
     "feed": "npx ts-node --skip-project --esm ./bin/feed.ts",
     "lint": "next lint"
