@@ -1,0 +1,53 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  canonical: string;
+}
+
+const { title, description, canonical } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content={Astro.generator} />
+    <meta property="og:title" content={title} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content="https://typescript.tips/logo.png" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://typescript.tips/logo.png" />
+    <meta name="twitter:image:alt" content="Blue square with TIPS in yellow sitting on TS in white." />
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="canonical" href={canonical} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+* {
+  font-family: 'Open Sans', sans-serif;
+}
+
+code, code * {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.9rem !important;
+}
+
+code, .hljs {
+  background-color: unset;
+  display: block;
+  padding: 0 20px !important;
+}
+</style>

@@ -2,6 +2,11 @@ import fs from "fs";
 import { parse } from "yaml";
 import hljs from "highlight.js";
 import { exec } from "child_process";
+import p from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = p.dirname(__filename);
 
 const tipsDir = `${__dirname}/../tips`;
 
