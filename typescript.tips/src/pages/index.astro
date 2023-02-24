@@ -1,12 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Tip from '../components/Tip.astro';
-import { readTips } from '../readTips';
+import TipComponent from '../components/Tip.astro';
+import { readPages } from '../page';
+import type { Page } from '../page';
 
-const props = readTips().at(10);
-if (!props) { throw new Error('Tip not found'); }
+const page: Page|undefined = readPages().at(10);
+if (!page) { throw new Error('Tip not found'); }
 ---
 
 <Layout title="TypeScript Tips" description="TypeScript Tips | Make bugs impossible. One TypeScript tip at a time." canonical="https://typescript.tips/">
-  <Tip {...props} />
+  <TipComponent {...page} />
 </Layout>

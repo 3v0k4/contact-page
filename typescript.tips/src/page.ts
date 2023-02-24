@@ -25,13 +25,13 @@ export type Tip = {
   goodCode: string;
 }
 
-type Page = {
+export type Page = {
   canonical: string;
   slug: string;
 } & Tip;
 
 
-export const readTips = (): Page[] => {
+export const readPages = (): Page[] => {
   return tips
     .map((filename, i, filenames) => {
       const yaml = fs.readFileSync(`./tips/${filename}`).toString();

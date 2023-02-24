@@ -1,18 +1,17 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import TipComponent from '../components/Tip.astro';
-import { readTips } from '../readTips';
-import type { Tip } from '../readTips';
+import { readPages } from '../page';
+import type { Page } from '../page';
 
-export async function getStaticPaths() {
-  return readTips()
+export const getStaticPaths = async () =>
+  readPages()
     .map(tip => ({
       params: { slug: tip.slug },
       props: tip,
     }));
-}
 
-interface Props extends Tip {}
+interface Props extends Page {}
 
 const { title, description, canonical } = Astro.props;
 ---
