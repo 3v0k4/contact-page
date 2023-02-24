@@ -7,7 +7,7 @@ import type { Tip } from '../readTips';
 export async function getStaticPaths() {
   return readTips()
     .map(tip => ({
-      params: { tip: tip.slug },
+      params: { slug: tip.slug },
       props: tip,
     }));
 }
