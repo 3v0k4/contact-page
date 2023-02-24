@@ -1,4 +1,6 @@
 ---
+import type { Tip } from '../readTips';
+interface Props extends Tip {}
 const { title, description, previousTipPath, nextTipPath, badCode, goodCode, pathsByIndex } = Astro.props;
 ---
 
@@ -178,20 +180,37 @@ const { title, description, previousTipPath, nextTipPath, badCode, goodCode, pat
 </div>
 
 <script>
+  (() => {
   const search = new URLSearchParams(window.location.search)
-  const index = parseInt(search.get("index"), 10)
-  const pathsByIndex = document.querySelector('#pathsByIndex').dataset.pathsByIndex.split(',')
-  if (Number.isInteger(index)) {
-    window.location = `${window.location.origin}${pathsByIndex[index]}`
-  }
+  const index = parseInt(search.get("index") || '', 10)
+  if (!Number.isInteger(index)) { return }
+
+  const element = document.querySelector('#pathsByIndex')
+  if (!(element instanceof HTMLElement)) { return }
+
+  const pathsByIndex = element.dataset.pathsByIndex
+  if (!pathsByIndex) { return }
+
+  window.location.href = `${window.location.origin}${pathsByIndex.split(',')[index]}`
+  })()
 </script>
 
 <script>
-  if (window.location.pathname !== '/') { document.querySelector('#tipTitle').scrollIntoView() }
+  (() => {
+  if (window.location.pathname === '/') { return }
+
+  const tipTitle = document.querySelector('#tipTitle')
+  if (!(tipTitle instanceof HTMLElement)) { return }
+
+  tipTitle.scrollIntoView()
+  })()
 </script>
 
 <script>
+  (() => {
   const head = document.querySelector("head")
+  if (!(head instanceof HTMLElement)) { return }
+
   const hrefs = [
     "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap",
     "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/mono-blue.min.css",
@@ -203,11 +222,16 @@ const { title, description, previousTipPath, nextTipPath, badCode, goodCode, pat
     resource.setAttribute("type", "text/css")
     head.appendChild(resource)
   })
+  })()
 </script>
 
 <script>
+  (() => {
   const prevButton = document.querySelector("#prevButton")
+  if (!(prevButton instanceof HTMLAnchorElement)) { return }
+
   const nextButton = document.querySelector("#nextButton")
+  if (!(nextButton instanceof HTMLAnchorElement)) { return }
 
   fetch(nextButton.href, { cache: "force-cache" })
   fetch(prevButton.href, { cache: "force-cache" })
@@ -216,20 +240,25 @@ const { title, description, previousTipPath, nextTipPath, badCode, goodCode, pat
     if (event.code === "ArrowLeft") { prevButton.click() }
     else if (event.code === "ArrowRight") { nextButton.click() }
   })
+  })()
 </script>
 
 <script>
   import hljs from 'highlight.js'
+
+  (() => {
   hljs.configure({ languages: ['typescript'] })
 
   document.addEventListener('DOMContentLoaded', () => {
     hljs.highlightAll()
   })
+  })()
 </script>
 
 <script>
   import ClipboardJS from 'clipboard'
 
+  (() => {
   document.addEventListener('DOMContentLoaded', () => {
     const clipboard = new ClipboardJS('.shareTip', {
       text: () => window.location.origin + window.location.pathname
@@ -237,7 +266,9 @@ const { title, description, previousTipPath, nextTipPath, badCode, goodCode, pat
 
     clipboard.on('success', () => {
       const shareButton = document.querySelector('.shareTip')
+      if (!(shareButton instanceof HTMLButtonElement)) { return }
       shareButton.innerText = 'Copied to clipboard'
     })
   })
+  })()
 </script>

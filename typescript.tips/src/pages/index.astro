@@ -1,33 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Tip from '../components/Tip.astro';
+import { readTips } from '../readTips';
 
-import fs from 'fs';
-import { parse } from 'yaml';
-
-const slugFrom = (filename: string): string => filename.split("-").slice(1).join("-").split(".")[0];
-const path = (filename: string): string => `/${encodeURIComponent(slugFrom(filename))}/`;
-const at = <T>(i: number, xs: T[]): T => xs.at(i % xs.length) as T;
-const tips = fs
-  .readdirSync('./tips')
-  .sort((a, b) => Number(a.split("-")[0]) - Number(b.split("-")[0]))
-const pathsByIndex = tips.map((filename) => path(filename));
-
-const props = tips
-  .map((filename, i, filenames) => {
-    const yaml = fs.readFileSync(`./tips/${filename}`).toString();
-    const slug = slugFrom(filename);
-    const props = {
-      ...parse(yaml),
-      canonical: `https://typescript.tips${path(filename)}`,
-      previousTipPath: path(at(i - 1, filenames)),
-      nextTipPath: path(at(i + 1, filenames)),
-      pathsByIndex,
-    };
-    return { params: { tip: slug }, props };
-  })
-  .at(10)
-  .props;
+const props = readTips().at(10);
+if (!props) { throw new Error('Tip not found'); }
 ---
 
 <Layout title="TypeScript Tips" description="TypeScript Tips | Make bugs impossible. One TypeScript tip at a time." canonical="https://typescript.tips/">
