@@ -222,3 +222,11 @@ const { title, description, previousTipPath, nextTipPath, badCode, goodCode, pat
     })
   })
 </script>
+
+<script>
+  document.addEventListener('turbo:load', () => {
+    const video = document.querySelector('video')
+    if (!(video instanceof HTMLVideoElement)) { return }
+    video.play()
+  })
+</script>
