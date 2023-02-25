@@ -109,7 +109,7 @@ const { title, description, previousTipPath, nextTipPath, badCode, goodCode, pat
           <span class="inline-block mt-3 ml-3 bg-gray-300 h-[15px] w-[15px] rounded-[50%]"></span>
           <span class="inline-block mt-3 ml-1 bg-gray-300 h-[15px] w-[15px] rounded-[50%]"></span>
           <span class="inline-block mt-3 ml-1 bg-gray-300 h-[15px] w-[15px] rounded-[50%]"></span>
-          <pre class=""><code class="mt-5" id="tipBadCode" style="background-color: transparent !important;">{badCode}</code>
+          <pre class=""><code class="mt-5" id="tipBadCode" style="background-color: transparent !important;" set:html={badCode} />
           </pre>
         </div>
       </div>
@@ -133,7 +133,7 @@ const { title, description, previousTipPath, nextTipPath, badCode, goodCode, pat
           <span class="inline-block mt-3 ml-3 bg-gray-300 h-[15px] w-[15px] rounded-[50%]"></span>
           <span class="inline-block mt-3 ml-1 bg-gray-300 h-[15px] w-[15px] rounded-[50%]"></span>
           <span class="inline-block mt-3 ml-1 bg-gray-300 h-[15px] w-[15px] rounded-[50%]"></span>
-          <pre class=""><code class="mt-5" id="tipGoodCode" style="background-color: transparent !important;">{goodCode}</code>
+          <pre class=""><code class="mt-5" id="tipGoodCode" style="background-color: transparent !important;" set:html={goodCode} />
           </pre>
         </div>
       </div>
@@ -239,18 +239,6 @@ const { title, description, previousTipPath, nextTipPath, badCode, goodCode, pat
   document.addEventListener('keyup', event => {
     if (event.code === "ArrowLeft") { prevButton.click() }
     else if (event.code === "ArrowRight") { nextButton.click() }
-  })
-  })()
-</script>
-
-<script>
-  import hljs from 'highlight.js'
-
-  (() => {
-  hljs.configure({ languages: ['typescript'] })
-
-  document.addEventListener('DOMContentLoaded', () => {
-    hljs.highlightAll()
   })
   })()
 </script>

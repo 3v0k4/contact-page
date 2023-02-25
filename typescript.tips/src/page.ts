@@ -1,5 +1,6 @@
 import fs from 'fs';
 import { parse } from 'yaml';
+import hljs from "highlight.js";
 
 const slugFrom = (filename: string): string => {
   const slug = filename.split("-").slice(1).join("-").split(".")[0];
@@ -23,26 +24,29 @@ export type Tip = {
   description: string;
   badCode: string;
   goodCode: string;
-}
+};
 
 export type Page = {
   canonical: string;
   slug: string;
 } & Tip;
 
-
 export const readPages = (): Page[] => {
-  return tips
-    .map((filename, i, filenames) => {
-      const yaml = fs.readFileSync(`./tips/${filename}`).toString();
+  return tips.map((filename, i, filenames) => {
+    const parsed = yaml.parse(fs.readFileSync(`./tips/${filename}`).toString());
 
-      return  {
-        ...parse(yaml),
-        canonical: `https://typescript.tips${path(filename)}`,
-        previousTipPath: path(at(i - 1, filenames)),
-        nextTipPath: path(at(i + 1, filenames)),
-        pathsByIndex: tips.map((filename) => path(filename)),
-        slug: slugFrom(filename),
-      };
-    });
-}
+    return {
+      ...parsed,
+      canonical: `https://typescript.tips${path(filename)}`,
+      previousTipPath: path(at(i - 1, filenames)),
+      nextTipPath: path(at(i + 1, filenames)),
+      pathsByIndex: tips.map((filename) => path(filename)),
+      slug: slugFrom(filename),
+      badCode: hljs.highlight(parsed.badCode || "", { language: "typescript" })
+        .value,
+      goodCode: hljs.highlight(parsed.goodCode || "", {
+        language: "typescript",
+      }).value,
+    };
+  });
+};
