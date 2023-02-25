@@ -1,20 +1,22 @@
-import fs from 'fs';
-import { parse } from 'yaml';
+import fs from "fs";
+import yaml from "yaml";
 import hljs from "highlight.js";
 
 const slugFrom = (filename: string): string => {
   const slug = filename.split("-").slice(1).join("-").split(".")[0];
   if (!slug) throw new Error(`Invalid filename: ${filename}`);
   return slug;
-}
+};
 
-const path = (filename: string): string => `/${encodeURIComponent(slugFrom(filename))}/`;
+const path = (filename: string): string =>
+  `/${encodeURIComponent(slugFrom(filename))}/`;
 
-const at = <T extends unknown>(i: number, xs: T[]): T => xs.at(i % xs.length) as T;
+const at = <T extends unknown>(i: number, xs: T[]): T =>
+  xs.at(i % xs.length) as T;
 
 const tips = fs
-  .readdirSync('./tips')
-  .sort((a, b) => Number(a.split("-")[0]) - Number(b.split("-")[0]))
+  .readdirSync("./tips")
+  .sort((a, b) => Number(a.split("-")[0]) - Number(b.split("-")[0]));
 
 export type Tip = {
   previousTipPath: string;
