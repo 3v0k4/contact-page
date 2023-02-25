@@ -121,7 +121,7 @@ const goodCodeHighlighted = hljs.highlight(goodCode || "", {
           <a href={`https://www.typescriptlang.org/play?#src=${encodeURIComponent(badCode)}`} aria-label="TypeScript Playground" target="_blank" rel="noreferrer noopener">
             <span class="inline-block mt-3 ml-1 bg-green-400 h-[15px] w-[15px] rounded-[50%] animate-pulse" style={{ animationIterationCount: 2 }}></span>
           </a>
-          <pre class=""><code class="mt-5" style="background-color: transparent !important;" set:html={badCodeHighlighted} />
+          <pre class="overflow-x-auto"><code class="mt-5" style="background-color: transparent !important;" set:html={badCodeHighlighted} />
           </pre>
         </div>
       </div>
@@ -147,7 +147,7 @@ const goodCodeHighlighted = hljs.highlight(goodCode || "", {
           <a href={`https://www.typescriptlang.org/play?#src=${encodeURIComponent(goodCode)}`} aria-label="TypeScript Playground" target="_blank" rel="noreferrer noopener">
             <span class="inline-block mt-3 ml-1 bg-green-400 h-[15px] w-[15px] rounded-[50%] animate-pulse" style={{ animationIterationCount: 2 }}></span>
           </a>
-          <pre class=""><code class="mt-5" style="background-color: transparent !important;" set:html={goodCodeHighlighted} />
+          <pre class="overflow-x-auto"><code class="mt-5" style="background-color: transparent !important;" set:html={goodCodeHighlighted} />
           </pre>
         </div>
       </div>
