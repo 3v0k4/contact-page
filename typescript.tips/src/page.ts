@@ -1,6 +1,5 @@
 import fs from "fs";
 import yaml from "yaml";
-import hljs from "highlight.js";
 
 const slugFrom = (filename: string): string => {
   const slug = filename.split("-").slice(1).join("-").split(".")[0];
@@ -44,11 +43,6 @@ export const readPages = (): Page[] => {
       nextTipPath: path(at(i + 1, filenames)),
       pathsByIndex: tips.map((filename) => path(filename)),
       slug: slugFrom(filename),
-      badCode: hljs.highlight(parsed.badCode || "", { language: "typescript" })
-        .value,
-      goodCode: hljs.highlight(parsed.goodCode || "", {
-        language: "typescript",
-      }).value,
     };
   });
 };

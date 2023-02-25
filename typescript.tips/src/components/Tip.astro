@@ -1,7 +1,17 @@
 ---
 import type { Tip } from '../page';
+import hljs from "highlight.js";
+
 interface Props extends Tip {}
 const { title, description, previousTipPath, nextTipPath, badCode, goodCode, pathsByIndex } = Astro.props;
+
+const badCodeHighlighted = hljs.highlight(badCode || "", {
+  language: "typescript",
+}).value
+
+const goodCodeHighlighted = hljs.highlight(goodCode || "", {
+  language: "typescript",
+}).value
 ---
 
 <div data-paths-by-index={pathsByIndex.join(',')} id="pathsByIndex" />
@@ -108,8 +118,10 @@ const { title, description, previousTipPath, nextTipPath, badCode, goodCode, pat
         <div class="bg-gray-100 rounded drop-shadow-lg">
           <span class="inline-block mt-3 ml-3 bg-gray-300 h-[15px] w-[15px] rounded-[50%]"></span>
           <span class="inline-block mt-3 ml-1 bg-gray-300 h-[15px] w-[15px] rounded-[50%]"></span>
-          <span class="inline-block mt-3 ml-1 bg-gray-300 h-[15px] w-[15px] rounded-[50%]"></span>
-          <pre class=""><code class="mt-5" style="background-color: transparent !important;" set:html={badCode} />
+          <a href={`https://www.typescriptlang.org/play?#src=${encodeURIComponent(badCode)}`} target="_blank" rel="noreferrer noopener">
+            <span class="inline-block mt-3 ml-1 bg-green-400 h-[15px] w-[15px] rounded-[50%] animate-pulse" style={{ animationIterationCount: 2 }}></span>
+          </a>
+          <pre class=""><code class="mt-5" style="background-color: transparent !important;" set:html={badCodeHighlighted} />
           </pre>
         </div>
       </div>
@@ -132,8 +144,10 @@ const { title, description, previousTipPath, nextTipPath, badCode, goodCode, pat
         <div class="bg-gray-100 rounded drop-shadow-lg">
           <span class="inline-block mt-3 ml-3 bg-gray-300 h-[15px] w-[15px] rounded-[50%]"></span>
           <span class="inline-block mt-3 ml-1 bg-gray-300 h-[15px] w-[15px] rounded-[50%]"></span>
-          <span class="inline-block mt-3 ml-1 bg-gray-300 h-[15px] w-[15px] rounded-[50%]"></span>
-          <pre class=""><code class="mt-5" style="background-color: transparent !important;" set:html={goodCode} />
+          <a href={`https://www.typescriptlang.org/play?#src=${encodeURIComponent(goodCode)}`} target="_blank" rel="noreferrer noopener">
+            <span class="inline-block mt-3 ml-1 bg-green-400 h-[15px] w-[15px] rounded-[50%] animate-pulse" style={{ animationIterationCount: 2 }}></span>
+          </a>
+          <pre class=""><code class="mt-5" style="background-color: transparent !important;" set:html={goodCodeHighlighted} />
           </pre>
         </div>
       </div>
