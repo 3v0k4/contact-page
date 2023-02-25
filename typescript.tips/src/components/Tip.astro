@@ -77,13 +77,13 @@ const goodCodeHighlighted = hljs.highlight(goodCode || "", {
     <p class="mt-10 text-lg">{description}</p>
 
     <div class="flex justify-between mt-10 flew-row w-[150px]">
-      <a href={previousTipPath} data-turbo-preserve-scroll id="prevButton" aria-label="Previous tip" class="w-14 h-14 bg-gray-200 rounded border-2 border-gray-400 hover:shadow-[-3px_3px_2px_rgba(0,0,0,0.25)] active:shadow-none flex justify-center items-center">
+      <a href={previousTipPath} data-turbo-preserve-scroll data-turbo-preload id="prevButton" aria-label="Previous tip" class="w-14 h-14 bg-gray-200 rounded border-2 border-gray-400 hover:shadow-[-3px_3px_2px_rgba(0,0,0,0.25)] active:shadow-none flex justify-center items-center">
         <svg class="mx-auto" width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M9.5399e-08 7L12 0.0717966L12 13.9282L9.5399e-08 7Z" fill="#AAAAAA"/>
         </svg>
       </a>
 
-      <a href={nextTipPath} data-turbo-preserve-scroll id="nextButton" aria-label="Next tip" class="w-14 h-14 bg-gray-200 rounded border-2 border-gray-400 hover:shadow-[-3px_3px_2px_rgba(0,0,0,0.25)] active:shadow-none flex justify-center items-center">
+      <a href={nextTipPath} data-turbo-preserve-scroll data-turbo-preload id="nextButton" aria-label="Next tip" class="w-14 h-14 bg-gray-200 rounded border-2 border-gray-400 hover:shadow-[-3px_3px_2px_rgba(0,0,0,0.25)] active:shadow-none flex justify-center items-center">
         <svg class="mx-auto" width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M12 7L-6.52533e-07 13.9282L-4.68497e-08 0.0717964L12 7Z" fill="#AAAAAA"/>
         </svg>
@@ -192,19 +192,6 @@ const goodCodeHighlighted = hljs.highlight(goodCode || "", {
     </div>
   </div>
 </div>
-
-<script>
-  document.addEventListener('turbo:load', () => {
-    const prevButton = document.querySelector("#prevButton")
-    if (!(prevButton instanceof HTMLAnchorElement)) { return }
-
-    const nextButton = document.querySelector("#nextButton")
-    if (!(nextButton instanceof HTMLAnchorElement)) { return }
-
-    fetch(nextButton.href, { cache: "force-cache" })
-    fetch(prevButton.href, { cache: "force-cache" })
-  })
-</script>
 
 <script>
   document.addEventListener('keyup', event => {

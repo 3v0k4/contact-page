@@ -56,23 +56,24 @@ code, .hljs {
 </style>
 
 <script>
-  import { cache } from "@hotwired/turbo"
+  import { navigator } from "@hotwired/turbo";
 
-  let scrollTop = 0
+  let scrollTop = 0;
 
-  document.addEventListener('turbo:click', (event) => {
-    if (!(event.target instanceof HTMLElement)) { return }
+  document.addEventListener("turbo:click", ({ target }) => {
+    if (!(target instanceof HTMLElement)) { return }
 
-    if (event.target.matches('[data-turbo-preserve-scroll]')) {
-      // When restoring a cached page, the scroll goes to 0 for a millisecond,
-      // so let's avoid using the cache.
-      cache.clear()
+    if (target.hasAttribute('data-turbo-preserve-scroll')) {
       scrollTop = document.documentElement.scrollTop;
+    } else {
+      scrollTop = 0;
     }
-  })
+  });
 
-  document.addEventListener('turbo:load', () => {
-    if (scrollTop) document.documentElement.scrollTop = scrollTop
+  document.addEventListener("turbo:visit", () => {
+    if (!navigator.currentVisit) { return }
+    navigator.currentVisit.scrolled = true;
+    document.documentElement.scrollTop = scrollTop;
   });
 </script>
 
