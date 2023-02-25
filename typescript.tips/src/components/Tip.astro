@@ -118,7 +118,7 @@ const goodCodeHighlighted = hljs.highlight(goodCode || "", {
         <div class="bg-gray-100 rounded drop-shadow-lg">
           <span class="inline-block mt-3 ml-3 bg-gray-300 h-[15px] w-[15px] rounded-[50%]"></span>
           <span class="inline-block mt-3 ml-1 bg-gray-300 h-[15px] w-[15px] rounded-[50%]"></span>
-          <a href={`https://www.typescriptlang.org/play?#src=${encodeURIComponent(badCode)}`} target="_blank" rel="noreferrer noopener">
+          <a href={`https://www.typescriptlang.org/play?#src=${encodeURIComponent(badCode)}`} aria-label="TypeScript Playground" target="_blank" rel="noreferrer noopener">
             <span class="inline-block mt-3 ml-1 bg-green-400 h-[15px] w-[15px] rounded-[50%] animate-pulse" style={{ animationIterationCount: 2 }}></span>
           </a>
           <pre class=""><code class="mt-5" style="background-color: transparent !important;" set:html={badCodeHighlighted} />
@@ -144,7 +144,7 @@ const goodCodeHighlighted = hljs.highlight(goodCode || "", {
         <div class="bg-gray-100 rounded drop-shadow-lg">
           <span class="inline-block mt-3 ml-3 bg-gray-300 h-[15px] w-[15px] rounded-[50%]"></span>
           <span class="inline-block mt-3 ml-1 bg-gray-300 h-[15px] w-[15px] rounded-[50%]"></span>
-          <a href={`https://www.typescriptlang.org/play?#src=${encodeURIComponent(goodCode)}`} target="_blank" rel="noreferrer noopener">
+          <a href={`https://www.typescriptlang.org/play?#src=${encodeURIComponent(goodCode)}`} aria-label="TypeScript Playground" target="_blank" rel="noreferrer noopener">
             <span class="inline-block mt-3 ml-1 bg-green-400 h-[15px] w-[15px] rounded-[50%] animate-pulse" style={{ animationIterationCount: 2 }}></span>
           </a>
           <pre class=""><code class="mt-5" style="background-color: transparent !important;" set:html={goodCodeHighlighted} />
