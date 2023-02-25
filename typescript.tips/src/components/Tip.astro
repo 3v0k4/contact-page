@@ -54,7 +54,7 @@ const { title, description, previousTipPath, nextTipPath, badCode, goodCode, pat
   </div>
 </div>
 
-<div id="tip" class="mt-24">
+<div class="mt-24">
   <div class="flex flex-col items-center px-5 mx-auto max-w-4xl">
     <h2 class="text-4xl text-center capitalize" id="tipTitle">{title}</h2>
     <div class="flex flex-col mt-4 text-sm leading-6 text-center text-gray-400 sm:flex-row">
@@ -81,7 +81,7 @@ const { title, description, previousTipPath, nextTipPath, badCode, goodCode, pat
     </div>
   </div>
 
-  {!badCode && !goodCode && <div id="image" class="px-5 mx-auto mt-24 max-w-[450px]">
+  {!badCode && !goodCode && <div class="px-5 mx-auto mt-24 max-w-[450px]">
     <video class="rounded" autoplay loop muted playsinline width="410" height="302">
       <source src="/thats-all-folks.mp4" type="video/mp4">
       <source src="/thats-all-folks.webm" type="video/webm">
@@ -89,9 +89,9 @@ const { title, description, previousTipPath, nextTipPath, badCode, goodCode, pat
   </div>
   }
 
-  <div id="tipCode" class="mx-auto mt-10">
+  <div class="mx-auto mt-10">
     <div class:list={["flex w-full", { "flex-col xl:flex-row justify-center": !!badCode && !!goodCode, "flex w-full xl:w-1/2 mx-auto": !badCode || !goodCode }]}>
-      {badCode && <div class="relative p-5 mt-10 flex-1 min-w-0" id="tipBadCodeContainer">
+      {badCode && <div class="relative p-5 mt-10 flex-1 min-w-0">
         <span class="absolute top-[-28px] left-[calc(50%-30px)]">
           <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect width="61" height="64" rx="30.5" fill="#FF0000"/>
@@ -99,7 +99,7 @@ const { title, description, previousTipPath, nextTipPath, badCode, goodCode, pat
             <path d="M20.556 20L41 44M20 44L40.444 20" stroke="white" stroke-width="3"/>
             </g>
             <defs>
-            <clipPath id="clip0_46_26">
+            <clipPath>
             <rect x="20" y="20" width="21" height="24" rx="5" fill="white"/>
             </clipPath>
             </defs>
@@ -109,13 +109,13 @@ const { title, description, previousTipPath, nextTipPath, badCode, goodCode, pat
           <span class="inline-block mt-3 ml-3 bg-gray-300 h-[15px] w-[15px] rounded-[50%]"></span>
           <span class="inline-block mt-3 ml-1 bg-gray-300 h-[15px] w-[15px] rounded-[50%]"></span>
           <span class="inline-block mt-3 ml-1 bg-gray-300 h-[15px] w-[15px] rounded-[50%]"></span>
-          <pre class=""><code class="mt-5" id="tipBadCode" style="background-color: transparent !important;" set:html={badCode} />
+          <pre class=""><code class="mt-5" style="background-color: transparent !important;" set:html={badCode} />
           </pre>
         </div>
       </div>
       }
 
-      {goodCode && <div class="relative p-5 mt-10 flex-1 min-w-0" id="tipGoodCodeContainer">
+      {goodCode && <div class="relative p-5 mt-10 flex-1 min-w-0">
         <span class="absolute top-[-28px] left-[calc(50%-30px)]">
           <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect width="61" height="64" rx="30.5" fill="#4FC631"/>
@@ -123,7 +123,7 @@ const { title, description, previousTipPath, nextTipPath, badCode, goodCode, pat
             <path d="M20 30.1606L27.4516 44C27.4516 44 35.709 29.3726 41 20" stroke="white" stroke-width="3"/>
             </g>
             <defs>
-            <clipPath id="clip0_46_23">
+            <clipPath>
             <rect x="20" y="20" width="21" height="24" rx="5" fill="white"/>
             </clipPath>
             </defs>
@@ -133,7 +133,7 @@ const { title, description, previousTipPath, nextTipPath, badCode, goodCode, pat
           <span class="inline-block mt-3 ml-3 bg-gray-300 h-[15px] w-[15px] rounded-[50%]"></span>
           <span class="inline-block mt-3 ml-1 bg-gray-300 h-[15px] w-[15px] rounded-[50%]"></span>
           <span class="inline-block mt-3 ml-1 bg-gray-300 h-[15px] w-[15px] rounded-[50%]"></span>
-          <pre class=""><code class="mt-5" id="tipGoodCode" style="background-color: transparent !important;" set:html={goodCode} />
+          <pre class=""><code class="mt-5" style="background-color: transparent !important;" set:html={goodCode} />
           </pre>
         </div>
       </div>
