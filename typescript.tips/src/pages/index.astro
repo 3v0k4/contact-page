@@ -11,3 +11,19 @@ if (!page) { throw new Error('Tip not found'); }
 <Layout title="TypeScript Tips" description="TypeScript Tips | Make bugs impossible. One TypeScript tip at a time." canonical="https://typescript.tips/">
   <TipComponent {...page} />
 </Layout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const search = new URLSearchParams(window.location.search)
+    const index = parseInt(search.get("index") || '', 10)
+    if (!Number.isInteger(index)) { return }
+
+    const element = document.querySelector('#pathsByIndex')
+    if (!(element instanceof HTMLElement)) { return }
+
+    const pathsByIndex = element.dataset.pathsByIndex
+    if (!pathsByIndex) { return }
+
+    window.location.href = `${window.location.origin}${pathsByIndex.split(',')[index]}`
+  })
+</script>

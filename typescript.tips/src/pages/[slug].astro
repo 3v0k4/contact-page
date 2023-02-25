@@ -19,3 +19,12 @@ const { title, description, canonical } = Astro.props;
 <Layout title={`${title} | TypeScript Tips`} description={description} canonical={canonical}>
   <TipComponent {...Astro.props} />
 </Layout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const tipTitle = document.querySelector('#tipTitle')
+    if (!(tipTitle instanceof HTMLElement)) { return }
+
+    tipTitle.scrollIntoView()
+  })
+</script>
