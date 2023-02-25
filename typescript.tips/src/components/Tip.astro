@@ -180,73 +180,72 @@ const { title, description, previousTipPath, nextTipPath, badCode, goodCode, pat
 </div>
 
 <script>
-  (() => {
-  const search = new URLSearchParams(window.location.search)
-  const index = parseInt(search.get("index") || '', 10)
-  if (!Number.isInteger(index)) { return }
+  document.addEventListener('DOMContentLoaded', () => {
+    const search = new URLSearchParams(window.location.search)
+    const index = parseInt(search.get("index") || '', 10)
+    if (!Number.isInteger(index)) { return }
 
-  const element = document.querySelector('#pathsByIndex')
-  if (!(element instanceof HTMLElement)) { return }
+    const element = document.querySelector('#pathsByIndex')
+    if (!(element instanceof HTMLElement)) { return }
 
-  const pathsByIndex = element.dataset.pathsByIndex
-  if (!pathsByIndex) { return }
+    const pathsByIndex = element.dataset.pathsByIndex
+    if (!pathsByIndex) { return }
 
-  window.location.href = `${window.location.origin}${pathsByIndex.split(',')[index]}`
-  })()
-</script>
-
-<script>
-  (() => {
-  if (window.location.pathname === '/') { return }
-
-  const tipTitle = document.querySelector('#tipTitle')
-  if (!(tipTitle instanceof HTMLElement)) { return }
-
-  tipTitle.scrollIntoView()
-  })()
-</script>
-
-<script>
-  (() => {
-  const head = document.querySelector("head")
-  if (!(head instanceof HTMLElement)) { return }
-
-  const hrefs = [
-    "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap",
-    "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/mono-blue.min.css",
-  ]
-  hrefs.forEach(href => {
-    const resource = document.createElement("link")
-    resource.setAttribute("rel", "stylesheet")
-    resource.setAttribute("href", href)
-    resource.setAttribute("type", "text/css")
-    head.appendChild(resource)
+    window.location.href = `${window.location.origin}${pathsByIndex.split(',')[index]}`
   })
-  })()
 </script>
 
 <script>
-  (() => {
-  const prevButton = document.querySelector("#prevButton")
-  if (!(prevButton instanceof HTMLAnchorElement)) { return }
+  document.addEventListener('DOMContentLoaded', () => {
+    if (window.location.pathname === '/') { return }
 
-  const nextButton = document.querySelector("#nextButton")
-  if (!(nextButton instanceof HTMLAnchorElement)) { return }
+    const tipTitle = document.querySelector('#tipTitle')
+    if (!(tipTitle instanceof HTMLElement)) { return }
 
-  fetch(nextButton.href, { cache: "force-cache" })
-  fetch(prevButton.href, { cache: "force-cache" })
-
-  document.addEventListener('keyup', event => {
-    if (event.code === "ArrowLeft") { prevButton.click() }
-    else if (event.code === "ArrowRight") { nextButton.click() }
+    tipTitle.scrollIntoView()
   })
-  })()
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const head = document.querySelector("head")
+    if (!(head instanceof HTMLElement)) { return }
+
+    const hrefs = [
+      "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap",
+      "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/mono-blue.min.css",
+    ]
+    hrefs.forEach(href => {
+      const resource = document.createElement("link")
+      resource.setAttribute("rel", "stylesheet")
+      resource.setAttribute("href", href)
+      resource.setAttribute("type", "text/css")
+      head.appendChild(resource)
+    })
+  })
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const prevButton = document.querySelector("#prevButton")
+    if (!(prevButton instanceof HTMLAnchorElement)) { return }
+
+    const nextButton = document.querySelector("#nextButton")
+    if (!(nextButton instanceof HTMLAnchorElement)) { return }
+
+    fetch(nextButton.href, { cache: "force-cache" })
+    fetch(prevButton.href, { cache: "force-cache" })
+
+    document.addEventListener('keyup', event => {
+      if (event.code === "ArrowLeft") { prevButton.click() }
+      else if (event.code === "ArrowRight") { nextButton.click() }
+    })
+  })
 </script>
 
 <script>
   import ClipboardJS from 'clipboard'
 
-  (() => {
   document.addEventListener('DOMContentLoaded', () => {
     const clipboard = new ClipboardJS('.shareTip', {
       text: () => window.location.origin + window.location.pathname
@@ -258,5 +257,4 @@ const { title, description, previousTipPath, nextTipPath, badCode, goodCode, pat
       shareButton.innerText = 'Copied to clipboard'
     })
   })
-  })()
 </script>
