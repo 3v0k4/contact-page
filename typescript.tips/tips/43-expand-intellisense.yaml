@@ -1,0 +1,17 @@
+title: Expand intellisense
+description: You can debug a static type by forcing the resolution of type aliases with a utility type.
+badCode: |
+  type Persisted = { id: number }
+  type User = { name: string }
+  type PersistedUser = Persisted & User
+  // ⛔️ ^? Persisted & User
+goodCode: |
+  type Persisted = { id: number }
+  type User = { name: string }
+  type PersistedUser = Persisted & User
+
+  type Expand<Type> = Type extends infer Inferred
+    ? { [Key in keyof Inferred]: Inferred[Key] }
+    : never
+  type Expanded = Expand<PersistedUser>
+  // ✅ ^? { id: number, name: string }
