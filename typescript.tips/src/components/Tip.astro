@@ -3,7 +3,7 @@ import type { Tip } from '../page';
 import hljs from "highlight.js";
 
 interface Props extends Tip {}
-const { title, description, previousTipPath, nextTipPath, badCode, goodCode, pathsByIndex } = Astro.props;
+const { title, description, previousTipPath, nextTipPath, badCode, goodCode, pathsByIndex, twitterHandle } = Astro.props;
 
 const badCodeHighlighted = hljs.highlight(badCode || "", {
   language: "typescript",
@@ -12,6 +12,8 @@ const badCodeHighlighted = hljs.highlight(badCode || "", {
 const goodCodeHighlighted = hljs.highlight(goodCode || "", {
   language: "typescript",
 }).value
+
+const twitterUrl = `https://twitter.com/${twitterHandle}`;
 ---
 
 <div data-paths-by-index={pathsByIndex.join(',')} id="pathsByIndex" />
@@ -68,7 +70,7 @@ const goodCodeHighlighted = hljs.highlight(goodCode || "", {
   <div class="flex flex-col items-center px-5 mx-auto max-w-4xl">
     <h2 class="text-4xl text-center capitalize" id="tipTitle">{title}</h2>
     <div class="flex flex-col mt-4 text-sm leading-6 text-center text-gray-400 sm:flex-row">
-      <span><a class="underline underline-offset-4" href="https://twitter.com/RiccardoOdone" target="_blank">@RiccardoOdone</a></span>
+      <span><a class="underline underline-offset-4" href={twitterUrl} target="_blank">@{twitterHandle}</a></span>
       <span class="mx-4">•</span>
       <span><a class="underline underline-offset-4" href="https://twitter.com/RiccardoOdone" target="_blank">Suggest a tip</a></span>
       <span class="mx-4">•</span>

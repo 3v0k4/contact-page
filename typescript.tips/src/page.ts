@@ -25,6 +25,7 @@ export type Tip = {
   description: string;
   badCode: string;
   goodCode: string;
+  twitterHandle: string;
 };
 
 export type Page = {
@@ -43,6 +44,7 @@ export const readPages = (): Page[] => {
       nextTipPath: path(at(i + 1, filenames)),
       pathsByIndex: tips.map((filename) => path(filename)),
       slug: slugFrom(filename),
+      twitterHandle: parsed.twitterHandle || "RiccardoOdone",
     };
   });
 };
