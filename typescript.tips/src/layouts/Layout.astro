@@ -29,6 +29,8 @@ const { title, description, canonical } = Astro.props;
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="canonical" href={canonical} />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/mono-blue.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <script>
       import * as Turbo from "@hotwired/turbo";
     </script>
@@ -75,23 +77,4 @@ code, .hljs {
     navigator.currentVisit.scrolled = true;
     document.documentElement.scrollTop = scrollTop;
   });
-</script>
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const head = document.querySelector("head")
-    if (!(head instanceof HTMLElement)) { return }
-
-    const hrefs = [
-      "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap",
-      "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/mono-blue.min.css",
-    ]
-    hrefs.forEach(href => {
-      const resource = document.createElement("link")
-      resource.setAttribute("rel", "stylesheet")
-      resource.setAttribute("href", href)
-      resource.setAttribute("type", "text/css")
-      head.appendChild(resource)
-    })
-  })
 </script>
