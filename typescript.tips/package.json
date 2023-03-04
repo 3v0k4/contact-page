@@ -14,8 +14,8 @@
   "dependencies": {
     "@astrojs/sitemap": "^1.1.0",
     "@astrojs/tailwind": "^3.0.1",
-    "@hotwired/turbo": "^7.2.5",
-    "astro": "^2.0.15",
+    "@hotwired/turbo": "^7.3.0",
+    "astro": "^2.0.17",
     "clipboard": "^2.0.11",
     "highlight.js": "^11.7.0",
     "tailwindcss": "^3.2.7",
