@@ -60,7 +60,7 @@ code, .hljs {
 <script>
   import { navigator } from "@hotwired/turbo";
 
-  let scrollTop = 0;
+  let scrollTop: number|null = null;
 
   document.addEventListener("turbo:click", ({ target }) => {
     if (!(target instanceof HTMLElement)) { return }
@@ -68,13 +68,21 @@ code, .hljs {
     if (target.hasAttribute('data-turbo-preserve-scroll')) {
       scrollTop = document.documentElement.scrollTop;
     } else {
-      scrollTop = 0;
+      scrollTop = null;
     }
   });
 
   document.addEventListener("turbo:visit", () => {
+    if (scrollTop === null) { return }
     if (!navigator.currentVisit) { return }
     navigator.currentVisit.scrolled = true;
     document.documentElement.scrollTop = scrollTop;
   });
+
+  document.addEventListener('turbo:load', () => {
+    if (scrollTop !== null) { return }
+    const tipTitle = document.querySelector('#tipTitle')
+    if (!(tipTitle instanceof HTMLElement)) { return }
+    tipTitle.scrollIntoView()
+  })
 </script>
