@@ -1,15 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import TipComponent from '../components/Tip.astro';
-import { readPages } from '../page';
+import { readPages, pageLinksByIndex } from '../page';
 import type { Page } from '../page';
 
 const page: Page|undefined = readPages().at(10);
 if (!page) { throw new Error('Tip not found'); }
+const props = { ...page, pageLinksByIndex }
 ---
 
 <Layout title="TypeScript Tips" description="TypeScript Tips | Make bugs impossible. One TypeScript tip at a time." canonical="https://typescript.tips/">
-  <TipComponent {...page} />
+  <TipComponent {...props} />
 </Layout>
 
 <script>
@@ -18,12 +19,12 @@ if (!page) { throw new Error('Tip not found'); }
     const index = parseInt(search.get("index") || '', 10)
     if (!Number.isInteger(index)) { return }
 
-    const element = document.querySelector('#pathsByIndex')
+    const element = document.querySelector('#pageLinksByIndex')
     if (!(element instanceof HTMLElement)) { return }
 
-    const pathsByIndex = element.dataset.pathsByIndex
-    if (!pathsByIndex) { return }
+    const pageLinksByIndex = element.dataset.pageLinksByIndex
+    if (!pageLinksByIndex) { return }
 
-    window.location.href = `${window.location.origin}${pathsByIndex.split(',')[index]}`
+    window.location.href = `${window.location.origin}${pageLinksByIndex.split(',')[index]}`
   })
 </script>

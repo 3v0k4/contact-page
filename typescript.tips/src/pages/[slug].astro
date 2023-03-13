@@ -1,17 +1,19 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import TipComponent from '../components/Tip.astro';
-import { readPages } from '../page';
-import type { Page } from '../page';
+import { readPages, pageLinksByIndex } from '../page';
+import type { Page, PageLink } from '../page';
 
 export const getStaticPaths = async () =>
   readPages()
     .map(tip => ({
       params: { slug: tip.slug },
-      props: tip,
+      props: { ...tip, pageLinksByIndex },
     }));
 
-interface Props extends Page {}
+interface Props extends Page {
+  pageLinksByIndex: PageLink[]
+}
 
 const { title, description, canonical } = Astro.props;
 ---

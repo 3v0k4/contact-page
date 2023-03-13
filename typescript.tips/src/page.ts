@@ -20,7 +20,6 @@ const tips = fs
 export type Tip = {
   previousTipPath: string;
   nextTipPath: string;
-  pathsByIndex: string[];
   title: string;
   description: string;
   badCode: string;
@@ -42,9 +41,23 @@ export const readPages = (): Page[] => {
       canonical: `https://typescript.tips${path(filename)}`,
       previousTipPath: path(at(i - 1, filenames)),
       nextTipPath: path(at(i + 1, filenames)),
-      pathsByIndex: tips.map((filename) => path(filename)),
       slug: slugFrom(filename),
       twitterHandle: parsed.twitterHandle || "RiccardoOdone",
     };
   });
 };
+
+export type PageLink = {
+  canonical: string;
+  title: string;
+}
+
+export const pageLinksByIndex: PageLink[] =
+  tips.map((filename) => {
+    const parsed = yaml.parse(fs.readFileSync(`./tips/${filename}`).toString());
+
+    return {
+      canonical: `https://typescript.tips${path(filename)}`,
+      title: parsed.title,
+    };
+  });
