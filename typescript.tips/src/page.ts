@@ -50,14 +50,13 @@ export const readPages = (): Page[] => {
 export type PageLink = {
   canonical: string;
   title: string;
-}
+};
 
-export const pageLinksByIndex: PageLink[] =
-  tips.map((filename) => {
-    const parsed = yaml.parse(fs.readFileSync(`./tips/${filename}`).toString());
+export const pageLinksByIndex: PageLink[] = tips.map((filename) => {
+  const parsed = yaml.parse(fs.readFileSync(`./tips/${filename}`).toString());
 
-    return {
-      canonical: `https://typescript.tips${path(filename)}`,
-      title: parsed.title,
-    };
-  });
+  return {
+    canonical: `https://typescript.tips${path(filename)}`,
+    title: parsed.title,
+  };
+});

@@ -8,13 +8,13 @@ interface Props {
 const { title, description, canonical } = Astro.props;
 ---
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
     <meta property="og:title" content={title} />
     <meta property="og:type" content="website" />
@@ -24,13 +24,26 @@ const { title, description, canonical } = Astro.props;
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content="https://typescript.tips/logo.png" />
-    <meta name="twitter:image:alt" content="Blue square with TIPS in yellow sitting on TS in white." />
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <meta
+      name="twitter:image:alt"
+      content="Blue square with TIPS in yellow sitting on TS in white."
+    />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="canonical" href={canonical} />
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/mono-blue.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <link
+      rel="preload"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/mono-blue.min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
     <script>
       import * as Turbo from "@hotwired/turbo";
     </script>
@@ -41,31 +54,36 @@ const { title, description, canonical } = Astro.props;
 </html>
 
 <style is:global>
-* {
-  font-family: 'Open Sans', sans-serif;
-}
+  * {
+    font-family: "Open Sans", sans-serif;
+  }
 
-code, code * {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  font-size: 0.9rem !important;
-}
+  code,
+  code * {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+      "Liberation Mono", "Courier New", monospace;
+    font-size: 0.9rem !important;
+  }
 
-code, .hljs {
-  background-color: unset;
-  display: block;
-  padding: 0 20px !important;
-}
+  code,
+  .hljs {
+    background-color: unset;
+    display: block;
+    padding: 0 20px !important;
+  }
 </style>
 
 <script>
   import { navigator } from "@hotwired/turbo";
 
-  let scrollTop: number|null = null;
+  let scrollTop: number | null = null;
 
   document.addEventListener("turbo:click", ({ target }) => {
-    if (!(target instanceof HTMLElement)) { return }
+    if (!(target instanceof HTMLElement)) {
+      return;
+    }
 
-    if (target.hasAttribute('data-turbo-preserve-scroll')) {
+    if (target.hasAttribute("data-turbo-preserve-scroll")) {
       scrollTop = document.documentElement.scrollTop;
     } else {
       scrollTop = null;
@@ -73,17 +91,27 @@ code, .hljs {
   });
 
   document.addEventListener("turbo:visit", () => {
-    if (scrollTop === null) { return }
-    if (!navigator.currentVisit) { return }
+    if (scrollTop === null) {
+      return;
+    }
+    if (!navigator.currentVisit) {
+      return;
+    }
     navigator.currentVisit.scrolled = true;
     document.documentElement.scrollTop = scrollTop;
   });
 
-  document.addEventListener('turbo:load', () => {
-    if (scrollTop !== null) { return }
-    if (location.pathname === "/") { return }
-    const tipTitle = document.querySelector('#tipTitle')
-    if (!(tipTitle instanceof HTMLElement)) { return }
-    tipTitle.scrollIntoView()
-  })
+  document.addEventListener("turbo:load", () => {
+    if (scrollTop !== null) {
+      return;
+    }
+    if (location.pathname === "/") {
+      return;
+    }
+    const tipTitle = document.querySelector("#tipTitle");
+    if (!(tipTitle instanceof HTMLElement)) {
+      return;
+    }
+    tipTitle.scrollIntoView();
+  });
 </script>

@@ -1,30 +1,44 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import TipComponent from '../components/Tip.astro';
-import { readPages, pageLinksByIndex } from '../page';
-import type { Page } from '../page';
+import Layout from "../layouts/Layout.astro";
+import TipComponent from "../components/Tip.astro";
+import { readPages, pageLinksByIndex } from "../page";
+import type { Page } from "../page";
 
-const page: Page|undefined = readPages().at(10);
-if (!page) { throw new Error('Tip not found'); }
-const props = { ...page, pageLinksByIndex }
+const page: Page | undefined = readPages().at(10);
+if (!page) {
+  throw new Error("Tip not found");
+}
+const props = { ...page, pageLinksByIndex };
 ---
 
-<Layout title="TypeScript Tips" description="TypeScript Tips | Make bugs impossible. One TypeScript tip at a time." canonical="https://typescript.tips/">
+<Layout
+  title="TypeScript Tips"
+  description="TypeScript Tips | Make bugs impossible. One TypeScript tip at a time."
+  canonical="https://typescript.tips/"
+>
   <TipComponent {...props} />
 </Layout>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const search = new URLSearchParams(window.location.search)
-    const index = parseInt(search.get("index") || '', 10)
-    if (!Number.isInteger(index)) { return }
+  document.addEventListener("DOMContentLoaded", () => {
+    const search = new URLSearchParams(window.location.search);
+    const index = parseInt(search.get("index") || "", 10);
+    if (!Number.isInteger(index)) {
+      return;
+    }
 
-    const element = document.querySelector('#pageLinksByIndex')
-    if (!(element instanceof HTMLElement)) { return }
+    const element = document.querySelector("#pageLinksByIndex");
+    if (!(element instanceof HTMLElement)) {
+      return;
+    }
 
-    const pageLinksByIndex = element.dataset.pageLinksByIndex
-    if (!pageLinksByIndex) { return }
+    const pageLinksByIndex = element.dataset.pageLinksByIndex;
+    if (!pageLinksByIndex) {
+      return;
+    }
 
-    window.location.href = `${window.location.origin}${pageLinksByIndex.split(',')[index]}`
-  })
+    window.location.href = `${window.location.origin}${
+      pageLinksByIndex.split(",")[index]
+    }`;
+  });
 </script>
