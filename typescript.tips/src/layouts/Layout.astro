@@ -81,6 +81,7 @@ code, .hljs {
 
   document.addEventListener('turbo:load', () => {
     if (scrollTop !== null) { return }
+    if (location.pathname === "/") { return }
     const tipTitle = document.querySelector('#tipTitle')
     if (!(tipTitle instanceof HTMLElement)) { return }
     tipTitle.scrollIntoView()
