@@ -37,8 +37,11 @@ const props = { ...page, pageLinksByIndex };
       return;
     }
 
-    window.location.href = `${window.location.origin}${
-      pageLinksByIndex.split(",")[index]
-    }`;
+    const href = pageLinksByIndex.split(",")[index];
+    if (!href) {
+      return;
+    }
+
+    window.location.href = href;
   });
 </script>
