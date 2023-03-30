@@ -86,6 +86,17 @@ export class CdkStack extends cdk.Stack {
       ),
     });
 
+    new route53.TxtRecord(
+      this,
+      `${DOMAIN_NAME}-route53-google-site-verification-record`,
+      {
+        zone: hostedZone,
+        values: [
+          `google-site-verification=b-jdrVZdvHX9m3CA2e_cx02q46c-UMGu-dwATLrp9xI`,
+        ],
+      }
+    );
+
     new s3deploy.BucketDeployment(this, `${DOMAIN_NAME}-s3-deploy`, {
       sources: [s3deploy.Source.asset(ASSETS_PATH)],
       destinationBucket: bucket,
