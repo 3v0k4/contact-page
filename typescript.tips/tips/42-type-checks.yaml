@@ -15,3 +15,7 @@ goodCode: |
   div(1, 0)
   // ✅ Does not compile
   // Argument of type '0' is not assignable to parameter of type '"cannot be 0"'
+
+  declare function gimmeANumber(): number
+  div(1, gimmeANumber())
+  // ⛔️ gimmeANumber() could return 0
