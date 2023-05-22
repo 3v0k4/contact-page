@@ -5,7 +5,7 @@ import Newsletter from '../components/newsletter'
 const Tir = () => (
   <>
     <Head>
-      <title>Riccardo Odone - Debug your Time in Range</title>
+      <title>Debug your Time in Range - Riccardo Odone</title>
     </Head>
 
     <div className="py-20 mx-auto max-w-3xl px-4">

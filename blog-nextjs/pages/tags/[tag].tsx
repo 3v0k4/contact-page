@@ -18,7 +18,7 @@ type Props = {
 const Tag = ({ categories, tags, posts, tag }: Props) => (
   <>
     <Head>
-      <title>Riccardo Odone - {tag}</title>
+      <title>{tag} - Riccardo Odone</title>
     </Head>
 
     <Posts categories={categories} tags={tags} posts={posts} />

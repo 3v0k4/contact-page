@@ -30,7 +30,7 @@ type Props = {
 const Post = ({ post }: Props) => (
   <>
     <Head>
-      <title>{post.title}</title>
+      <title>{post.title} - Riccardo Odone</title>
       <meta property="og:title" content={post.title} />
       <meta property="og:description" content={post.description} />
       <meta name="description" content={post.description} />

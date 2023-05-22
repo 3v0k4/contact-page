@@ -4,7 +4,7 @@ import { InternalLink } from "../components/internal-link";
 const Custom404 = () => (
   <>
     <Head>
-      <title>Page Not Found - 404</title>
+      <title>Page Not Found - Riccardo Odone</title>
     </Head>
 
     <div className="mx-auto max-w-3xl px-4 my-10">

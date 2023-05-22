@@ -9,7 +9,7 @@ const Home = ({ categories, tags }: TagsProps) => {
   return (
     <>
       <Head>
-        <title>Riccardo Odone - Home</title>
+        <title>Home - Riccardo Odone</title>
       </Head>
 
       <div className="hero relative bg-[position:70%_0%] bg-cover bg-no-repeat">
