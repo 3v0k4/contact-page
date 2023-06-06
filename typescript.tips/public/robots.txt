@@ -1,4 +1,0 @@
-User-agent: *
-Disallow:
-
-Sitemap: https://typescript.tips/sitemap-index.xml

@@ -29,7 +29,3 @@ cd -
 cd timeless-software-wisdom
 ./deploy.sh
 cd -
-
-cd typescript.tips
-./deploy.sh
-cd -
