@@ -12,7 +12,7 @@ const Home = ({ categories, tags }: TagsProps) => {
         <title>Home - Riccardo Odone</title>
       </Head>
 
-      <div className="hero relative bg-[position:70%_0%] bg-cover bg-no-repeat">
+      <div className="hero relative bg-[position:70%_0%] bg-cover max-w-[1680px] mx-auto">
         <div className="px-[5%] text-white py-24 lg:bg-transparent lg:max-w-[50%] bg-black/[0.6]">
           <div className="slide-in">
             <h1 className="leading-tight uppercase text-5xl sm:text-6xl font-extralight">

@@ -5,7 +5,7 @@ const Newsletter = () => (
     id="newsletter"
     className="shadow-[0_0_5px_var(--pink)] text-white bg-[color:var(--pink)] text-center py-20 px-4"
   >
-    <div className="flex flex-wrap-reverse place-items-center mx-auto gap-12 justify-around">
+    <div className="flex flex-wrap-reverse place-items-center mx-auto gap-12 justify-around max-w-7xl">
       <div className="flex-1 min-w-[350px]">
         <h2 className="text-4xl font-semibold mb-4">PinkLetter</h2>
 
@@ -39,7 +39,7 @@ const Newsletter = () => (
         </p>
       </div>
 
-      <div className="flex-1 min-w-[350px] text-center">
+      <div className="flex-1 min-w-[500px] text-center">
         <div className="text-left inline-block">
           <h2 className="text-4xl mb-4">Tired of RELEARNING webdev stuff?</h2>
 
