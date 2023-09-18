@@ -74,27 +74,52 @@ const Home = ({ categories, tags }: TagsProps) => {
               </InternalLink>
             </div>
 
-            <div className="basis-40">
-              <Link href="https://basal.odone.io">
-                <a target="_blank" rel="noopener noreferrer">
-                  <picture>
-                    <source type="image/webp" srcSet="/images/basal.webp" />
-                    <source type="image/jpeg" srcSet="/images/basal.png" />
-                    <img
-                      width="345"
-                      height="533"
-                      className="rounded-xl"
-                      alt="Basal iPhone app icon"
-                      src="/images/basal.png"
-                    />
-                  </picture>
+            <div className="basis-40 flex flex-col justify-between gap-10">
+              <div>
+                <Link href="https://basal.odone.io">
+                  <a target="_blank" rel="noopener noreferrer">
+                    <picture>
+                      <source type="image/webp" srcSet="/images/basal.webp" />
+                      <source type="image/jpeg" srcSet="/images/basal.png" />
+                      <img
+                        width="345"
+                        height="533"
+                        className="rounded-xl"
+                        alt="Basal iPhone app icon"
+                        src="/images/basal.png"
+                      />
+                    </picture>
 
-                  <div className="text-sm mt-2 text-center">
-                    <p className="font-bold">Basal iPhone App</p>
-                    <p>Plan, visualize, and perform basal insulin testing</p>
-                  </div>
-                </a>
-              </Link>
+                    <div className="text-sm mt-2 text-center">
+                      <p className="font-bold">Basal iPhone App</p>
+                      <p>Plan, visualize, and perform basal insulin testing</p>
+                    </div>
+                  </a>
+                </Link>
+              </div>
+
+              <div>
+                <Link href="https://getdextop.com">
+                  <a target="_blank" rel="noopener noreferrer">
+                    <picture>
+                      <source type="image/webp" srcSet="/images/dextop.webp" />
+                      <source type="image/jpeg" srcSet="/images/dextop.png" />
+                      <img
+                        width="345"
+                        height="533"
+                        className="rounded-xl"
+                        alt="DexTop app icon"
+                        src="/images/dextop.png"
+                      />
+                    </picture>
+
+                    <div className="text-sm mt-2 text-center">
+                      <p className="font-bold">DexTop App</p>
+                      <p>Real-time Dexcom blood sugars on your desktop</p>
+                    </div>
+                  </a>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
