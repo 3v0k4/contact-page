@@ -1,9 +1,0 @@
-{
-  "scripts": {
-    "css": "tailwindcss -i input.css -o public/output.css --watch",
-    "web": "http-server -c-1 public/"
-  },
-  "devDependencies": {
-    "tailwindcss": "^3.0.24"
-  }
-}
