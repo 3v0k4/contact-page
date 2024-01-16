@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && yarn sitemap && next export",
+    "build": "next build && yarn sitemap",
     "sitemap": "rm -f public/sitemap-0.xml && next-sitemap --config next-sitemap.config.mjs",
     "prebuild": "yarn feed",
     "start": "next start",
@@ -13,25 +13,27 @@
   },
   "dependencies": {
     "feed": "^4.2.2",
-    "highlight.js": "^11.6.0",
-    "next": "^12.2.5",
-    "next-sitemap": "^3.1.11",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "highlight.js": "^11.9.0",
+    "next": "^14.0.4",
+    "next-sitemap": "^4.2.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@types/node": "^18.7.14",
-    "@types/react": "^18.0.17",
-    "@types/react-dom": "18.0.6",
-    "autoprefixer": "^10.4.7",
-    "eslint": "^8.23.0",
-    "eslint-config-next": "^12.2.5",
+    "@babel/core": "^7.23.7",
+    "@babel/plugin-transform-unicode-regex": "^7.23.3",
+    "@types/node": "^20.11.4",
+    "@types/react": "^18.2.48",
+    "@types/react-dom": "^18.2.18",
+    "autoprefixer": "^10.4.16",
+    "eslint": "^8.56.0",
+    "eslint-config-next": "^14.0.4",
     "gray-matter": "^4.0.3",
-    "postcss": "^8.4.14",
-    "remark": "^14.0.2",
-    "remark-html": "^15.0.1",
-    "tailwindcss": "^3.1.6",
+    "postcss": "^8.4.33",
+    "remark": "^15.0.1",
+    "remark-html": "^16.0.1",
+    "tailwindcss": "^3.4.1",
     "tsx": "^4.7.0",
-    "typescript": "^4.8.2"
+    "typescript": "^5.3.3"
   }
 }

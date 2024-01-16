@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import Script from 'next/script'
 import Newsletter from '../../components/newsletter'
 import markdownToHtml from '../../lib/markdownToHtml'
 import { InternalLink } from '../../components/internal-link'
@@ -27,18 +28,21 @@ type Props = {
   post: Post
 }
 
-const Post = ({ post }: Props) => (
-  <>
+const Post = ({ post }: Props) => {
+  const title = `${post.title} - Riccardo Odone`
+
+  return <>
     <Head>
-      <title>{post.title} - Riccardo Odone</title>
+      <title>{title}</title>
       <meta property="og:title" content={post.title} />
       <meta property="og:description" content={post.description} />
       <meta name="description" content={post.description} />
       <meta property="og:type" content="article" />
       <meta property="og:image" content={post.cover_image} />
       <meta name="twitter:card" content="summary_large_image" />
-      <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
     </Head>
+
+    <Script src="https://platform.twitter.com/widgets.js" strategy="lazyOnload" />
 
     <div className="mx-auto max-w-3xl px-4 my-10">
       <article>
@@ -52,7 +56,11 @@ const Post = ({ post }: Props) => (
           <div className="mb-4">
             Posted on {post.date}
             { post.author && <span> by {post.author}</span> }
-            { post.canonical_url && <span><br />Originally posted at <Link href={post.canonical_url}><a target="_blank" rel="noopener" className="underline">{post.canonical_url}</a></Link>.</span> }
+            { post.canonical_url && <span><br />Originally posted at <Link
+              href={post.canonical_url}
+              target="_blank"
+              rel="noopener"
+              className="underline">{post.canonical_url}</Link>.</span> }
           </div>
 
           <div>
@@ -73,7 +81,7 @@ const Post = ({ post }: Props) => (
 
         { post.tweet && (
           <p style={{ display: 'none' }}>
-            Support my work by <Link href={post.tweet}><a target="_blank" rel="noopener">tweeting</a></Link> this article! 🙏
+            Support my work by <Link href={post.tweet} target="_blank" rel="noopener">tweeting</Link> this article! 🙏
           </p>
         )}
       </article>
@@ -94,7 +102,7 @@ const Post = ({ post }: Props) => (
       ))}
     </div>
   </>
-)
+}
 
 export default Post
 

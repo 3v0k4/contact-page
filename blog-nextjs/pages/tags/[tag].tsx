@@ -15,17 +15,19 @@ type Props = {
   tag: string,
 } & TagsProps
 
-const Tag = ({ categories, tags, posts, tag }: Props) => (
-  <>
+const Tag = ({ categories, tags, posts, tag }: Props) => {
+  const title = `${tag} - Riccardo Odone`
+
+  return <>
     <Head>
-      <title>{tag} - Riccardo Odone</title>
+      <title>{title}</title>
     </Head>
 
     <Posts categories={categories} tags={tags} posts={posts} />
 
     <Newsletter />
   </>
-)
+}
 
 export default Tag
 

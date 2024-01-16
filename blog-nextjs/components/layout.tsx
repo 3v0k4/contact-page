@@ -10,8 +10,7 @@ const Layout = ({ children }: React.PropsWithChildren<{}>) => {
   const router = useRouter()
   const canonical = router.asPath
 
-  return (
-  <>
+  return <>
     <Head>
       <meta charSet="utf-8" />
       <meta httpEquiv="x-ua-compatible" content="ie=edge" />
@@ -55,11 +54,14 @@ const Layout = ({ children }: React.PropsWithChildren<{}>) => {
             </picture>
           </a>
         </InternalLink>
-        <h3 className="mt-2 font-bold">Gimme a shout on <Link href="https://twitter.com/riccardoodone"><a target="_blank" rel="noopener" className="underline">Twitter</a></Link>!</h3>
+        <h3 className="mt-2 font-bold">Gimme a shout on <Link
+          href="https://twitter.com/riccardoodone"
+          target="_blank"
+          rel="noopener"
+          className="underline">Twitter</Link>!</h3>
       </footer>
     </div>
-  </>
-  )
+  </>;
 }
 
 export default Layout

@@ -54,14 +54,12 @@ const Newsletter = () => (
               <li className="mt-1">Your recommended weekly dose of pink</li>
               <li className="mt-1">
                 <span className="font-bold">Try before you buy? </span>
-                <Link href="https://buttondown.email/riccardo.odone/archive">
-                  <a
-                    className="underline hover:text-white"
-                    target="_blank"
-                    rel="noopener"
-                  >
+                <Link
+                  href="https://buttondown.email/riccardo.odone/archive"
+                  className="underline hover:text-white"
+                  target="_blank"
+                  rel="noopener">
                     Check the archives
-                  </a>
                 </Link>
                 .
               </li>

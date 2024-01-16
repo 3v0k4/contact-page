@@ -24,7 +24,11 @@ const Tir = () => (
       </h1>
 
       <p className="mt-10">
-      This is also available as a <Link href="https://tir.odone.io"><a target="_blank" rel="noopener" className="underline text-[color:var(--blue)]">six-week email course</a></Link>.
+      This is also available as a <Link
+        href="https://tir.odone.io"
+        target="_blank"
+        rel="noopener"
+        className="underline text-[color:var(--blue)]">six-week email course</Link>.
       </p>
 
       <div className="mt-32 mb-5">
@@ -134,7 +138,11 @@ const Tir = () => (
       </p>
 
       <p className="mb-4">
-      Please duplicate the <Link href="https://docs.google.com/spreadsheets/d/1agCSjgpFGCDfFSUt15aS5d9t3Voaqvf8qpk-Ri8m1AQ/edit?usp=sharing"><a className="underline text-[color:var(--blue)]" target="_blank" rel="noopener">spreadsheet</a></Link> you will use to track your 10% time in range increase in six weeks.
+      Please duplicate the <Link
+        href="https://docs.google.com/spreadsheets/d/1agCSjgpFGCDfFSUt15aS5d9t3Voaqvf8qpk-Ri8m1AQ/edit?usp=sharing"
+        className="underline text-[color:var(--blue)]"
+        target="_blank"
+        rel="noopener">spreadsheet</Link> you will use to track your 10% time in range increase in six weeks.
       </p>
 
       <p className="mb-4">
@@ -178,7 +186,11 @@ const Tir = () => (
       </p>
 
       <p className="mb-4">
-      Take an average day, be in a fasting state, drink only water, and measure your blood sugars every hour. You want your basal to keep your blood sugars in a flatline plus or minus a small variation (20-30 mg/dl). Here&apos;s a more in depth <Link href="https://integrateddiabetes.com/basal-testing/"><a className="underline text-[color:var(--blue)]" target="_blank" rel="noopener">explanation</a></Link>.
+      Take an average day, be in a fasting state, drink only water, and measure your blood sugars every hour. You want your basal to keep your blood sugars in a flatline plus or minus a small variation (20-30 mg/dl). Here&apos;s a more in depth <Link
+        href="https://integrateddiabetes.com/basal-testing/"
+        className="underline text-[color:var(--blue)]"
+        target="_blank"
+        rel="noopener">explanation</Link>.
       </p>
 
       <p className="mt-10">
@@ -202,7 +214,11 @@ const Tir = () => (
       </p>
 
       <p className="mb-4">
-      At the end of your day, jump into the <Link href="https://docs.google.com/spreadsheets/d/1agCSjgpFGCDfFSUt15aS5d9t3Voaqvf8qpk-Ri8m1AQ/edit?usp=sharing"><a className="underline text-[color:var(--blue)]" target="_blank" rel="noopener">Today sheet</a></Link>, fill in your readings, and focus on one or two surprising blood sugars: what can you do tomorrow to improve them? 
+      At the end of your day, jump into the <Link
+        href="https://docs.google.com/spreadsheets/d/1agCSjgpFGCDfFSUt15aS5d9t3Voaqvf8qpk-Ri8m1AQ/edit?usp=sharing"
+        className="underline text-[color:var(--blue)]"
+        target="_blank"
+        rel="noopener">Today sheet</Link>, fill in your readings, and focus on one or two surprising blood sugars: what can you do tomorrow to improve them? 
       </p>
 
       <p className="mb-4">
@@ -330,7 +346,11 @@ const Tir = () => (
       </p>
 
       <p className="mb-4">
-      You can use the <Link href="https://waltzingthedragon.ca/diabetes/nutrition-excercise/reduce-post-meal-spikes-caused-by-fat-and-protein/"><a className="underline text-[color:var(--blue)]" target="_blank" rel="noopener">Warsaw approach</a></Link> as a starting point. But, as a general rule, you cover proteins and fats with an extended bolus.
+      You can use the <Link
+        href="https://waltzingthedragon.ca/diabetes/nutrition-excercise/reduce-post-meal-spikes-caused-by-fat-and-protein/"
+        className="underline text-[color:var(--blue)]"
+        target="_blank"
+        rel="noopener">Warsaw approach</Link> as a starting point. But, as a general rule, you cover proteins and fats with an extended bolus.
       </p>
 
       <p className="mb-4">
