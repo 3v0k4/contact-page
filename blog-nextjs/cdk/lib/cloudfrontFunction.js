@@ -165,6 +165,18 @@ function handler(event) {
     };
   }
 
+  if (uri.match(/\/socrates2024(.*)$/)) {
+    return {
+      statusCode: 302,
+      statusDescription: "Found",
+      headers: {
+        location: {
+          value: "https://www.kaggle.com/code/riccardoodone/just-enough-python-to-beat-excel-socrates2024",
+        },
+      },
+    };
+  }
+
   if (uri.endsWith('/')) {
       request.uri += 'index.html';
   } else if (!uri.includes('.')) {
