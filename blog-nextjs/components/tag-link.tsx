@@ -2,7 +2,7 @@ import { InternalLink } from '../components/internal-link'
 import React from 'react'
 import { useRouter } from 'next/router'
 
-type Props = React.PropsWithChildren<{tag: string, klass: string}>
+type Props = React.PropsWithChildren<{tag: string, klass?: string}>
 
 export const TagLink = ({ tag, klass, children }: Props) => {
   const router = useRouter()
