@@ -49,7 +49,3 @@ export const TagLink = ({ tag, klass, children }: Props) => {
     </InternalLink>
   )
 }
-
-TagLink.defaultProps = {
-  klass: ''
-}
