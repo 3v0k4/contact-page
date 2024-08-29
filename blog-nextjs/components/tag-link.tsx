@@ -2,11 +2,10 @@ import { InternalLink } from '../components/internal-link'
 import React from 'react'
 import { useRouter } from 'next/router'
 
-type Props = React.PropsWithChildren<{tag: string, klass?: string}>
+type Props = React.PropsWithChildren<{href: string, klass?: string}>
 
-export const TagLink = ({ tag, klass, children }: Props) => {
+export const TagLink = ({ href, klass, children }: Props) => {
   const router = useRouter()
-  const href = `/tags/${tag}/`.replace(" ", "%20")
   const isActive = href === router.asPath
   const defaultKlass = [
     "border-[1px]",

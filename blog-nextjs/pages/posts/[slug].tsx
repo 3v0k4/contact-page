@@ -64,7 +64,7 @@ const Post = ({ post }: Props) => {
           </div>
 
           <div>
-            {post.tags.map(tag => <TagLink key={tag} tag={tag} klass="text-sm px-2 py-1">{tag}</TagLink>)}
+            {post.tags.map(tag => <TagLink key={tag} href={`/tags/${tag}/`.replace(" ", "%20")} klass="text-sm px-2 py-1">{tag}</TagLink>)}
           </div>
         </section>
 
