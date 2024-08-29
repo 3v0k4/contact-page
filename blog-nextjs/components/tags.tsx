@@ -15,7 +15,7 @@ export type Props = {
 
 export const Tags = ({ categories, tags }: Props) => {
   const allTag =
-    <TagLink key="All" href={`/archive`}>
+    <TagLink key="All" href={`/archive/`}>
       <span>All</span>
       <span className="ml-2 rounded-md font-light leading-6 px-1 bg-white text-[color:var(--blue)]">
         {categories.reduce((acc, category) => acc + category.count, 0)}

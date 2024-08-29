@@ -21,10 +21,6 @@ export const TagLink = ({ href, klass, children }: Props) => {
     "text-md",
   ].join(" ")
   const activeKlass = [
-    "hover:bg-white",
-    "hover:border-[color:var(--blue)]",
-    "hover:fill-[color:var(--blue)]",
-    "hover:text-[color:var(--blue)]",
     "bg-[color:var(--pink)]",
     "border-[color:var(--pink)]",
     "fill-white",
@@ -41,7 +37,7 @@ export const TagLink = ({ href, klass, children }: Props) => {
   ].join(" ")
 
   return (
-    <InternalLink href={isActive ? `/archive` : href}>
+    <InternalLink href={href}>
       <a className={`${defaultKlass} ${klass} ${isActive ? activeKlass : inactiveKlass}`}>
         {children}
       </a>
