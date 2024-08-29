@@ -14,15 +14,16 @@ jobs:
         with:
           node-version: 20
           cache: yarn
+          cache-dependency-path: blog-nextjs/yarn.lock
       - run: yarn install
       - run: yarn build
       - run: aws s3 sync ./out s3://odone.io
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_DEFAULT_REGION: 'us-east-1'
+          AWS_DEFAULT_REGION: us-east-1
       - run: aws cloudfront create-invalidation --distribution-id EHEV8XRM85R9X --paths "/*"
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_DEFAULT_REGION: 'us-east-1'
+          AWS_DEFAULT_REGION: us-east-1
