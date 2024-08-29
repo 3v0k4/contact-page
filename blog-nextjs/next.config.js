@@ -8,6 +8,7 @@ const nextConfig = {
  swcMinify: true,
  productionBrowserSourceMaps: true,
  trailingSlash: true,
+ transpilePackages: process.env.NODE_ENV === 'production' ? ['highlight.js'] : [],
 }
 
 module.exports = nextConfig
