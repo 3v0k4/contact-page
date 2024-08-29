@@ -24,7 +24,7 @@ export const Tags = ({ categories, tags }: Props) => {
 
   return (
     <div>
-      <div className="flex">
+      <div className="flex flex-wrap">
         { [allTag].concat(categories.map(({ icon, tag, count }) => (
           <TagLink key={tag} href={`/tags/${tag}/`.replace(" ", "%20")}>
             <span className="mr-2 w-6" dangerouslySetInnerHTML={{ __html: icon }} />
