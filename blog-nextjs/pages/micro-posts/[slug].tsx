@@ -4,8 +4,9 @@ import Newsletter from '../../components/newsletter'
 import markdownToHtml from '../../lib/markdownToHtml'
 import { InternalLink } from '../../components/internal-link'
 import { TagLink } from '../../components/tag-link'
-import { getPostBySlug, getAllPosts } from '../../lib/api'
+import { getMicroPostBySlug, getAllMicroPosts } from '../../lib/api'
 import { useRouter } from 'next/router'
+import { useEffect } from 'react'
 
 type Post = {
   title: string,
@@ -29,6 +30,12 @@ type Props = {
 
 const Post = ({ post }: Props) => {
   const title = `${post.title} - Riccardo Odone`
+  useEffect(() => {
+    const s = document.createElement("script");
+    s.setAttribute("src", "https://platform.twitter.com/widgets.js");
+    s.setAttribute("async", "true");
+    document.head.appendChild(s);
+  }, []);
 
   return <>
     <Head>
@@ -40,8 +47,6 @@ const Post = ({ post }: Props) => {
       <meta property="og:image" content={post.cover_image} />
       <meta name="twitter:card" content="summary_large_image" />
     </Head>
-
-    <Script src="https://platform.twitter.com/widgets.js" strategy="lazyOnload" />
 
     <div className="mx-auto max-w-3xl px-4 my-10">
       <article>
@@ -76,7 +81,7 @@ const Post = ({ post }: Props) => {
           </section>
         )}
 
-        <section className="post" dangerouslySetInnerHTML={{ __html: post.content }} />
+        <section className="post micro-post" dangerouslySetInnerHTML={{ __html: post.content }} />
 
         { post.tweet && (
           <p style={{ display: 'none' }}>
@@ -112,7 +117,7 @@ type Params = {
 }
 
 export const getStaticProps = async ({ params }: Params) => {
-  const post = getPostBySlug(params.slug, [
+  const post = getMicroPostBySlug(params.slug, [
    'title',
    'cover_image',
    'author',
@@ -138,7 +143,7 @@ export const getStaticProps = async ({ params }: Params) => {
 }
 
 export const getStaticPaths = async () => {
-  const posts = getAllPosts(['slug'])
+  const posts = getAllMicroPosts(['slug'])
 
   return {
     paths: posts.map(post => {
@@ -154,7 +159,7 @@ export const getStaticPaths = async () => {
 
 const SeriesLink = ({ slug, title }: { slug: string, title: string }) => {
   const router = useRouter()
-  const href = `/posts/${encodeURIComponent(slug)}`
+  const href = `/posts/${encodeURIComponent(slug)}/`
   const isActive = href === router.asPath
 
   return(

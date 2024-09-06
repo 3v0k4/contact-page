@@ -126,11 +126,20 @@ a.post-title {
   margin-bottom: 1rem;
 }
 
+.micro-post pre {
+  margin-left: 0;
+  width: 100%;
+}
+
 .post code {
   overflow: auto;
   word-wrap: normal;
   white-space: pre;
   font-size: 1.1rem;
+}
+
+.micro-post code {
+  font-size: 0.9rem;
 }
 
 .post p > code, .post ul code {

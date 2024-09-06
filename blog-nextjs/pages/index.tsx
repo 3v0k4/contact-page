@@ -3,9 +3,10 @@ import Link from "next/link";
 import Newsletter from "../components/newsletter";
 import { InternalLink } from "../components/internal-link";
 import { Tags, Props as TagsProps } from "../components/tags";
-import { getCategories, getTags } from "./../lib/api";
+import { MicroTags, Props as MicroTagsProps } from "../components/micro-tags";
+import { getCategories, getTags, getMicroCategories, getMicroTags } from "./../lib/api";
 
-const Home = ({ categories, tags }: TagsProps) => {
+const Home = ({ blog, microBlog }: { blog: TagsProps, microBlog: MicroTagsProps }) => {
   return <>
     <Head>
       <title>Home - Riccardo Odone</title>
@@ -39,16 +40,20 @@ const Home = ({ categories, tags }: TagsProps) => {
           target="_blank"
           rel="noopener"
           className="underline text-[color:var(--blue)]">
-          
             Check the archives
-          
         </Link>
+      </div>
+
+      <div className="mt-20">
+        <h2 className="text-4xl font-semibold mb-4">MicroBlog</h2>
+
+        <MicroTags categories={microBlog.categories} tags={microBlog.tags} />
       </div>
 
       <div className="mt-20">
         <h2 className="text-4xl font-semibold mb-4">Blog</h2>
 
-        <Tags categories={categories} tags={tags} />
+        <Tags categories={blog.categories} tags={blog.tags} />
       </div>
 
       <div className="mt-20">
@@ -192,10 +197,16 @@ const Home = ({ categories, tags }: TagsProps) => {
 export default Home;
 
 export const getStaticProps = async () => {
-  const categories = getCategories();
-  const tags = getTags();
-
   return {
-    props: { categories, tags },
+    props: {
+      blog: {
+        categories: getCategories(),
+        tags: getTags(),
+      },
+      microBlog: {
+        categories: getMicroCategories(),
+        tags: getMicroTags(),
+      }
+    },
   };
 };

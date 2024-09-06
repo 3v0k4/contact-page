@@ -1,0 +1,20 @@
+<form>
+  <input type="text" name="title" placeholder="Enter title" />
+  <button type="button" onclick="addQuestion()">Add question</button>
+  <p>Question</p>
+  <input type="text" name="question" placeholder="Enter question" />
+</form>
+
+<div class="template" style="display: none;">
+  <p>Question</p>
+  <input type="text" name="question" placeholder="Enter question" />
+</div>
+
+<script>
+  function addQuestion() {
+    let template = document.querySelectorAll(".template")[0];
+    let clone = template.cloneNode(true);
+    clone.style.display = "block";
+    document.querySelectorAll("form")[0].appendChild(clone);
+  }
+</script>
