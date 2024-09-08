@@ -13,11 +13,11 @@ tags:
 
 By default Hakyll does not add the proper meta tags for Twitter Cards. For that reason, if we try to tweet a link to a Hakyll post, no card will be rendered. We can confirm that by using [Twitter's Card Validator](https://cards-dev.twitter.com/validator):
 
-![Twitter card validator saying "Unable to render card preview"](https://odone.io/images/card-no-metas.png){.content-image}
+![Twitter card validator saying "Unable to render card preview"](https://odone.io/images/card-no-metas.png)
 
 That can be fixed with a few lines of code:
 
-![Twitter card validator showing the Twitter card with post's cover_image, title and description](https://odone.io/images/card-with-metas.png){.content-image}
+![Twitter card validator showing the Twitter card with post's cover_image, title and description](https://odone.io/images/card-with-metas.png)
 
 ## The Few Lines of Code
 

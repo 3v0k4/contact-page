@@ -20,21 +20,12 @@ Some years ago, I was exposed to an equally simple and powerful idea: **verifica
 Verification steps provide guidance on **how to verify a feature implementation**. They look similar to a description of how to reproduce an issue in a bug report. They don't come with a 100% save-ass guarantee, but the list of benefits is long, and it's not limited to finding bugs:
 
 - **Summary**. Ticket descriptions tend to be in the form of a conversation, not to count all the back-and-forth in the comments. Verification steps work as a TL;DR.
-
 - **BDD**. As a developer, I love diving into code right away. Sometimes it means I get lost in the details and lose sight of the big picture. Having a clear step-by-step breakdown in the ticket helps.
-
 - **Definition of done**. In some cases, it's not clear when to stop working on a feature. By following the steps, it's easy to verify that.
-
 - **Empathy**. Verification steps are a journey, the same one users will embark on. By following the same path, it's easier to get in their shoes.
-
 - **Keep the team in sync**. When everybody is working on their stuff, silos are born. By encouraging the team to test tickets via the verification steps, knowledge spreads.
-
 - **Ensure successful deploys**. Ever `git push`ed and realized, hours later, it has been rejected because your local branch was behind? Or maybe forgot to toggle a feature flag? I cannot count the number of times I deployed a feature when I actually hadn't. Luckily, anybody can catch it by following the verification steps.
-
 - **Build things right**. When focused on coding, developers embed their own bias into the software. A list of steps can not only shake programmers out of their own bubble, but they also allow the verifier to test according to their own bias. And yes, the more diverse the team, the better.
-
 - **Build the right things**. It's challenging to *feel* a feature by reading a ticket description. Verification steps make it more apparent what the final user experience would be. Also, designers can make sure the steps represent what they envisioned.
-
 - **Doing one thing at a time**. Any writer would say that drafting and editing don't go hand-in-hand. The same is valid for coding and manual testing. When the author of the code and the tester are the same person, verification steps help to enforce the boundaries.
-
 - **Serendipitous verification**. I had clients, designers, and testers providing better technical solutions than whatever I came up with in the past. By enabling everybody to chime in with their expertise, bias, and freshness, better solutions surface.
