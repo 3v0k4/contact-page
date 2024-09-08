@@ -1,12 +1,10 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import React from 'react'
-import hljs from 'highlight.js'
 import { InternalLink } from './internal-link'
 import { useRouter } from 'next/router'
 
 const Layout = ({ children }: React.PropsWithChildren<{}>) => {
-  React.useEffect(() => { hljs.highlightAll() })
   const router = useRouter()
   const canonical = router.asPath
 

@@ -14,13 +14,13 @@ tags:
 
 Let’s start with a refresher of `map`:
 
-```haskell
+```hs
 map :: forall a b. (a -> b) -> f a -> f b
 ```
 
 In other words, map takes a function `a -> b` and gives us a function `f a -> f b`. For that reason, we can take any two nested functors (e.g. `Array` and `Maybe`) and run a function on the nested values by putting two `map`s together:
 
-```haskell
+```hs
 v :: Array (Maybe Int)
 v = [Just 1, Nothing, Just 3]
 
@@ -38,13 +38,13 @@ main = do
 
 This time we want to take a look at `bind`:
 
-```haskell
+```hs
 bind :: forall a b. m a -> (a -> m b) -> m b
 ```
 
 If we tried to compose the same way we did with functors, we would notice the code does not compile:
 
-```haskell
+```hs
 v :: Array (Maybe Int)
 v = [Just 1, Nothing, Just 3]
 
@@ -58,7 +58,7 @@ main = do
 
 The problem here is in the nested `bind`:
 
-```haskell
+```hs
 bind v (\x -> bind x f2)
      ^ Maybe Int
        ^ Int -> Array (Maybe String)
@@ -68,7 +68,7 @@ In fact, `Maybe Int -> (Int -> Array (Maybe String)) -> ??` is not what `bind` e
 
 To make the program compile we have to make use of a function (i.e. `maybe`) specific to the monad we are dealing with (i.e. `Maybe`):
 
-```haskell
+```hs
 main :: Effect Unit
 main = do
  -- logShow $ bind v (\x -> bind x f2) -- DOES NOT COMPILE!!
@@ -77,7 +77,7 @@ main = do
 
 Or we could use the `MaybeT` monad transformer:
 
-```haskell
+```hs
 v2 :: MaybeT Array Int
 v2 = MaybeT [Just 1, Nothing, Just 3]
 

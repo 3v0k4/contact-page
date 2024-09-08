@@ -36,7 +36,7 @@ The first thing we want to do is to parse the code into an Abstract Syntax Tree 
 
 The code to do that is the following
 
-```haskell
+```hs
 data Ast
   = Node Op Ast Ast
   | Value Int
@@ -93,7 +93,7 @@ valueParser = do
 
 With the AST at our disposal we can either compile to some other language or evaluate the code:
 
-```haskell
+```hs
 generate :: Ast -> String
 generate (Value i) = show i
 generate (Node Add ast1 ast2) =
@@ -111,7 +111,7 @@ evaluate (Node Sub ast1 ast2) =
 
 ## Test Drive
 
-```haskell
+```hs
 input :: String
 input =
   "add 1 sub 6 add 3 2"

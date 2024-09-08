@@ -23,7 +23,7 @@ You won!
 
 The code
 
-```haskell
+```hs
 module Main where
 
 import Prelude

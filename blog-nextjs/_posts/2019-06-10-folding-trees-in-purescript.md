@@ -21,7 +21,7 @@ In this post we will perform both by employing three different strategies:
 
 ## The Tree Type
 
-```haskell
+```hs
 data Tree a
     = Leaf a
     | Node (Tree a) (Tree a)
@@ -46,7 +46,7 @@ main = do
 
 PureScript is a purely functional programming language and `Tree a` is a recursive type: recursive functions are a perfect fit.
 
-```haskell
+```hs
 countTreeRec :: forall a. Tree a -> Int
 countTreeRec tree =
     go 0 tree
@@ -81,7 +81,7 @@ What's described above is exactly what the Foldable typeclass captures. Let's se
 
 The Foldable typeclass captures the idea of "folding" a structure into another one.
 
-```haskell
+```hs
 instance foldableTree :: Foldable Tree where
     -- foldMap :: forall a m. Monoid m => (a -> m) -> f a -> m
     foldMap g (Leaf x)   = g x
@@ -118,7 +118,7 @@ Try to compare `countTreeFold` vs `countTreeRec` and `toListFold` vs `toListRec`
 
 The foldable trick is totally cool. But why not go overkill implementing and using a State Monad?
 
-```haskell
+```hs
 newtype State s a = State (s -> Tuple a s)
 
 runState :: forall s a. State s a -> s -> Tuple a s
@@ -168,7 +168,7 @@ I'm gonna cover `State` in a future post, so keep tuned!
 ## The Whole Code
 
 
-```haskell
+```hs
 module Main where
 
 import Prelude (class Applicative, class Apply, class Bind, class Functor, class Show, Unit, discard, show, ($), (+), (<$>),

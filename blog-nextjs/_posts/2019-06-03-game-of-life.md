@@ -14,7 +14,7 @@ An example run
 
 The code
 
-```haskell
+```hs
 module Main where
 
 import Prelude

@@ -142,12 +142,18 @@ a.post-title {
   font-size: 0.9rem;
 }
 
-.post p > code, .post ul code {
+.post p > code, .post ul code, .post ol code {
   color: var(--pink);
 }
 
 .post ul {
   list-style-type: disc;
+  list-style-position: inside;
+  margin-bottom: 1rem;
+}
+
+.post ol {
+  list-style-type: decimal;
   list-style-position: inside;
   margin-bottom: 1rem;
 }

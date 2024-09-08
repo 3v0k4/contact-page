@@ -15,7 +15,7 @@ Last week we’ve had some fun solving the [Bank Kata in PureScript](https://odo
 
 In particular, we are going to test the three main functions of the kata:
 
-```haskell
+```hs
 deposit :: Int -> StateT (Array Transaction) Effect Unit
 
 withdraw :: Int -> StateT (Array Transaction) Effect Unit
@@ -27,7 +27,7 @@ printStatement :: StateT (Array Transaction) Effect Unit
 
 Let’s start with `deposit`:
 
-```haskell
+```hs
 deposit :: Int -> StateT (Array Transaction) Effect Unit
 deposit amount = do
 ts <- lift nowDateTime
@@ -39,7 +39,7 @@ Unfortunately, it uses `Effect`. That means, it does something impure we cannot 
 
 We can fix that easily by changing the type signature into
 
-```haskell
+```hs
 deposit
  :: forall m. Monad m
  => Int
@@ -52,7 +52,7 @@ Sadly, that does not compile. In fact, the type signature is telling a lie. In t
 
 Luckily, this is an easy fix. Instead of using `nowDateTime` in `deposit`, we will just inject it:
 
-```haskell
+```hs
 deposit
  :: forall m. Monad m
  => m DateTime
@@ -64,7 +64,7 @@ The downside of this refactoring is that we need to change the production code f
 
 Here’s the test
 
-```haskell
+```hs
 testDeposit :: Effect Unit
 testDeposit = do
  ts <- nowDateTime
@@ -80,7 +80,7 @@ Testing `withdraw` follows the exact same pattern so we are not going to cover t
 
 Let’s move to `printStatement`:
 
-```haskell
+```hs
 printStatement :: StateT (Array Transaction) Effect Unit
 printStatement = do
  s <- gets toStatement
@@ -89,7 +89,7 @@ printStatement = do
 
 Here the story is really similar to what we did to `deposit`:
 
-```haskell
+```hs
 printStatement :: forall m. Monad m => (String -> m Unit) -> StateT (Array Transaction) m Unit
 printStatement logger = do
  s <- gets toStatement
@@ -98,7 +98,7 @@ printStatement logger = do
 
 And the corresponding unit test:
 
-```haskell
+```hs
 testPrintStatementWithTransactions :: Effect Unit
 testPrintStatementWithTransactions = do
  timestamp <- nowDateTime
@@ -116,7 +116,7 @@ Notice that as a base monad we use [`Writer`](https://pursuit.purescript.org/pac
 
 Code:
 
-```haskell
+```hs
 data Transaction
   = Deposit Info
   | Withdraw Info
@@ -168,7 +168,7 @@ main = do
 
 Tests:
 
-```haskell
+```hs
 main :: Effect Unit
 main = do
   testDeposit

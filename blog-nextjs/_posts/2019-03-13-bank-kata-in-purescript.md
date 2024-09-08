@@ -37,7 +37,7 @@ One way to read / write state in PureScript is using [the state monad transforme
 
 Therefore, we will use the following types:
 
-```haskell
+```hs
 deposit :: Int -> StateT (Array Transaction) Effect Unit
 
 withdraw :: Int -> StateT (Array Transaction) Effect Unit
@@ -49,7 +49,7 @@ In other words, our three functions will do their thing in the `StateT (Array Tr
 
 And here we have the type for `Transaction`:
 
-```haskell
+```hs
 data Transaction
  = Deposit Info
  | Withdraw Info
@@ -64,7 +64,7 @@ type Info =
 
 Let’s start with `deposit`:
 
-```haskell
+```hs
 deposit :: Int -> StateT (Array Transaction) Effect Unit
 deposit amount = do
  ts <- lift nowDateTime
@@ -82,7 +82,7 @@ Lastly, [`modify_`](https://pursuit.purescript.org/packages/purescript-transform
 
 `withdraw` is almost the same:
 
-```haskell
+```hs
 withdraw :: Int -> StateT (Array Transaction) Effect Unit
 withdraw amount = do
  ts <- lift nowDateTime
@@ -92,7 +92,7 @@ withdraw amount = do
 
 Finally, we have `printStatement`:
 
-```haskell
+```hs
 printStatement :: StateT (Array Transaction) Effect Unit
 printStatement = do
  s <- gets toStatement
@@ -105,7 +105,7 @@ The last line lifts `log s :: Effect Unit` in `StateT (Array Transaction) Effect
 
 The implementation of `toStatement` is not that important. Here is an example of that:
 
-```haskell
+```hs
 toStatement :: Array Transaction -> String
 toStatement =
  fst <<< foldl fnc (Tuple "" 0)
@@ -120,7 +120,7 @@ toStatement =
 
 Now we can write something like
 
-```haskell
+```hs
 do
  deposit 500
  withdraw 100
@@ -129,7 +129,7 @@ do
 
 which has type `StateT (Array Transaction) Effect Unit`. And we can run that computation with [`evalStateT`](https://pursuit.purescript.org/packages/purescript-transformers/4.2.0/docs/Control.Monad.State.Trans#v:evalStateT). Notice that the following code returns `Effect Unit`.
 
-```haskell
+```hs
 flip evalStateT [] do
  deposit 500
  withdraw 100
@@ -140,7 +140,7 @@ flip evalStateT [] do
 
 And here we have all the code
 
-```haskell
+```hs
 data Transaction
   = Deposit Info
   | Withdraw Info

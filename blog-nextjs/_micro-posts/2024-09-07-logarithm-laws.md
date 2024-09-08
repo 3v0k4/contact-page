@@ -8,46 +8,46 @@ tags:
 
 ## Power law
 
-<code>log<sub>b</sub>p<sup>n</sup> = n * log<sub>b</sub>p</code>
+<code>log~b~p^n^ = n * log~b~p</code>
 
 **Proof:**
 
-<code>log<sub>b</sub>p = a</code> -> <code>b<sup>a</sup> = p</code>
+<code>log~b~p = a</code> -> <code>b^a^ = p</code>
 
-Raise to `k` -> <code>b<sup>k\*a</sup> = p<sup>k</sup></code>
+Raise to `k` -> <code>b<sup>k\*a</sup> = p^k^</code>
 
-Apply <code>log<sub>b</sub></code> -> <code>k * a = log<sub>b</sub>p<sup>k</sup></code>
+Apply <code>log~b~</code> -> <code>k * a = log~b~p^k^</code>
 
-Replace `a` with <code>log<sub>b</sub>p</code> -> <code>k * log<sub>b</sub>p = log<sub>b</sub>p<sup>k</sup></code>
+Replace `a` with <code>log~b~p</code> -> <code>k * log~b~p = log~b~p^k^</code>
 
 ## Product law
 
-<code>log<sub>b</sub>m\*n = log<sub>b</sub>m + log<sub>b</sub>n</code>
+<code>log~b~m\*n = log~b~m + log~b~n</code>
 
 **Proof:**
 
-<code>log<sub>b</sub>m = i</code> -> <code>b<sup>i</sup> = m</code> & <code>log<sub>b</sub>n = j</code> -> <code>b<sup>j</sup> = n</code>
+<code>log~b~m = i</code> -> <code>b^i^ = m</code> & <code>log~b~n = j</code> -> <code>b^j^ = n</code>
 
-Multiply -> <code>b<sup>i</sup> * b<sup>j</sup> = m * n</code>
+Multiply -> <code>b^i^ * b^j^ = m * n</code>
 
 Simplify -> <code>b<sup>i+j</sup> = m * n</code>
 
-Apply <code>log<sub>b</sub></code> -> <code>i + j = log<sub>b</sub>m\*n</code>
+Apply <code>log~b~</code> -> <code>i + j = log~b~m\*n</code>
 
-Replace `i` and `j` -> <code>log<sub>b</sub>m + log<sub>b</sub>n = log<sub>b</sub>m\*n</code>
+Replace `i` and `j` -> <code>log~b~m + log~b~n = log~b~m\*n</code>
 
 ## Quotient law
 
-<code>log<sub>b</sub>m/n = log<sub>b</sub>m - log<sub>b</sub>n</code>
+<code>log~b~m/n = log~b~m - log~b~n</code>
 
 **Proof:**
 
-<code>log<sub>b</sub>m = i</code> -> <code>b<sup>i</sup> = m</code> & <code>log<sub>b</sub>n = j</code> -> <code>b<sup>j</sup> = n</code>
+<code>log~b~m = i</code> -> <code>b^i^ = m</code> & <code>log~b~n = j</code> -> <code>b^j^ = n</code>
 
-Divide -> <code>b<sup>i</sup> / b<sup>j</sup> = m / n</code>
+Divide -> <code>b^i^ / b^j^ = m / n</code>
 
 Simplify -> <code>b<sup>i-j</sup> = m / n</code>
 
-Apply <code>log<sub>b</sub></code> -> <code>i - j = log<sub>b</sub>m/n</code>
+Apply <code>log~b~</code> -> <code>i - j = log~b~m/n</code>
 
-Replace `i` and `j` -> <code>log<sub>b</sub>m - log<sub>b</sub>n = log<sub>b</sub>m/n</code>
+Replace `i` and `j` -> <code>log~b~m - log~b~n = log~b~m/n</code>

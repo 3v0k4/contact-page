@@ -39,7 +39,7 @@ Insert ROW NUM. Example '1 3'
 
 The code
 
-```haskell
+```hs
 module Main where
 
 import Prelude

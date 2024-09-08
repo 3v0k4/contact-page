@@ -19,7 +19,7 @@ One thing that is easily modelled with mutable state is a stack. This is how [Wi
 
 And this is how it looks in code:
 
-```haskell
+```hs
 type Stack = List Int
 
 push :: Int -> Stack -> Stack
@@ -50,7 +50,7 @@ main = do
 
 If we rewrite `push` and we put it side by side with `pop`
 
-```haskell
+```hs
 push :: Int -> Stack -> Tuple Unit Stack
 push x st = Tuple unit (x : st)
 
@@ -72,7 +72,7 @@ In this section we are going to implement a State Monad. We will use `4`s and `3
 
 We start by defining `Stat3`:
 
-```haskell
+```hs
 newtype Stat3 s v = Stat3 (s -> Tuple v s)
 ```
 
@@ -82,7 +82,7 @@ That looks really similar to the types of `pop` (`Stack -> Tuple (Maybe Int) Sta
 
 Then we define a function to "unwrap" `s -> Tuple v s` and run it with an initial state `s`:
 
-```haskell
+```hs
 runStat3 :: forall s v. Stat3 s v -> s -> Tuple v s
 runStat3 (Stat3 g) s = g s
 ```
@@ -91,7 +91,7 @@ To be able to write declarative code and match the api of [`State`](https://purs
 
 In particular, we implement the typeclasses on `Stat3 s` and not `Stat3`. That's because they work on type constructors of kind `* -> *` and not `* -> * -> *`.
 
-```haskell
+```hs
 instance functorStat3 :: Functor (Stat3 s) where
     -- map :: forall a b. (a -> b) -> f a -> f b
     map g f = Stat3 (\s -> let Tuple v s' = runStat3 f s in Tuple (g v) s')
@@ -112,7 +112,7 @@ instance bindStat3 :: Apply (Stat3 s) => Bind (Stat3 s) where
 
 Now we can write
 
-```haskell
+```hs
 pushStat3 :: Int -> Stat3 (List Int) Unit
 pushStat3 x = Stat3 (\s -> Tuple unit (x : s))
 
@@ -134,7 +134,7 @@ main = do
 
 We can improve `pushStat3` and `popStat3` as follows:
 
-```haskell
+```hs
 g3t :: forall s. Stat3 s s
 g3t = Stat3 (\s -> Tuple s s)
 
@@ -157,7 +157,7 @@ pushStat3 x = m0dify_ (\s -> x : s)
 
 Using the [`State` Monad](https://pursuit.purescript.org/packages/purescript-transformers/4.2.0/docs/Control.Monad.State#t:State) is as easy as replacing `3`s with `e`s and `4`s with `a`s: 
 
-```haskell
+```hs
 pushState :: Int -> State (List Int) Unit
 pushState x = modify_ (\s -> x : s)
 
@@ -182,7 +182,7 @@ main = do
 
 ## The Whole Code
 
-```haskell
+```hs
 module Main where
 
 import Prelude
