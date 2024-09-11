@@ -45,86 +45,76 @@ const Home = ({ blog, microBlog }: { blog: TagsProps, microBlog: MicroTagsProps 
     <div className="mt-20 mx-auto max-w-3xl px-4">
       <h2 className="text-4xl font-semibold mb-4">Coder</h2>
 
-      <div className="flex flex-wrap gap-x-32 gap-y-10">
-        <div className="w-40">
-          <Link href="https://github.com/3v0k4/exit.nvim" target="_blank" rel="noopener noreferrer">
-            <img
-              width="160"
-              height="160"
-              className="rounded-xl"
-              alt="exit.nvim icon"
-              src="/images/exit.svg"
-            />
-            <div className="text-sm mt-2 text-center">
-              <p className="font-bold">exit.nvim</p>
-              <p>I solved how to exit Vim. exit.nvim prompts LLMs to write neovim commands.</p>
-            </div>
-          </Link>
-        </div>
+      <div className="grid gap-20 grid-cols-[repeat(auto-fit,minmax(130px,1fr))]">
+        <Link href="https://github.com/3v0k4/exit.nvim" target="_blank" rel="noopener noreferrer">
+          <img
+            width="192"
+            height="192"
+            className="rounded-xl"
+            alt="exit.nvim icon"
+            src="/images/exit.svg"
+          />
+          <div className="text-sm mt-2 text-center">
+            <p className="font-bold">exit.nvim</p>
+            <p>I solved how to exit Vim. exit.nvim prompts LLMs to write neovim commands.</p>
+          </div>
+        </Link>
 
-        <div className="w-40">
-          <Link href="https://github.com/3v0k4/unpath" target="_blank" rel="noopener noreferrer">
-            <img
-              width="160"
-              height="160"
-              className="rounded-xl"
-              alt="Unpath icon"
-              src="/images/unpath.svg"
-            />
-            <div className="text-sm mt-2 text-center">
-              <p className="font-bold">Unpath</p>
-              <p>Runs a command with a modified PATH that does not contain the given command(s).</p>
-            </div>
-          </Link>
-        </div>
+        <Link href="https://github.com/3v0k4/unpath" target="_blank" rel="noopener noreferrer">
+          <img
+            width="192"
+            height="192"
+            className="rounded-xl"
+            alt="Unpath icon"
+            src="/images/unpath.svg"
+          />
+          <div className="text-sm mt-2 text-center">
+            <p className="font-bold">Unpath</p>
+            <p>Runs a command with a modified PATH that does not contain the given command(s).</p>
+          </div>
+        </Link>
 
-        <div className="w-40">
-          <Link href="https://github.com/3v0k4/favicon_factory" target="_blank" rel="noopener noreferrer">
-            <img
-              width="160"
-              height="160"
-              className="rounded-xl"
-              alt="Favicon Factory icon"
-              src="/images/favicon_factory.svg"
-            />
-            <div className="text-sm mt-2 text-center">
-              <p className="font-bold">Favicon Factory</p>
-              <p>Generates from an SVG the minimal set of icons needed by modern browsers.</p>
-            </div>
-          </Link>
-        </div>
+        <Link href="https://github.com/3v0k4/favicon_factory" target="_blank" rel="noopener noreferrer">
+          <img
+            width="192"
+            height="192"
+            className="rounded-xl"
+            alt="Favicon Factory icon"
+            src="/images/favicon_factory.svg"
+          />
+          <div className="text-sm mt-2 text-center">
+            <p className="font-bold">Favicon Factory</p>
+            <p>Generates from an SVG the minimal set of icons needed by modern browsers.</p>
+          </div>
+        </Link>
 
-        <div className="w-40">
-          <Link href="https://typescript.tips/" target="_blank" rel="noopener noreferrer">
-            <img
-              width="160"
-              height="160"
-              className="rounded-xl"
-              alt="TypeScript.tips icon"
-              src="/images/typescript-tips.svg"
-            />
-            <div className="text-sm mt-2 text-center">
-              <p className="font-bold">TypeScript.tips</p>
-              <p>Make bugs impossible. One TypeScript tip at a time.</p>
-            </div>
-          </Link>
-        </div>
+        <Link href="https://typescript.tips/" target="_blank" rel="noopener noreferrer">
+          <img
+            width="192"
+            height="192"
+            className="rounded-xl"
+            alt="TypeScript.tips icon"
+            src="/images/typescript-tips.svg"
+          />
+          <div className="text-sm mt-2 text-center">
+            <p className="font-bold">TypeScript.tips</p>
+            <p>Make bugs impossible. One TypeScript tip at a time.</p>
+          </div>
+        </Link>
 
-        <div className="w-40">
-          <Link href="https://rictionary.odone.io/" target="_blank" rel="noopener noreferrer">
-            <img
-              width="160"
-              height="160"
-              className="rounded-xl"
-              alt="Rictionary icon"
-              src="/images/rictionary.svg"
-            />
-            <div className="text-sm mt-2 text-center">
-              <p className="font-bold">Rictionary</p>
-              <p>My own personal Polish dictionary.</p>
-            </div>
-          </Link>
-        </div>
+        <Link href="https://rictionary.odone.io/" target="_blank" rel="noopener noreferrer">
+          <img
+            width="192"
+            height="192"
+            className="rounded-xl"
+            alt="Rictionary icon"
+            src="/images/rictionary.svg"
+          />
+          <div className="text-sm mt-2 text-center">
+            <p className="font-bold">Rictionary</p>
+            <p>My own personal Polish dictionary.</p>
+          </div>
+        </Link>
       </div>
     </div>
 
@@ -228,8 +218,8 @@ const Home = ({ blog, microBlog }: { blog: TagsProps, microBlog: MicroTagsProps 
     <div className="mt-20 mx-auto max-w-3xl px-4">
       <h2 className="text-4xl font-semibold mb-4">Diabetic</h2>
 
-      <div className="flex flex-wrap gap-10 justify-between">
-        <div className="basis-96">
+      <div className="flex flex-wrap gap-20 justify-between">
+        <div className="basis-96 flex-grow">
           <InternalLink href="/tir">
             <a>
               <picture>
@@ -247,7 +237,7 @@ const Home = ({ blog, microBlog }: { blog: TagsProps, microBlog: MicroTagsProps 
           </InternalLink>
         </div>
 
-        <div className="basis-40 flex flex-col justify-between gap-10">
+        <div className="basis-40 flex-grow grid gap-20 grid-cols-[repeat(auto-fit,minmax(130px,1fr))] content-between">
           <div>
             <Link href="https://basal.odone.io" target="_blank" rel="noopener noreferrer">
 
@@ -255,8 +245,8 @@ const Home = ({ blog, microBlog }: { blog: TagsProps, microBlog: MicroTagsProps 
                 <source type="image/webp" srcSet="/images/basal.webp" />
                 <source type="image/jpeg" srcSet="/images/basal.png" />
                 <img
-                  width="345"
-                  height="533"
+                  width="160"
+                  height="160"
                   className="rounded-xl"
                   alt="Basal iPhone app icon"
                   src="/images/basal.png"
@@ -277,8 +267,8 @@ const Home = ({ blog, microBlog }: { blog: TagsProps, microBlog: MicroTagsProps 
                 <source type="image/webp" srcSet="/images/dextop.webp" />
                 <source type="image/jpeg" srcSet="/images/dextop.png" />
                 <img
-                  width="345"
-                  height="533"
+                  width="160"
+                  height="160"
                   className="rounded-xl"
                   alt="DexTop app icon"
                   src="/images/dextop.png"
@@ -298,7 +288,7 @@ const Home = ({ blog, microBlog }: { blog: TagsProps, microBlog: MicroTagsProps 
     <div className="mt-20 mx-auto max-w-3xl px-4">
       <h2 className="text-4xl font-semibold mb-4">I&apos;m also on</h2>
 
-      <ul className="list-none flex flex-wrap gap-8">
+      <ul className="list-none grid gap-8 grid-cols-[repeat(auto-fit,56px)] justify-between">
         {[
           {
             href: "https://www.youtube.com/channel/UCqoYTAX09Ico3T_NCRy-iSg",
