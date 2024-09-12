@@ -24,7 +24,7 @@ const Newsletter = () => (
           />
           <input type="hidden" value="1" name="embed" />
           <input
-            className="whitespace-normal w-[100%] mt-4 bg-[color:var(--blue)] hover:bg-[color:var(--dark-blue)] px-3 py-2 rounded-md cursor-pointer disabled:bg-gray-500 disabled:cursor-not-allowed"
+            className="whitespace-normal w-[100%] mt-4 bg-blue-diabetes hover:bg-blue-dark px-3 py-2 rounded-md cursor-pointer disabled:bg-gray-500 disabled:cursor-not-allowed"
             type="submit"
             value="Closed for vacation"
             disabled

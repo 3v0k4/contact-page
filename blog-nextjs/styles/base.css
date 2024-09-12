@@ -1,8 +1,6 @@
 :root {
   --pink: #f76ca5;
   --blue: #007bff;
-  --dark-blue: #0070e8;
-  --logo-size: 50px;
   --bs-body-font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
   --bs-body-font-size: 1rem;
   --bs-body-font-weight: 400;
@@ -62,22 +60,6 @@ header {
 
 a.post-title {
   font-size: 1.7rem;
-}
-
-.logo-odone {
-  display: block;
-  margin: auto;
-  width: var(--logo-size);
-  height: var(--logo-size);
-  text-decoration: none;
-  cursor: pointer;
-  background-size: var(--logo-size);
-  background-image: url('/images/android-chrome-512x512.png');
-  -webkit-tap-highlight-color: var(--pink);
-}
-
-.logo-odone:hover, .logo-odone:focus, .logo-odone:active {
-  background-image: url('/images/android-chrome-512x512-pink.png');
 }
 
 .post .twitter-tweet {
