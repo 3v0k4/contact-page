@@ -46,11 +46,11 @@ const Home = ({ blog, microBlog }: { blog: TagsProps, microBlog: MicroTagsProps 
       <h2 className="text-4xl font-semibold mb-4">Coder</h2>
 
       <div className="grid gap-20 grid-cols-[repeat(auto-fit,minmax(130px,1fr))]">
-        <Link href="https://github.com/3v0k4/exit.nvim" target="_blank" rel="noopener noreferrer">
+        <Link className="group" href="https://github.com/3v0k4/exit.nvim" target="_blank" rel="noopener noreferrer">
           <img
             width="192"
             height="192"
-            className="rounded-xl"
+            className="rounded-xl group-hover:scale-[103%]"
             alt="exit.nvim icon"
             src="/images/exit.svg"
           />
@@ -60,11 +60,11 @@ const Home = ({ blog, microBlog }: { blog: TagsProps, microBlog: MicroTagsProps 
           </div>
         </Link>
 
-        <Link href="https://github.com/3v0k4/unpath" target="_blank" rel="noopener noreferrer">
+        <Link className="group" href="https://github.com/3v0k4/unpath" target="_blank" rel="noopener noreferrer">
           <img
             width="192"
             height="192"
-            className="rounded-xl"
+            className="rounded-xl group-hover:scale-[103%]"
             alt="Unpath icon"
             src="/images/unpath.svg"
           />
@@ -74,11 +74,11 @@ const Home = ({ blog, microBlog }: { blog: TagsProps, microBlog: MicroTagsProps 
           </div>
         </Link>
 
-        <Link href="https://github.com/3v0k4/favicon_factory" target="_blank" rel="noopener noreferrer">
+        <Link className="group" href="https://github.com/3v0k4/favicon_factory" target="_blank" rel="noopener noreferrer">
           <img
             width="192"
             height="192"
-            className="rounded-xl"
+            className="rounded-xl group-hover:scale-[103%]"
             alt="Favicon Factory icon"
             src="/images/favicon_factory.svg"
           />
@@ -88,11 +88,11 @@ const Home = ({ blog, microBlog }: { blog: TagsProps, microBlog: MicroTagsProps 
           </div>
         </Link>
 
-        <Link href="https://typescript.tips/" target="_blank" rel="noopener noreferrer">
+        <Link className="group" href="https://typescript.tips/" target="_blank" rel="noopener noreferrer">
           <img
             width="192"
             height="192"
-            className="rounded-xl"
+            className="rounded-xl group-hover:scale-[103%]"
             alt="TypeScript.tips icon"
             src="/images/typescript-tips.svg"
           />
@@ -102,11 +102,11 @@ const Home = ({ blog, microBlog }: { blog: TagsProps, microBlog: MicroTagsProps 
           </div>
         </Link>
 
-        <Link href="https://rictionary.odone.io/" target="_blank" rel="noopener noreferrer">
+        <Link className="group" href="https://rictionary.odone.io/" target="_blank" rel="noopener noreferrer">
           <img
             width="192"
             height="192"
-            className="rounded-xl"
+            className="rounded-xl group-hover:scale-[103%]"
             alt="Rictionary icon"
             src="/images/rictionary.svg"
           />
@@ -221,14 +221,14 @@ const Home = ({ blog, microBlog }: { blog: TagsProps, microBlog: MicroTagsProps 
       <div className="flex flex-wrap gap-20 justify-between">
         <div className="basis-96 flex-grow">
           <InternalLink href="/tir">
-            <a>
+            <a className="group">
               <picture>
                 <source type="image/webp" srcSet="/images/tir.webp" />
                 <source type="image/jpeg" srcSet="/images/tir.png" />
                 <img
                   width="345"
                   height="533"
-                  className="mx-auto rounded-xl"
+                  className="mx-auto rounded-xl group-hover:scale-[101%]"
                   alt="Cover of a book: Debug your time in range - The 6-week course for diabetic developers to increase TIR by 10%"
                   src="/images/tir.png"
                 />
@@ -239,7 +239,7 @@ const Home = ({ blog, microBlog }: { blog: TagsProps, microBlog: MicroTagsProps 
 
         <div className="basis-40 flex-grow grid gap-20 grid-cols-[repeat(auto-fit,minmax(130px,1fr))] content-between">
           <div>
-            <Link href="https://basal.odone.io" target="_blank" rel="noopener noreferrer">
+            <Link className="group" href="https://basal.odone.io" target="_blank" rel="noopener noreferrer">
 
               <picture>
                 <source type="image/webp" srcSet="/images/basal.webp" />
@@ -247,7 +247,7 @@ const Home = ({ blog, microBlog }: { blog: TagsProps, microBlog: MicroTagsProps 
                 <img
                   width="160"
                   height="160"
-                  className="rounded-xl"
+                  className="rounded-xl group-hover:scale-[102%]"
                   alt="Basal iPhone app icon"
                   src="/images/basal.png"
                 />
@@ -261,7 +261,7 @@ const Home = ({ blog, microBlog }: { blog: TagsProps, microBlog: MicroTagsProps 
           </div>
 
           <div>
-            <Link href="https://getdextop.com" target="_blank" rel="noopener noreferrer">
+            <Link className="group" href="https://getdextop.com" target="_blank" rel="noopener noreferrer">
 
               <picture>
                 <source type="image/webp" srcSet="/images/dextop.webp" />
@@ -269,7 +269,7 @@ const Home = ({ blog, microBlog }: { blog: TagsProps, microBlog: MicroTagsProps 
                 <img
                   width="160"
                   height="160"
-                  className="rounded-xl"
+                  className="rounded-xl group-hover:scale-[102%]"
                   alt="DexTop app icon"
                   src="/images/dextop.png"
                 />
@@ -334,7 +334,7 @@ const Home = ({ blog, microBlog }: { blog: TagsProps, microBlog: MicroTagsProps 
           <li key={href}>
             <Link
               href={href}
-              className={`block indent-[-9999px] h-14 w-14 bg-contain bg-no-repeat bg-center ${klass}`}
+              className={`block indent-[-9999px] h-14 w-14 hover:scale-110 bg-contain bg-no-repeat bg-center ${klass}`}
               target="_blank"
               rel="noopener">
 
