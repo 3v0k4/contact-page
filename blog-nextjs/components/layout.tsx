@@ -39,7 +39,7 @@ const Layout = ({ children }: React.PropsWithChildren<{}>) => {
               <a className="text-blue-diabetes hover:text-pinkk block mx-auto w-11 h-11 no-underline cursor-pointer">
                 <span className="sr-only">Home</span>
                 <svg fill="currentColor" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M25 50C38.8071 50 50 38.8071 50 25C50 11.1929 38.8071 0 25 0C11.1929 0 0 11.1929 0 25C0 38.8071 11.1929 50 25 50ZM25 42.8571C34.8622 42.8571 42.8571 34.8622 42.8571 25C42.8571 15.1378 34.8622 7.14286 25 7.14286C15.1378 7.14286 7.14286 15.1378 7.14286 25C7.14286 34.8622 15.1378 42.8571 25 42.8571Z" />
+                  <path fillRule="evenodd" clipRule="evenodd" d="M25 50C38.8071 50 50 38.8071 50 25C50 11.1929 38.8071 0 25 0C11.1929 0 0 11.1929 0 25C0 38.8071 11.1929 50 25 50ZM25 42.8571C34.8622 42.8571 42.8571 34.8622 42.8571 25C42.8571 15.1378 34.8622 7.14286 25 7.14286C15.1378 7.14286 7.14286 15.1378 7.14286 25C7.14286 34.8622 15.1378 42.8571 25 42.8571Z" />
                 </svg>
               </a>
             </InternalLink>
