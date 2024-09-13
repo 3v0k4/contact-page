@@ -58,6 +58,10 @@ header {
   background-image: image-set(url("/images/hero.webp") 1x, url("/images/hero.png") 1x);
 }
 
+.post, .micro-post {
+  overflow-x: hidden;
+}
+
 a.post-title {
   font-size: 1.7rem;
 }
@@ -124,7 +128,7 @@ a.post-title {
   font-size: 0.9rem;
 }
 
-.post p > code, .post ul code, .post ol code {
+.post p > code, .post li > code {
   color: var(--pink);
 }
 
