@@ -7,10 +7,12 @@ import { useRouter } from 'next/router'
 const Layout = ({ children }: React.PropsWithChildren<{}>) => {
   const router = useRouter()
   const canonical = router.asPath
-  const ref = useRef<HTMLAnchorElement>(null)
+  const footer = useRef<HTMLElement>(null)
+  const selfie = useRef<HTMLAnchorElement>(null)
   useLayoutEffect(() => {
-    if(!ref.current) return;
-    ref.current.scrollIntoView({ inline: 'center' })
+    if(!footer.current) return;
+    if(!selfie.current) return;
+    footer.current.scrollLeft = selfie.current.offsetLeft / 2
   }, [])
 
 
@@ -55,7 +57,7 @@ const Layout = ({ children }: React.PropsWithChildren<{}>) => {
         <main role="main">{children}</main>
       </div>
 
-      <footer className="flex justify-between items-center p-4 mt-2 w-full max-w-3xl overflow-x-auto gap-6 md:gap-0 md:overflow-x-visible mx-auto">
+      <footer ref={footer} className="flex justify-between items-center p-4 mt-2 w-full max-w-3xl overflow-x-auto gap-6 md:gap-0 md:overflow-x-visible mx-auto">
         {[
           {
             href: "https://www.youtube.com/channel/UCqoYTAX09Ico3T_NCRy-iSg",
@@ -89,7 +91,7 @@ const Layout = ({ children }: React.PropsWithChildren<{}>) => {
         ))}
 
         <Link
-          ref={ref}
+          ref={selfie}
           href={'/'}
           className={`flex-shrink-0 block h-24 w-24 hover:scale-105`}>
           <picture>
