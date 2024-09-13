@@ -12,7 +12,7 @@ const Layout = ({ children }: React.PropsWithChildren<{}>) => {
   useLayoutEffect(() => {
     if(!footer.current) return;
     if(!selfie.current) return;
-    footer.current.scrollLeft = selfie.current.offsetLeft / 2
+    footer.current.scrollLeft = (selfie.current.offsetLeft / 2) + (selfie.current.offsetWidth / 4);
   }, [])
 
 
