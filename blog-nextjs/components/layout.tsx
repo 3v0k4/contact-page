@@ -1,12 +1,18 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import React from 'react'
+import React, { useRef, useLayoutEffect } from 'react'
 import { InternalLink } from './internal-link'
 import { useRouter } from 'next/router'
 
 const Layout = ({ children }: React.PropsWithChildren<{}>) => {
   const router = useRouter()
   const canonical = router.asPath
+  const ref = useRef<HTMLAnchorElement>(null)
+  useLayoutEffect(() => {
+    if(!ref.current) return;
+    ref.current.scrollIntoView({ inline: 'center' })
+  }, [])
+
 
   return <>
     <Head>
@@ -49,21 +55,81 @@ const Layout = ({ children }: React.PropsWithChildren<{}>) => {
         <main role="main">{children}</main>
       </div>
 
-      <footer className="text-center py-4 mt-2">
-        <InternalLink href="/">
-          <a>
-            <picture>
-              <source type="image/webp" srcSet="/images/selfie.webp" />
-              <source type="image/png" srcSet="/images/selfie.png" />
-              <img height="80" width="80" alt="Picture (headshot) of Riccardo Odone" className="w-20 h-20 rounded-full mx-auto" src="/images/selfie.png" />
-            </picture>
-          </a>
-        </InternalLink>
-        <h3 className="mt-2 font-bold">Gimme a shout on <Link
-          href="https://twitter.com/riccardoodone"
-          target="_blank"
-          rel="noopener"
-          className="underline">Twitter</Link>!</h3>
+      <footer className="flex justify-between items-center p-4 mt-2 w-full max-w-3xl overflow-x-auto gap-6 md:gap-0 md:overflow-x-visible mx-auto">
+        {[
+          {
+            href: "https://www.youtube.com/channel/UCqoYTAX09Ico3T_NCRy-iSg",
+            klass: "bg-[url(/images/logo-youtube.svg)]",
+            label: "YouTube",
+          },
+          {
+            href: "https://twitter.com/riccardoodone",
+            klass: "bg-[url(/images/logo-twitter.svg)]",
+            label: "Twitter",
+          },
+          {
+            href: "https://dev.to/riccardoodone",
+            klass: "bg-[url(/images/logo-devto.svg)]",
+            label: "DevTO",
+          },
+          {
+            href: "https://medium.com/@riccardoodone",
+            klass: "bg-[url(/images/logo-medium.svg)]",
+            label: "Medium",
+          },
+        ].map(({ href, klass, label }) => (
+          <Link
+            key={href}
+            href={href}
+            className={`flex-shrink-0 block indent-[-9999px] h-14 w-14 hover:scale-110 bg-contain bg-no-repeat bg-center ${klass}`}
+            target="_blank"
+            rel="noopener">
+            {label}
+          </Link>
+        ))}
+
+        <Link
+          ref={ref}
+          href={'/'}
+          className={`flex-shrink-0 block h-24 w-24 hover:scale-105`}>
+          <picture>
+            <source type="image/webp" srcSet="/images/selfie.webp" />
+            <source type="image/png" srcSet="/images/selfie.png" />
+            <img height="80" width="80" alt="Picture (headshot) of Riccardo Odone" className="rounded-full" src="/images/selfie.png" />
+          </picture>
+        </Link>
+
+        {[
+          {
+            href: "https://www.facebook.com/riccardo.odone",
+            klass: "bg-[url(/images/logo-facebook.svg)]",
+            label: "Facebook",
+          },
+          {
+            href: "https://it.linkedin.com/in/riccardoodone",
+            klass: "bg-[url(/images/logo-linkedin.svg)]",
+            label: "Linkedin",
+          },
+          {
+            href: "https://github.com/3v0k4",
+            klass: "bg-[url(/images/logo-github.svg)]",
+            label: "Github",
+          },
+          {
+            href: "https://www.goodreads.com/review/list/75221217-riccardo?shelf=read&sort=rating",
+            klass: "bg-[url(/images/logo-goodreads.svg)]",
+            label: "GoodReads",
+          },
+        ].map(({ href, klass, label }) => (
+          <Link
+            key={href}
+            href={href}
+            className={`flex-shrink-0 block indent-[-9999px] h-14 w-14 hover:scale-110 bg-contain bg-no-repeat bg-center ${klass}`}
+            target="_blank"
+            rel="noopener">
+            {label}
+          </Link>
+        ))}
       </footer>
     </div>
   </>;
