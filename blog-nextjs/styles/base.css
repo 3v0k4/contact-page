@@ -111,6 +111,7 @@ a.post-title {
 .micro-post pre {
   margin-left: 0;
   width: 100%;
+  @apply rounded-md shadow-lg;
 }
 
 .post code {
