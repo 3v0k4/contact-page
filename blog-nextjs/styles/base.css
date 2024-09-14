@@ -58,7 +58,7 @@ header {
   background-image: image-set(url("/images/hero.webp") 1x, url("/images/hero.png") 1x);
 }
 
-.post, .micro-post {
+.micro-post {
   overflow-x: hidden;
 }
 
