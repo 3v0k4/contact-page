@@ -29,7 +29,7 @@ export const MicroPosts = ({ categories, tags, posts }: Props) => (
             <a className="text-4xl text-[color:var(--blue)] hover:text-[color:var(--pink)]">{title}</a>
           </InternalLink>
           <p className="text-2xl text-gray-500">{description}</p>
-          <section className="mt-6 post micro-post" dangerouslySetInnerHTML={{ __html: content }} />
+          <section className="mt-6 post" dangerouslySetInnerHTML={{ __html: content }} />
         </li>
       ))}
     </ul>

@@ -81,7 +81,7 @@ const Post = ({ post }: Props) => {
           </section>
         )}
 
-        <section className="post micro-post" dangerouslySetInnerHTML={{ __html: post.content }} />
+        <section className="post" dangerouslySetInnerHTML={{ __html: post.content }} />
 
         { post.tweet && (
           <p style={{ display: 'none' }}>

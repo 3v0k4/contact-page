@@ -108,7 +108,7 @@ a.post-title {
   margin-bottom: 1rem;
 }
 
-.micro-post pre {
+.post pre {
   margin-left: 0;
   width: 100%;
   @apply rounded-md shadow-lg;
@@ -117,10 +117,6 @@ a.post-title {
 .post code {
   overflow: auto;
   word-break: break-all;
-  font-size: 1.1rem;
-}
-
-.micro-post code {
   font-size: 0.9rem;
 }
 
