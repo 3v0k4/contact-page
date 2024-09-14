@@ -85,7 +85,7 @@ const Layout = ({ children }: React.PropsWithChildren<{}>) => {
           <Link
             key={href}
             href={href}
-            className={`flex-shrink-0 block indent-[-9999px] h-14 w-14 hover:scale-110 bg-contain bg-no-repeat bg-center ${klass}`}
+            className={`opacity-50 flex-shrink-0 block indent-[-9999px] h-14 w-14 hover:scale-110 bg-contain bg-no-repeat bg-center ${klass}`}
             target="_blank"
             rel="noopener">
             {label}
@@ -128,7 +128,7 @@ const Layout = ({ children }: React.PropsWithChildren<{}>) => {
           <Link
             key={href}
             href={href}
-            className={`flex-shrink-0 block indent-[-9999px] h-14 w-14 hover:scale-110 bg-contain bg-no-repeat bg-center ${klass}`}
+            className={`opacity-50 flex-shrink-0 block indent-[-9999px] h-14 w-14 hover:scale-110 bg-contain bg-no-repeat bg-center ${klass}`}
             target="_blank"
             rel="noopener">
             {label}
