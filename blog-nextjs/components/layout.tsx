@@ -24,7 +24,7 @@ const Layout = ({ children }: React.PropsWithChildren<{}>) => {
     footer.current.scrollLeft = selfie.current.offsetLeft + // scroll to left edge of selfie
       selfie.current.offsetWidth / 2 - // scroll to center of selfie
       Math.max(document.documentElement.clientWidth, window.innerWidth || 0) / 2 // scroll back half the viewport
-  }, [])
+  })
 
 
   return <>
