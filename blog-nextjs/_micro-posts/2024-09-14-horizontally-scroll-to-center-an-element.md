@@ -1,5 +1,6 @@
 ---
 title: Horizontally scroll to center an element
+description:
 author: Riccardo
 tags:
   - JavaScript
