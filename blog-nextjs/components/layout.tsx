@@ -97,7 +97,7 @@ const Layout = ({ children }: React.PropsWithChildren<{}>) => {
             className="opacity-50 flex-shrink-0 flex justify-center items-center"
             target="_blank"
             rel="noopener">
-            <Image className="h-14 w-14 hover:scale-110" width="56" height="56" src={src} alt={label} />
+            <Image className="h-14 w-14 hover:scale-110" width="56" height="56" src={src} alt={label} priority={true} />
           </Link>
         ))}
 
@@ -140,7 +140,7 @@ const Layout = ({ children }: React.PropsWithChildren<{}>) => {
             className="opacity-50 flex-shrink-0 flex justify-center items-center"
             target="_blank"
             rel="noopener">
-            <Image className="h-14 w-14 hover:scale-110" width="56" height="56" src={src} alt={label} />
+            <Image className="h-14 w-14 hover:scale-110" width="56" height="56" src={src} alt={label} priority={true} />
           </Link>
         ))}
       </footer>
