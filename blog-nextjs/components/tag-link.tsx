@@ -12,8 +12,6 @@ export const TagLink = ({ href, klass, children }: Props) => {
     "border-solid",
     "inline-flex",
     "items-center",
-    "mb-2",
-    "mr-2",
     "no-underline",
     "px-3",
     "py-2",
@@ -31,9 +29,9 @@ export const TagLink = ({ href, klass, children }: Props) => {
     "hover:border-[color:var(--pink)]",
     "hover:fill-white",
     "hover:text-white",
-    "border-[color:var(--blue)]",
-    "fill-[color:var(--blue)]",
-    "text-[color:var(--blue)]",
+    "border-gray-500",
+    "fill-gray-500",
+    "text-gray-500",
   ].join(" ")
 
   return (
