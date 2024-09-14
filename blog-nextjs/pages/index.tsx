@@ -4,9 +4,12 @@ import Newsletter from "../components/newsletter";
 import { InternalLink } from "../components/internal-link";
 import { Tags, Props as TagsProps } from "../components/tags";
 import { MicroTags, Props as MicroTagsProps } from "../components/micro-tags";
-import { getCategories, getTags, getMicroCategories, getMicroTags } from "./../lib/api";
+import { getCategories, getTags, getMicroCategories, getMicroTags, getAllPosts, getAllMicroPosts } from "./../lib/api";
 
-const Home = ({ blog, microBlog }: { blog: TagsProps, microBlog: MicroTagsProps }) => {
+type Posts = { latestPosts: { title: string, slug: string }[] };
+type MicroPosts = { latestMicroPosts: { title: string, slug: string }[] };
+
+const Home = ({ blog, microBlog }: { blog: TagsProps & Posts, microBlog: MicroTagsProps & MicroPosts }) => {
   return <>
     <Head>
       <title>Home - Riccardo Odone</title>
@@ -33,13 +36,35 @@ const Home = ({ blog, microBlog }: { blog: TagsProps, microBlog: MicroTagsProps 
     </div>
 
     <div className="mt-20 mx-auto max-w-3xl px-4">
-      <h2 className="text-4xl font-semibold mb-4">Writer</h2>
-
-      <h3 className="text-xl font-semibold mb-4 uppercase">MicroBlog</h3>
+      <h2 className="text-4xl font-semibold mb-4">MicroBlogger</h2>
       <MicroTags categories={microBlog.categories} tags={microBlog.tags} />
 
-      <h3 className="text-xl font-semibold mb-4 uppercase">Blog</h3>
+      <h3 className="text-xl font-semibold uppercase mt-4">Latest</h3>
+      <ul className="list-inside list-[circle]">
+        { microBlog.latestMicroPosts.map(({ title, slug }) => (
+          <li key={title}>
+            <InternalLink href={`/micro-posts/${slug}`}>
+              <a className="text-2xl text-[color:var(--blue)] hover:text-[color:var(--pink)]">{title}</a>
+            </InternalLink>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <div className="mt-20 mx-auto max-w-3xl px-4">
+      <h2 className="text-4xl font-semibold mb-4">Blogger</h2>
       <Tags categories={blog.categories} tags={blog.tags} />
+
+      <h3 className="text-xl font-semibold uppercase mt-4">Latest</h3>
+      <ul className="list-inside list-[circle]">
+        { blog.latestPosts.map(({ title, slug }) => (
+          <li key={title}>
+            <InternalLink href={`/posts/${slug}`}>
+              <a className="text-2xl text-[color:var(--blue)] hover:text-[color:var(--pink)]">{title}</a>
+            </InternalLink>
+          </li>
+        ))}
+      </ul>
     </div>
 
     <div className="mt-20 mx-auto max-w-3xl px-4">
@@ -294,15 +319,20 @@ const Home = ({ blog, microBlog }: { blog: TagsProps, microBlog: MicroTagsProps 
 export default Home;
 
 export const getStaticProps = async () => {
+  const latestPosts = getAllPosts(['title', 'slug']).slice(0, 3);
+  const latestMicroPosts = getAllMicroPosts(['title', 'slug']).slice(0, 3);
+
   return {
     props: {
       blog: {
         categories: getCategories(),
         tags: getTags(),
+        latestPosts,
       },
       microBlog: {
         categories: getMicroCategories(),
         tags: getMicroTags(),
+        latestMicroPosts,
       }
     },
   };
