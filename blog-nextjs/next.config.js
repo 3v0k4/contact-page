@@ -3,6 +3,7 @@ const nextConfig = {
   output: 'export',
   images: {
     domains: ['cdn-images-1.medium.com'],
+    unoptimized: true,
   },
   reactStrictMode: true,
   swcMinify: true,

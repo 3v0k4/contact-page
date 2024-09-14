@@ -3,6 +3,15 @@ import Link from 'next/link'
 import React, { useRef, useLayoutEffect } from 'react'
 import { InternalLink } from './internal-link'
 import { useRouter } from 'next/router'
+import goodreads from '../public/images/logo-goodreads.svg'
+import facebook from '../public/images/logo-facebook.svg'
+import github from '../public/images/logo-github.svg'
+import linkedin from '../public/images/logo-linkedin.svg'
+import youtube from '../public/images/logo-youtube.svg'
+import twitter from '../public/images/logo-twitter.svg'
+import devto from '../public/images/logo-devto.svg'
+import medium from '../public/images/logo-medium.svg'
+import Image from 'next/image';
 
 const Layout = ({ children }: React.PropsWithChildren<{}>) => {
   const router = useRouter()
@@ -63,32 +72,32 @@ const Layout = ({ children }: React.PropsWithChildren<{}>) => {
         {[
           {
             href: "https://www.youtube.com/channel/UCqoYTAX09Ico3T_NCRy-iSg",
-            klass: "bg-[url(/images/logo-youtube.svg)]",
+            src: youtube,
             label: "YouTube",
           },
           {
             href: "https://twitter.com/riccardoodone",
-            klass: "bg-[url(/images/logo-twitter.svg)]",
+            src: twitter,
             label: "Twitter",
           },
           {
             href: "https://dev.to/riccardoodone",
-            klass: "bg-[url(/images/logo-devto.svg)]",
+            src: devto,
             label: "DevTO",
           },
           {
             href: "https://medium.com/@riccardoodone",
-            klass: "bg-[url(/images/logo-medium.svg)]",
+            src: medium,
             label: "Medium",
           },
-        ].map(({ href, klass, label }) => (
+        ].map(({ href, src, label }) => (
           <Link
-            key={href}
-            href={href}
-            className={`opacity-50 flex-shrink-0 block indent-[-9999px] h-14 w-14 hover:scale-110 bg-contain bg-no-repeat bg-center ${klass}`}
+            key={label}
+            href={src}
+            className="opacity-50 flex-shrink-0 flex justify-center items-center"
             target="_blank"
             rel="noopener">
-            {label}
+            <Image className="h-14 w-14 hover:scale-110" width="56" height="56" src={src} alt={label} />
           </Link>
         ))}
 
@@ -106,32 +115,32 @@ const Layout = ({ children }: React.PropsWithChildren<{}>) => {
         {[
           {
             href: "https://www.facebook.com/riccardo.odone",
-            klass: "bg-[url(/images/logo-facebook.svg)]",
+            src: facebook,
             label: "Facebook",
           },
           {
             href: "https://it.linkedin.com/in/riccardoodone",
-            klass: "bg-[url(/images/logo-linkedin.svg)]",
+            src: linkedin,
             label: "Linkedin",
           },
           {
             href: "https://github.com/3v0k4",
-            klass: "bg-[url(/images/logo-github.svg)]",
+            src: github,
             label: "Github",
           },
           {
             href: "https://www.goodreads.com/review/list/75221217-riccardo?shelf=read&sort=rating",
-            klass: "bg-[url(/images/logo-goodreads.svg)]",
+            src: goodreads,
             label: "GoodReads",
           },
-        ].map(({ href, klass, label }) => (
+        ].map(({ href, src, label }) => (
           <Link
-            key={href}
-            href={href}
-            className={`opacity-50 flex-shrink-0 block indent-[-9999px] h-14 w-14 hover:scale-110 bg-contain bg-no-repeat bg-center ${klass}`}
+            key={label}
+            href={src}
+            className="opacity-50 flex-shrink-0 flex justify-center items-center"
             target="_blank"
             rel="noopener">
-            {label}
+            <Image className="h-14 w-14 hover:scale-110" width="56" height="56" src={src} alt={label} />
           </Link>
         ))}
       </footer>
