@@ -55,7 +55,7 @@ const Newsletter = () => (
               <li className="mt-1">
                 <span className="font-bold">Try before you buy? </span>
                 <Link
-                  href="https://buttondown.email/riccardo.odone/archive"
+                  href="https://buttondown.com/riccardo.odone/archive"
                   className="underline hover:text-white"
                   target="_blank"
                   rel="noopener">
