@@ -130,6 +130,15 @@ a.post-title {
   margin-bottom: 1rem;
 }
 
+.post ul ul {
+  list-style-type: circle;
+  margin-bottom: 0;
+}
+
+.post ul > li, .post ol > li {
+  padding-left: 1em;
+}
+
 .post ol {
   list-style-type: decimal;
   list-style-position: inside;
