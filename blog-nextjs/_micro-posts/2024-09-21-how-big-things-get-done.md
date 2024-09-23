@@ -9,7 +9,7 @@ tags:
 *How big things get done* published the following breakdown:
 - 100% of the mega-projects analyzed
 - 47.9% finished on budget
-- 8.5% finished on time
+- 8.5% finished on bugdet and time
 - 0.5% finished on budget, time, and produced the expected benefits
 
 Later, the book analyzes what are the prerequisites to get into the 0.5% Olympus:
