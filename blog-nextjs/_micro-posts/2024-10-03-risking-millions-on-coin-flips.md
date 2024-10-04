@@ -20,7 +20,7 @@ If you toss a coin twice you can get either one of the following:
 
 Therefore, the probability of getting one tails out of two flips is 2/4 (ie, case 3. and 4.).
 
-That is described by the Binomial Distribution where n is the number of trails (coins) and k is the number of successes (tails):
+That is described by the Binomial Distribution where n is the number of trials (coins) and k is the number of successes (tails):
 
 ```
 p = n! / [k! * (n - k)!] * (1/2)^n
