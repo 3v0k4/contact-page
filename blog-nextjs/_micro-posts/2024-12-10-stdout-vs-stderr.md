@@ -1,5 +1,5 @@
 ---
-title: Stdout vs stderr
+title: stdout vs stderr
 description:
 author: Riccardo
 tags:
