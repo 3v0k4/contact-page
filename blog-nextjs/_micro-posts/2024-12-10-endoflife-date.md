@@ -12,4 +12,4 @@ Example:
 
 Need to check what's the latest version of Ruby? Or until when it's supported?
 
-https://endoflife.date/ruby
+[endoflife.date/ruby](https://endoflife.date/ruby)
