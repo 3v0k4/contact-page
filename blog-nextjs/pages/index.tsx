@@ -71,6 +71,20 @@ const Home = ({ blog, microBlog }: { blog: TagsProps & Posts, microBlog: MicroTa
       <h2 className="text-4xl font-semibold mb-4">Coder</h2>
 
       <div className="grid gap-20 grid-cols-[repeat(auto-fit,minmax(130px,1fr))]">
+        <Link className="group" href="https://github.com/3v0k4/degem" target="_blank" rel="noopener noreferrer">
+          <img
+            width="192"
+            height="192"
+            className="rounded-xl group-hover:scale-[103%]"
+            alt="Degem icon"
+            src="/images/degem.svg"
+          />
+          <div className="text-sm mt-2 text-center">
+            <p className="font-bold">Degem</p>
+            <p>Find unused gems in a Ruby bundle.</p>
+          </div>
+        </Link>
+
         <Link className="group" href="https://github.com/3v0k4/exit.nvim" target="_blank" rel="noopener noreferrer">
           <img
             width="192"
