@@ -3,7 +3,7 @@ title: Elm Tricks from Production–Declarative, Bug-Free User Interfaces with C
 description: How to use custom types to keep the interface declarative and avoid bugs.
 published: true
 author: Riccardo
-cover_image: https://odone.io/images/elm.jpg
+cover_image: /images/elm.jpg
 canonical_url: https://blog.lunarlogic.io/2019/elm-tricks-from-production-custom-types/
 series: Elm Tricks from Production
 tags:

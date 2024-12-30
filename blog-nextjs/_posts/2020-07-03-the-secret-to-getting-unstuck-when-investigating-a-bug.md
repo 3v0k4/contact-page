@@ -3,7 +3,7 @@ title: The Secret to Getting Unstuck when Investigating a Bug
 description: "When Radek asked me to pair on investigating a bug I was skeptical. But I had something he lacked: ignorance."
 published: true
 author: Riccardo
-cover_image: https://odone.io/images/investigator.png
+cover_image: /images/investigator.png
 tags:
   - Essential Skills
   - Team Work
@@ -23,7 +23,7 @@ I was (and still am) nowhere near his level. But I had something he lacked: igno
 
 We build a mental model of the code that is incorrect, we convince ourselves the problem is in a specific place, and we limit the investigation to the wrong area.
 
-As [described last week](https://odone.io/posts/2020-06-26-why-good-solutions-block-better-ones/), the Einstullung effect makes us ignore aspects that are not aligned with our mental model, looking more at what confirms it.
+As [described last week](/posts/2020-06-26-why-good-solutions-block-better-ones/), the Einstullung effect makes us ignore aspects that are not aligned with our mental model, looking more at what confirms it.
 
 The best strategy to unstucking oneself is to take a step back. Unfortunately, it is incredibly hard. When debugging, the root cause seems to be five minutes away from being found. It's an infinite cycle of believing the next try is the good one.
 

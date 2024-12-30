@@ -2,7 +2,7 @@
 title: Nim in PureScript
 author: Riccardo
 description: Interactive Programming in PureScript
-cover_image: https://odone.io/images/nim.jpg
+cover_image: /images/nim.jpg
 tags:
   - Functional Programming
   - PureScript

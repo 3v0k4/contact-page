@@ -3,7 +3,7 @@ title: Naming Things Made Easy
 description: Naming things belongs to the editing phase not the writing one. Doing it too early is unproductive and dangerous. Here's why and how to fix it easily.
 published: true
 author: Riccardo
-cover_image: https://odone.io/images/board.png
+cover_image: /images/board.png
 tags:
   - Essential Skills
   - Team Work
@@ -31,7 +31,7 @@ Code is the result of an exploration: the most promising solution of the ones co
 
 **Naming early is dangerous too**. Words carry a mental baggage with them. For example, the word "classroom" seems harmless at first. But wait, in my head I see a physical space, several people sitting in front of small desks, a teacher standing on the opposite side and a ton of other details. I can also smell the chalk. Now I feel it on my fingers. Wow. And I thought I was just naming a variable for an online course platform.
 
-It is incredibly powerful to use the proper word in the right spot. It can be catastrophic otherwise. Choosing the **wrong name contaminates our thinking**. That is a good way to impair our problem solving skills as highlighted in [Starting from the Problem not the Solution](https://odone.io/posts/2020-06-19-starting-from-the-problem-not-the-solution/) and [Why Good Solutions Block Better Ones](https://odone.io/posts/2020-06-26-why-good-solutions-block-better-ones/).
+It is incredibly powerful to use the proper word in the right spot. It can be catastrophic otherwise. Choosing the **wrong name contaminates our thinking**. That is a good way to impair our problem solving skills as highlighted in [Starting from the Problem not the Solution](/posts/2020-06-19-starting-from-the-problem-not-the-solution/) and [Why Good Solutions Block Better Ones](/posts/2020-06-26-why-good-solutions-block-better-ones/).
 
 I have a secret. **The code I write sucks until I edit it**. I name things with colors. Sometimes it's even a single character. When I feel lazy I call a class `Klass` and I likely have twenty-three commits named "wip". I would get lost myself if I had to go back to the code a few days later. But I won't need to because I trust my editing self will do the right thing down the line.
 

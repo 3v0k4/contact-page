@@ -1,6 +1,8 @@
+import { TLD } from "consts";
+
 /** @type {import('next-sitemap').IConfig} */
 const config = {
-  siteUrl: process.env.SITE_URL || 'https://odone.io',
+  siteUrl: process.env.SITE_URL || `https://${TLD}`,
   generateRobotsTxt: true,
   transform: async (config, path) => {
     return {
@@ -9,8 +11,8 @@ const config = {
       priority: config.priority,
       lastmod: config.autoLastmod ? new Date().toISOString() : undefined,
       alternateRefs: config.alternateRefs ?? [],
-    }
+    };
   },
-}
+};
 
-export default config
+export default config;

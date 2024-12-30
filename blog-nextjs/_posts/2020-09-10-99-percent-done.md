@@ -3,7 +3,7 @@ title: 99 Percent Done
 description: After several weeks of work, we are still 99% percent done. Or maybe I should say 99.9% done. Math is awesome, there's always room to add yet another nine to make it right.
 published: true
 author: Riccardo
-cover_image: https://odone.io/images/dictionary.jpg
+cover_image: /images/dictionary.jpg
 tags:
   - Essential Skills
 ---
@@ -24,13 +24,13 @@ When hard things surface, having a blurry definition (or none at all) justifies 
 
 This product was supposed to be launched years ago. But without a definition of done, it was always not done, by definition.
 
-Being a commercial endeavor, profit should have been the success metric guiding the effort. Instead, without boundaries, the product grew to a [complicated aggregate of features](https://odone.io/posts/2020-07-10-grateful-for-the-opportunity-of-working-on-legacy-code/) that accrued bugs and welcomed scope creep.
+Being a commercial endeavor, profit should have been the success metric guiding the effort. Instead, without boundaries, the product grew to a [complicated aggregate of features](/posts/2020-07-10-grateful-for-the-opportunity-of-working-on-legacy-code/) that accrued bugs and welcomed scope creep.
 
 ## ...Developers Just Translate Specifications
 
 Don't get me wrong, coding is awesome but I'm tired of building things that have zero positive impact. When developers are tasked with translating specifications into code, they will just do that. Or worse.
 
-If people are not given the incentive to care about the product, they will have fun elsewhere. For example, by [introducing accidental complexity](https://odone.io/posts/2020-04-23-learning-commercial-projects/). Or at least that's what I did in the past.
+If people are not given the incentive to care about the product, they will have fun elsewhere. For example, by [introducing accidental complexity](/posts/2020-04-23-learning-commercial-projects/). Or at least that's what I did in the past.
 
 ## ...We are Building the Wrong Thing
 

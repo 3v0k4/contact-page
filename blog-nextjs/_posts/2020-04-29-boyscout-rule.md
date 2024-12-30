@@ -40,7 +40,7 @@ First of all, goals need to be defined. We need to know where we are going to ge
 
 That starts with the business talks. Customers use software because it provides value to them, not because the code is written in a specific way. Good code is at the service of that and not the other way around.
 
-With the business context in mind, we can decide what would be the perfect code to support the goals. This is where the team should dream big but limited to [what makes sense for the project](https://odone.io/posts/2020-04-23-learning-commercial-projects/).
+With the business context in mind, we can decide what would be the perfect code to support the goals. This is where the team should dream big but limited to [what makes sense for the project](/posts/2020-04-23-learning-commercial-projects/).
 
 So, we know where we are and where we want to be. It’s time to prepare a roadmap. Depending on the context it could be as generic as a list of tricks to improve the code to a more detailed timeline. At the minimum, the roadmap should explain what "better" means in the Scout Rule.
 

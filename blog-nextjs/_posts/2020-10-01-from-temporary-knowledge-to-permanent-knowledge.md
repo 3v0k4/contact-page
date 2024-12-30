@@ -3,7 +3,7 @@ title: From Temporary Knowledge to Permanent Knowledge
 description: By disregarding practices and principles, we are condemned to start from scratch and re-learn at every context switch.
 published: true
 author: Riccardo
-cover_image: https://odone.io/images/old-books.jpg
+cover_image: /images/old-books.jpg
 tags:
   - Essential Skills
 series: Permanent Knowledge
@@ -31,7 +31,7 @@ To which somebody replied with:
 
 As a developer, I wish the latter was true. However, I cannot help but think there's some merit to the first take. I posit both opinions are valid through the proper lens, and we better be aware of it. Let me explain.
 
-The WHATs of anything are bound to its context and lifecycle. For example, the [syntax for records in Haskell](https://odone.io/posts/2020-06-01-records-haskell/) is relevant only to Haskell code. However, the HOWs and, to a more significant extent, the WHYs are part of the nature of software. They can be transferred to other languages.
+The WHATs of anything are bound to its context and lifecycle. For example, the [syntax for records in Haskell](/posts/2020-06-01-records-haskell/) is relevant only to Haskell code. However, the HOWs and, to a more significant extent, the WHYs are part of the nature of software. They can be transferred to other languages.
 
 Don't get me wrong, temporary knowledge is essential. It's a bit like shallow and deep work. Our jobs entail both. We need the WHATs, in other words, the concrete implementations, to perform a task. At the same time, we should be contemplating the HOWs and WHYs behind them.
 
@@ -49,7 +49,7 @@ Permanent knowledge does not expire because it's not bound to the current contex
 
 Thus, one way to develop permanent knowledge would be laddering up from temporary knowledge. Instead of throwing arrays at problems, understand HOW to use them, most importantly, understand WHY. Syntax changes from language to language, but an array's nature is the same across the board. Hell, you could follow the abstraction to math, then it would apply to everything, not only software.
 
-Recently, I started working on a [legacy project that is over-engineered with all sorts of technologies](https://odone.io/posts/2020-07-10-grateful-for-the-opportunity-of-working-on-legacy-code/). What saved me was transferring knowledge:
+Recently, I started working on a [legacy project that is over-engineered with all sorts of technologies](/posts/2020-07-10-grateful-for-the-opportunity-of-working-on-legacy-code/). What saved me was transferring knowledge:
 
 - Haskell -> RxJs
 - Redux -> NgRx

@@ -12,6 +12,7 @@ import twitter from '../public/images/logo-twitter.svg'
 import devto from '../public/images/logo-devto.svg'
 import medium from '../public/images/logo-medium.svg'
 import Image from 'next/image';
+import { TLD } from '../consts'
 
 const Layout = ({ children }: React.PropsWithChildren<{}>) => {
   const router = useRouter()
@@ -40,14 +41,14 @@ const Layout = ({ children }: React.PropsWithChildren<{}>) => {
       <link rel="manifest" href="/site.webmanifest" />
       <meta name="twitter:site" content="@riccardoodone" />
       <meta name="twitter:creator" content="@riccardoodone" />
-      <link rel="canonical" href={`https://odone.io${canonical}`} />
-      <meta property="og:url" content={`https://odone.io${canonical}`} />
-      <meta property="og:title" content="Riccardo Odone" />
-      <meta property="og:description" content="Official website of Riccardo Odone. I craft web software and lead as a maverick. I teach and study timeless software skills on the blog." />
-      <meta name="description" content="Official website of Riccardo Odone. I craft web software and lead as a maverick. I teach and study timeless software skills on the blog." />
-      <meta property="og:type" content="website" />
-      <meta property="og:image" content="https://odone.io/images/android-chrome-512x512.png" />
-      <meta name="twitter:card" content="summary" />
+      <link rel="canonical" href={`https://${TLD}${canonical}`} />
+      <meta property="og:url" content={`https://${TLD}${canonical}`} />
+      <meta key="og:title" property="og:title" content="Riccardo Odone" />
+      <meta key="og:description" property="og:description" content="Official website of Riccardo Odone. I craft web software and lead as a maverick. I teach and study timeless software skills on the blog." />
+      <meta key="description" name="description" content="Official website of Riccardo Odone. I craft web software and lead as a maverick. I teach and study timeless software skills on the blog." />
+      <meta key="og:type" property="og:type" content="website" />
+      <meta key="og:image" property="og:image" content={`https://${TLD}/images/android-chrome-512x512.png`} />
+      <meta key="twitter:card" name="twitter:card" content="summary" />
     </Head>
 
     <div className="flex flex-col">

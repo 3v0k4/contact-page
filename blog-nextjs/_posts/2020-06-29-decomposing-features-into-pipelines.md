@@ -3,7 +3,7 @@ title: Decomposing Features into Pipelines
 description: Code and pray when devising a solution is not the best approach. The exploration needs to start in problem space.
 published: true
 author: Riccardo
-cover_image: https://odone.io/images/pipeline.jpg
+cover_image: /images/pipeline.jpg
 tags:
   - Functional Programming
 ---

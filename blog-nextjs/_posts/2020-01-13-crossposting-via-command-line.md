@@ -10,7 +10,7 @@ tags:
 
 Another week, another script in Haskell. It's probably clear that I've found a safe heaven where to play with functional concepts. I do the same at work. Do we need to automate something simple? Maybe just run once and forget it forever? No need to talk more, my fingers are already typing `vim script.hs`.
 
-Two weeks ago we covered a [script to scaffold a blog post](https://odone.io/posts/2019-12-26-scaffolding-a-blog-post/). Last week we talked about [tweeting a blog post from the command line](https://odone.io/posts/2020-01-06-posting-a-tweet-with-haskell/). Today it's time to crosspost a local Jekyll-like blog post to [dev.to](https://dev.to).
+Two weeks ago we covered a [script to scaffold a blog post](/posts/2019-12-26-scaffolding-a-blog-post/). Last week we talked about [tweeting a blog post from the command line](/posts/2020-01-06-posting-a-tweet-with-haskell/). Today it's time to crosspost a local Jekyll-like blog post to [dev.to](https://dev.to).
 
 Let's start from the core of the script, the `crosspost` function:
 
@@ -137,7 +137,7 @@ A proper call adds an unpublished blog post on DevTo with all the following fill
 - title;
 - description;
 - tags;
-- canonical_url (the URL of the post on [odone.io](https://odone.io));
+- canonical_url (the URL of the post on odone.io);
 - content.
 
 The whole script is on [GitHub](https://github.com/3v0k4/contact-page/blob/ba7b8ceab98f1cd19765dc94f5adee6a446719ae/blog/todevto.hs).

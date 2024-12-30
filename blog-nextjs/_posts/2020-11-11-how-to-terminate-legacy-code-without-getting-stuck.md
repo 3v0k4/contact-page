@@ -3,7 +3,7 @@ title: How to Terminate Legacy Code without Getting Stuck
 description: "Embracing the inversion principle with legacy code: don't try to make it perfect; just make it less awful for the next round of changes."
 published: true
 author: Riccardo
-cover_image: https://odone.io/images/stuck.jpg
+cover_image: /images/stuck.jpg
 tags:
   - Essential Skills
 ---
@@ -22,4 +22,4 @@ Legacy code is not created all the same. Some never change and should be left al
 
 You will be back.
 
-![I'll be back](https://odone.io/images/ill-be-back.gif)
+![I'll be back](/images/ill-be-back.gif)

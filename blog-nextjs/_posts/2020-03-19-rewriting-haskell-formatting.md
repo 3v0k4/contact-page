@@ -39,4 +39,4 @@ ormolu -m inplace **/*.hs
 
 Also, [plugins](https://github.com/tweag/ormolu#editor-integration) are available to automate formatting whenever a Haskell file is saved! In VIM it works really well:
 
-![Gif showing Ormolu formatting a Haskell file in a VIM buffer](https://odone.io/images/ormolu.gif)
+![Gif showing Ormolu formatting a Haskell file in a VIM buffer](/images/ormolu.gif)

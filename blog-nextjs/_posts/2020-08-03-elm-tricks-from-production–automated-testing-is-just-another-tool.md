@@ -3,7 +3,7 @@ title: Elm Tricks from Production–Automated Testing is Just Another Tool
 description: Our take on unit testing and how we approached testing Elm code in AirCasting.
 published: true
 author: Riccardo
-cover_image: https://odone.io/images/elm.jpg
+cover_image: /images/elm.jpg
 canonical_url: https://blog.lunarlogic.io/2019/elm-tricks-from-production-automated-testing/
 series: Elm Tricks from Production
 tags:

@@ -7,6 +7,7 @@ import { TagLink } from '../../components/tag-link'
 import { getPostBySlug, getAllPosts } from '../../lib/api'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
+import { TLD } from '../../consts'
 
 type Post = {
   title: string,
@@ -37,20 +38,22 @@ const Post = ({ post }: Props) => {
     document.head.appendChild(s);
   }, []);
 
+  const coverImage = post.cover_image ? (post.cover_image.startsWith("/") ? `https://${TLD}${post.cover_image}` : post.cover_image) : null
+
   return <>
     <Head>
       <title>{title}</title>
-      <meta property="og:title" content={post.title} />
-      <meta property="og:description" content={post.description} />
-      <meta name="description" content={post.description} />
-      <meta property="og:type" content="article" />
-      <meta property="og:image" content={post.cover_image} />
-      <meta name="twitter:card" content="summary_large_image" />
+      <meta key="og:title" property="og:title" content={post.title} />
+      <meta key="og:description" property="og:description" content={post.description} />
+      <meta key="description" name="description" content={post.description} />
+      <meta key="og:type" property="og:type" content="article" />
+      { coverImage && <meta key="og:image" property="og:image" content={coverImage} /> }
+      <meta key="twitter:card" name="twitter:card" content="summary_large_image" />
     </Head>
 
     <div className="mx-auto max-w-3xl px-4 my-10">
       <article>
-        { post.cover_image && <img className="mb-10" src={post.cover_image} /> }
+        { coverImage && <img className="mb-10" src={coverImage} /> }
 
         <h1 className="text-4xl font-semibold">
           {post.title}
@@ -81,7 +84,7 @@ const Post = ({ post }: Props) => {
           </section>
         )}
 
-        <section className="post" dangerouslySetInnerHTML={{ __html: post.content }} />
+        <section className="post" dangerouslySetInnerHTML={{ __html: post.content.replaceAll("{{TLD}}", TLD) }} />
 
         { post.tweet && (
           <p style={{ display: 'none' }}>

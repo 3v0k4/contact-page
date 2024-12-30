@@ -2,7 +2,7 @@
 title: Game of Life in PureScript
 author: Riccardo
 description: Interactive Programming in PureScript
-cover_image: https://odone.io/images/game-of-life.jpg
+cover_image: /images/game-of-life.jpg
 tags:
   - Functional Programming
   - PureScript
@@ -10,7 +10,7 @@ tags:
 
 An example run
 
-![Gif showing the evolution of the Game of Life through a few iterations in the terminal; the - character represents dead cells and 0 alive cells](https://odone.io/images/game-of-life.gif)
+![Gif showing the evolution of the Game of Life through a few iterations in the terminal; the - character represents dead cells and 0 alive cells](/images/game-of-life.gif)
 
 The code
 

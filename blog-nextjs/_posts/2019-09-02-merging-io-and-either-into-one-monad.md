@@ -2,7 +2,7 @@
 title: Merging IO and Either into one monad
 description: How to simplify code by merging two monads into one
 author: Riccardo
-cover_image: https://odone.io/images/puzzle-merge.jpg
+cover_image: /images/puzzle-merge.jpg
 tags:
   - Functional Programming
   - Haskell

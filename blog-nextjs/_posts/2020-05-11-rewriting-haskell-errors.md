@@ -67,7 +67,7 @@ However, had the proper error been returned, Elm would know what attribute was b
 
 The frontend would add an error below the field in the form:
 
-![Screenshot of the comment form in Stream with a red error message right below the text field](https://odone.io/images/elm-comment-error.png)
+![Screenshot of the comment form in Stream with a red error message right below the text field](/images/elm-comment-error.png)
 
 Therefore, we need to make sure that if in a body of a POST some key/value pair is missing, we return the correct json response. In other words, instead of the following:
 

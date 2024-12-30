@@ -3,7 +3,7 @@ title: The Simplest Most Powerful Trick–Verification Steps
 description: Verification steps don't come with a 100% save-ass guarantee, but the list of benefits is long, and it's not limited to finding bugs.
 published: true
 author: Riccardo
-cover_image: https://odone.io/images/steps.jpg
+cover_image: /images/steps.jpg
 tags:
   - Essential Skills
   - Team Work
@@ -15,7 +15,7 @@ Sure, it would be best to have an expert tester on the team. Still, not having o
 
 Some years ago, I was exposed to an equally simple and powerful idea: **verification steps**.
 
-![Screenshot of verification steps out of a Trello ticket. Verification steps: 1. login on staging with riccardo.odone 2. open reporting 3. go to production checklist 4. notice it's fast enough 5. select dates to cover September (14th has 25 orders, 15th has 50 orders, etc.) 6. notice the pagination (50 per page) 7. wait a few seconds 8. notice the print button becomes active 9. notice that printing would print all pages not only the current one 10. notice, both in the page and in printing, items are ordered by fulfillment date first, order number second (Please check with other accounts too, Please do a light testing of manage orders and tax summary–just visualizing them not generating)](https://odone.io/images/verification-steps.png)
+![Screenshot of verification steps out of a Trello ticket. Verification steps: 1. login on staging with riccardo.odone 2. open reporting 3. go to production checklist 4. notice it's fast enough 5. select dates to cover September (14th has 25 orders, 15th has 50 orders, etc.) 6. notice the pagination (50 per page) 7. wait a few seconds 8. notice the print button becomes active 9. notice that printing would print all pages not only the current one 10. notice, both in the page and in printing, items are ordered by fulfillment date first, order number second (Please check with other accounts too, Please do a light testing of manage orders and tax summary–just visualizing them not generating)](/images/verification-steps.png)
 
 Verification steps provide guidance on **how to verify a feature implementation**. They look similar to a description of how to reproduce an issue in a bug report. They don't come with a 100% save-ass guarantee, but the list of benefits is long, and it's not limited to finding bugs:
 

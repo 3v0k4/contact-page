@@ -3,7 +3,7 @@ title: How to Conjure Your Team Magic with a few Stickies and the Playbook Exerc
 description: When you support others, others will support you and your outrageous wishes.
 published: true
 author: Riccardo
-cover_image: https://odone.io/images/playbook.jpg
+cover_image: /images/playbook.jpg
 tags:
   - Essential Skills
   - Team Work

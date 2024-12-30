@@ -2,7 +2,7 @@
 title: Building a Blog in Haskell with Yesod–JSON API
 description: In this post we are going to see how to transform our Yesod blog into a JSON API (including authentication)
 author: Riccardo
-cover_image: https://odone.io/images/yesod.png
+cover_image: /images/yesod.png
 series: Building a Blog in Haskell with Yesod
 tags:
   - Functional Programming
@@ -18,7 +18,7 @@ In other words, this won't be good material to learn how to use Yesod. However, 
 
 ## Back in Business
 
-[Last week's post](https://odone.io/posts/2019-08-12-building-a-blog-in-haskell-with-yesod–returning-JSON/) started on a bitter note:
+[Last week's post](/posts/2019-08-12-building-a-blog-in-haskell-with-yesod–returning-JSON/) started on a bitter note:
 
 > The plan for this post was to transform the entire blog into an API. Unfortunately, the compiler got in the middle.
 

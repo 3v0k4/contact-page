@@ -3,7 +3,7 @@ title: Vanilla JavaScript vs. RxJs
 description: 'Tackling problems from different angles: imperative against declarative, or "push" vs. "pull."'
 published: true
 author: Riccardo
-cover_image: https://odone.io/images/hacker.jpg
+cover_image: /images/hacker.jpg
 tags:
   - Essential Skills
 ---

@@ -2,7 +2,7 @@
 title: Scripting in Haskell and PureScript
 author: Riccardo
 description: Writing scripts with Haskell and PureScript is a good way of doing some functional programming at work
-cover_image: https://odone.io/images/scripting.jpg
+cover_image: /images/scripting.jpg
 tags:
   - Functional Programming
   - Haskell

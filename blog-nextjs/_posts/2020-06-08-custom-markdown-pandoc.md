@@ -121,7 +121,7 @@ In a recent workshop I attended one rule was "all ideas are brilliant". Yes, at 
 
 becomes
 
-[![Screenshot of a pull quote from a blog post](https://odone.io/images/pull-quote.png)](https://odone.io/posts/2020-05-29-silly-questions/)
+[![Screenshot of a pull quote from a blog post](/images/pull-quote.png)](/posts/2020-05-29-silly-questions/)
 
 ---
 

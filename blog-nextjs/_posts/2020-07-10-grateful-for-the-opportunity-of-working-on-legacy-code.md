@@ -3,7 +3,7 @@ title: Grateful for the Opportunity of Working on Legacy Code
 description: In the end it's my choice. I can be lazy, fixate on the small details and waste time. Or I can use some discipline, focus on the big picture and accept the challenge.
 published: true
 author: Riccardo
-cover_image: https://odone.io/images/legacy.png
+cover_image: /images/legacy.png
 tags:
   - Essential Skills
 ---
