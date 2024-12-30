@@ -3,7 +3,7 @@ title: How would I do it in Haskell?
 description: Here's a couple of examples where I contaminated Ruby with functional intuitions.
 published: true
 author: Riccardo
-cover_image: https://odone.io/images/rubies.jpg
+cover_image: /images/rubies.jpg
 tags:
   - Functional Programming
 ---

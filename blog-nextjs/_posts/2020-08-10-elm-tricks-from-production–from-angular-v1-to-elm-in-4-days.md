@@ -3,7 +3,7 @@ title: Elm Tricks from Production–From Angular v1 to Elm in 4 Days
 description: A solid plan and some patience is all you need to migrate an entire application to a different technology (while it continues to run).
 published: true
 author: Riccardo
-cover_image: https://odone.io/images/elm.jpg
+cover_image: /images/elm.jpg
 canonical_url: https://blog.lunarlogic.io/2020/elm-tricks-from-production-angular-to-elm/
 series: Elm Tricks from Production
 tags:

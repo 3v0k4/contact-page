@@ -2,7 +2,7 @@
 title: A Parser Combinator in PureScript (part 1/2)
 author: Riccardo
 description: Implementing and using a parser combinator
-cover_image: https://odone.io/images/parser.jpeg
+cover_image: /images/parser.jpeg
 series: A Parser Combinator in PureScript
 tags:
   - Functional Programming

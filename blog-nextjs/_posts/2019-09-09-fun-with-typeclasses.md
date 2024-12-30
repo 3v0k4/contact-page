@@ -2,7 +2,7 @@
 title: Fun with Typeclasses
 description: Ever heard of `Enum`, `Bounded`, `BoundedEnum` and `CyclicEnum`?
 author: Riccardo
-cover_image: https://odone.io/images/typeclasses.jpg
+cover_image: /images/typeclasses.jpg
 tags:
   - Functional Programming
   - Haskell

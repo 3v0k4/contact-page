@@ -9,7 +9,7 @@ tags:
   - Servant
 ---
 
-In the [previous post](https://odone.io/posts/2020-04-27-rewriting-haskell-query-params/) we covered how to have Servant parse URL query parameters to custom data types. In this post, we see a similar technique without the use of `FromHttpApiData`.
+In the [previous post](/posts/2020-04-27-rewriting-haskell-query-params/) we covered how to have Servant parse URL query parameters to custom data types. In this post, we see a similar technique without the use of `FromHttpApiData`.
 
 The search endpoint in Stream has the following type signature:
 

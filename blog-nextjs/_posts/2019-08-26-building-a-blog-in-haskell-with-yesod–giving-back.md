@@ -2,7 +2,7 @@
 title: Building a Blog in Haskell with Yesod–Giving Back
 description: In this post I'm celebrating becoming a contributor to Yesod
 author: Riccardo
-cover_image: https://odone.io/images/yesod.png
+cover_image: /images/yesod.png
 series: Building a Blog in Haskell with Yesod
 tags:
   - Functional Programming
@@ -22,7 +22,7 @@ Last week has been a very special one. First of all, I had the chance of spendin
 
 Something else happened last week that I'm really proud of. I got my first Pull Request merged for an open source project: I'm officially a [Haskell Yesod contributor](https://github.com/yesodweb/yesod/graphs/contributors)!!
 
-The inspiration came from [last week's post](https://odone.io/posts/2019-08-19-building-a-blog-in-haskell-with-yesod–returning-JSON-API/):
+The inspiration came from [last week's post](/posts/2019-08-19-building-a-blog-in-haskell-with-yesod–returning-JSON-API/):
 
 > Unfortunately, Yesod.Auth.Dummy does not support registration via JSON requests. Therefore, we have to patch it ourselves.
 

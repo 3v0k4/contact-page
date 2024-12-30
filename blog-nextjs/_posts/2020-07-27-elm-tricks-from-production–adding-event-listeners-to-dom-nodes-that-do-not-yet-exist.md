@@ -3,7 +3,7 @@ title: Elm Tricks from Production–Adding Event Listeners to DOM Nodes that do 
 description: How to use `setTimeout` and the DOM mutation observer API to attach callbacks to DOM nodes that do not yet exist.
 published: true
 author: Riccardo
-cover_image: https://odone.io/images/elm.jpg
+cover_image: /images/elm.jpg
 canonical_url: https://blog.lunarlogic.io/2019/elm-tricks-from-production-adding-event-listeners/
 series: Elm Tricks from Production
 tags:

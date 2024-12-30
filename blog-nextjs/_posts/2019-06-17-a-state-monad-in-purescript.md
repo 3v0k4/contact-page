@@ -2,7 +2,7 @@
 title: A State Monad in PureScript
 author: Riccardo
 description: Implementing and using the State Monad
-cover_image: https://odone.io/images/state.jpg
+cover_image: /images/state.jpg
 tags:
   - Functional Programming
   - PureScript

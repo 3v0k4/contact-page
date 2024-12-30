@@ -2,7 +2,7 @@
 title: Building a Blog in Haskell with Yesod–Using a Database
 author: Riccardo
 description: In this post we are going to hook up our Yesod blog to a database
-cover_image: https://odone.io/images/yesod.png
+cover_image: /images/yesod.png
 series: Building a Blog in Haskell with Yesod
 tags:
   - Functional Programming

@@ -8,7 +8,7 @@ tags:
   - Script
 ---
 
-In the [previous post](https://odone.io/posts/2019-12-26-scaffolding-a-blog-post/) we have seen how to scaffold a blog post with a Haskell script. Today, we are going to automate tweeting.
+In the [previous post](/posts/2019-12-26-scaffolding-a-blog-post/) we have seen how to scaffold a blog post with a Haskell script. Today, we are going to automate tweeting.
 
 The heart of the script is the `tweet` function which uses:
 

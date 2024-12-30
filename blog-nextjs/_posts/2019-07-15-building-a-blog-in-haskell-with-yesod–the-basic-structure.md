@@ -2,7 +2,7 @@
 title: Building a Blog in Haskell with Yesod–The Basic Structure
 author: Riccardo
 description: In this post we are going to develop the basic structure of our Yesod blog
-cover_image: https://odone.io/images/yesod.png
+cover_image: /images/yesod.png
 series: Building a Blog in Haskell with Yesod
 tags:
   - Functional Programming
@@ -24,11 +24,11 @@ In this post we are going to develop the basic structure of our blog. The flow o
 
 1. The landing page is a login form:
 
-![Screenshot of a login form with username and password fields and a submit button](https://odone.io/images/login.png)
+![Screenshot of a login form with username and password fields and a submit button](/images/login.png)
 
 2. After a successful login the user is redirected to the posts page. Here, the user is able to create a new post and check all the posts already published:
 
-![Screenshot of the blog with a "toggle form" button and two posts with title and text](https://odone.io/images/posts-final.png)
+![Screenshot of the blog with a "toggle form" button and two posts with title and text](/images/posts-final.png)
 
 To keep this article simple, we are not going to connect to the database, neither we will check the login credentials.
 
@@ -103,7 +103,7 @@ index f91122a..011e171 100644
 
 With that, it's possible to launch the dev server `stack exec -- yesod devel` and visit `/landing`.
 
-![Screenshot of a compilation error in the browser that says "Not yet implemented: getLandingR"](https://odone.io/images/landing-error.png)
+![Screenshot of a compilation error in the browser that says "Not yet implemented: getLandingR"](/images/landing-error.png)
 
 The error comes from the fact that the handler is not yet developed.
 
@@ -150,7 +150,7 @@ index 8a1fbdc..aefaa65 100644
 
 In other words, every variable in scope can be used in the template.
 
-If we visited `/landing` now we would see: ![Screenshot of the landing page showing a "Landing interpolated string" heading](https://odone.io/images/landing-interpolation.png)
+If we visited `/landing` now we would see: ![Screenshot of the landing page showing a "Landing interpolated string" heading](/images/landing-interpolation.png)
 
 ## Tweaking the Landing
 
@@ -347,7 +347,7 @@ index 7675a0f..c2d4d10 100644
 +        $(widgetFile "landing")
 ```
 
-If we visited `/` now we would see: ![Screenshot of a login form with username and password fields and a submit button](https://odone.io/images/login.png)
+If we visited `/` now we would see: ![Screenshot of a login form with username and password fields and a submit button](/images/login.png)
 
 ## The Posts Page
 
@@ -447,7 +447,7 @@ index 0000000..2445442
 +    <p>Text 2
 ```
 
-If we visited `/posts` now we would see: ![Screenshot of the blog with a form at the top with title field, text field and submit button; below two hardcoded posts with title and text](https://odone.io/images/posts.png)
+If we visited `/posts` now we would see: ![Screenshot of the blog with a form at the top with title field, text field and submit button; below two hardcoded posts with title and text](/images/posts.png)
 
 ## Tweaking the Empty Layout
 
@@ -515,4 +515,4 @@ index 0000000..3790b61
 +});
 ```
 
-If we visited `/` now we would see: ![Screenshot of the blog with a "toggle form" button and two posts with title and text](https://odone.io/images/posts-final.png)
+If we visited `/` now we would see: ![Screenshot of the blog with a "toggle form" button and two posts with title and text](/images/posts-final.png)

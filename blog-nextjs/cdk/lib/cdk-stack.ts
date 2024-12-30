@@ -6,32 +6,37 @@ import * as s3 from "aws-cdk-lib/aws-s3";
 import * as s3deploy from "aws-cdk-lib/aws-s3-deployment";
 import { Construct } from "constructs";
 
-const DOMAIN_NAME = "odone.io";
+const ODONE_IO = "odone.io";
+const ODONE_ME = "odone.me";
 const ASSETS_PATH = "../out";
 
 export class CdkStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
-    const bucket = new s3.Bucket(this, `${DOMAIN_NAME}-s3-bucket`, {
-      bucketName: DOMAIN_NAME,
+    const bucket = new s3.Bucket(this, `${ODONE_IO}-s3-bucket`, {
+      bucketName: ODONE_IO,
       versioned: true,
       removalPolicy: cdk.RemovalPolicy.RETAIN,
     });
 
     const certificate = new acm.Certificate(
       this,
-      `${DOMAIN_NAME}-acm-certificate`,
+      `${ODONE_IO}-acm-certificate`,
       {
-        domainName: DOMAIN_NAME,
-        subjectAlternativeNames: [`www.${DOMAIN_NAME}`],
+        domainName: ODONE_IO,
+        subjectAlternativeNames: [
+          `www.${ODONE_IO}`,
+          ODONE_ME,
+          `www.${ODONE_ME}`,
+        ],
         validation: acm.CertificateValidation.fromDns(),
       }
     );
 
     const cloudfrontFunction = new cloudfront.Function(
       this,
-      `${DOMAIN_NAME}-cloudfront-function`,
+      `${ODONE_IO}-cloudfront-function`,
       {
         code: cloudfront.FunctionCode.fromFile({
           filePath: "lib/cloudfrontFunction.js",
@@ -41,11 +46,11 @@ export class CdkStack extends cdk.Stack {
 
     const distribution = new cloudfront.Distribution(
       this,
-      `${DOMAIN_NAME}-cloudfront-distribution`,
+      `${ODONE_IO}-cloudfront-distribution`,
       {
         priceClass: cloudfront.PriceClass.PRICE_CLASS_100,
         certificate,
-        domainNames: [DOMAIN_NAME, `www.${DOMAIN_NAME}`],
+        domainNames: [ODONE_IO, `www.${ODONE_IO}`, ODONE_ME, `www.${ODONE_ME}`],
         defaultBehavior: {
           viewerProtocolPolicy:
             cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
@@ -60,7 +65,7 @@ export class CdkStack extends cdk.Stack {
       }
     );
 
-    new s3deploy.BucketDeployment(this, `${DOMAIN_NAME}-s3-deploy`, {
+    new s3deploy.BucketDeployment(this, `${ODONE_IO}-s3-deploy`, {
       sources: [s3deploy.Source.asset(ASSETS_PATH)],
       destinationBucket: bucket,
       distribution,

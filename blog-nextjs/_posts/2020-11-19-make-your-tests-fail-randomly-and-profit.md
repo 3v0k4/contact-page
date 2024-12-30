@@ -3,7 +3,7 @@ title: Make Your Tests Fail Randomly (and Profit)
 description: Using random values in automated tests to improve readability and the likelihood of failures in the presence of bugs or wrong mental models.
 published: true
 author: Riccardo
-cover_image: https://odone.io/images/mural.jpg
+cover_image: /images/mural.jpg
 tags:
   - Essential Skills
 ---

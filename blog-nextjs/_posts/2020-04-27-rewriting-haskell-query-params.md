@@ -9,7 +9,7 @@ tags:
   - Servant
 ---
 
-As discussed in the [series intro](https://odone.io/posts/2020-02-26-rewriting-haskell-intro/), we are rewriting Stream from Rails to Servant. Since we value small iterations, the idea is to rely as much as possible on existing code while migrating Ruby to Haskell. For that reason, we decided to move endpoint by endpoint and leave the authentication in Rails for the time being.
+As discussed in the [series intro](/posts/2020-02-26-rewriting-haskell-intro/), we are rewriting Stream from Rails to Servant. Since we value small iterations, the idea is to rely as much as possible on existing code while migrating Ruby to Haskell. For that reason, we decided to move endpoint by endpoint and leave the authentication in Rails for the time being.
 
 Stream authenticates users via Slack OAuth. In other words, Rails, for any given authenticated request, knows the `slack_token` of the current user. We started with the following endpoint in Servant:
 

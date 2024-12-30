@@ -10,7 +10,7 @@ tags:
   - Monad
 ---
 
-Recently I've spent some time staring at type signatures. The goal was to develop a better intuition by absorbing their wisdom. Last week it was [Monad's `bind`](https://odone.io/posts/2020-02-03-monad-composes-sequentially/). This time I've decided to compare the following four:
+Recently I've spent some time staring at type signatures. The goal was to develop a better intuition by absorbing their wisdom. Last week it was [Monad's `bind`](/posts/2020-02-03-monad-composes-sequentially/). This time I've decided to compare the following four:
 
 ```hs
 ($)   ::   (a ->   b) ->   a ->   b

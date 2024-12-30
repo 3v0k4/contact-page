@@ -2,7 +2,7 @@
 title: Hangman in PureScript
 author: Riccardo
 description: Interactive Programming in PureScript
-cover_image: https://odone.io/images/hangman.jpeg
+cover_image: /images/hangman.jpeg
 tags:
   - Functional Programming
   - PureScript

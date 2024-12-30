@@ -3,7 +3,7 @@ title: How to Tame Your Reading List to Support Your Goals
 description: While busy trying to fit all that content in our heads, we forget that reading is just the easy part.
 published: true
 author: Riccardo
-cover_image: https://odone.io/images/library.jpg
+cover_image: /images/library.jpg
 tags:
   - Essential Skills
 ---

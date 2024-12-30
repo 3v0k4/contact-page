@@ -3,7 +3,7 @@ title: How to Tame Complexity Into Simplicity with a Shake List
 description: The trick is in minimizing the feedback loop. Ideally, you want to be told at each turn if you are wrong, not drive for days just to realize you were heading the opposite direction.
 published: true
 author: Riccardo
-cover_image: https://odone.io/images/leaves.jpg
+cover_image: /images/leaves.jpg
 tags:
   - Essential Skills
 ---
@@ -72,7 +72,7 @@ Here's what I came up with:
 
 The time had come to put down the designer's hat and pick up the engineer's one. **I shook the candidate solutions against the shake list**. First of all, I discarded all the invalid solutions (e.g. didn't solve the problem, inferior to an alternative). Then, I marked candidate solutions that either solved more than one problem or were complementary to each other.
 
-I kept shaking the tree glad of all the leaves falling down. They were the **silly ideas I saved myself from**. Also, I noted why any item got discarded for documentation's sake. Among other things, that proved to be useful when my brain wanted some solutions to work and kept surfacing them. Luckily, I could refer to my notes and avoid falling prey to the [Einstellung effect](https://odone.io/posts/2020-06-26-why-good-solutions-block-better-ones/).
+I kept shaking the tree glad of all the leaves falling down. They were the **silly ideas I saved myself from**. Also, I noted why any item got discarded for documentation's sake. Among other things, that proved to be useful when my brain wanted some solutions to work and kept surfacing them. Luckily, I could refer to my notes and avoid falling prey to the [Einstellung effect](/posts/2020-06-26-why-good-solutions-block-better-ones/).
 
 Here's the list of candidate solutions after shaking:
 
@@ -94,6 +94,6 @@ I explored the problem until I grokked it, I came up with validated and performa
 
 ## Outro
 
-Nowadays, I would have deferred coding more. You know what I would have done instead? You bet it is more whiteboarding. Candidate solutions were still too abstract. Today I would have [Decomposed the Feature Into a Pipeline](https://odone.io/posts/2020-06-29-decomposing-features-into-pipelines/) and made sure to get [Code Quality for Free](https://odone.io/posts/2020-08-20-code-quality-is-free-if-you-do-it-right/).
+Nowadays, I would have deferred coding more. You know what I would have done instead? You bet it is more whiteboarding. Candidate solutions were still too abstract. Today I would have [Decomposed the Feature Into a Pipeline](/posts/2020-06-29-decomposing-features-into-pipelines/) and made sure to get [Code Quality for Free](/posts/2020-08-20-code-quality-is-free-if-you-do-it-right/).
 
 Besides consuming more markers, I would also overcommunicate more throughout the process. Unfortunately, it's **not common to see a developer spending time on the whiteboard**. Thus, it's better to raise the objection and explain what's going on. I highlight the complexity of the problem by making the shake list visible. I employ the process to propose shortcuts or better alternatives. I advertise the many silly mistakes I avoided. I show by example that my work is faster and better by the nature of my process.

@@ -12,7 +12,6 @@ type Post = {
   title: string,
   description: string,
   slug: string,
-  cover_image: string,
   date: string,
   author: string,
   canonical_url: string,
@@ -40,18 +39,15 @@ const Post = ({ post }: Props) => {
   return <>
     <Head>
       <title>{title}</title>
-      <meta property="og:title" content={post.title} />
-      <meta property="og:description" content={post.description} />
-      <meta name="description" content={post.description} />
-      <meta property="og:type" content="article" />
-      <meta property="og:image" content={post.cover_image} />
-      <meta name="twitter:card" content="summary_large_image" />
+      <meta key="og:title" property="og:title" content={post.title} />
+      { post.description && <meta key="og:description" property="og:description" content={post.description} /> }
+      { post.description && <meta key="description" name="description" content={post.description} /> }
+      <meta key="og:type" property="og:type" content="article" />
+      <meta key="twitter:card" name="twitter:card" content="summary_large_image" />
     </Head>
 
     <div className="mx-auto max-w-3xl px-4 my-10">
       <article>
-        { post.cover_image && <img className="mb-10" src={post.cover_image} /> }
-
         <h1 className="text-4xl font-semibold">
           {post.title}
         </h1>
@@ -119,7 +115,6 @@ type Params = {
 export const getStaticProps = async ({ params }: Params) => {
   const post = getMicroPostBySlug(params.slug, [
    'title',
-   'cover_image',
    'author',
    'canonical_url',
    'date',

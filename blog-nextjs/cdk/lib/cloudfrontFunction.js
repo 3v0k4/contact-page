@@ -113,19 +113,18 @@ function handler(event) {
   var uri = request.uri;
   var host = request.headers.host.value;
 
-  if (host.startsWith('www.')) {
+  var apex = host.replace(/^www\./, "");
+  if (apex !== host) {
     return {
       statusCode: 302,
-      statusDescription: 'Found',
+      statusDescription: "Found",
       headers: {
         location: {
-          value: `https://odone.io${uri}`
-        }
-      }
+          value: `https://${apex}${uri}`,
+        },
+      },
     };
   }
-
-
 
   var path = PATHS.find((path) => uri.endsWith(path));
 
@@ -171,16 +170,17 @@ function handler(event) {
       statusDescription: "Found",
       headers: {
         location: {
-          value: "https://www.kaggle.com/code/riccardoodone/just-enough-python-to-beat-excel-socrates2024",
+          value:
+            "https://www.kaggle.com/code/riccardoodone/just-enough-python-to-beat-excel-socrates2024",
         },
       },
     };
   }
 
-  if (uri.endsWith('/')) {
-      request.uri += 'index.html';
-  } else if (!uri.includes('.')) {
-      request.uri += '/index.html';
+  if (uri.endsWith("/")) {
+    request.uri += "index.html";
+  } else if (!uri.includes(".")) {
+    request.uri += "/index.html";
   }
 
   return request;

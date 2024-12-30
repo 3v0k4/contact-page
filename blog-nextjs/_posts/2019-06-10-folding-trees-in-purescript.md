@@ -2,7 +2,7 @@
 title: Folding Trees in PureScript
 author: Riccardo
 description: Transforming the structure of a tree by employing recursive functions, the Foldable typeclass and the State Monad
-cover_image: https://odone.io/images/folding-trees.jpg
+cover_image: /images/folding-trees.jpg
 tags:
   - Functional Programming
   - PureScript

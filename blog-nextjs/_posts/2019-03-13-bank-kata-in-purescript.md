@@ -192,4 +192,4 @@ Thanks to [Liam Griffin](https://medium.com/u/98e431287677) who inspired me to t
 
 Finally, I want to give a shoutout to [BusConf](https://www.bus-conf.org/) and to all the people I’ve met there that showed so much support for my PureScript journey. You are awesome!
 
-If you are hungry for more, see how we can test the code in the followup: [Testing Bank Kata in PureScript](https://odone.io/posts/2019-03-18-testing-bank-kata-in-purescript/).
+If you are hungry for more, see how we can test the code in the followup: [Testing Bank Kata in PureScript](/posts/2019-03-18-testing-bank-kata-in-purescript/).

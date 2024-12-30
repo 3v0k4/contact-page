@@ -11,7 +11,7 @@ tags:
 
 ## Intro
 
-Last week we’ve had some fun solving the [Bank Kata in PureScript](https://odone.io/posts/2019-03-13-bank-kata-in-purescript/). Now it’s time to add some unit tests.
+Last week we’ve had some fun solving the [Bank Kata in PureScript](/posts/2019-03-13-bank-kata-in-purescript/). Now it’s time to add some unit tests.
 
 In particular, we are going to test the three main functions of the kata:
 
@@ -48,7 +48,7 @@ deposit
 
 In other words, we don’t specify the specific monad (`Effect`) anymore. We just say that `deposit` uses a monad `m` as a base monad for `StateT`.
 
-Sadly, that does not compile. In fact, the type signature is telling a lie. In the body of the function we do `ts <- lift nowDateTime`. As explained in the [previous post](https://odone.io/posts/2019-03-13-bank-kata-in-purescript/), that obliges the function to use `Effect`.
+Sadly, that does not compile. In fact, the type signature is telling a lie. In the body of the function we do `ts <- lift nowDateTime`. As explained in the [previous post](/posts/2019-03-13-bank-kata-in-purescript/), that obliges the function to use `Effect`.
 
 Luckily, this is an easy fix. Instead of using `nowDateTime` in `deposit`, we will just inject it:
 

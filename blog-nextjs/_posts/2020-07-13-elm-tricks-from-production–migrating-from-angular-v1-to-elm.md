@@ -3,7 +3,7 @@ title: Elm Tricks from Production–Migrating from Angular v1 to Elm
 description: How we managed to migrate AirCasting from Angular v1 to Elm while still delivering value
 published: true
 author: Riccardo
-cover_image: https://odone.io/images/elm.jpg
+cover_image: /images/elm.jpg
 canonical_url: https://blog.lunarlogic.io/2019/elm-tricks-from-production-migration/
 series: Elm Tricks from Production
 tags:

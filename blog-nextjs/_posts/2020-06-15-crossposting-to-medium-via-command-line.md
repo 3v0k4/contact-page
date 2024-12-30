@@ -9,7 +9,7 @@ tags:
   - Script
 ---
 
-This post is heavily based on ["Crossposting to DevTo via Command Line"](https://odone.io/posts/2020-01-13-crossposting-via-command-line/). However, that is not a prerequisite reading.
+This post is heavily based on ["Crossposting to DevTo via Command Line"](/posts/2020-01-13-crossposting-via-command-line/). However, that is not a prerequisite reading.
 
 Let's see how to crosspost a local Jekyll-like blog post to [Medium](https://medium.com). First, we have the `crosspost` function:
 
@@ -166,7 +166,7 @@ A proper call adds an unpublished blog post on Medium with all the following fil
 - title;
 - description;
 - tags;
-- canonical\_url (the URL of the post on [odone.io](https://odone.io));
+- canonical\_url (the URL of the post on odone.io);
 - content.
 
 The whole script is on [GitHub](https://github.com/3v0k4/contact-page/blob/6863fcd7c5a570269f93e94cb50a84f7e67161be/blog/tomedium.hs).

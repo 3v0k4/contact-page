@@ -3,7 +3,7 @@ title: Scripting the Hell out of Trello with Haskell
 description: Want to use Haskell for something real but don't want to risk it at work? This is how I do it.
 published: true
 author: Riccardo
-cover_image: https://odone.io/images/bash.jpg
+cover_image: /images/bash.jpg
 tags:
   - Functional Programming
   - Script
@@ -12,7 +12,7 @@ tags:
 
 When I started learning Haskell, I struggled to find places to deploy it. Doing silly textbook exercises was boring. At the same time, committing substantial work to it would have been a risk.
 
-Somebody encouraged me to try writing scripts at Monadic Party last year. I [never looked back](https://odone.io/tags/Script/): it's approachable, useful, and fun.
+Somebody encouraged me to try writing scripts at Monadic Party last year. I [never looked back](/tags/Script/): it's approachable, useful, and fun.
 
 Let's write one step-by-step. If you cannot resist the urge, feel free to [go to the bottom](#the-whole-script) to see the final result.
 
@@ -27,7 +27,7 @@ We will develop a script that:
 1. Fetches templates and their intervals from a list of "recurring cards".
 2. Creates cards for the upcoming week in a target list.
 
-For example, I send the [PinkLetter](https://odone.io/#newsletter) on Sundays, check my Twitter stats on the first of the month, and YouTube channel on the fifteenth. In Trello, I keep three template cards named "Sun | Send PinkLetter", "D01 | Check Twitter stats", and "D15 | Check YouTube channel".
+For example, I send the [PinkLetter](/#newsletter) on Sundays, check my Twitter stats on the first of the month, and YouTube channel on the fifteenth. In Trello, I keep three template cards named "Sun | Send PinkLetter", "D01 | Check Twitter stats", and "D15 | Check YouTube channel".
 
 The script is aware of what day is today, so it only creates tasks that are due in the next seven days. Also, all the labels included in the templates are preserved.
 
@@ -223,7 +223,7 @@ Wait, wat?
    |     ^^^^
 ```
 
-It turns out, [records in Haskell are a pain in the dot](https://odone.io/posts/2020-06-01-records-haskell/). We could use some type-trickery, but also no:
+It turns out, [records in Haskell are a pain in the dot](/posts/2020-06-01-records-haskell/). We could use some type-trickery, but also no:
 
 ```hs
 data Card = Card
@@ -305,7 +305,7 @@ instance FromJSON Card where
       <*> pure "INTERVAL" -- CHANGED
 ```
 
-The interval is part of the name. However, applicative does not allow to express a dependency between name and interval, but [monads can be sequenced](https://odone.io/posts/2020-02-03-monad-composes-sequentially/).
+The interval is part of the name. However, applicative does not allow to express a dependency between name and interval, but [monads can be sequenced](/posts/2020-02-03-monad-composes-sequentially/).
 
 Let's make the change easy...
 
@@ -691,7 +691,7 @@ If you don't give a damn about portability, don't have colleagues complaining th
 
 At first, it's strange to type-drive a script, but having Haskell's full power and the maintainability provided by types, is a game-changer.
 
-Want to see more scripts? Smash [this link](https://odone.io/tags/Script/)!
+Want to see more scripts? Smash [this link](/tags/Script/)!
 
 ## The Whole Script
 
