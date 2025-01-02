@@ -13,7 +13,7 @@ type Props = {
 } & MicroTagsProps
 
 export const MicroPosts = ({ categories, tags, posts }: Props) => (
-  <div className="mx-auto max-w-3xl px-4 mt-10">
+  <div className="mx-auto max-w-3xl px-4 mt-10 break-all">
     <h1 className="text-center text-4xl font-semibold">
       MicroPosts
     </h1>
