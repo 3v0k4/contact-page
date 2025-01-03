@@ -94,7 +94,7 @@ const Layout = ({ children }: React.PropsWithChildren<{}>) => {
         ].map(({ href, src, label }) => (
           <Link
             key={label}
-            href={src}
+            href={href}
             className="opacity-50 flex-shrink-0 flex justify-center items-center"
             target="_blank"
             rel="noopener">
@@ -137,7 +137,7 @@ const Layout = ({ children }: React.PropsWithChildren<{}>) => {
         ].map(({ href, src, label }) => (
           <Link
             key={label}
-            href={src}
+            href={href}
             className="opacity-50 flex-shrink-0 flex justify-center items-center"
             target="_blank"
             rel="noopener">
