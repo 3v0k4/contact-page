@@ -11,10 +11,9 @@ cd blog-nextjs
 ./deploy.sh
 cd -
 
-rsync \
-  --rsync-path="sudo rsync" \
-  -a \
-  curves/public riccardo@odone.io:/usr/share/nginx/html/odone.io/
+cd curves
+./deploy.sh
+cd -
 
 cd xpath
 yarn compile
