@@ -16,13 +16,7 @@ cd curves
 cd -
 
 cd xpath
-yarn compile
-sed -i '' -e "s/VERSION/$(date +%s)/g" public/index.html
-rsync \
-  --rsync-path="sudo rsync" \
-  -a \
-  public/ riccardo@odone.io:/usr/share/nginx/html/odone.io/xpath/
-git checkout public/index.html
+./deploy.sh
 cd -
 
 cd timeless-software-wisdom
