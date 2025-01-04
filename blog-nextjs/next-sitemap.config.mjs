@@ -1,8 +1,6 @@
-import { TLD } from "consts";
-
 /** @type {import('next-sitemap').IConfig} */
 const config = {
-  siteUrl: process.env.SITE_URL || `https://${TLD}`,
+  siteUrl: process.env.SITE_URL || `https://odone.me`,
   generateRobotsTxt: true,
   transform: async (config, path) => {
     return {

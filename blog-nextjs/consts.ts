@@ -1,1 +1,1 @@
-export const TLD = "odone.io";
+export const TLD = "odone.me";

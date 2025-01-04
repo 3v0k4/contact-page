@@ -25,7 +25,7 @@ const Tir = () => (
 
       <p className="mt-10">
       This is also available as a <Link
-        href="https://tir.odone.io"
+        href="https://tir.odone.me"
         target="_blank"
         rel="noopener"
         className="underline text-[color:var(--blue)]">six-week email course</Link>.

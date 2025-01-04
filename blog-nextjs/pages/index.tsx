@@ -141,7 +141,7 @@ const Home = ({ blog, microBlog }: { blog: TagsProps & Posts, microBlog: MicroTa
           </div>
         </Link>
 
-        <Link className="group" href="https://rictionary.odone.io/" target="_blank" rel="noopener noreferrer">
+        <Link className="group" href="https://rictionary.odone.me/" target="_blank" rel="noopener noreferrer">
           <img
             width="192"
             height="192"
@@ -278,7 +278,7 @@ const Home = ({ blog, microBlog }: { blog: TagsProps & Posts, microBlog: MicroTa
 
         <div className="basis-40 flex-grow grid gap-20 grid-cols-[repeat(auto-fit,minmax(130px,1fr))] content-between">
           <div>
-            <Link className="group" href="https://basal.odone.io" target="_blank" rel="noopener noreferrer">
+            <Link className="group" href="https://basal.odone.me" target="_blank" rel="noopener noreferrer">
 
               <picture>
                 <source type="image/webp" srcSet="/images/basal.webp" />
