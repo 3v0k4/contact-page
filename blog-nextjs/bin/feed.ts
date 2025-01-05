@@ -14,7 +14,6 @@ export const generateRssFeed = async () => {
   const date = new Date();
   const author = {
     name: "Riccardo Odone",
-    email: "riccardo(at)odone.me",
   };
 
   const feed = new Feed({
