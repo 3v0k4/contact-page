@@ -11,7 +11,7 @@ tags:
 
 set -euo pipefail
 IFS=$'\n\t'
-set -vx
+set -x
 ```
 
 Explanation:
