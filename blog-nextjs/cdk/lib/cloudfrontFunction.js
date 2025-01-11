@@ -114,13 +114,13 @@ function handler(event) {
   var host = request.headers.host.value;
 
   var apex = host.replace(/^www\./, "");
-  if (apex !== host) {
+  if (apex === "odone.io" || apex !== host) {
     return {
       statusCode: 302,
       statusDescription: "Found",
       headers: {
         location: {
-          value: `https://${apex}${uri}`,
+          value: `https://odone.me${uri}`,
         },
       },
     };
