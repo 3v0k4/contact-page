@@ -17,3 +17,5 @@ Ask yourself:
 - Would any product go for slow & hard-to-use?
 
 Nope. Because that's bullshit!
+
+Inspiration: https://longform.asmartbear.com/opposite-test/
