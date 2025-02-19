@@ -1,15 +1,26 @@
 import fs from "fs";
 import { Feed } from "feed";
-import { getPostSlugs, parsePost } from "../lib/api";
+import {
+  getPostSlugs,
+  parsePost,
+  getMicroPostSlugs,
+  parseMicroPost,
+} from "../lib/api";
 import { TLD } from "../consts";
 
-export const getBlogPostsData = async () =>
+export const getBlogPostsData = () =>
   getPostSlugs()
-    .map(parsePost)
+    .map((post) => ({ ...parsePost(post), path: "posts" }))
+    .concat(
+      getMicroPostSlugs().map((post) => ({
+        ...parseMicroPost(post),
+        path: "micro-posts",
+      }))
+    )
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
 
-export const generateRssFeed = async () => {
-  const posts = await getBlogPostsData();
+export const generateRssFeed = () => {
+  const posts = getBlogPostsData();
   const root = `https://${TLD}`;
   const date = new Date();
   const author = {
@@ -33,7 +44,7 @@ export const generateRssFeed = async () => {
   });
 
   posts.slice(0, 10).forEach((post) => {
-    const url = `${root}/posts/${post.slug}/`;
+    const url = `${root}/${post.path}/${post.slug}/`;
 
     feed.addItem({
       title: post.title,

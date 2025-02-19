@@ -175,10 +175,10 @@ export const getTags = () => {
 
 const MICROPOSTS_DIRECTORY = join(process.cwd(), "_micro-posts");
 
-const getMicroPostSlugs = () =>
+export const getMicroPostSlugs = () =>
   fs.readdirSync(MICROPOSTS_DIRECTORY).map((slug) => slug.replace(/\.md$/, ""));
 
-const parseMicroPost = (slug: string) => {
+export const parseMicroPost = (slug: string) => {
   const fullPath = join(MICROPOSTS_DIRECTORY, `${slug}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const date = new Date(slug.split("-").slice(0, 3).join("-"));
