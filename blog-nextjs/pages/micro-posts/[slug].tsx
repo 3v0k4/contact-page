@@ -92,7 +92,7 @@ const Post = ({ post }: Props) => {
     <div className="py-20 flex flex-col md:flex-row bg-[color:var(--blue)] shadow-[0_0_5px_var(--blue)] items-start justify-around gap-10">
       { post.randomPosts.map(randomPost => (
         <div key={randomPost.title} className="px-4 md:max-w-[33%]">
-          <InternalLink href={`/posts/${randomPost.slug}`}>
+          <InternalLink href={`/micro-posts/${randomPost.slug}`}>
             <a className="text-black hover:text-black">
               <h3 className="text-2xl underline font-semibold">{randomPost.title}</h3>
               <p className="mt-5">{randomPost.description}</p>
