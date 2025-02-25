@@ -168,6 +168,20 @@ const Home = ({ blog, microBlog }: { blog: TagsProps & Posts, microBlog: MicroTa
             <p>My own personal Polish dictionary.</p>
           </div>
         </Link>
+
+        <Link className="group" href="https://github.com/3v0k4" target="_blank" rel="noopener noreferrer">
+          <img
+            width="192"
+            height="192"
+            className="rounded-xl group-hover:scale-[103%] opacity-30"
+            alt="GitHub icon"
+            src="/images/logo-github.svg"
+          />
+          <div className="text-sm mt-2 text-center">
+            <p className="font-bold">And more...</p>
+            <p>Check out all my OSS on GitHub.</p>
+          </div>
+        </Link>
       </div>
     </div>
 
