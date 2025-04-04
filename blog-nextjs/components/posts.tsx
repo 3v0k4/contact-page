@@ -12,7 +12,7 @@ type Props = {
 } & TagsProps
 
 export const Posts = ({ categories, tags, posts }: Props) => (
-  <div className="mx-auto max-w-3xl px-4 mt-10 break-all">
+  <div className="mx-auto max-w-3xl px-4 mt-10 break-words">
     <h1 className="text-center text-4xl font-semibold">
       Posts
     </h1>
