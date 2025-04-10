@@ -10,7 +10,7 @@ Will Guidara hires Dreamweavers in his restaurant.
 
 Their job is to *pull legends*: creating, automating, and scaling unforgettable experiences.
 
-From Will Guidara’s Unreasonable Hospitality: 
+From the book Unreasonable Hospitality: 
 
 > I told the story in pre-meal, and the term “Legend” became shorthand within the restaurant for these special touches—as in, “I did the best Legend for a table last night.” The name took on even greater significance as we realized what made these Legends so legendary. **Namely, they gave people a story—a Legend—to tell.** Why do people put so much time and effort into a marriage proposal? Because they know it’s a story they’ll tell for the rest of their lives. The best of those stories do two things: First, they put you right back in the moment, so that you’re not just recounting the experience, but reliving it. Second, the story itself tells you that while you were having the experience, you were seen and heard.
 >
