@@ -36,7 +36,7 @@ const Home = ({ blog, microBlog }: { blog: TagsProps & Posts, microBlog: MicroTa
     </div>
 
     <div className="mt-20 mx-auto max-w-3xl px-4">
-      <h2 className="text-4xl font-semibold mb-4">MicroBlogger</h2>
+      <h2 className="text-3xl font-semibold mb-4">MicroBlogger</h2>
       <MicroTags categories={microBlog.categories} tags={microBlog.tags} />
 
       <h3 className="text-xl font-semibold uppercase mt-4">Latest</h3>
@@ -44,7 +44,7 @@ const Home = ({ blog, microBlog }: { blog: TagsProps & Posts, microBlog: MicroTa
         { microBlog.latestMicroPosts.map(({ title, slug }) => (
           <li key={title}>
             <InternalLink href={`/micro-posts/${slug}`}>
-              <a className="text-2xl text-[color:var(--blue)] hover:text-[color:var(--pink)]">{title}</a>
+              <a className="text-xl text-[color:var(--blue)] hover:text-[color:var(--pink)]">{title}</a>
             </InternalLink>
           </li>
         ))}
@@ -52,7 +52,7 @@ const Home = ({ blog, microBlog }: { blog: TagsProps & Posts, microBlog: MicroTa
     </div>
 
     <div className="mt-20 mx-auto max-w-3xl px-4">
-      <h2 className="text-4xl font-semibold mb-4">Blogger</h2>
+      <h2 className="text-3xl font-semibold mb-4">Blogger</h2>
       <Tags categories={blog.categories} tags={blog.tags} />
 
       <h3 className="text-xl font-semibold uppercase mt-4">Latest</h3>
@@ -60,7 +60,7 @@ const Home = ({ blog, microBlog }: { blog: TagsProps & Posts, microBlog: MicroTa
         { blog.latestPosts.map(({ title, slug }) => (
           <li key={title}>
             <InternalLink href={`/posts/${slug}`}>
-              <a className="text-2xl text-[color:var(--blue)] hover:text-[color:var(--pink)]">{title}</a>
+              <a className="text-xl text-[color:var(--blue)] hover:text-[color:var(--pink)]">{title}</a>
             </InternalLink>
           </li>
         ))}
@@ -68,7 +68,7 @@ const Home = ({ blog, microBlog }: { blog: TagsProps & Posts, microBlog: MicroTa
     </div>
 
     <div className="mt-20 mx-auto max-w-3xl px-4">
-      <h2 className="text-4xl font-semibold mb-4">Coder</h2>
+      <h2 className="text-3xl font-semibold mb-4">Coder</h2>
 
       <div className="grid gap-20 grid-cols-[repeat(auto-fit,minmax(130px,1fr))]">
         <Link className="group" href="https://github.com/3v0k4/hot_docs" target="_blank" rel="noopener noreferrer">
@@ -186,7 +186,7 @@ const Home = ({ blog, microBlog }: { blog: TagsProps & Posts, microBlog: MicroTa
     </div>
 
     <div className="mt-20 mx-auto max-w-3xl px-4">
-      <h2 className="text-4xl font-semibold mb-4">Co-Organizer</h2>
+      <h2 className="text-3xl font-semibold mb-4">Co-Organizer</h2>
       <ul className="list-disc list-inside">
         <li>
           <Link
@@ -213,7 +213,7 @@ const Home = ({ blog, microBlog }: { blog: TagsProps & Posts, microBlog: MicroTa
     </div>
 
     <div className="mt-20 mx-auto max-w-3xl px-4">
-      <h2 className="text-4xl font-semibold mb-4">Speaker</h2>
+      <h2 className="text-3xl font-semibold mb-4">Speaker</h2>
       <ul className="list-disc list-inside">
         <li>
           <Link
@@ -283,7 +283,7 @@ const Home = ({ blog, microBlog }: { blog: TagsProps & Posts, microBlog: MicroTa
     </div>
 
     <div className="mt-20 mx-auto max-w-3xl px-4">
-      <h2 className="text-4xl font-semibold mb-4">Diabetic</h2>
+      <h2 className="text-3xl font-semibold mb-4">Diabetic</h2>
 
       <div className="flex flex-wrap gap-20 justify-between">
         <div className="basis-96 flex-grow">
