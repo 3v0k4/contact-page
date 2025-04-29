@@ -25,7 +25,7 @@ const Home = ({ blog, microBlog }: { blog: TagsProps & Posts, microBlog: MicroTa
             </p>
           </h1>
           <h2 className="text-4xl font-extralight mt-10">
-            My pronoun is he and I like{" "}
+            My favorite color is{" "}
             <span className="text-[#f76ca5] [text-shadow:1px_1px_1px_white]">
               pink
             </span>
