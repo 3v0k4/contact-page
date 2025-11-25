@@ -128,7 +128,7 @@ not-existing-command: command not found
 
 ---
 
-**`IFS=$'\n\t'`: Set input field separator (default: $' \n\t')**
+**`IFS=$'\n\t'`: Set input field separator (default: $' \n\t' = space, newline, tab)**
 
 Script:
 
