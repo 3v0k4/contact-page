@@ -71,7 +71,7 @@ const Home = ({ blog, microBlog }: { blog: TagsProps & Posts, microBlog: MicroTa
       <h2 className="text-3xl font-semibold mb-4">Coder</h2>
 
       <div className="grid gap-20 grid-cols-[repeat(auto-fit,minmax(130px,1fr))]">
-        <Link className="group" href="https://github.com/3v0k4/hot_docs" target="_blank" rel="noopener noreferrer">
+        <Link className="group" href="https://github.com/3v0k4/hotdocs" target="_blank" rel="noopener noreferrer">
           <img
             width="192"
             height="192"
@@ -141,7 +141,7 @@ const Home = ({ blog, microBlog }: { blog: TagsProps & Posts, microBlog: MicroTa
           </div>
         </Link>
 
-        <Link className="group" href="https://typescript.tips/" target="_blank" rel="noopener noreferrer">
+        <Link className="group" href="https://typescript.odone.me/" target="_blank" rel="noopener noreferrer">
           <img
             width="192"
             height="192"
@@ -328,7 +328,7 @@ const Home = ({ blog, microBlog }: { blog: TagsProps & Posts, microBlog: MicroTa
           </div>
 
           <div>
-            <Link className="group" href="https://getdextop.com" target="_blank" rel="noopener noreferrer">
+            <Link className="group" href="https://dextop.odone.me" target="_blank" rel="noopener noreferrer">
 
               <picture>
                 <source type="image/webp" srcSet="/images/dextop.webp" />
