@@ -348,7 +348,7 @@ This post is an introduction to fp-ts, a functional programming library for Type
 
 &nbsp;
 
-## [TypeScript Tips](https://typescript.tips/)
+## [TypeScript Tips](https://typescript.odone.me/)
 by [Riccardo Odone](https://twitter.com/RiccardoOdone)
 
 Make Bugs Impossible. One TypeScript Tip At A Time.
@@ -2035,6 +2035,7 @@ So I'm publicly sharing my framework to help others come to similar realizations
 by [Barry Schwartz](https://twitter.com/BarrySch)
 
 Psychologist Barry Schwartz takes aim at a central tenet of western societies: freedom of choice. In Schwartz's estimation, choice has made us not freer but more paralyzed, not happier but more dissatisfied.
+
 
 &nbsp;
 
