@@ -24,10 +24,8 @@ export class CdkStack extends cdk.Stack {
       this,
       `${ODONE_IO}-acm-certificate`,
       {
-        domainName: ODONE_IO,
+        domainName: ODONE_ME,
         subjectAlternativeNames: [
-          `www.${ODONE_IO}`,
-          ODONE_ME,
           `www.${ODONE_ME}`,
         ],
         validation: acm.CertificateValidation.fromDns(),
@@ -50,11 +48,11 @@ export class CdkStack extends cdk.Stack {
       {
         priceClass: cloudfront.PriceClass.PRICE_CLASS_100,
         certificate,
-        domainNames: [ODONE_IO, `www.${ODONE_IO}`, ODONE_ME, `www.${ODONE_ME}`],
+        domainNames: [ODONE_ME, `www.${ODONE_ME}`],
         defaultBehavior: {
           viewerProtocolPolicy:
             cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
-          origin: new origins.S3Origin(bucket),
+          origin: new origins.S3StaticWebsiteOrigin(bucket),
           functionAssociations: [
             {
               function: cloudfrontFunction,
@@ -65,11 +63,11 @@ export class CdkStack extends cdk.Stack {
       }
     );
 
-    new s3deploy.BucketDeployment(this, `${ODONE_IO}-s3-deploy`, {
-      sources: [s3deploy.Source.asset(ASSETS_PATH)],
-      destinationBucket: bucket,
-      distribution,
-    });
+    // new s3deploy.BucketDeployment(this, `${ODONE_IO}-s3-deploy`, {
+    //   sources: [s3deploy.Source.asset(ASSETS_PATH)],
+    //   destinationBucket: bucket,
+    //   distribution,
+    // });
 
     new cdk.CfnOutput(this, "cloudfront-distribution-domain", {
       value: distribution.domainName,
