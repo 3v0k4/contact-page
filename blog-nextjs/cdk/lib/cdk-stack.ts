@@ -18,6 +18,7 @@ export class CdkStack extends cdk.Stack {
       bucketName: ODONE_IO,
       versioned: true,
       removalPolicy: cdk.RemovalPolicy.RETAIN,
+      blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL
     });
 
     const certificate = new acm.Certificate(
@@ -52,7 +53,7 @@ export class CdkStack extends cdk.Stack {
         defaultBehavior: {
           viewerProtocolPolicy:
             cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
-          origin: new origins.S3StaticWebsiteOrigin(bucket),
+          origin: origins.S3BucketOrigin.withOriginAccessControl(bucket),
           functionAssociations: [
             {
               function: cloudfrontFunction,
